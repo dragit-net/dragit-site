@@ -2,7 +2,12 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>DragIT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
@@ -39,17 +44,31 @@
       box-sizing: border-box;
      }
      body{
+      zoom: inherit;
+      width: 100%;
+      min-height: 100%;
+      margin:0;
+      display: block;
       overflow-x: hidden;
      }
+    .site_wrapper {
+      overflow: hidden;
+    }
     .hero_section{
       background-color: #0000;
-      background-image:url("img2.png");
+      background-image:url("img1.1.png");
       background-position: center 14vh;
       background-size: cover;
       background-repeat: no-repeat;
-      padding-top: 5rem;
+     
       position: relative;
       height:60rem;
+      width: 100vw;
+      overflow: visible;
+     }
+     img{
+      vertical-align: middle;
+      display: inline-block;
      }
      
     .navbar{
@@ -58,7 +77,7 @@
       padding-top:1.25rem;
       padding-bottom:1.68rem;
       z-index:10;
-      position: fixed;
+      position: sticky;
       /* border-bottom: 2px solid rgb(0, 0, 83);; */
       top:0;
       left:0;
@@ -66,7 +85,8 @@
       box-shadow: 0 0 1.26rem rgba(0, 31, 134, 0.5);
       background: transparent;
       backdrop-filter: blur(17px);
-      animation:padni 0.5s ease-out forwards;
+      animation:padni 0.7s ease-out forwards;
+      width: 100vw;
     }
     @keyframes padni{
       0% {
@@ -80,6 +100,37 @@
       opacity:1;
       transform:translateY(0);}
     }
+    #responsiveMenuToggleButton{
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top:0;
+      right:0;
+    }
+    #responsiveMenuToggleButton svg{
+      height: 2.2rem;
+      width: 2.2rem;
+      /* border: 1px solid rgb(4, 14, 128); */
+      border-radius: 3px;
+      color:rgb(1, 8, 90);
+      position: absolute;
+      top:1.75rem;
+      right:0.75rem;
+    }
+    #responsiveMenuToggleButton .openIcon{
+      display: block;
+    }
+    #responsiveMenuToggleButton .closeIcon{
+       display: none;
+    }
+    #responsiveMenuToggleButton.open .openIcon{
+      display: none;
+    }
+    #responsiveMenuToggleButton.open .closeIcon{
+      display: block;
+    }
     .nav-container{
       display: flex;
       justify-content: space-between;
@@ -88,6 +139,33 @@
       padding-right: 1.56rem;
       margin-top:0px;
      
+    }
+    @media screen and (max-width:1199px){
+      #responsiveMenuToggleButton {
+        display: block;
+        
+        margin-top: 7px;
+      }
+      .bar{
+        flex-direction: column;
+      }
+
+      .contact-us{
+        margin-right:35px !important ;
+      }
+    }
+    @media screen and (max-width:630px) {
+      #responsiveMenuToggleButton{
+        margin-top: 0;
+      }
+      
+    }
+    @media screen and (max-width:480px) {
+      .contact-us1{
+        height: 55px !important;
+        margin-left: 0px !important;
+      }
+      
     }
     .logo{
       width: 12rem;
@@ -102,24 +180,54 @@
       justify-content: space-around;
       flex:1;
     }
-    .bar p{
+    .bar a{
       font-family: Mulish, Arial;
       font-weight: 600;
+    }
+    .reci{
+      border:none;
+      transform: border-bottom 1s;
+    }
+    .reci:hover{
+      border-bottom: 2px solid blue;
+      border-top: 2px solid blue;
     }
 
     .contact-us{
       width:12rem;
       height: 4rem;
-      color:white;
+      color:black;
       font-size:1rem;
       font-weight:500;
       font-family: Mulish, Arial;
-      background: linear-gradient(180deg, rgb(35, 35, 151), rgb(4, 1, 67));
+      background: rgba(255, 255, 255);
       /* border: 0.125rem solid white; */
       border:none;
-      border-radius: 30px;
-      transition:0.2s box-shadow ;
-      transition: 0.2s transform;
+      border-radius: 100px;
+      
+      position: relative;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      transition: 0.5s box-shadow ;
+      transition: 0.2s color;
+      align-items: center;
+    }
+    .contact-us::after{
+      content:'';
+      position:absolute;
+      background-image: linear-gradient( to bottom right,rgb(64, 1, 254),rgb(3, 0, 55) );
+      height: 108%;
+      width: 103%;
+      border-radius: 100px;
+      z-index: -1;
+      
+
+    }
+    .contact-us:hover{
+      z-index: 0;
+      color:white;
+      box-shadow:  10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(156, 110, 255, 0.39);
     }
     
     .div-button{
@@ -129,21 +237,27 @@
     .bar div{
       display: flex;
       vertical-align: center;
-      
+      max-width: 100%;
     }
     .layout{
       display: grid;
-      vertical-align: center;
+      align-items: center;
       justify-content: center;
       position: relative;
       padding-top: 4rem;
       row-gap: 1.25rem;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1143px;
+      
     }
     .heroparent {
       flex-direction: column;
       justify-content: center;
       margin-left: auto;
       margin-right: auto;
+      width: 100%;
       padding-top: 0px;
       padding-bottom: 4.625rem;
       display: flex;
@@ -177,8 +291,8 @@
       text-transform: uppercase;
       margin-top: 0;
       margin-bottom: 0;
-      font-family: Raleway, Arial;
-      font-size: 5.5rem;
+      font-family: Outfit, Arial; 
+      font-size: 4.5rem;
       font-weight: 900;
       line-height: 5.65rem;
       /* text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
@@ -186,7 +300,8 @@
       20px 20px 30px #ffffff,
       
       25px 25px 10px #15008058; */
-      background: linear-gradient(180deg, hsl(240, 100%, 35%), hsl(225, 100%, 6%));
+      /* background: linear-gradient(180deg, hsl(240, 100%, 35%), hsl(225, 100%, 6%)); */
+      background: linear-gradient(180deg, hsl(242, 99%, 42%), hsl(0, 0%, 0%));
       background-clip: text;
       color:transparent;
       
@@ -194,19 +309,18 @@
    
     .tanglineinner{
       justify-content: center;
-      height:3.125rem;
-      width:28.75rem;
-
       align-items: center;
       margin-left: auto;
       margin-right: auto;
+      
       display: flex;
-      /* background: linear-gradient(150deg, white, rgba(1, 1, 183, 0.55)); */
-      background-color: #bec4ff23;
+      /* background-color: #bec4ff23; */
+      background: rgba(232, 235, 251, 0.817) ;
+      backdrop-filter:blur(19px);
       border:0px solid rgba(0, 39, 165, 0.817);
       border-radius: 1.9rem;
       color:rgb(7, 0, 81);
-      font-family: Mulish, Arial;
+      font-family: Poppins, sans-serif;
       box-shadow: 0 0 0.4rem rgba(0, 31, 134, 0.5);
       opacity: 0;
       animation: sponuj 1.5s ease forwards;
@@ -224,7 +338,7 @@
       font-size: 1rem;
       font-weight: 500;
       line-height: 3.125rem;
-      
+      margin-right:20px;
     }
     .rocket-icon{
       vertical-align: middle;
@@ -233,20 +347,24 @@
       height:1.25rem;
       width: 1.25rem;
       margin-right: 1.25rem;
+      margin-left: 20px;
     } 
     .ono-dugacko{
-      text-wrap: wrap;
+      overflow: hidden;
+      width:100%;
       margin-top:1rem;
       margin-left:6rem;
       margin-right: 6rem;
-      font-family: Mulish, Arial;
+      font-family: Poppins, sans-serif;
       color:rgb(0, 0, 0);
       /* s */
       padding: 1rem 1rem;
       border-radius: 20px;
       font-weight: 600;
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       font-style: italic;
+      display: flex;
+      justify-content: center;
     }
     .menu{
       display:none;
@@ -276,7 +394,7 @@
     }
     .contact-us1:hover{
       transform:scale(110%);
-      box-shadow: 0.1875rem 0.1875rem 1.25rem rgba(0, 0, 0, 0.3);
+      box-shadow: 0.1875rem 0.1875rem 1.25rem rgba(16, 0, 139, 0.3);
     }
     .logo1{
       width: 12rem;
@@ -284,6 +402,7 @@
       line-height: 21px;
       filter:contrast(130%);
       margin-top:0.6rem;
+      display:none;
     }
 
     
@@ -294,8 +413,14 @@
         width:0.5rem;
         height:0.5rem;
       } */
+    /* @media(max-width:767px){
+      .bar{
+        display: none;
+      }
+    }
 
-    @media(max-width:850px){
+
+    @media(min-width:768px) and (max-width:992px){
       .bar{
         display: none;
       }
@@ -310,91 +435,867 @@
       .hero_section{
         background-size: contain;
       }
+      .herocontentbox p{
+        font-size: 10vw;
+      }
+      .hero_section{
+        background-size: 150%;
+        background-position: 60% 50%;
+      }
+    } */
+    @media screen and (max-width: 479px) {
+      
+      .hero_section {
+        height: auto;
+        padding: 0;
+        background-position: center 16vh;
+      }
+      .contact-us1 {
+        border-radius: 30px;
+        width: auto;
+        min-width: 152px;
+        padding-left: 15px;
+        padding-right: 14px;
+        font-size: 18px;
+      }
+      
+      .logo {
+        max-width: 150px;
+        height: 45px;
+      }
+      .logo1{
+        max-width: 150px;
+        height: 45px;
+      }
+      .text-block2 {
+        text-align: left;
+        border-radius: 50px;
+        align-self: center;
+        margin-bottom: 0;
+        margin-left: 0;
+        padding: 0;
+        font-size: 11px;
+        line-height: 16px;
+      }
+      
+      /* .ono-dugacko {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 30px;
+        font-size: 14px;
+        line-height: 19px;
+        overflow-wrap: break-word;
+      } */
+      .layout {
+        flex-flow: column;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      
+      .heroheading {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 30px !important;
+        line-height: 25px !important;
+        display: block;
+        
+      }
+      .herocontentbox{
+        padding-top:23px !important;
+      }
+      .ono-dugacko{
+        padding-top: 0px;
+      }
+
+      
     }
-     
-  </style>
+    
+    @media screen and (max-width: 767px) {
+      .w-nav-brand {
+        padding-left: 10px;
+      }
+      .logo {
+        width: auto;
+        line-height: 21px;
+      }
+      .hero_section {
+        height: auto;
+        padding: 0;
+      }
+      .layout {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      
+      
+      .text-block2{
+        align-self: center;
+        margin-left: 0;
+        font-size: 12px;
+        line-height: 38px;
+      }
+      .heroheading {
+        font-size: 40px;
+        line-height: 49px;
+      }
+      .layout{
+        row-gap: 0;
+      }
+      .ono-dugacko p{
+        width: 450px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        font-size: 15px;
+        line-height: 22px;
+        
+        word-wrap: break-word;
+
+      }
+    }
+    
+    @media screen and (max-width: 991px) {
+      .navbar {
+          padding-top: 20px;
+          position: relative;
+      }
+      .hero_section {
+        height: auto;
+        padding: 0;
+      }
+      .heroheading {
+        margin-top: 10px;
+        margin-bottom: 0;
+        font-size: 48px;
+        line-height: 50px;
+      }
+      .ono-dugacko{
+        width: 700px;
+        font-size: 2.2vw;
+        font-weight: 550;
+      }
+      .navbar{
+        position: fixed;
+      }
+      .hero_section{
+        padding-top: 80px;
+      }
+      .herocontentbox{
+        padding-top: 40px;
+      }
+      .herocontentbox{
+        padding-top: 20px;
+      }
+      
+      
+    }
+    @media screen and (min-width:631px) and (max-width:766px) {
+      /* .hero_section{
+        padding-top: 100px;
+      } */
+      .herocontentbox{
+        padding-top: 20px
+      }
+    }
+    
+    @media screen and (max-width:1200px) {
+      .bar{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+      .contact-us{
+        display: none;
+      }
+      .nav-container{
+        flex-direction: column;
+        align-items: flex-start;
+        width:100% ;
+        padding: 0;
+        padding-top: 10px;
+      }
+      
+      .logo{
+        margin-left: 10px;
+      }
+
+      .bar{
+        padding-top: 20px;
+      }
+      .bar.open{
+        display: block;
+        
+      }
+      
+      .bar a{
+        color:rgb(255, 255, 255);
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: rgb(17, 0, 113);
+      }
+      
+    }
+    @media screen and (max-width:630px) {
+      .ono-dugacko{
+        max-width:390px;
+        font-size:1rem;
+        margin:10px 10px;
+        padding-bottom: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow-wrap: break-word;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .contact-us{
+        display: none;
+      }
+      .navbar{
+        background-color: white;
+      }
+      
+    }
+    @media screen and (max-width:380px){
+      .ono-dugacko{
+        max-width:350px;
+        font-size:1rem;
+        margin:10px 10px;
+        padding-bottom: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top:0;
+        overflow-wrap: break-word;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero_section{
+        background-position: center 20vh;
+      }
+      .herocontentbox{
+        padding-top: 7px;
+      }
+      
+      .heroheading{
+        font-size: 40px;
+      }
+      
+    }
+    @media screen and (min-width:768px){
+      .hero_section{
+        /* padding-top: 100px; */
+      }
+    }
+
+    .container{
+      height: 200px;
+      /* display: grid;
+      grid-template-columns: 18vw 1fr;
+      
+      grid-column-gap: 5vw;
+      /* justify-content: flex-end;
+      align-items: flex-start; 
+      padding-left: 0;
+      padding-right: 0;
+      display: grid;
+      background-color: #26262a;
+      box-shadow: 0 -8px 50px #6d58f7; 
+      color:white;
+      font-family: Poppins, sans-serif; */
+      grid-column-gap: 72px;
+    grid-row-gap: 72px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 1215px;
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+    color:black;
+    font-family:Poppins, sans-serif;
+      
+    }
+    .new_footer {
+      background-color: #e3e3e3b7;
+      padding-top: 88px;
+      padding-bottom: 88px;
+      position: relative;
+    } 
+    .container2{
+      grid-column-gap: 3vw;
+      grid-row-gap: 7vh;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr ;
+      grid-auto-columns: 1fr;
+      width: 100%;
+      display: grid;
+    }
+    @media screen and (max-width:991px){
+      .container2{
+        grid-template-columns: 1fr 1fr ;
+      }
+      .container{
+        padding-left: 7vw;
+        padding-right:10vw;
+        max-width: 721px;
+      }
+    }
+    @media screen and (max-width:479px){
+      .container2{
+        grid-column-gap: 22px;
+        grid-row-gap: 22px;
+        grid-template-columns: 1fr 1fr;
+      }
+      .container{
+        grid-column-gap: 27px;
+        grid-row-gap: 27px;
+        flex-flow: column;
+        margin-bottom: 20px;
+        /* flex-flow: column;
+        grid-column-gap: 7vw; */
+      }
+    }
+
+    
+    .second-section{
+      /* margin-bottom:200px;
+      display: grid;
+      row-gap: 50px;
+      margin-left:5vw;
+      margin-right: 5vw; */
+
+      /* width:100%;
+      overflow: hidden;
+      position: relative;
+      background-position: left 65%;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background:black url("images/drugafejdslika.png");
+      padding-top:10px;
+      padding-bottom: 200px; */
+      background:rgb(255, 255, 255) url("images/drugafejdslika.png");
+    background-position: 0% 70%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-top: 100px;
+    margin-bottom: 0;
+    padding-bottom: 180px;
+    /* box-shadow: 0 -8px 50px #523fd7 inset; */
+    }
+    .prelaz{
+      height:130px;
+      background: linear-gradient(180deg,white, black);
+      display: none;
+    }
+    .naslov{
+      font-size:100px;
+      text-align: center;
+      color:white;
+      margin-top: 0;
+      font-family: Poppins, sans-serif;
+      display:none;
+    }
+    .tri{
+      /* display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap:10vw;  */
+      grid-column-gap: 1.5vw;
+      grid-row-gap: 24px;
+      text-align: center;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-columns: 1fr;
+      max-width: 1140px;
+      margin-bottom: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      padding: 30px 20px;
+      /* box-shadow: 0 0px 60px #523fd7 inset; */
+      border-radius: 30px;
+
+    }
+    .box1{
+      border-radius: 16px;
+      padding: 64px 32px 8px;
+      text-decoration: none;
+      height: auto !important;
+      font-family: Poppins,sans-serif;
+      /* background: rgb(179, 168, 219) url("images/fejd-odozgo.png"); */
+      background: rgba(45, 38, 123, 0.436) url("images/fejd-odozgo.png");
+      /* background: rgba(3, 0, 63, 0.436) url("images/fejd-odozgo.png"); */
+      background-size: cover;
+      /* box-shadow: 0 0px 20px #523fd7 inset; */
+      color:white;
+    }
+    .slicica{
+      margin-bottom: 40px;
+    }
+    .text1{
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      font-family: Poppins, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+    }
+    .text2{
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    .text3{
+      color: #eef3f9;
+      margin-bottom: 40px;
+      font-family: Poppins, sans-serif;
+    }
+    .text3-1{
+      margin-bottom: 30px;
+    }
+    .text4{
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+    .text5{
+      color: #eef6ff;
+      margin-bottom: 40px;
+      font-family: Poppins, sans-serif;
+    }
+    .box2{
+      border-radius: 16px;
+      padding: 64px 32px 8px;
+      text-decoration: none;
+      height: auto;
+      color:rgb(255, 255, 255);
+      font-family:Poppins, sans-serif ;
+      /* background: rgb(179, 168, 219) url("images/fejd-odozgo.png"); */
+      background: rgba(45, 38, 123, 0.436) url("images/fejd-odozgo.png");
+      background-size: cover;
+      /* box-shadow: 0 -2px 20px #523fd7   ; */
+      
+    }
+    
+    
+    .box3-1,
+    .box3-2,
+    .box3-3{
+      /* color: #fff;
+      text-align: center;
+      /* background-image: linear-gradient(241deg, #090047, #1a00c4cc); 
+      border-image: linear-gradient(241deg,#523fd7,#7c6de0);
+      border-radius: 26px;
+      padding: 49px 24px 50px;
+      box-shadow: 0 -8px 40px #1700ac;
+      */
+      color: #fff;
+    text-align: center;
+    vertical-align: center;
+
+    background-image: linear-gradient(241deg, #523fd7, #7c6de0);
+    border-radius: 26px;
+    padding: 49px 24px 50px;
+    box-shadow: 0 -5px 50px #523fd7;
+    }
+    .box3-4-1{
+      align-self: center;
+      text-align: center;
+      background-image: linear-gradient(241deg, #4e39db, #9386e7);
+      height:79px;
+      border-radius: 90px;
+      width:214px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow:0 0 30px #4f39db9c;
+
+    }
+    .box3-4{
+      align-self: center;
+      text-align: center;
+    }
+    .dugme{
+      width:205px;
+      text-align: center;
+      background-color: white;
+      height: 75px;
+      color:#523fd7;
+      font-size: 20px;
+      border-radius: 50px;
+      border:none;
+      transition: 0.3s color;
+      
+    }
+    .dugme:hover{
+      background:linear-gradient(241deg, #4e39db, #9386e7); 
+      color: white;
+      box-shadow: 0 0 20px rgb(124, 99, 248);
+    }
+    
+    
+    .box2,
+    .box1{
+      height:500px;
+    }
+    .dva_holder{
+      margin:auto;
+      max-width: 1140px;
+
+    }
+    .dva{
+      grid-column-gap: 1.5vw;
+      grid-row-gap: 24px;
+      text-align: center;
+      grid-template-columns: 1fr 1fr ;
+      grid-auto-columns: 1fr;
+      max-width: 1140px;
+      margin-bottom: 150px;
+      margin-left: 27px;
+      margin-right: 27px;
+      display: grid;
+      
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-radius: 30px;
+      /* box-shadow: 0 -8px 50px #523fd7 inset; */
+      
+    }
+    .cetiri{
+      grid-column-gap:1.52vw;
+      grid-row-gap: 24px;
+      text-align: center;
+      font-family: Poppins, sans-serif;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-auto-columns: 1fr;
+      max-width: 1140px;
+      margin-bottom: 88px;
+      margin:auto;
+      display: grid;
+    }
+    .text1-1{
+      margin-bottom: 40px;
+      font-size: large;
+      font-weight: 700;
+      color:rgb(255, 255, 255);
+    }
+    .text2-2{
+      margin-bottom: 20px;
+      color:rgb(247, 246, 254);
+    }
+    .div-sa-tackama{
+      text-align: start;
+      font-size: 14.5px;
+      margin-left: 8px;
+    }
+    
+    @media screen and (max-width:976px) {
+      .second-section{
+        background-position: 0 0;
+      }
+    }
+    @media screen and (max-width:1108px){
+      .cetiri{
+        grid-template-columns: 1fr 1fr 1fr ;
+      }
+    }
+    @media screen and (max-width: 1050px){
+      .tri{
+        margin:0px 5vw ;
+        margin-bottom: 80px;
+        grid-template-columns: 1fr 1fr  ;
+      }
+    }
+    @media screen and (max-width:820px){
+      .cetiri{
+        grid-template-columns: 1fr 1fr  ;
+        margin-left: 3vw;
+        column-gap: 3vw;
+        margin-right: 3vw;
+      }
+      .dva{
+        padding:0;
+      }
+    }
+    @media screen and (max-width:800px){
+      .dva{
+        grid-template-columns: 1fr ;
+        margin-bottom: 25px;
+        
+      }
+      .tri{
+        grid-template-columns: 1fr ;
+        margin-bottom: 25px;
+        padding:0;
+      }
+    }
+    @media screen and (max-width:420px){
+      .second-section{
+        background-position: 65% ;
+      }
+      
+    }
+    @media screen and (max-width:525px) and (min-width:389px){
+      .cetiri{
+        grid-template-columns: 1fr ;
+        margin:0px 10vw;
+      }
+    }
+    @media screen and (max-width:388px){
+      .cetiri{
+        grid-template-columns: 1fr ;
+      }
+
+      .tri{
+        grid-template-columns: 1fr ;
+        margin:0px 10px;
+        margin-bottom: 25px;
+      }
+      .dva{
+        grid-template-columns: 1fr ;
+        margin:0px 10px;
+        margin-bottom: 25px;
+      }
+    }
+
+
+
+</style>
 </head>
 
+<div class="site-wrapper">
+  <section class="hero_section">
+    <div class="navbar">
+      <div class="nav-container">
+        <div class="div-with-pitcure">
+          <img class="logo"src="img1-removebg-preview.png">
+        </div>
 
-<section class="hero_section">
-  
-  <div class="navbar">
-    <div class="nav-container">
-      <div class="div-with-pitcure">
-        <img class="logo"src="img1-removebg-preview.png">
-      </div>
-      <div class="bar">
-        <div>
-          <p style="display: inline-block;">Products</p>
-          <svg style="margin-top:15px; "  xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#000000"><path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/></svg>
-        </div> 
-        <div>
-          <p>Marketplace </p>
-          <svg style="margin-top:15px; "  xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#000000"><path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/></svg>
-        </div> 
-        <div>
-          <p>Uce cases</p>
-          <svg style="margin-top:15px; "  xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#000000"><path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/></svg>
-        </div> 
-        <div>
-          <p>Affiliate</p>
-          <svg style="margin-top:15px; "  xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#000000"><path d="M480-333 240-573l51-51 189 189 189-189 51 51-240 240Z"/></svg>
-        </div> 
-      </div>
-      <div class="div-button">
-        <button class="contact-us">
-          Call: +381643719470
-          <!-- <svg style="
-          width:25px;
-          height:25px;
-          padding-top:8px;
-          margin-left:0px;
-          color:white; -->
-         
+        <button aria-label="toggle menu"
+          id="responsiveMenuToggleButton"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="openIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="closeIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          
+          
         </button>
 
-        <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
+        <div class="bar">
+          <div>
+            <a style="display: inline-block;">About Us</a>
+            
+          </div> 
+          <div>
+            <a>Services </a>
+            
+          </div> 
+          <div>
+            <a>Use cases</a>
+            
+          </div> 
+          <div>
+            <a>Contact Us</a>
+            
+          </div> 
+        </div>
+        <div class="div-button">
+          <button class="contact-us">
+            Call: +381643719470
+            <!-- <svg style="
+            width:25px;
+            height:25px;
+            padding-top:8px;
+            margin-left:0px;
+            color:white; -->
+          
+          </button>
+
+          <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <div class="tanglineinner">
+        <img class="rocket-icon" src="rocket-icon.png">
+        <div class="text-block2">
+          Tailored software solutions
+          - from vision to execution!
+        </div>
+      </div>
+      <div class="heroparent">
+          <div class="herocontentbox">
+            <p class="heroheading">Control.</p>
+            <p class="heroheading">Trust. Influence.</p>
+            <p class="heroheading">Success.</p>
+
+            <div class="ono-dugacko">
+              <p>
+                Empowering clients to enhance productivity, optimize efficiency, and reduce costs through innovative ISV solutions.
+            </p>
+            </div>
+            <div class="poslednji-red">
+              <div>
+                <img class="logo1" src="img1-removebg-preview.png">
+              </div>
+              <button class="contact-us1">
+                Contact Us
+                <!-- <svg style="
+                width:25px;
+                height:25px;
+                padding-top:8px;
+                margin-left:0px;
+                color:white; -->
+                <svg class="svg" style="width:20px; 
+                height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg>
+              </div>
+          </div>
+          </div>
+      </div>
+      
+    </div>
+  </section>
+  <div class="prelaz"></div>
+  <div class="second-section">
+    <div>
+      <p class="naslov">
+        NASLOV
+      </p>
+    </div>
+    <div class="tri">
+      <div class="box1">
+        <img class="slicica" src="images/slikica1.svg">
+        <div class="text1">BOOST PRODUCTIVITY</div>
+        <div class="text2">Build tailored automation</div>
+        <div class="text3">Develop <b>custom ISV solutions</b> that automate
+          industry-specific processes, from ERP extensions to
+          AI-driven task handling, freeing teams to focus on
+          improvenemts.
+        </div>
+        <div class="text4">Real-time operational visibility</div>
+        <div class="text5">Embed <b>real-time data dashboards</b> into software
+          applications, enabling proactive adjustments and
+          boosting operational agility.
+        </div>
+      </div>
+      <div class="box1">
+        <img class="slicica" src="images/slikica1.svg">
+        
+        <div class="text1">OPTIMIZE EFFICIENCY</div>
+        <div class="text2">Streamline operations &amp; workflows</div>
+        <div class="text3 text3-1">Implement lean digital methodologies and ERP
+          integrations to eliminate redundancies, synchronize
+          supply chains, and reduce downtime in maintenance.
+        </div>
+        <div class="text4">Data-driven resource optimization</div>
+        <div class="text5">Align machinery, labor, and materials with smart
+          allocation algorithms, maximizing output while
+          minimizing waste in production lines.
+        </div>
+      </div>
+      <div class="box1">
+        <img class="slicica" src="images/slikica1.svg">
+        <div class="text1">REDUCE COSTS</div>
+        <div class="text2">Cut operational waste</div>
+        <div class="text3">Identify and <b>eliminate hidden costs</b> like energy
+          overconsumption, idle machinery, or inefficient
+          maintenance practices.
+        </div>
+        <div class="text4">Scalable cloud-first solutions</div>
+        <div class="text5">Deploy <b>pay-as-you-go industrial software</b> to slash
+          upfront costs and long-term overhead.
+        </div>
+      </div>
+    </div>
+    <!-- <div class="cetiri">
+      <div class="box3">Taylor Made Software</div>
+      <div class="box3">ISV Solutions</div>
+      <div class="box3">Digital Transformation</div>
+      <div class="box3">IT Consulting</div>
+    </div> -->
+    <div class="dva_holder">
+      <div class="dva">
+        <div class="box2">Clients</div>
+        <div class="box2">Testimonials</div>
+      </div>
+    </div>
+    <div class="cetiri">
+      <div class="box3-1">
+        <div class="text1-1">TAILORED TO YOUR INDUSTRY</div>
+        <div class="text2-2">Our <b>digital transformation</b> strategies are designed for <b>production and service operations</b>,
+        combining ISV expertise with digital technologies to drive measurable gains in productivity,
+        efficiency, and cost savings.</div>
+      </div>
+      <div class="box3-2">
+        <div class="text1-1">BUILT FOR INDUSTRIAL IMPACT</div>
+        <div class="text2-2">
+          Our ISV solutions are engineered for manufacturing, transportation, and maintenance
+          sectors, translating software innovation into tangible operational gains:
+        </div>
+          <div class="div-sa-tackama">
+            <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automate high-volume production lines.</div>
+          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimize production, supply chain and warehouse workflows.</div>
+          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predict equipment failures before they disrupt operations.</div>
+         <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Slash waste in energy, materials, and labor without compromising quality.</div>
+          </div>
+        
+      </div>
+        <div class="box3-3">
+          <div class="text1-1">WHY OUR ISV SOLUTIONS STAND OUT</div>
+          <div class="text2-2">We blend <b>domain-specific expertise in supply chain management</b> with secure, scalable
+          software design—delivering solutions that drive automation, slash costs, and elevate user
+          experiences through intuitive, purpose-built tools</div>
+          <div class="text3-3">
+            By <b>embedding intelligence</b> into your physical processes, we drive measurable
+            improvements in output, resource utilization, and bottom-line savings.
+          </div>
+        </div>
+        
+      <div class="box3-4">
+       <div class="box3-4-1"> <button class="dugme">Contact us</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="new_footer">
+    
+    <div class="container">
+      <div class="container1">container 1</div>
+      <div class="container2">
+        <div class="div1">div 1</div>
+        <div class="div1">div 2</div>
+        <div class="div1">div 3</div>
         
       </div>
     </div>
   </div>
-  <div class="layout">
-    <div class="tanglineinner">
-      <img class="rocket-icon" src="rocket-icon.png">
-      <div class="text-block2">
-        Empowering clients with tailored software solutions
-      </div>
-    </div>
-    <div class="heroparent">
-        <div class="herocontentbox">
-          <p class="heroheading">ISV Services</p>
-          <p class="heroheading">&</p>
-          <p class="heroheading">solutions</p>
-          <div class="ono-dugacko">
-            Empowering clients to boost productivity, efficiency and reduce costs through ISV services and digital transformation - from vision to execution!
-          </div>
-          <div class="poslednji-red">
-            <div>
-              <img class="logo1" src="img1-removebg-preview.png">
-            </div>
-            <button class="contact-us1">
-              Contact Us
-              <!-- <svg style="
-              width:25px;
-              height:25px;
-              padding-top:8px;
-              margin-left:0px;
-              color:white; -->
-              <svg class="svg" style="width:20px; 
-              height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg>
-            </div>
-        </div>
-        </div>
-    </div>
-    
-  </div>
+</div>
+  <script>
+  const responsiveMenuButton=document.getElementById(
+    'responsiveMenuToggleButton'
+  );
+  const navBarLinks = document.querySelector('.bar')
+  responsiveMenuButton.addEventListener('click', ()=>{
+    navBarLinks.classList.toggle('open');
+    responsiveMenuButton.classList.toggle('open');
+  })
 
-</section>
- 
+
+  </script>
 </body>
 </html>
