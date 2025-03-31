@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="color-scheme" content="light">
   <title>DragIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,9 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
   <style>
-    html{
-      color-scheme:light !important;
-    }
+  
     /* .top-bar{
       background-color: white;
       box-shadow: 0px 0px 50px rgba(34, 0, 255, 0.3);
@@ -45,32 +43,26 @@
     } */
      *{
       box-sizing: border-box;
-
      }
-
-    body,
-    html{
-      overflow-x: hidden !important;
-      max-width: 100vw !important;
-      flex-wrap: wrap;
-    }
+     html{
+      color-scheme: light !important;
+     }
      body{
       zoom: inherit;
       width: 100%;
+      background-color: white;
       min-height: 100%;
       margin:0;
-       background-color:white !important;
       display: block;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
      }
-    .site_wrapper {
-      overflow: hidden !important;
-    }
      img {
   max-width: 100% !important; /* Ensures images scale down */
   height: auto;
 }
- 
+    .site_wrapper {
+      overflow: hidden;
+    }
     .hero_section{
       background-color: #0000;
       /* background-image:url("img1.1.png"); */
@@ -271,11 +263,12 @@
     .heroparent {
       flex-direction: column;
       justify-content: center;
+      /* margin-left: auto;
+      margin-right: auto; */
       width: 100%;
       padding-top: 0px;
       padding-bottom: 4.625rem;
       display: flex;
-      margin:0 !important;
     }
     .herocontentbox {
       text-align: center;
@@ -284,7 +277,9 @@
       align-self: center;
       align-items: center;
       max-width: 100%;
-      margin:0 !important;
+      margin: 0 !important;
+      /* margin-left: 10%;
+      margin-right: 10%; */
       padding-top: 0.6rem;
       display: flex;
       width:50rem;
@@ -588,10 +583,10 @@
         font-weight: 550;
       }
       .navbar{
-        position: fixed;
+        position: sticky;
       }
       .hero_section{
-        padding-top: 80px;
+        padding-top: 0px;
       }
       .herocontentbox{
         padding-top: 40px;
@@ -881,7 +876,7 @@
       /* background: rgb(179, 168, 219) url("images/fejd-odozgo.png"); */
 
       /* background: rgba(45, 38, 123, 0.436) url("images/pozadinazamale.png"); */
-      background: linear-gradient(rgb(12, 12, 90), rgb(2, 0, 24));
+      background-image: url(mala1.jpg);
       
       background-size: cover;
       /* box-shadow: 0 -2px 20px #523fd7   ; */
