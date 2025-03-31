@@ -46,6 +46,7 @@
      *{
       box-sizing: border-box;
      }
+    
      body{
       zoom: inherit;
       width: 100%;
@@ -56,8 +57,13 @@
       overflow-x: hidden;
      }
     .site_wrapper {
-      overflow: hidden;
+      overflow: hidden !important;
     }
+     img {
+  max-width: 100% !important; /* Ensures images scale down */
+  height: auto;
+}
+ 
     .hero_section{
       background-color: #0000;
       /* background-image:url("img1.1.png"); */
