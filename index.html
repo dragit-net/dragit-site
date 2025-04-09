@@ -3,7 +3,9 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="light only">
+
+<!-- or "dark only" if you prefer dark mode -->
   <title>DragIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,15 +54,23 @@
   position: relative;
   overflow-x: clip;
 }
+:root {
+  color-scheme: light !important; /* Forces light mode rendering */
+}
+
+html, body {
+  background-color: #ffffff !important; /* Your fixed background color */
+  color: #000000 !important; /* Your fixed text color */
+  color-scheme: light !important;
+}
 
      html{
       color-scheme: light !important;
-       background-color: white !important;
      }
      body{
       zoom: inherit;
       width: 100%;
-      background-color: white !important;
+      background-color: white;
       min-height: 100%;
       margin:0;
       display: block;
@@ -1265,6 +1275,7 @@ color:rgb(92, 92, 92);
   }
 }
 
+
     .logo-footer{
       width: 190px;
       height: auto;
@@ -1830,90 +1841,12 @@ button {
   
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root, body, html, header, footer, div, section, article,
   button, input, textarea, a, p, h1, h2, h3, h4, h5, h6 {
-    background-color: white !important;
-
-  }
-}
-
-    :root {
-  color-scheme: light !important; /* Forces light mode rendering */
-}
-
-html, body {
-  background-color: #ffffff !important; /* Your fixed background color */
-  color: #000000 !important; /* Your fixed text color */
-}
-
-    <!DOCTYPE html>
-<html style="color-scheme: light !important">
-<head>
-  <!-- 1. Force light mode at browser engine level -->
-  <meta name="color-scheme" content="light">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- 2. Full CSS Reset -->
-  <style>
-  /* ====== CORE OVERRIDES ====== */
-  :root {
     color-scheme: light !important;
-    --background: #ffffff !important;
-    --text: #000000 !important;
   }
-
-  /* ====== ELEMENT FORCE-OVERRIDE ====== */
-  html, body, header, footer, div, span,
-  h1, h2, h3, h4, h5, h6, p, a, img,
-  ol, ul, li, form, label, legend,
-  table, caption, tbody, tfoot, thead, tr, th, td {
-    background: var(--background) !important;
-    color: var(--text) !important;
-    accent-color: var(--text) !important; /* Form control accents */
-  }
-
-  /* ====== FORM ELEMENTS ====== */
-  input, textarea, select, button {
-    background: var(--background) !important;
-    color: var(--text) !important;
-    border-color: #cccccc !important;
-    -webkit-appearance: none !important;
-    appearance: none !important;
-  }
-
-  /* ====== SCROLLBARS ====== */
-  ::-webkit-scrollbar {
-    width: 10px;
-    background: var(--background) !important;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #888 !important;
-    border-radius: 5px;
-  }
-
-  /* ====== SVG/IMAGES ====== */
-  img, svg {
-    filter: none !important; /* Remove dark mode inversion */
-  }
-  svg {
-    fill: currentColor !important;
-    stroke: currentColor !important;
-  }
-
-  /* ====== DARK MODE MEDIA QUERY KILLER ====== */
-  @media (prefers-color-scheme: dark) {
-    :where(html, body, :not(svg *, g *)) {
-      background: var(--background) !important;
-      color: var(--text) !important;
-    }
-  }
-  </style>
-</head>
-<body>
-  <!-- Your content -->
-</body>
-</html>
+}
 </style>
 </head>
 
