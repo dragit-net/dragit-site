@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="color-scheme" content="dark">
+  <meta name="color-scheme" content="dark only">
   <title>DragIT</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,8 +52,9 @@
   position: relative;
   overflow-x: clip;
 }
+
      html{
-      color-scheme: light !important;
+      color-scheme: dark !important;
      }
      body{
       zoom: inherit;
@@ -1826,6 +1827,15 @@ button {
     align-self: flex-start;
   }
   
+}
+
+@media (prefers-color-scheme: light) {
+  :root, body, html, header, footer, div, section, article,
+  button, input, textarea, a, p, h1, h2, h3, h4, h5, h6 {
+    background-color: var(--background) !important;
+    color: var(--text) !important;
+    border-color: #cccccc !important;
+  }
 }
 </style>
 </head>
