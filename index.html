@@ -45,10 +45,12 @@
       font-family: Mulish, Arial;
      }
     html, body {
-  overflow-x: hidden !important;
-  width: 100% !important;
+
+  /* overflow-x: hidden !important; */
+  max-width: 100% !important;
       flex-wrap:wrap !important;
   position: relative;
+  overflow-x: clip;
 }
      html{
       color-scheme: light !important;
@@ -60,15 +62,15 @@
       min-height: 100%;
       margin:0;
       display: block;
-      overflow-x: hidden !important;
+      /* overflow-x: hidden !important; */
      }
      img {
   max-width: 100% !important; /* Ensures images scale down */
   height: auto;
 }
-    .site_wrapper {
+    /* .site_wrapper {
       overflow: hidden;
-    }
+    } */
     .hero_section{
       background-color: #0000;
       /* background-image:url("img1.1.png"); */
@@ -86,14 +88,14 @@
       vertical-align: middle;
       display: inline-block;
      }
-     
+    
     .navbar{
       background-color: white;
       max-width:100%;
       padding-top:1.25rem;
       padding-bottom:1.68rem;
       z-index:10;
-      position: sticky;
+      position: sticky !important;
       /* border-bottom: 2px solid rgb(0, 0, 83);; */
       top:0;
       left:0;
@@ -291,7 +293,7 @@
       padding-top: 0.6rem;
       display: flex;
       width:50rem;
-      animation: appear 1s ease-out;
+      
     }
     @keyframes appear {
       from{
@@ -366,6 +368,20 @@
       margin-right: 1.25rem;
       margin-left: 20px;
     } 
+    .heroheading1{
+      animation: appear 0.8s ease-out forwards;
+      animation-delay: 0.2s;
+      opacity: 0;
+    }
+    .heroheading2{
+      animation: appear 0.8s ease-out forwards;
+      animation-delay: 0.4s;
+      opacity: 0;
+    }
+    .heroheading3{
+      opacity: 0;
+      animation: appear 0.8s ease-out 0.6s forwards;
+    }
     .ono-dugacko{
       overflow: hidden;
       width:100%;
@@ -378,6 +394,9 @@
       border-radius: 20px;
       font-weight: 700;
       box-sizing: border-box;
+      opacity: 0;
+
+
       font-size: 1.5rem;
       font-style: italic;
       display: flex;
@@ -400,18 +419,40 @@
       font-size:1.25rem;
       font-weight:500;
       cursor: pointer;
+      padding-bottom: 5px;
       font-family: Roboto, Arial;
-      background: linear-gradient(180deg, rgb(8, 8, 116), rgb(4, 1, 67));
+      background: linear-gradient(180deg, rgb(3, 3, 120), rgb(4, 1, 67));
       /* border: 0.125rem solid white; */
       border:none;
       border-radius: 30px;
       transition:0.2s box-shadow ;
-      transition: 0.2s transform;
+      opacity: 0;
+      transition: 0.15s box-shadow;
       margin-left: 1rem;
+    }
+    .ono-dugacko{
+      opacity: 0;
+      transform: translateY(30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+ 
+    }
+    .ono-dugacko.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact-us1{
+      opacity: 0;
+      transform: translateY(30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+ 
+    }
+    .contact-us1.scrolled {
+      opacity: 1;
+      transform: translateY(0);
     }
     .contact-us1:hover{
       transform:scale(110%);
-      box-shadow: 0.1875rem 0.1875rem 1.25rem rgba(16, 0, 139, 0.3);
+      box-shadow: 0.1875rem 1rem 1.25rem rgba(16, 0, 139, 0.3);
     }
     .logo1{
       width: 12rem;
@@ -571,10 +612,7 @@
     }
     
     @media screen and (max-width: 991px) {
-      .navbar {
-          padding-top: 20px;
-          position: relative;
-      }
+
       .hero_section {
         height: auto;
         padding: 0;
@@ -592,7 +630,7 @@
         
       }
       .navbar{
-        position: sticky;
+        position: sticky !important;
       }
       .hero_section{
         padding-top: 0px;
@@ -698,11 +736,7 @@
       }
       
     }
-    @media screen and (min-width:768px){
-      .hero_section{
-        /* padding-top: 100px; */
-      }
-    }
+
 
     .container{
 
@@ -855,6 +889,45 @@
       
       color:white;
     }
+    .box1-1 {
+      opacity: 0;
+      transform: translateX(-30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+      text-align: center;
+      
+    }
+
+
+/* Class added when element is in view */
+    .box1-1.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    .box1-2 {
+      opacity: 0;
+      transform: translateY(-30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+ 
+    }
+    .box1-2.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .box1-3.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    .box1-3 {
+      opacity: 0;
+      transform: translateX(30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+    }
     .slicica{
       margin-bottom: 40px;
     }
@@ -970,23 +1043,95 @@ margin-bottom: 10px;
 .kf-text{
 color:rgb(92, 92, 92);
 }
-.kf1.active {
-animation: fadeUp 1s ease-out forwards;
-}
-@keyframes fadeUp {
-to {
-    opacity: 1;
-    transform:translateY(0px);
-}
-}
-.kf1:nth-child(1) { animation-delay: 0s; }
-.kf1:nth-child(2) { animation-delay: 0.2s; }
-.kf1:nth-child(3) { animation-delay: 0.4s; }
-.kf1:nth-child(4) { animation-delay: 0.6s; }
-.kf1:nth-child(5) { animation-delay: 0.2s; }
-.kf1:nth-child(6) { animation-delay: 0.4s; }
-.kf1:nth-child(7) { animation-delay: 0.6s; }
-.kf1:nth-child(8) { animation-delay: 0.8s; }
+
+.kf1-2{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            
+        
+        }
+        .kf1-2.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-3{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            
+        
+        }
+        .kf1-3.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-6{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.2s;
+        
+        }
+        .kf1-6.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-7{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.2s;
+        
+        }
+        .kf1-7.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-1{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.4s;
+        
+        }
+        .kf1-1.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-4{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.4s;
+        
+        }
+        .kf1-4.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-5{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        
+        }
+        .kf1-5.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-8{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        
+        }
+        .kf1-8.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
 @media screen and (max-width:773px) {
 .key-frames{
@@ -997,6 +1142,49 @@ to {
 .kf1{
     max-width: 180px;
 }
+.kf1-1,
+            .kf1-2,
+            .kf1-3,
+            .kf1-4,
+            .kf1-5,
+            .kf1-6,
+            .kf1-7,
+            .kf1-8{
+                transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+            }
+            
+            .kf1-1{
+                transform: translateY(20px);
+                transition-delay: 0s;
+            }
+            .kf1-2{
+                transform: translateY(20px);
+                transition-delay: 0.15s;
+            }
+            .kf1-3{
+                transform: translateY(20px);
+                transition-delay: 0.3s;
+            }
+            .kf1-4{
+                transform: translateY(20px);
+                transition-delay: 0.45s;
+            }
+            .kf1-5{
+                transform: translateY(20px);
+                transition-delay: 0.6s;
+            }
+            .kf1-6{
+                transform: translateY(20px);
+                transition-delay: 0.75s;
+            }
+            .kf1-7{
+                transform: translateY(20px);
+                transition-delay: 0.9s;
+            }
+            .kf1-8{
+                transform: translateY(20px);
+                transition-delay: 1.1s;
+            }
 }
 @media screen and (max-width:630px) {
 .key-frames{
@@ -1005,6 +1193,39 @@ to {
     margin-right: auto;
     max-width: 450px;
 }
+.kf1-1{
+                transform: translateX(-30px);
+                transition-delay: 0s;
+            }
+            .kf1-3{
+                transform: translateX(-30px);
+                transition-delay: 0.25s;
+            }
+            .kf1-5{
+                transform: translateX(-30px);
+                transition-delay: 0.5s;
+            }
+            .kf1-7{
+                transform: translateX(-30px);
+                transition-delay: 0.75s;
+            }
+
+            .kf1-2{
+                transform: translateX(30px);
+                transition-delay: 0s;
+            }
+            .kf1-4{
+                transform: translateX(30px);
+                transition-delay: 0.25s;
+            }
+            .kf1-6{
+                transform: translateX(30px);
+                transition-delay: 0.5s;
+            }
+            .kf1-8{
+                transform: translateX(30px);
+                transition-delay: 0.75s;
+            }
 }
 @media screen and (max-width:470px) {
   .key-frames{
@@ -1099,6 +1320,51 @@ to {
       align-self: center;
       text-align: center;
     }
+    /* .box3.active {
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+    .box3:nth-child(1) { animation-delay: 0.1s; }
+    .box3:nth-child(2) { animation-delay: 0.3s; }
+    .box3:nth-child(3) { animation-delay: 0.5s; }
+    .box3:nth-child(4) { animation-delay: 0.7s; }
+    .box3{
+      opacity: 0;
+      transform: translateY(40px);
+    } */
+
+
+    .box3-1,
+    .box3-2,
+    .box3-3,
+    .box3-4 {
+      opacity: 0;
+      transform: translateY(40px); /* Start slightly below */
+      transition: opacity 0.5s ease-out, transform 0.6s ease-out;
+ 
+    }
+    .box3:nth-child(1) { transition-delay: 0.1s; }
+    .box3:nth-child(2) { transition-delay: 0.2s; }
+    .box3:nth-child(3) { transition-delay: 0.4s; }
+    .box3:nth-child(4) { transition-delay: 0.6s; }
+
+    .box3-1.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .box3-2.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .box3-3.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .box3-4.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
     .footer-svg{
       margin-top: 5px;
     }
@@ -1176,7 +1442,72 @@ to {
       font-size: 14.5px;
       margin-left: 8px;
     }
+    .naslovi{
+      text-align: center;
+      background: linear-gradient(180deg, rgb(3, 0, 94), hsl(0, 0%, 0%));
+      background-clip: text;
+      color:transparent;
+      font-size: 70px;
+      font-weight: 700;
+      text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
+      
+    }
+    .one {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+.one:before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #020031;
+}
+.one:after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #020031;
+}
     
+    .naslovi {
+      opacity: 0;
+      transform: translateY(20px); /* Start slightly below */
+      transition: opacity 0.5s ease-out, transform 0.6s ease-out;
+ 
+    }
+    .naslovi.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media screen and (max-width:410px) {
+      .naslovi{
+        font-size: 35px;
+        text-shadow: 
+      5px 5px 10px #ffffff43,
+      
+      5px 5px 10px #150080a8; 
+        font-weight: 800;
+        margin-top: 60px;
+      }
+      .kf-naslovveliki{
+        text-shadow: 
+      5px 5px 10px #ffffff43,
+      
+      5px 5px 10px #150080a8; 
+      }
+    }
     @media screen and (max-width:976px) {
       .second-section{
         background-position: 0 0;
@@ -1220,7 +1551,10 @@ to {
     @media screen and (max-width:420px){
       .second-section{
         background-position: 65% ;
+        padding-bottom: 70px;
+        
       }
+      
       
     }
     @media screen and (max-width:525px) and (min-width:389px){
@@ -1313,6 +1647,12 @@ button {
         .logo-item.active {
             animation: fadeUp 0.6s ease-out forwards;
         }
+        @media screen and (max-width:480px) {
+          .svg{
+            width:16px !important;
+            height:20px !important;
+          }
+        }
 
         @keyframes fadeUp {
             to {
@@ -1339,6 +1679,9 @@ button {
         .logo-item:nth-child(4) { animation-delay: 0.7s; }
         .logo-item:nth-child(6) { animation-delay: 0.9s; }
         .logo-item:nth-child(7) { animation-delay: 1.1s; }
+
+
+
         .js-scroll {
   opacity: 0;
   transform: translateY(20px); /* Start slightly below */
@@ -1415,6 +1758,11 @@ button {
 .linkedin-logo{
   text-decoration: none;
   color: rgb(108,107,107);
+}
+@media screen and (max-width: 410px) {
+  .fade-element{
+    font-size: 25px;
+  }
 }
 @media screen and (max-width:990px) {
   .w-container{
@@ -1509,9 +1857,9 @@ button {
       </div>
       <div class="heroparent">
           <div class="herocontentbox">
-            <p class="heroheading">Control.</p>
-            <p class="heroheading">Trust. Impact.</p>
-            <p class="heroheading">Success.</p>
+            <p class="heroheading heroheading1">Control.</p>
+            <p class="heroheading heroheading2">Trust. Impact.</p>
+            <p class="heroheading heroheading3">Success.</p>
 
             <div class="ono-dugacko">
               <p>
@@ -1542,12 +1890,12 @@ button {
   <div class="prelaz"></div>
   <div class="second-section">
     <div>
-      <p class="naslov">
-        NASLOV
-      </p>
+
     </div>
+    
     <div class="tri">
-      <div class="box1">
+      
+      <div class="box1 box1-1">
         <img class="slicica" src="images/slikica1.svg">
         <div class="text1">BOOST PRODUCTIVITY</div>
         <div class="text2">Build tailored automation</div>
@@ -1562,8 +1910,8 @@ button {
           boosting operational agility.
         </div>
       </div>
-      <div class="box1">
-        <img class="slicica" src="images/slikica1.svg">
+      <div class="box1 box1-2">
+        <img class="slicica" src="images/slikica2.svg">
         
         <div class="text1">OPTIMIZE EFFICIENCY</div>
         <div class="text2">Streamline operations &amp; workflows</div>
@@ -1577,8 +1925,8 @@ button {
           minimizing waste in production lines.
         </div>
       </div>
-      <div class="box1">
-        <img class="slicica" src="images/slikica1.svg">
+      <div class="box1 box1-3">
+        <img class="slicica" src="images/slikica3.svg">
         <div class="text1">REDUCE COSTS</div>
         <div class="text2">Cut operational waste</div>
         <div class="text3">Identify and <b>eliminate hidden costs</b> like energy
@@ -1593,15 +1941,16 @@ button {
     </div>
 
 
-    
+    <p class="naslovi one">OUR SERVICES</p>
     <div class="cetiri">
-      <div class="box3-1">
+      
+      <div class="box3-1 box3">
         <div class="text1-1">TAILORED TO YOUR INDUSTRY</div>
         <div class="text2-2">Our <b>digital transformation</b> strategies are designed for <b>production and service operations</b>,
         combining ISV expertise with digital technologies to drive measurable gains in productivity,
         efficiency, and cost savings.</div>
       </div>
-      <div class="box3-2">
+      <div class="box3-2 box3">
         <div class="text1-1">BUILT FOR INDUSTRIAL IMPACT</div>
         <div class="text2-2">
           Our ISV solutions are engineered for manufacturing, transportation, and maintenance
@@ -1615,7 +1964,7 @@ button {
           </div>
         
       </div>
-        <div class="box3-3">
+        <div class="box3-3 box3">
           <div class="text1-1">WHY OUR ISV SOLUTIONS STAND OUT</div>
           <div class="text2-2">We blend <b>domain-specific expertise in supply chain management</b> with secure, scalable
           software design—delivering solutions that drive automation, slash costs, and elevate user
@@ -1626,7 +1975,7 @@ button {
           </div>
         </div>
         
-      <div class="box3-4">
+      <div class="box3-4 box3">
        <div class="box3-4-1"> <button class="dugme">Contact us<svg class="svg" style="width:20px; 
         height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg></button></div>
       </div>
@@ -1638,7 +1987,7 @@ button {
           <p>KEY FEATURES</p>
       </div>
       <div class="key-frames">
-          <div class="kf1">
+          <div class="kf1 kf1-1">
               <img src="images/keyfeatures1.png" class="kf-img">
               <div class="kf-naslov">
                   Personalised Dashboards
@@ -1661,7 +2010,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-2">
               <img src="images/keyfeatures2.png" class="kf-img">
               <div class="kf-naslov">
                   Performance Managment
@@ -1684,7 +2033,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-3">
               <img src="images/keyfeatures3.png" class="kf-img">
               <div class="kf-naslov">
                   Analytical Processing
@@ -1707,7 +2056,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-4">
               <img src="images/keyfeatures4.png" class="kf-img">
               <div class="kf-naslov">
                   Scheduled Reporting
@@ -1730,7 +2079,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-5">
               <img src="images/keyfeatures5.png" class="kf-img">
               <div class="kf-naslov">
                   Team Colaboration
@@ -1753,7 +2102,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-6">
               <img src="images/keyfeatures6.png" class="kf-img">
               <div class="kf-naslov">
                   Alerts & Notifications
@@ -1773,7 +2122,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-7">
               <img src="images/keyfeatures7.png" class="kf-img">
               <div class="kf-naslov">
                   Records Of Data (CRUD)
@@ -1796,7 +2145,7 @@ button {
               </div>
           </div>
 
-          <div class="kf1">
+          <div class="kf1 kf1-8">
               <img src="images/keyfeatures8.png" class="kf-img">
               <div class="kf-naslov">
                   Integration To Existing Systems
@@ -1906,11 +2255,13 @@ button {
     responsiveMenuButton.classList.toggle('open');
   })
 
+  
+
 
   document.addEventListener('DOMContentLoaded', function() {
             const logoItems = document.querySelectorAll('.logo-item');
             const observerOptions = {
-                threshold: 0.5,
+                threshold: 0.2,
                 rootMargin: '0px'
             };
 
@@ -1927,6 +2278,9 @@ button {
 
             observer.observe(document.querySelector('.logos-container'));
         });
+
+
+
         
 
            // Detect when the element is in the viewport
@@ -1980,12 +2334,71 @@ document.addEventListener('DOMContentLoaded', function() {
       observer1.unobserve(entry.target);
     }
   });
-}, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
+}, { rootMargin: '0px 0px -20px 0px' }); // Adjust trigger point
 
 // Apply to all elements with the .js-scroll class
 document.querySelectorAll('.kf-naslovveliki').forEach(el => {
   observer1.observe(el);
 });
+
+    document.querySelectorAll('.box1-1').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.box1-2').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.box1-3').forEach(el => {
+      observer1.observe(el);
+    });
+
+    document.querySelectorAll('.naslovi').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.ono-dugacko').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.contact-us1').forEach(el => {
+      observer1.observe(el);
+    });
+
+    document.querySelectorAll('.kf1-1').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-2').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-3').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-4').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-5').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-6').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-7').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-8').forEach(el => {
+  observer1.observe(el);
+});
+
+document.querySelectorAll('.box3-1').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.box3-2').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.box3-3').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.box3-4').forEach(el => {
+  observer1.observe(el);
+});
+
   </script>
 </body>
 </html>
