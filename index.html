@@ -1846,6 +1846,74 @@ html, body {
   background-color: #ffffff !important; /* Your fixed background color */
   color: #000000 !important; /* Your fixed text color */
 }
+
+    <!DOCTYPE html>
+<html style="color-scheme: light !important">
+<head>
+  <!-- 1. Force light mode at browser engine level -->
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- 2. Full CSS Reset -->
+  <style>
+  /* ====== CORE OVERRIDES ====== */
+  :root {
+    color-scheme: light !important;
+    --background: #ffffff !important;
+    --text: #000000 !important;
+  }
+
+  /* ====== ELEMENT FORCE-OVERRIDE ====== */
+  html, body, header, footer, div, span,
+  h1, h2, h3, h4, h5, h6, p, a, img,
+  ol, ul, li, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td {
+    background: var(--background) !important;
+    color: var(--text) !important;
+    accent-color: var(--text) !important; /* Form control accents */
+  }
+
+  /* ====== FORM ELEMENTS ====== */
+  input, textarea, select, button {
+    background: var(--background) !important;
+    color: var(--text) !important;
+    border-color: #cccccc !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  /* ====== SCROLLBARS ====== */
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: var(--background) !important;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #888 !important;
+    border-radius: 5px;
+  }
+
+  /* ====== SVG/IMAGES ====== */
+  img, svg {
+    filter: none !important; /* Remove dark mode inversion */
+  }
+  svg {
+    fill: currentColor !important;
+    stroke: currentColor !important;
+  }
+
+  /* ====== DARK MODE MEDIA QUERY KILLER ====== */
+  @media (prefers-color-scheme: dark) {
+    :where(html, body, :not(svg *, g *)) {
+      background: var(--background) !important;
+      color: var(--text) !important;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- Your content -->
+</body>
+</html>
 </style>
 </head>
 
