@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .key-frames{
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 10px;
+            max-width: 900px;
+            margin-right: auto;
+            margin-left: auto;
+            
+        }
+        .kf-naslovveliki{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            
+        
+        }
+        .kf-naslovveliki.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .kf1-2{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            
+        
+        }
+        .kf1-2.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-3{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            
+        
+        }
+        .kf1-3.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-6{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.2s;
+        
+        }
+        .kf1-6.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-7{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.2s;
+        
+        }
+        .kf1-7.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-1{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.4s;
+        
+        }
+        .kf1-1.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-4{
+            opacity: 0;
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.4s;
+        
+        }
+        .kf1-4.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-5{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        
+        }
+        .kf1-5.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kf1-8{
+            opacity: 0;
+            transform: translateY(40px); /* Start slightly below */
+            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        
+        }
+        .kf1-8.scrolled {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .div1{
+            height: 900px;
+
+        }
+
+
+
+        .kf1-1,
+        .kf1-2,
+        .kf1-3,
+        .kf1-4,
+        .kf1-5,
+        .kf1-6,
+        .kf1-7,
+        .kf1-8{
+            border: 3px solid rgb(163, 163, 163);
+            padding: 25px 15px 15px;
+            display: flex;
+            opacity: 0;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267); */
+
+            
+        }
+        .kf-img{
+            width:100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        .kf-naslov{
+            font-size: 25px;
+            color: rgb(0, 0, 112);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .kf-text{
+            color:rgb(92, 92, 92);
+        }
+        /* .kf1.active {
+            animation: fadeUp 1s ease-in-out forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform:translateY(0px);
+            }
+        }
+        .kf1:nth-child(1) { animation-delay: 0.2s; }
+        .kf1:nth-child(2) { animation-delay: 0.4s; }
+        .kf1:nth-child(3) { animation-delay: 0.6s; }
+        .kf1:nth-child(4) { animation-delay: 0.8s; }
+        .kf1:nth-child(5) { animation-delay: 0.3s; }
+        .kf1:nth-child(6) { animation-delay: 0.5s; }
+        .kf1:nth-child(7) { animation-delay: 0.7s; }
+        .kf1:nth-child(8) { animation-delay: 0.9s; } */
+        
+        @media screen and (max-width:773px) {
+            .key-frames{
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .kf1{
+                max-width: 180px;
+            }
+            .kf1-1,
+            .kf1-2,
+            .kf1-3,
+            .kf1-4,
+            .kf1-5,
+            .kf1-6,
+            .kf1-7,
+            .kf1-8{
+                transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+            }
+            
+            .kf1-1{
+                transform: translateY(20px);
+                transition-delay: 0s;
+            }
+            .kf1-2{
+                transform: translateY(20px);
+                transition-delay: 0.15s;
+            }
+            .kf1-3{
+                transform: translateY(20px);
+                transition-delay: 0.3s;
+            }
+            .kf1-4{
+                transform: translateY(20px);
+                transition-delay: 0.45s;
+            }
+            .kf1-5{
+                transform: translateY(20px);
+                transition-delay: 0.6s;
+            }
+            .kf1-6{
+                transform: translateY(20px);
+                transition-delay: 0.75s;
+            }
+            .kf1-7{
+                transform: translateY(20px);
+                transition-delay: 0.9s;
+            }
+            .kf1-8{
+                transform: translateY(20px);
+                transition-delay: 1.1s;
+            }
+        }
+        @media screen and (max-width:630px) {
+            .key-frames{
+                grid-template-columns: 1fr 1fr ;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 450px;
+            }
+            .kf1-1{
+                transform: translateX(-30px);
+                transition-delay: 0s;
+            }
+            .kf1-3{
+                transform: translateX(-30px);
+                transition-delay: 0.25s;
+            }
+            .kf1-5{
+                transform: translateX(-30px);
+                transition-delay: 0.5s;
+            }
+            .kf1-7{
+                transform: translateX(-30px);
+                transition-delay: 0.75s;
+            }
+
+            .kf1-2{
+                transform: translateX(30px);
+                transition-delay: 0s;
+            }
+            .kf1-4{
+                transform: translateX(30px);
+                transition-delay: 0.25s;
+            }
+            .kf1-6{
+                transform: translateX(30px);
+                transition-delay: 0.5s;
+            }
+            .kf1-8{
+                transform: translateX(30px);
+                transition-delay: 0.75s;
+            }
+
+            
+        }
+        
+    </style>
+</head> 
+<body>
+    <div class="div1"></div>
+    <div class="dva_holder">
+        <div class="kf-naslovveliki">
+            <p>KEY FEATURES</p>
+        </div>
+        <div class="key-frames">
+            <div class="kf1-1">
+                <img src="images/keyfeatures1.png" class="kf-img">
+                <div class="kf-naslov">
+                    Personalised Dashboards
+                </div>
+                <div>
+                    <div class="kf-text">
+                        All-in-one
+                    </div>
+                    <div class="kf-text">
+                        Intuitive presentation
+                    </div>
+                    <div class="kf-text">
+                        Drill into details
+                    </div>
+                    
+                    <div class="kf-text">
+                        Mobile accessible.
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="kf1-2">
+                <img src="images/keyfeatures2.png" class="kf-img">
+                <div class="kf-naslov">
+                    Performance Managment
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Goals setting
+                    </div>
+                    <div class="kf-text">
+                        Motivate & inform
+                    </div>
+                    <div class="kf-text">
+                        Monitor & control
+                    </div>
+                    <div class="kf-text">
+                        Prioritize & fire risk
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="kf1-3">
+                <img src="images/keyfeatures3.png" class="kf-img">
+                <div class="kf-naslov">
+                    Analytical Processing
+                </div>
+                <div>
+                    <div class="kf-text">
+                        On-line pivot reporting
+                    </div>
+                    <div class="kf-text">
+                        Multi-dimensional
+                    </div>
+                    <div class="kf-text">
+                        Complex calculations
+                    </div>
+                    <div class="kf-text">
+                        Time intelligence
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="kf1-4">
+                <img src="images/keyfeatures4.png" class="kf-img">
+                <div class="kf-naslov">
+                    Scheduled Reporting
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Define recivers
+                    </div>
+                    <div class="kf-text">
+                        Schedule delivery
+                    </div>
+                    <div class="kf-text">
+                        Get emails
+                    </div>
+                    <div class="kf-text">
+                        Take action
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="kf1-5">
+                <img src="images/keyfeatures5.png" class="kf-img">
+                <div class="kf-naslov">
+                    Team Colaboration
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Task managment
+                    </div>
+                    <div class="kf-text">
+                        Email task state info
+                    </div>
+                    <div class="kf-text">
+                        Comment's history
+                    </div>
+                    <div class="kf-text">
+                        Kanban cards
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="kf1-6">
+                <img src="images/keyfeatures6.png" class="kf-img">
+                <div class="kf-naslov">
+                    Alerts & Notifications
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Action-driven alerts
+                    </div>
+                    <div class="kf-text">
+                        Email notifications
+                    </div>
+                    <div class="kf-text">
+                        Dashboard, report & record level alerts
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="kf1-7">
+                <img src="images/keyfeatures7.png" class="kf-img">
+                <div class="kf-naslov">
+                    Records Of Data (CRUD)
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Digitalize your business
+                    </div>
+                    <div class="kf-text">
+                        Collect data efficiently
+                    </div>
+                    <div class="kf-text">
+                        Apply business rules
+                    </div>
+                    <div class="kf-text">
+                        Make data more usable
+                    </div>
+                    
+
+                </div>
+            </div>
+
+            <div class="kf1-8">
+                <img src="images/keyfeatures8.png" class="kf-img">
+                <div class="kf-naslov">
+                    Integration To Existing Systems
+                </div>
+                <div>
+                    <div class="kf-text">
+                        Integrate your legacy systems: ERP, BI, BPM, MES, CRM ...
+                    </div>
+                    <div class="kf-text">
+                        Emprove your data
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        
+        const observer1 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('scrolled');
+      // Optional: Stop observing after animation
+      observer1.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
+
+// Apply to all elements with the .js-scroll class
+document.querySelectorAll('.kf-naslovveliki').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-1').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-2').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-3').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-4').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-5').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-6').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-7').forEach(el => {
+  observer1.observe(el);
+});
+document.querySelectorAll('.kf1-8').forEach(el => {
+  observer1.observe(el);
+});
+
+    </script>
+</body>
+</html>

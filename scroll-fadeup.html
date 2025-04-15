@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Initial state of the element */
+.js-scroll {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Class added when element is in view */
+.js-scroll.scrolled {
+  opacity: 1;
+  transform: translateY(0);
+}
+  </style>
+</head>
+<body>
+  <h2 class="fade-element js-scroll">This element will fade up! ✨</div>
+  <script>
+    // Detect when the element is in the viewport
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('scrolled');
+      // Optional: Stop observing after animation
+      observer.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
+
+// Apply to all elements with the .js-scroll class
+document.querySelectorAll('.js-scroll').forEach(el => {
+  observer.observe(el);
+});
+  </script>
+</body>
+</html>

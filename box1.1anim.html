@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+        .tri{
+      /* display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap:10vw;  */
+      grid-column-gap: 1.5vw;
+      grid-row-gap: 24px;
+      text-align: center;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-columns: 1fr;
+      max-width: 1140px;
+      margin-bottom: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      padding: 30px 20px;
+      /* box-shadow: 0 0px 60px #523fd7 inset; */
+      border-radius: 30px;
+
+    }
+    .box1{
+      border-radius: 16px;
+      padding: 64px 32px 8px;
+      text-decoration: none;
+      height: auto !important;
+      font-family: Poppins,sans-serif;
+      
+      /* background: rgba(45, 38, 123, 0.436) url("images/fejd-odozgo.png"); */
+      background-image: url(mala4.png);
+      background-size: cover;
+      
+      color:white;
+    }
+    .slicica{
+      margin-bottom: 40px;
+    }
+    .text1{
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+      font-family: Poppins, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 29px;
+    }
+    .text2{
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    .text3{
+      color: #eef3f9;
+      margin-bottom: 40px;
+      font-family: Poppins, sans-serif;
+    }
+    .text3-1{
+      margin-bottom: 30px;
+    }
+    .text4{
+      color: #fff;
+      margin-bottom: 8px;
+      font-family: Poppins, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+    }
+    .text5{
+      color: #eef6ff;
+      margin-bottom: 40px;
+      font-family: Poppins, sans-serif;
+    }
+    .box1{
+      opacity: 0;
+      
+    }
+
+    .div1{
+      height:800px;
+      width:100%;
+    }
+    .box1-1 {
+      opacity: 0;
+      transform: translateX(-30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+      text-align: center;
+      
+    }
+
+
+/* Class added when element is in view */
+    .box1-1.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    .box1-2 {
+      opacity: 0;
+      transform: translateY(-30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+ 
+    }
+    .box1-2.scrolled {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .box1-3.scrolled {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+
+    .box1-3 {
+      opacity: 0;
+      transform: translateX(30px); /* Start slightly below */
+      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="div1"></div>
+  <div class="tri">
+      
+    <div class="box1 box1-1">
+      <img class="slicica" src="images/slikica1.svg">
+      <div class="text1">BOOST PRODUCTIVITY</div>
+      <div class="text2">Build tailored automation</div>
+      <div class="text3">Develop <b>custom ISV solutions</b> that automate
+        industry-specific processes, from ERP extensions to
+        AI-driven task handling, freeing teams to focus on
+        improvenemts.
+      </div>
+      <div class="text4">Real-time operational visibility</div>
+      <div class="text5">Embed <b>real-time data dashboards</b> into software
+        applications, enabling proactive adjustments and
+        boosting operational agility.
+      </div>
+    </div>
+    <div class="box1 box1-2">
+      <img class="slicica" src="images/slikica2.svg">
+      
+      <div class="text1">OPTIMIZE EFFICIENCY</div>
+      <div class="text2">Streamline operations &amp; workflows</div>
+      <div class="text3 text3-1">Implement lean digital methodologies and ERP
+        integrations to eliminate redundancies, synchronize
+        supply chains, and reduce downtime in maintenance.
+      </div>
+      <div class="text4">Data-driven resource optimization</div>
+      <div class="text5">Align machinery, labor, and materials with smart
+        allocation algorithms, maximizing output while
+        minimizing waste in production lines.
+      </div>
+    </div>
+    <div class="box1 box1-3">
+      <img class="slicica" src="images/slikica3.svg">
+      <div class="text1">REDUCE COSTS</div>
+      <div class="text2">Cut operational waste</div>
+      <div class="text3">Identify and <b>eliminate hidden costs</b> like energy
+        overconsumption, idle machinery, or inefficient
+        maintenance practices.
+      </div>
+      <div class="text4">Scalable cloud-first solutions</div>
+      <div class="text5">Deploy <b>pay-as-you-go industrial software</b> to slash
+        upfront costs and long-term overhead.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const observer1 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scrolled');
+          // Optional: Stop observing after animation
+          observer1.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
+
+    // Apply to all elements with the .js-scroll class
+    document.querySelectorAll('.box1-1').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.box1-2').forEach(el => {
+      observer1.observe(el);
+    });
+    document.querySelectorAll('.box1-3').forEach(el => {
+      observer1.observe(el);
+    });
+  </script>
+</body>
+</html>

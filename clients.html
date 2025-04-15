@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Logos</title>
+    <style>
+        .logos-section {
+            padding: 4rem 1rem;
+            background: #f8f9fa;
+        }
+
+        .logos-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .logo-item.active {
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logos-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animation delays */
+        .logo-item:nth-child(1) { animation-delay: 0.1s; }
+        .logo-item:nth-child(2) { animation-delay: 0.3s; }
+        .logo-item:nth-child(3) { animation-delay: 0.5s; }
+        .logo-item:nth-child(4) { animation-delay: 0.7s; }
+    </style>
+</head>
+<body>
+    <div class="logos-section">
+        <div class="logos-container">
+            <div class="logo-item">
+                <img src="putanja/do/logo1.png" alt="Client 1">
+            </div>
+            <div class="logo-item">
+                <img src="putanja/do/logo2.png" alt="Client 2">
+            </div>
+            <div class="logo-item">
+                <img src="putanja/do/logo3.png" alt="Client 3">
+            </div>
+            <div class="logo-item">
+                <img src="putanja/do/logo4.png" alt="Client 4">
+            </div>
+        </div>
+      </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoItems = document.querySelectorAll('.logo-item');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        logoItems.forEach(item => {
+                            item.classList.add('active');
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            observer.observe(document.querySelector('.logos-container'));
+        });
+    </script>
+</body>
+</html>
