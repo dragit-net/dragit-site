@@ -1813,15 +1813,23 @@ button {
   text-decoration: none;
   color: rgb(108,107,107);
 }
-@media screen and (max-width: 410px) {
+@media screen and (max-width: 410px){
   .fade-element{
     font-size: 25px;
   }
+
 }
+
 @media screen and (max-width:990px) {
   .w-container{
     max-width: 630px;
     margin-top: 50px !important;
+    
+  }
+
+  :root, body, html, header, footer, div, section, article,
+  button, input, textarea, a, p, h1, h2, h3, h4, h5, h6 {
+    color-scheme: light !important;
   }
 }
 @media screen and (max-width:700px) {
@@ -1829,6 +1837,7 @@ button {
     margin-left: 30px;
     margin-right: 30px;
   }
+  
 }
 @media screen and (max-width:554px) {
   .container-21{
@@ -1840,15 +1849,10 @@ button {
   .social_net{
     align-self: flex-start;
   }
-  
+
 }
 
-@media (prefers-color-scheme: light) {
-  :root, body, html, header, footer, div, section, article,
-  button, input, textarea, a, p, h1, h2, h3, h4, h5, h6 {
-    color-scheme: light !important;
-  }
-}
+
 :root {
   color-scheme: light !important; /* Forces light mode rendering */
 }
