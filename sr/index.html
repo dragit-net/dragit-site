@@ -236,7 +236,7 @@ html, body {
     }
 
     .contact-us{
-      width:12rem;
+      width:15rem;
       height: 4rem;
       color:black;
       font-size:1rem;
@@ -337,7 +337,7 @@ html, body {
       margin-top: 0;
       margin-bottom: 0;
       font-family: Outfit, Arial; 
-      font-size: 4.9rem;
+      font-size: 4.2rem;
       font-weight: 900;
       line-height: 5.65rem;
       /* text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
@@ -439,7 +439,7 @@ html, body {
       justify-items: center;
     }
     .contact-us1{
-      width:11.25rem;
+      width:13rem;
       height: 4rem;
       color:white;
       font-size:1.25rem;
@@ -579,7 +579,7 @@ html, body {
       .heroheading {
         margin-top: 0;
         margin-bottom: 20px;
-        font-size: 30px !important;
+        
         line-height: 25px !important;
         display: block;
         
@@ -762,7 +762,11 @@ html, body {
       }
       
     }
-
+    @media screen and (max-width: 360px) {
+      .heroheading{
+        font-size: 30px;
+      }
+    }
 
     .container{
 
@@ -793,9 +797,40 @@ html, body {
     font-family:Poppins, sans-serif;
       
     }
-    @media screen and (max-width:1154px) {
+    @media screen and (max-width:600px) {
       
-    
+      .heroheading{
+        font-size: 40px;
+        line-height: 40px;
+      }
+    }
+    @media screen and (max-width:500px) {
+      
+      .heroheading{
+        font-size: 32px;
+      }
+    }
+    @media screen and (max-width:400px) {
+      
+      .heroheading{
+        font-size: 28px;
+      }
+    }
+    @media screen and (max-width:350px) {
+      
+      .heroheading{
+        font-size: 25px;
+      }
+      .tanglineinner{
+        max-width: 100%;
+      }
+      .rocket-icon{
+        width: 20px;
+        height: auto;
+      }
+      .text-block2{
+        font-size: 10px;
+      }
     }
 
     .new_footer {
@@ -893,7 +928,7 @@ html, body {
       grid-template-columns: 1fr 1fr 1fr;
       grid-auto-columns: 1fr;
       max-width: 1140px;
-      margin-bottom: 150px;
+      margin-bottom: 100px;
       margin-left: auto;
       margin-right: auto;
       display: grid;
@@ -1013,6 +1048,8 @@ html, body {
     }
     
     .key-frames{
+padding:30px ;
+border-radius: 20px;
 
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1022,8 +1059,16 @@ max-width: 900px;
 margin-right: auto;
 margin-top: 60px;
 margin-left: auto;
-
+box-shadow: none;
+  
+  /* Transition for smooth fade-in */
+  transition: box-shadow 1s ease-in-out;
 }
+.key-frames.active {
+  box-shadow: 0 0 10px rgba(0, 0, 75, 0.452) ;
+  /* box-shadow: 0 0 10px rgba(0, 0, 75, 0.452) inset; */
+}
+
 .dva_holder{
   margin-top: 100px !important;
 }
@@ -1047,12 +1092,14 @@ border: 3px solid rgb(163, 163, 163);
 padding: 25px 15px 15px;
 display: flex;
 opacity: 0;
+border-radius: 5px;
 flex-direction: column;
 justify-content: center;
 text-align: center;
 /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267); */
 transform: translateY(20px);
 background-color: white;
+box-shadow: 0 0 10px rgba(0, 4, 57, 0.329) inset;
 }
 .kf-img{
 width:100px;
@@ -1457,7 +1504,7 @@ color:rgb(92, 92, 92);
     .text1-1{
       margin-bottom: 40px;
       font-size: large;
-      font-weight: 700;
+      font-weight: 800;
       color:rgb(255, 255, 255);
     }
     .text2-2{
@@ -1474,9 +1521,10 @@ color:rgb(92, 92, 92);
       background: linear-gradient(180deg, rgb(3, 0, 94), hsl(0, 0%, 0%));
       background-clip: text;
       color:transparent;
-      font-size: 70px;
+      font-size: 50px;
       font-weight: 700;
       text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
+      
       
     }
     .one {
@@ -1887,25 +1935,25 @@ button {
 
         <div class="bar">
           <div>
-            <a style="display: inline-block;">About Us</a>
+            <a style="display: inline-block;">O nama</a>
             
           </div> 
           <div>
-            <a>Services </a>
+            <a>Usluge</a>
             
           </div> 
           <div>
-            <a>Use cases</a>
+            <a>Projekti</a>
             
           </div> 
           <div>
-            <a>Contact Us</a>
+            <a>Kontakt</a>
             
           </div> 
         </div>
         <div class="div-button">
           <button class="contact-us">
-            Call: +381643719470
+            Pozovite: +381 64 371 9470
             <!-- <svg style="
             width:25px;
             height:25px;
@@ -1924,19 +1972,18 @@ button {
       <div class="tanglineinner">
         <img class="rocket-icon" src="../rocket-icon.png">
         <div class="text-block2">
-          Tailored software solutions
-          - from vision to execution!
+          Softverska rešenja „po meri“ - od ideje do realizacije!
         </div>
       </div>
       <div class="heroparent">
           <div class="herocontentbox">
-            <p class="heroheading heroheading1">Control.</p>
-            <p class="heroheading heroheading2">Trust. Impact.</p>
-            <p class="heroheading heroheading3">Success.</p>
+            <p class="heroheading heroheading1">KONTROLA.</p>
+            <p class="heroheading heroheading2">POVERENJE. REZULTAT.</p>
+            <p class="heroheading heroheading3">USPEH.</p>
 
             <div class="ono-dugacko">
               <p>
-                Empowering clients to enhance productivity, optimize efficiency, and reduce costs through innovative ISV solutions.
+                Pomažemo klijentima da povećaju produktivnost, unaprede efikasnost i smanje troškove kroz inovativna ISV rešenja.
             </p>
             </div>
             <div class="poslednji-red">
@@ -1944,7 +1991,7 @@ button {
                 <img class="logo1" src="../img1-removebg-preview.png">
               </div>
               <button class="contact-us1">
-                Contact Us
+                Kontaktirajte nas
                 <!-- <svg style="
                 width:25px;
                 height:25px;
@@ -1970,45 +2017,61 @@ button {
       
       <div class="box1 box1-1">
         <img class="slicica" src="../images/slikica1.svg">
-        <div class="text1">BOOST PRODUCTIVITY</div>
-        <div class="text2">Build tailored automation</div>
-        <div class="text3">Develop <b>custom ISV solutions</b> that automate
-          industry-specific processes, from ERP extensions to
-          AI-driven task handling, freeing teams to focus on
-          improvenemts.
+        <div class="text1">UNAPREDITE PROIZVODNJU</div>
+        <div class="text2">Prilagođena automatizacija i
+          personalizacija</div>
+        <div class="text3">Implementirajte ISV rešenja koja
+          automatizuju procese specifične za
+          vašu industriju – od ERP ekstenzija,
+          do AI podržane realizacije
+          zadataka, oslobodite timove da se
+          fokusiraju na stalna operativna i
+          strategijska poboljšanja.
         </div>
-        <div class="text4">Real-time operational visibility</div>
-        <div class="text5">Embed <b>real-time data dashboards</b> into software
-          applications, enabling proactive adjustments and
-          boosting operational agility.
+        <div class="text4">Operativna vidljivost u realnom vremenu</div>
+        <div class="text5">Integrišite komandne table i vaše
+          postojeće aplikacije, pristupute
+          ključnim podacima u realnom
+          vremenu, omogućite preventivne
+          intervencije i povećajte spremnost
+          sistema za dinamične promene.
         </div>
       </div>
       <div class="box1 box1-2">
         <img class="slicica" src="../images/slikica2.svg">
         
-        <div class="text1">OPTIMIZE EFFICIENCY</div>
-        <div class="text2">Streamline operations &amp; workflows</div>
-        <div class="text3 text3-1">Implement lean digital methodologies and ERP
-          integrations to eliminate redundancies, synchronize
-          supply chains, and reduce downtime in maintenance.
+        <div class="text1">POVEĆAJTE EFIKASNOST</div>
+        <div class="text2">Optimizacija procesa
+          i operacija</div>
+        <div class="text3 text3-1">Implementirajte lean metodologiju i
+          ERP integraciju da eliminište čekanje
+          i dupliranje posla, sinhronizujete
+          lanac snabdevanja i smanjite
+          zastoje, uključujući održavanje.
         </div>
-        <div class="text4">Data-driven resource optimization</div>
-        <div class="text5">Align machinery, labor, and materials with smart
-          allocation algorithms, maximizing output while
-          minimizing waste in production lines.
+        <div class="text4">Pametna alokacija resursa</div>
+        <div class="text5">Usaglasite mašine/opremu, radnu
+          snagu i materijale pomoću pametnih
+          algoritama – povećaj kapacitete,
+          smanji gubitke u proizvodnim
+          linijama.
         </div>
       </div>
       <div class="box1 box1-3">
         <img class="slicica" src="../images/slikica3.svg">
-        <div class="text1">REDUCE COSTS</div>
-        <div class="text2">Cut operational waste</div>
-        <div class="text3">Identify and <b>eliminate hidden costs</b> like energy
-          overconsumption, idle machinery, or inefficient
-          maintenance practices.
+        <div class="text1">SMANJITE TROŠKOVE</div>
+        <div class="text2">Eliminišite operativne gubitke</div>
+        <div class="text3">Identifikujte i eliminišite skrivene
+          troškove: prekomernu potrošnju
+          energenata, neiskorišćene
+          mašine/opremu ili zastarele
+          prakse održavanja.
         </div>
-        <div class="text4">Scalable cloud-first solutions</div>
-        <div class="text5">Deploy <b>pay-as-you-go industrial software</b> to slash
-          upfront costs and long-term overhead.
+        <div class="text4">Scalable cloud rešenja</div>
+        <div class="text5">Implementirajte softver sa
+          modelom plaćanje po potrošnji –
+          smanjite početne investicije i
+          dugoročne operativne troškove.
         </div>
       </div>
     </div>
@@ -2018,66 +2081,100 @@ button {
     <div class="cetiri">
       
       <div class="box3-1 box3">
-        <div class="text1-1">TAILORED TO YOUR INDUSTRY</div>
-        <div class="text2-2">Our <b>digital transformation</b> strategies are designed for <b>production and service operations</b>,
-        combining ISV expertise with digital technologies to drive measurable gains in productivity,
-        efficiency, and cost savings.</div>
+        <div class="text1-1">SOFTVERSKA REŠENJA
+          „PO VAŠOJ MERI“</div>
+        <div class="text2-2">Naše strategije digitalne
+          transformacione koncipirane su za
+          proizvodne i uslužne sisteme,
+          spajajući domensku ekspertizu sa vrhunskim tehnologijama u ISV
+          rešenja koja implementiramo
+          „prema vašoj meri“, kako
+          bi ostvarili merljive rezultate u
+          produktivnosti, efikasnosti i
+          smanjenju troškova.</div>
       </div>
       <div class="box3-2 box3">
-        <div class="text1-1">BUILT FOR INDUSTRIAL IMPACT</div>
+        <div class="text1-1">MENJAMO INDUSTRIJU NA BOLJE</div>
         <div class="text2-2">
-          Our ISV solutions are engineered for manufacturing, transportation, and maintenance
-          sectors, translating software innovation into tangible operational gains:
+          Naša ISV rešenja su oblikovana za
+proizvodnju, transport i
+održavanje – pretvaraju softver
+u opipljive operativne dobitke:
         </div>
           <div class="div-sa-tackama">
-            <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automate high-volume production lines.</div>
-          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimize production, supply chain and warehouse workflows.</div>
-          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predict equipment failures before they disrupt operations.</div>
-         <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Slash waste in energy, materials, and labor without compromising quality.</div>
+            <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automatizacija procesa
+              i operacija: od narudžbe do
+              isporuke proizvoda.</div>
+          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimizacija lanca
+            snabdevanja: sinhronizacija
+            akcija bez kašnjenja i uskih  
+            grla..</div>
+          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predviđanje kvarova
+            opreme pre nego što
+            izazovu haos: podaci +
+            mašinsko učenje
+            = vidovitost.</div>
+         <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Manje rasipanje
+          energenata, materijala i
+          rada: bez kompromitovanja
+          kvaliteta.</div>
           </div>
         
       </div>
         <div class="box3-3 box3">
-          <div class="text1-1">WHY OUR ISV SOLUTIONS STAND OUT</div>
-          <div class="text2-2">We blend <b>domain-specific expertise in supply chain management</b> with secure, scalable
-          software design—delivering solutions that drive automation, slash costs, and elevate user
-          experiences through intuitive, purpose-built tools</div>
+          <div class="text1-1">ZAŠTO SE NAŠA ISV REŠENJA
+            IZDVAJAJU</div>
+          <div class="text2-2">Kombinujemo stručnost u
+            upravljanju lancem snabdevanja,
+            proizvodnji i održavanu, sa
+            sigurnim i skalabilnim softverskim sistemima.</div>
           <div class="text3-3">
-            By <b>embedding intelligence</b> into your physical processes, we drive measurable
-            improvements in output, resource utilization, and bottom-line savings.
+            Isporučujemo hibridna
+web/mobile softverska rešenja
+koja omogućavaju maksimalnu
+automatizaciju, smanjuju
+troškove i poboljšavaju korisničko
+iskustvo kroz intuitivne,
+personalizovane, namenski
+razvijene interfejse.
           </div>
+          <div class="text3-3" style="margin-top: 10px;">Integracijom AI podržanih
+            algoritama u vaše poslovne
+            procese, postižemo merljiva
+            poboljšanja u proizvodnji,
+            iskorišćenju resursa i uštedi.</div>
         </div>
         
       <div class="box3-4 box3">
-       <div class="box3-4-1"> <button class="dugme">Contact us<svg class="svg" style="width:20px; 
+       <div class="box3-4-1"> <button class="dugme">Kontaktirajte nas<svg class="svg" style="width:20px; 
         height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg></button></div>
       </div>
     </div>
 
 
     <div class="dva_holder">
-      <div class="kf-naslovveliki">
-          <p>KEY FEATURES</p>
+      <div class="kf-naslovveliki one">
+          KEY FEATURES
       </div>
       <div class="key-frames">
           <div class="kf1 kf1-1">
               <img src="../images/keyfeatures1.png" class="kf-img">
               <div class="kf-naslov">
-                  Personalised Dashboards
+                Komandne table
               </div>
               <div>
                   <div class="kf-text">
-                      All-in-one
+                    Sve bitno na jednom mestu
                   </div>
                   <div class="kf-text">
-                      Intuitive presentation
+                    Intuitivna prezentacija
                   </div>
                   <div class="kf-text">
-                      Drill into details
+                    Detalji na jedan klik
                   </div>
                   
                   <div class="kf-text">
-                      Mobile accessible.
+                    Prilagođen za mobilne uređaje.
                   </div>
 
               </div>
@@ -2086,20 +2183,20 @@ button {
           <div class="kf1 kf1-2">
               <img src="../images/keyfeatures2.png" class="kf-img">
               <div class="kf-naslov">
-                  Performance Managment
+                Performanse procesa
               </div>
               <div>
                   <div class="kf-text">
-                      Goals setting
+                    Postavite ciljeve
                   </div>
                   <div class="kf-text">
-                      Motivate & inform
+                    Motivišite i informišite
                   </div>
                   <div class="kf-text">
-                      Monitor & control
+                    Pratite i kontrolišite
                   </div>
                   <div class="kf-text">
-                      Prioritize & fire risk
+                    Prioritizujte i smanjite rizike
                   </div>
                   
 
@@ -2113,16 +2210,16 @@ button {
               </div>
               <div>
                   <div class="kf-text">
-                      On-line pivot reporting
+                    On-line pivot izveštavanje
                   </div>
                   <div class="kf-text">
-                      Multi-dimensional
+                    Multi-dimenzionalnost
                   </div>
                   <div class="kf-text">
-                      Complex calculations
+                    Kompleksne kalkulacije
                   </div>
                   <div class="kf-text">
-                      Time intelligence
+                    Hronologija i analitika
                   </div>
                   
 
@@ -2136,16 +2233,16 @@ button {
               </div>
               <div>
                   <div class="kf-text">
-                      Define recivers
+                    Definišite primaoce
                   </div>
                   <div class="kf-text">
-                      Schedule delivery
+                    Planirajte vreme izvještaja
                   </div>
                   <div class="kf-text">
-                      Get emails
+                    Proverite imejl
                   </div>
                   <div class="kf-text">
-                      Take action
+                    Preuzmite akciju
                   </div>
                   
 
@@ -2155,20 +2252,20 @@ button {
           <div class="kf1 kf1-5">
               <img src="../images/keyfeatures5.png" class="kf-img">
               <div class="kf-naslov">
-                  Team Colaboration
+                Saradnja tima
               </div>
               <div>
                   <div class="kf-text">
-                      Task managment
+                    Upravljanje zadacima
                   </div>
                   <div class="kf-text">
-                      Email task state info
+                    Status zadatka na imejl
                   </div>
                   <div class="kf-text">
-                      Comment's history
+                    Istorijat komentara
                   </div>
                   <div class="kf-text">
-                      Kanban cards
+                    Kanban kartice
                   </div>
                   
 
@@ -2182,16 +2279,16 @@ button {
               </div>
               <div>
                   <div class="kf-text">
-                      Action-driven alerts
+                    Alerti pokrenuti akcijama
                   </div>
                   <div class="kf-text">
-                      Email notifications
+                    Imejl obaveštenja
                   </div>
                   <div class="kf-text">
-                      Dashboard, report & record level alerts
+                    Alerti na komandnim tablama Izveštajima i evidencijama
                   </div>
                   
-                  
+                 
               </div>
           </div>
 
@@ -2202,16 +2299,16 @@ button {
               </div>
               <div>
                   <div class="kf-text">
-                      Digitalize your business
+                    Digitalizacija podatake
                   </div>
                   <div class="kf-text">
-                      Collect data efficiently
+                    Efukasan obuhvat podataka
                   </div>
                   <div class="kf-text">
-                      Apply business rules
+                    Kontrola podataka
                   </div>
                   <div class="kf-text">
-                      Make data more usable
+                    Mobilnost podataka
                   </div>
                   
 
@@ -2225,10 +2322,10 @@ button {
               </div>
               <div>
                   <div class="kf-text">
-                      Integrate your legacy systems: ERP, BI, BPM, MES, CRM ...
+                    Integrišite postojeće sisteme: ERP, BI, BPM, MES, CRM ...
                   </div>
                   <div class="kf-text">
-                      Emprove your data
+                    Maksimalno iskoristite sve raspoložive podatke
                   </div>
                   
               </div>
@@ -2277,16 +2374,16 @@ button {
       <div class="container1"><img src="../img1-removebg-preview.png" class="logo-footer"></div>
       <div class="container2">
         <div class="div1">
-          <div class="footer1">MENU</div>
-          <div class="footer2">About Us</div>
-          <div class="footer2">Services</div>
-          <div class="footer2">Use Cases</div>
+          <div class="footer1">MENI</div>
+          <div class="footer2">O nama</div>
+          <div class="footer2">Usluge</div>
+          <div class="footer2">Projekti</div>
         </div>
         <div class="div1">
-          <div class="footer1">CONTACT US</div>
+          <div class="footer1">KONTAKT</div>
           <div class="footer2"><svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px"  fill="#5c5c5c"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>mimi@gmail.com</div>
           <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+22348739824838</div>
-          <div class="footer2"><a class="linkedin-logo" href="https://ba.linkedin.com/in/dragit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>Linkedin Profile</a></div>
+          <div class="footer2"><a class="linkedin-logo" href="https://ba.linkedin.com/in/dragit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>Linkedin Profil</a></div>
         </div>
         
       </div>
@@ -2468,6 +2565,27 @@ document.querySelectorAll('.box3-4').forEach(el => {
   observer1.observe(el);
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const element = document.querySelector('.key-frames');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Wait 1 second, then add the class (which triggers the transition)
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, 300);
+      } else {
+        // Remove the class when exiting viewport (optional)
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.2 }); // Trigger when 50% visible
+
+  observer.observe(element);
+});
   </script>
 </body>
 </html>

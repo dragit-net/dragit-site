@@ -881,7 +881,7 @@ html, body {
       grid-template-columns: 1fr 1fr 1fr;
       grid-auto-columns: 1fr;
       max-width: 1140px;
-      margin-bottom: 150px;
+      margin-bottom: 100px;
       margin-left: auto;
       margin-right: auto;
       display: grid;
@@ -1002,6 +1002,9 @@ html, body {
     
     .key-frames{
 
+      padding:30px ;
+border-radius: 20px;
+
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 column-gap: 10px;
@@ -1011,6 +1014,14 @@ margin-right: auto;
 margin-top: 60px;
 margin-left: auto;
 
+box-shadow: none;
+  
+  /* Transition for smooth fade-in */
+  transition: box-shadow 1s ease-in-out;
+
+}
+.key-frames.active {
+  box-shadow: 0 0 10px rgba(0, 0, 75, 0.452) ;
 }
 .dva_holder{
   margin-top: 100px !important;
@@ -1866,6 +1877,7 @@ button {
 </style>
 </head>
 <body>
+  <div id="content" style="display: none;">
 <div class="site-wrapper">
   <section class="hero_section">
     <div class="navbar">
@@ -1927,7 +1939,7 @@ button {
         <img class="rocket-icon" src="rocket-icon.png">
         <div class="text-block2">
           Tailored software solutions
-          - from vision to execution!
+          - from vision to execution!!!
         </div>
       </div>
       <div class="heroparent">
@@ -2058,8 +2070,8 @@ button {
 
 
     <div class="dva_holder">
-      <div class="kf-naslovveliki">
-          <p>KEY FEATURES</p>
+      <div class="kf-naslovveliki one">
+          KEY FEATURES
       </div>
       <div class="key-frames">
           <div class="kf1 kf1-1">
@@ -2320,6 +2332,7 @@ button {
     </div>
   </div>
 </div>
+</div>
   <script>
   const responsiveMenuButton=document.getElementById(
     'responsiveMenuToggleButton'
@@ -2474,6 +2487,53 @@ document.querySelectorAll('.box3-4').forEach(el => {
   observer1.observe(el);
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const element = document.querySelector('.key-frames');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Wait 1 second, then add the class (which triggers the transition)
+        setTimeout(() => {
+          entry.target.classList.add('active');
+        }, 800);
+      } else {
+        // Remove the class when exiting viewport (optional)
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.2 }); // Trigger when 50% visible
+
+  observer.observe(element);
+});
+
+const targetCountries = ['RS', 'ME', 'HR', 'BA'];
+        
+        // Funkcija za preusmjeravanje
+        function redirectToSerbian() {
+            window.location.href = '/sr'; // Promijenite putanju prema potrebi
+        }
+
+        // Dohvati geolokaciju preko IP-a
+        fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const countryCode = data.country_code;
+                
+                if (targetCountries.includes(countryCode)) {
+                    redirectToSerbian();
+                } else {
+                    // Sakrij loading overlay i prikaži sadržaj
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Greška pri dohvatu lokacije:', error);
+                document.getElementById('loading-overlay').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            });
   </script>
 </body>
 </html>
