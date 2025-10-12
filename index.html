@@ -2514,14 +2514,19 @@ const targetCountries = ['RS', 'ME', 'HR', 'BA'];
         function redirectToSerbian() {
             window.location.href = 'sr/'; // Promijenite putanju prema potrebi
         }
-
-        // Dohvati geolokaciju preko IP-a
-        fetch('https://ipapi.co/json/')
+        // Proveri redirekciju sa druge strane
+        const urlParams = new URLSearchParams(window.location.search);
+        const langEn = urlParams.get('lang');
+        alert(langEn);
+        if (langEn !=='en' )
+        {
+            // Dohvati geolokaciju preko IP-a2q
+            fetch('https://ipapi.co/json/')
             .then(response => response.json())
             .then(data => {
                 const countryCode = data.country_code;
                 
-                if (targetCountries.includes(countryCode)) {
+                if (targetCountries.includes(countryCode) ) {
                     redirectToSerbian();
                 } else {
                     // Sakrij loading overlay i prikaži sadržaj
@@ -2534,6 +2539,9 @@ const targetCountries = ['RS', 'ME', 'HR', 'BA'];
                 document.getElementById('loading-overlay').style.display = 'none';
                 document.getElementById('content').style.display = 'block';
             });
+          }
+          else
+            document.getElementById('content').style.display = 'block';
   </script>
 </body>
 </html>
