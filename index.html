@@ -2345,8 +2345,6 @@ button {
   })
 
   
-
-
   document.addEventListener('DOMContentLoaded', function() {
             const logoItems = document.querySelectorAll('.logo-item');
             const observerOptions = {
@@ -2387,10 +2385,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.js-scroll').forEach(el => {
   observer.observe(el);
 });
-
-
-
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -2532,14 +2526,20 @@ const targetCountries = ['XX'];
                     redirectToSerbian();
                 } else {
                     // Sakrij loading overlay i prikaži sadržaj
-                    document.getElementById('loading-overlay').style.display = 'none';
+                   // document.getElementById('loading-overlay').style.display = 'none';
+                   // document.getElementById('content').style.display = 'block';
+                   const overlay = document.getElementById('loading-overlay');
+                    if (overlay) overlay.style.display = 'none';
                     document.getElementById('content').style.display = 'block';
                 }
             })
             .catch(error => {
                 console.error('Greška pri dohvatu lokacije:', error);
-                document.getElementById('loading-overlay').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
+                //document.getElementById('loading-overlay').style.display = 'none';
+                //document.getElementById('content').style.display = 'block';
+                const overlay = document.getElementById('loading-overlay');
+                  if (overlay) overlay.style.display = 'none';
+                  document.getElementById('content').style.display = 'block';
             });
           }
           else
