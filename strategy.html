@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DragIT - IT & AI Strategy Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Mulish, Arial;
+        }
+
+        html, body {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            color-scheme: light !important;
+            overflow-x: hidden;
+            max-width: 100% !important;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: white;
+            max-width: 100%;
+            padding-top: 1.25rem;
+            padding-bottom: 1.68rem;
+            z-index: 10;
+            position: sticky !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 0 1.26rem rgba(0, 31, 134, 0.5);
+            background: transparent;
+            backdrop-filter: blur(17px);
+            animation: padni 0.7s ease-out forwards;
+            width: 100vw;
+        }
+
+        @keyframes padni {
+            0% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+            80% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 1.56rem;
+            padding-right: 1.56rem;
+            margin-top: 0px;
+        }
+
+        .logo {
+            width: 12rem;
+            height: 3.1rem;
+            line-height: 21px;
+            filter: contrast(130%);
+        }
+
+        .bar {
+            display: flex;
+            vertical-align: center;
+            justify-content: space-around;
+            flex: 1;
+        }
+
+        .bar a {
+            font-family: Mulish, Arial;
+            font-weight: 600;
+            text-decoration: none;
+            color: #000;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .bar a:hover {
+            border-bottom: 2px solid blue;
+            border-top: 2px solid blue;
+        }
+
+        .contact-us {
+            width: 12rem;
+            height: 4rem;
+            color: black;
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: Mulish, Arial;
+            background: rgba(255, 255, 255);
+            border: none;
+            border-radius: 100px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            font-weight: 600;
+            transition: 0.5s box-shadow;
+            transition: 0.2s color;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .contact-us::after {
+            content: '';
+            position: absolute;
+            background-image: linear-gradient(to bottom right, rgb(0, 14, 163), rgb(3, 0, 55));
+            height: 108%;
+            width: 103%;
+            border-radius: 100px;
+            z-index: -1;
+        }
+
+        .contact-us:hover {
+            z-index: 0;
+            color: white;
+            box-shadow: 10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(31, 2, 191, 0.39);
+        }
+
+        /* Hero Section for Services */
+        .services-hero {
+            background-color: #ffffff;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            height: 40rem;
+            width: 100vw;
+            overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .services-hero-content {
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .services-hero h1 {
+            font-family: Outfit, Arial;
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 4rem;
+            background: linear-gradient(180deg, hsla(242, 100%, 29%), hsl(0, 0%, 0%));
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-hero p {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #0b63ff;
+            color: #fff;
+        }
+
+        .btn-outline {
+            border: 1px solid #ddd;
+            color: #222;
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        .section-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .section h2 {
+            font-family: Outfit, Arial;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(180deg, hsla(242, 100%, 29%), hsl(0, 0%, 0%));
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .bullet-list {
+            list-style-type: none;
+            margin: 1.5rem 0;
+        }
+
+        .bullet-list li {
+            padding: 0.5rem 0;
+            color: #444;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .bullet-list li:before {
+            content: "•";
+            color: #0e0067;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .figure {
+            margin: 1rem 0;
+        }
+
+        .figure img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .figure figcaption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Approach Section */
+        .section--light {
+            background: #fafafa;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #0e0067;
+        }
+
+        /* Use Cases Section */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #0e0067;
+        }
+
+        /* Why Section */
+        .section--accent {
+            background: #f4fbff;
+        }
+
+        .cta-row {
+            margin-top: 2rem;
+        }
+
+        /* Final CTA */
+        .text-center {
+            text-align: center;
+        }
+
+        .promo {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .promo h2 {
+            margin-bottom: 1rem;
+        }
+
+        .promo .lead {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-hero {
+            background: #0b63ff;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .new_footer {
+            background-color: #e3e3e3b7;
+            padding-top: 88px;
+            padding-bottom: 88px;
+            position: relative;
+        }
+
+        .footer-container {
+            grid-column-gap: 72px;
+            grid-row-gap: 72px;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-left: 0;
+            padding-right: 0;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 840px;
+            color: black;
+            font-family: Poppins, sans-serif;
+        }
+
+        .footer-container2 {
+            grid-column-gap: 3vw;
+            grid-row-gap: 7vh;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-columns: 1fr;
+            max-width: 450px;
+            display: grid;
+        }
+
+        .logo-footer {
+            width: 190px;
+            height: auto;
+        }
+
+        .footer1 {
+            color: #0e0067;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+        }
+
+        .footer2 {
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 17px;
+            color: rgb(108, 107, 107);
+        }
+
+        .footer2:hover {
+            color: #535353;
+            text-decoration: underline;
+        }
+
+        .footer-svg {
+            margin-top: 5px;
+        }
+
+        .social_net {
+            grid-column-gap: 12px;
+            grid-row-gap: 12px;
+            display: flex;
+        }
+
+        .link-block-2 {
+            border: 1px solid #ffffff;
+            border-radius: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            background-color: #0e0067;
+        }
+
+        .text-block-39 {
+            color: #8b949e;
+            margin-left: auto;
+            font-family: Poppins, sans-serif;
+            font-size: 13px;
+        }
+
+        .w-container {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container-21 {
+            grid-column-gap: 72px;
+            grid-row-gap: 72px;
+            max-width: 1215px;
+            padding-left: 0;
+            padding-right: 0;
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 1199px) {
+            .bar {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .contact-us {
+                display: none;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                padding: 0;
+                padding-top: 10px;
+            }
+
+            .logo {
+                margin-left: 10px;
+            }
+
+            .bar.open {
+                display: block;
+            }
+
+            .bar a {
+                color: rgb(255, 255, 255);
+                width: 100%;
+                flex-direction: column;
+                padding: 1rem;
+                background-color: rgb(8, 0, 53);
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+
+            .section-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                padding-left: 7vw;
+                padding-right: 10vw;
+                padding-right: 10px;
+                max-width: 721px;
+                column-gap: 30px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .services-hero {
+                height: 30rem;
+            }
+
+            .services-hero h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+
+            .services-hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .features, .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .container-21 {
+                flex-direction: column;
+                gap: 30px;
+                justify-content: start;
+                align-self: flex-start;
+            }
+
+            .social_net {
+                align-self: flex-start;
+            }
+        }
+
+        @media screen and (max-width: 479px) {
+            .services-hero {
+                height: 25rem;
+            }
+
+            .services-hero h1 {
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .footer-container2 {
+                grid-column-gap: 22px;
+                grid-row-gap: 45px;
+                grid-template-columns: 1fr 1fr;
+                margin-left: 30px;
+                margin-top: 30px;
+            }
+
+            .footer-container {
+                grid-column-gap: 27px;
+                grid-row-gap: 27px;
+                flex-flow: column;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="div-with-pitcure">
+                <img class="logo" src="img1-removebg-preview.png" alt="DragIT Logo">
+            </div>
+
+            <div class="bar">
+                <div>
+                    <a href="index.html">Home</a>
+                </div>
+                <div>
+                    <a href="strategy.html" style="border-bottom: 2px solid blue; border-top: 2px solid blue;">IT / AI Strategy</a>
+                </div>
+                <div>
+                    <a href="go_digital.html">Go Digital</a>
+                </div>
+                <div>
+                    <a href="d365_f&o.html">D365 F&O</a>
+                </div>
+                <div>
+                    <a href="custom_software.html">Custom software</a>
+                </div> 
+            </div>
+            <div class="div-button">
+                <button class="contact-us">
+                    Call: +38765384235
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="services-hero">
+        <div class="services-hero-content">
+            <h1>Align Technology with Business Vision</h1>
+            <p class="lead">
+                Transform your IT landscape into a strategic enabler — harness AI, data, and automation to drive measurable business outcomes.
+            </p>
+            <p class="hero-cta">
+                <a class="btn btn-primary" href="/contact">Book a strategy session</a>
+                <a class="btn btn-outline" href="#approach">Learn how we work</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problem" class="section">
+        <div class="container">
+            <div class="section-inner">
+                <div class="col">
+                    <h2>The challenge we solve</h2>
+                    <p>
+                        Many organizations invest in IT and AI initiatives without a clear link to business goals — leading to fragmented systems, high costs, and underutilized data. We bridge the gap between <strong>business strategy</strong> and <strong>technology execution</strong>, making sure every digital initiative creates measurable value.
+                    </p>
+
+                    <ul class="bullet-list">
+                        <li>Lack of alignment between IT initiatives and business objectives</li>
+                        <li>Unclear roadmap for AI and automation adoption</li>
+                        <li>High IT spending without tangible ROI</li>
+                        <li>Siloed data across departments and low digital maturity</li>
+                    </ul>
+
+                    <p class="muted">Need a quick assessment? <a href="/contact">Contact us</a> for a short discovery call.</p>
+                </div>
+
+                <div class="col">
+                    <figure class="figure">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1310&q=80" alt="Business leader reviewing IT roadmap">
+                        <figcaption>IT & AI roadmap — align people, processes and technology.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="approach" class="section section--light">
+        <div class="container">
+            <h2>Our approach &amp; key benefits</h2>
+            <div class="features">
+                <article class="feature">
+                    <h3>Strategic alignment</h3>
+                    <p>We translate your business strategy into an actionable IT & AI roadmap so each initiative supports measurable goals.</p>
+                </article>
+
+                <article class="feature">
+                    <h3>AI readiness & digital maturity</h3>
+                    <p>We assess current capabilities and design the path toward predictive, data-driven operations.</p>
+                </article>
+
+                <article class="feature">
+                    <h3>Actionable roadmaps</h3>
+                    <p>From concept to execution — we deliver roadmaps that balance innovation, cost-efficiency and scalability.</p>
+                </article>
+
+                <article class="feature">
+                    <h3>Business value first</h3>
+                    <p>We focus on measurable KPIs: efficiency, cost reduction and smarter decision-making.</p>
+                </article>
+
+                <article class="feature">
+                    <h3>Vendor-neutral advisory</h3>
+                    <p>Independent guidance — we recommend the best solution for your needs, not for vendor commissions.</p>
+                </article>
+
+                <article class="feature">
+                    <h3>Fast delivery model</h3>
+                    <p>Our Accelerator Model speeds delivery while keeping quality, evolvability and security high.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section id="use-cases" class="section">
+        <div class="container">
+            <h2>Use cases</h2>
+
+            <div class="cards">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c6fe63c7e35e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Predictive maintenance dashboard">
+                    <div class="card-body">
+                        <h3>Predictive maintenance with AI</h3>
+                        <p>A manufacturing company reduced unplanned downtime by <strong>15%</strong> using machine data analytics and AI-based maintenance predictions.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unified data model and analytics">
+                    <div class="card-body">
+                        <h3>Data strategy for decision intelligence</h3>
+                        <p>A service organization implemented a unified data model that improved forecasting accuracy by <strong>10%</strong> and enhanced reporting transparency.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Automation workflow integrated with ERP">
+                    <div class="card-body">
+                        <h3>AI-driven process automation</h3>
+                        <p>A logistics company automated around <strong>30%</strong> of repetitive workflows by deploying low-code AI tools integrated with ERP systems.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY DRAGIT -->
+    <section id="why" class="section section--accent">
+        <div class="container">
+            <div class="section-inner">
+                <div class="col">
+                    <h2>Why dragIT</h2>
+                    <ul class="bullet-list">
+                        <li>20+ years of ICT experience in strategy, software, and transformation</li>
+                        <li>Deep domain expertise in <strong>D365 F&O, Manufacturing, Maintenance, SCM</strong></li>
+                        <li>Proven Accelerator Model for fast, secure and evolvable delivery</li>
+                        <li>Independent, vendor-neutral advisory — focused on measurable outcomes</li>
+                    </ul>
+                    <p class="cta-row">
+                        <a class="btn btn-primary" href="/contact">Talk to an expert</a>
+                        <a class="btn btn-outline" href="/services">Explore other services</a>
+                    </p>
+                </div>
+
+                <div class="col">
+                    <figure class="figure">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Consulting team discussing strategy">
+                        <figcaption>Strategy workshops, assessments and roadmaps delivered with practical implementation plans.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / FOOTER PITCH -->
+    <section id="final-cta" class="section text-center">
+        <div class="container">
+            <div class="promo">
+                <h2>Ready to build your IT & AI strategy?</h2>
+                <p class="lead">Turn your vision into a clear, actionable roadmap and start delivering measurable results.</p>
+                <a class="btn btn-hero" href="/contact">Book a free consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="new_footer">
+        <div class="footer-container">
+            <div class="container1"><img src="img1-removebg-preview.png" class="logo-footer" alt="DragIT Logo"></div>
+            <div class="footer-container2">
+                <div class="div1">
+                    <div class="footer1">MENU</div>
+                    <div class="footer2">About Us</div>
+                    <div class="footer2">Services</div>
+                    <div class="footer2">Use Cases</div>
+                </div>
+                <div class="div1">
+                    <div class="footer1">CONTACT US</div>
+                    <div class="footer2">
+                        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
+                            <path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/>
+                        </svg>
+                        info@dragit.net
+                    </div>
+                    <div class="footer2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
+                            <path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/>
+                        </svg>
+                        +387 65 384 235
+                    </div>
+                    <div class="footer2">
+                        <a class="linkedin-logo" href="https://www.dragit.net" style="text-decoration: none; color: rgb(108,107,107);">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999">
+                                <path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/>
+                            </svg>
+                            www.dragit.net
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-layout-blockcontainer container-21 new w-container">
+            <div class="social_net">
+                <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
+                    <img src="images/facebook.svg" alt="Facebook">
+                </a>
+
+                <a href="https://www.youtube.com" class="link-block-2 w-inline-block" target="_blank">
+                    <img src="images/youtube.svg" alt="YouTube">
+                </a>
+
+                <a href="twitter.com" class="link-block-2 w-inline-block" target="_blank">
+                    <img src="images/x(1).png" class="x-picture" alt="Twitter">
+                </a>
+
+                <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
+                    <img src="images/instagram.svg" alt="Instagram">
+                </a>
+            </div>
+            <div class="text-block-39">© 2024 — Copyright</div>
+        </div>
+    </div>
+
+    <script>
+        // Simple script for mobile menu toggle (if needed)
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Services page loaded');
+        });
+    </script>
+</body>
+</html>
