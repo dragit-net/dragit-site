@@ -213,7 +213,7 @@ html, body {
       filter:contrast(130%);
       
     }
-    .bar{
+    /* .bar{
       display: flex;
       vertical-align: center;
       justify-content: space-around;
@@ -230,6 +230,27 @@ html, body {
     .reci:hover{
       border-bottom: 2px solid blue;
       border-top: 2px solid blue;
+    } */
+
+    .bar {
+    display: flex;
+    vertical-align: center;
+    justify-content: space-around;
+    flex: 1;
+    }
+
+    .bar a {
+        font-family: Mulish, Arial;
+        font-weight: 600;
+        text-decoration: none;
+        color: #000;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s;
+    }
+
+    .bar a:hover {
+        border-bottom: 2px solid blue;
+        border-top: 2px solid blue;
     }
 
     .contact-us{
@@ -1909,20 +1930,22 @@ button {
         </button>
 
         <div class="bar">
-          <div>
+   <!--        <div>
             <a style="display: inline-block;">About Us</a>
             
+          </div>  -->
+          <div>
+            <a href="strategy.html">IT / AI strategy</a>
           </div> 
           <div>
-            <a>Services </a>
+            <a href="go_digital.html">Go Digital</a>
+          </div> 
+          <div>
+            <a href="d365_f&o.html">D365 F&O</a>
             
           </div> 
           <div>
-            <a>Use cases</a>
-            
-          </div> 
-          <div>
-            <a>Contact Us</a>
+            <a href="custom_software.html">Custom software</a>
             
           </div> 
         </div>
@@ -1947,7 +1970,7 @@ button {
       <div class="tanglineinner">
         <img class="rocket-icon" src="rocket-icon.png">
         <div class="text-block2">
-          Tailored software solutions
+          Business software solutions
           - from vision to execution!!!
         </div>
       </div>
