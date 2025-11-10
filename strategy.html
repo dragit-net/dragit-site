@@ -89,9 +89,27 @@
         }
 
         .bar a:hover {
-            border-bottom: 2px solid blue;
-            border-top: 2px solid blue;
-        }
+        border-bottom: 1px solid rgba(0, 0, 74, 0.639);
+        border-top: 1px solid rgba(0, 0, 74, 0.639);
+    }
+        .bar div{
+      display: flex;
+      vertical-align: center;
+      max-width: 100%;
+    }
+    a {
+  text-decoration: none; /* skida liniju ispod teksta */
+  color: inherit; /* preuzima boju teksta od roditelja */
+}
+.fufi {
+        transition: all 0.8s ease; /* tranzicija za efekat */
+      }
+
+      .fufi.highlight {
+        transform: scale(1.03);
+        /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
+        color: #02006c;
+      }
 
         .contact-us {
             width: 12rem;
@@ -126,13 +144,13 @@
         .contact-us:hover {
             z-index: 0;
             color: white;
-            box-shadow: 10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(31, 2, 191, 0.39);
         }
 
         /* Hero Section for Services */
         .services-hero {
             background-color: #ffffff;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80);
+            /* background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); */
             background-position: center;
             background-size: cover;
             position: relative;
@@ -160,6 +178,7 @@
             color: transparent;
             margin-bottom: 1.5rem;
         }
+
 
         .services-hero p {
             font-size: 1.25rem;
@@ -364,6 +383,36 @@
             border-radius: 10px;
             font-size: 1.1rem;
         }
+        .tt-picture{
+  width:20px;
+  height: auto;
+}
+        .meeting-slika {
+    animation: levitate 5s ease-in-out infinite;
+    
+}
+
+
+      .footer1_1 {
+        transition: all 0.8s ease; /* tranzicija za efekat */
+        transition-delay: 0.3s;
+      }
+
+      .footer1_1.highlight {
+        transform: scale(1.03);
+        /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
+        color: #02006c;
+      }
+
+@keyframes levitate {
+    0%, 100% {
+        transform: translateY(0);
+        
+    }
+    50% {
+        transform: translateY(-10px);        
+    }
+}
 
         /* Footer */
         .new_footer {
@@ -426,6 +475,43 @@
         .footer-svg {
             margin-top: 5px;
         }
+        .x-picture{
+  width: 28px;
+  height: 28px;
+}
+
+        #responsiveMenuToggleButton{
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top:0;
+      right:0;
+    }
+    #responsiveMenuToggleButton svg{
+      height: 2.2rem;
+      width: 2.2rem;
+      /* border: 1px solid rgb(4, 14, 128); */
+      border-radius: 3px;
+      color:rgb(1, 8, 90);
+      position: absolute;
+      top:1.75rem;
+      right:0.75rem;
+    }
+    #responsiveMenuToggleButton .openIcon{
+      display: block;
+    }
+    #responsiveMenuToggleButton .closeIcon{
+       display: none;
+    }
+    #responsiveMenuToggleButton.open .openIcon{
+      display: none;
+    }
+    #responsiveMenuToggleButton.open .closeIcon{
+      display: block;
+    }
+    
 
         .social_net {
             grid-column-gap: 12px;
@@ -449,6 +535,10 @@
             margin-left: auto;
             font-family: Poppins, sans-serif;
             font-size: 13px;
+        }
+        .x-picture{
+            width: 28px;
+            height: 28px;
         }
 
         .w-container {
@@ -504,6 +594,15 @@
                 background-color: rgb(8, 0, 53);
             }
         }
+        @media screen and (max-width:496px) {
+    .btn2{
+        margin-top: 20px;
+    
+    }
+    .services-hero{
+        padding-top: 80px;
+    }
+}
 
         @media screen and (max-width: 991px) {
             .services-hero h1 {
@@ -587,6 +686,39 @@
                 margin-bottom: 20px;
             }
         }
+        @media screen and (max-width:1199px){
+      #responsiveMenuToggleButton {
+        display: block;
+        
+        margin-top: 7px;
+      }
+      .bar{
+        flex-direction: column;
+      }
+      @media screen and (max-width: 700px) {
+    .w-container {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .container2 {
+        grid-template-columns: 1fr;
+    }
+}
+      /* .bar.open{
+        display: block;
+        
+      } */
+
+      
+    }
+    @media screen and (max-width:630px) {
+      #responsiveMenuToggleButton{
+        margin-top: 0;
+      }
+      
+    }
     </style>
 </head>
 <body>
@@ -594,15 +726,30 @@
     <div class="navbar">
         <div class="nav-container">
             <div class="div-with-pitcure">
-                <img class="logo" src="img1-removebg-preview.png" alt="DragIT Logo">
+                <a class="linkedin-logo" href="index.html">
+          <img class="logo"src="img1-removebg-preview.png">
+          </a>
             </div>
+
+            <button aria-label="toggle menu"
+          id="responsiveMenuToggleButton"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="openIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="closeIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          
+          
+        </button>
 
             <div class="bar">
                 <div>
                     <a href="index.html">Home</a>
                 </div>
                 <div>
-                    <a href="strategy.html" style="border-bottom: 2px solid blue; border-top: 2px solid blue;">IT / AI Strategy</a>
+                    <a href="strategy.html" style="border-bottom: 2px solid rgb(0, 0, 88); border-top: 2px solid rgb(0, 0, 90);">IT / AI Strategy</a>
                 </div>
                 <div>
                     <a href="go_digital.html">Go Digital</a>
@@ -616,7 +763,7 @@
             </div>
             <div class="div-button">
                 <button class="contact-us">
-                    Call: +38765384235
+                    Contact Us
                 </button>
             </div>
         </div>
@@ -630,8 +777,8 @@
                 Transform your IT landscape into a strategic enabler — harness AI, data, and automation to drive measurable business outcomes.
             </p>
             <p class="hero-cta">
-                <a class="btn btn-primary" href="/contact">Book a strategy session</a>
-                <a class="btn btn-outline" href="#approach">Learn how we work</a>
+                <a class="btn btn1 btn-primary" href="/contact">Book a strategy session</a>
+                <a class="btn btn2 btn-outline" href="#approach">Learn how we work</a>
             </p>
         </div>
     </section>
@@ -658,7 +805,7 @@
 
                 <div class="col">
                     <figure class="figure">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1310&q=80" alt="Business leader reviewing IT roadmap">
+                        <img src="images/meeting.jpg" class="meeting-slika">
                         <figcaption>IT & AI roadmap — align people, processes and technology.</figcaption>
                     </figure>
                 </div>
@@ -669,7 +816,7 @@
     <!-- APPROACH -->
     <section id="approach" class="section section--light">
         <div class="container">
-            <h2>Our approach &amp; key benefits</h2>
+            <h2 class="fufi">Our approach &amp; key benefits</h2>
             <div class="features">
                 <article class="feature">
                     <h3>Strategic alignment</h3>
@@ -711,7 +858,7 @@
 
             <div class="cards">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c6fe63c7e35e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Predictive maintenance dashboard">
+                    <img src="images/d12.webp" alt="Predictive maintenance dashboard">
                     <div class="card-body">
                         <h3>Predictive maintenance with AI</h3>
                         <p>A manufacturing company reduced unplanned downtime by <strong>15%</strong> using machine data analytics and AI-based maintenance predictions.</p>
@@ -719,7 +866,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Unified data model and analytics">
+                    <img src="images/d13.png" alt="Unified data model and analytics">
                     <div class="card-body">
                         <h3>Data strategy for decision intelligence</h3>
                         <p>A service organization implemented a unified data model that improved forecasting accuracy by <strong>10%</strong> and enhanced reporting transparency.</p>
@@ -727,7 +874,7 @@
                 </article>
 
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Automation workflow integrated with ERP">
+                    <img src="images/d14.avif" alt="Automation workflow integrated with ERP">
                     <div class="card-body">
                         <h3>AI-driven process automation</h3>
                         <p>A logistics company automated around <strong>30%</strong> of repetitive workflows by deploying low-code AI tools integrated with ERP systems.</p>
@@ -750,8 +897,8 @@
                         <li>Independent, vendor-neutral advisory — focused on measurable outcomes</li>
                     </ul>
                     <p class="cta-row">
-                        <a class="btn btn-primary" href="/contact">Talk to an expert</a>
-                        <a class="btn btn-outline" href="/services">Explore other services</a>
+                        <a class="btn btn1 btn-primary" href="/contact">Talk to an expert</a>
+                        <a class="btn btn2 btn-outline" href="/services">Explore other services</a>
                     </p>
                 </div>
 
@@ -771,7 +918,7 @@
             <div class="promo">
                 <h2>Ready to build your IT & AI strategy?</h2>
                 <p class="lead">Turn your vision into a clear, actionable roadmap and start delivering measurable results.</p>
-                <a class="btn btn-hero" href="/contact">Book a free consultation</a>
+                <a class="btn btn1 btn-hero" href="/contact">Book a free consultation</a>
             </div>
         </div>
     </section>
@@ -779,16 +926,18 @@
     <!-- Footer -->
     <div class="new_footer">
         <div class="footer-container">
-            <div class="container1"><img src="img1-removebg-preview.png" class="logo-footer" alt="DragIT Logo"></div>
+            <div class="container1"><a class="linkedin-logo" href="index.html">
+          <img class="logo"src="img1-removebg-preview.png">
+          </a></div>
             <div class="footer-container2">
                 <div class="div1">
-                    <div class="footer1">MENU</div>
-                    <div class="footer2">About Us</div>
-                    <div class="footer2">Services</div>
-                    <div class="footer2">Use Cases</div>
+                    <div class="footer2"><a href="strategy.html">IT / AI strategy</a></div>
+          <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
+          <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
+          <div class="footer2"><a href="custom_software.html">Custom software</a></div>
                 </div>
                 <div class="div1">
-                    <div class="footer1">CONTACT US</div>
+                    <div class="footer1 footer1_1">CONTACT US</div>
                     <div class="footer2">
                         <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
                             <path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/>
@@ -801,6 +950,7 @@
                         </svg>
                         +387 65 384 235
                     </div>
+                    <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+381 64 371 9470</div>
                     <div class="footer2">
                         <a class="linkedin-logo" href="https://www.dragit.net" style="text-decoration: none; color: rgb(108,107,107);">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999">
@@ -814,7 +964,7 @@
         </div>
         <div class="w-layout-blockcontainer container-21 new w-container">
             <div class="social_net">
-                <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
+                <!-- <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
                     <img src="images/facebook.svg" alt="Facebook">
                 </a>
 
@@ -828,17 +978,72 @@
 
                 <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
                     <img src="images/instagram.svg" alt="Instagram">
-                </a>
+                </a> -->
+                <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
+          <img src="images/linkedin_logo.png" class="tt-picture">
+        </a>
             </div>
             <div class="text-block-39">© 2024 — Copyright</div>
         </div>
     </div>
 
     <script>
+        const responsiveMenuButton=document.getElementById(
+    'responsiveMenuToggleButton'
+  );
+  const navBarLinks = document.querySelector('.bar')
+  responsiveMenuButton.addEventListener('click', ()=>{
+    navBarLinks.classList.toggle('open');
+    responsiveMenuButton.classList.toggle('open');
+  })
         // Simple script for mobile menu toggle (if needed)
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Services page loaded');
         });
+
+    
+    document.querySelector(".contact-us").addEventListener("click", () => {
+  const footerTitle = document.querySelector(".footer1_1");
+  if (footerTitle) {
+    footerTitle.scrollIntoView({ behavior: "smooth" });
+
+    // kratko naglašavanje naslova
+    footerTitle.classList.add("highlight");
+    setTimeout(() => {
+      footerTitle.classList.remove("highlight");
+    }, 800); // efekat traje 0.8 sekundi
+  }
+});
+
+
+
+document.querySelectorAll(".btn1").forEach(btn1 => {
+  btn1.addEventListener("click", (e) => {
+    e.preventDefault();
+    const footerEl = document.querySelector(".footer1_1");
+    if (footerEl) {
+      footerEl.scrollIntoView({ behavior: "smooth" });
+
+      // dodaj highlight efekat
+      footerEl.classList.add("highlight");
+      setTimeout(() => footerEl.classList.remove("highlight"), 800);
+    }
+  });
+});
+
+document.querySelectorAll(".btn2").forEach(btn2 => {
+  btn2.addEventListener("click", (e) => {
+    e.preventDefault();
+    const footerEl = document.querySelector(".fufi");
+    if (footerEl) {
+      footerEl.scrollIntoView({ behavior: "smooth" });
+
+      // dodaj highlight efekat
+      footerEl.classList.add("highlight");
+      setTimeout(() => footerEl.classList.remove("highlight"), 800);
+    }
+  });
+});
     </script>
 </body>
 </html>

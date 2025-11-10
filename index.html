@@ -68,6 +68,10 @@
   overflow-x: clip;
 }
 
+a {
+  text-decoration: none; /* skida liniju ispod teksta */
+  color: inherit; /* preuzima boju teksta od roditelja */
+}
 
 html, body {
   background-color: #ffffff !important; /* Your fixed background color */
@@ -87,10 +91,24 @@ html, body {
       display: block;
       /* overflow-x: hidden !important; */
      }
-     img {
-  max-width: 100% !important; /* Ensures images scale down */
-  height: auto;
-}
+      img {
+        max-width: 100% !important; /* Ensures images scale down */
+        height: auto;
+      }
+      html {
+        scroll-behavior: smooth; /* lep prelaz pri skrolu */
+      }
+
+      .footer1_1 {
+        transition: all 0.8s ease; /* tranzicija za efekat */
+        transition-delay: 0.3s;
+      }
+
+      .footer1_1.highlight {
+        transform: scale(1.1);
+        /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
+        color: #02006c;
+      }
     /* .site_wrapper {
       overflow: hidden;
     } */
@@ -249,9 +267,15 @@ html, body {
     }
 
     .bar a:hover {
-        border-bottom: 2px solid blue;
-        border-top: 2px solid blue;
+        border-bottom: 1px solid rgba(0, 0, 74, 0.639);
+        border-top: 1px solid rgba(0, 0, 74, 0.639);
     }
+     /* .bar a:hover {
+  background-color: rgba(0, 123, 255, 0.1);  blago plavkasta pozadina 
+  color: #00046d78;
+  border-radius: 6px;
+} */
+
 
     .contact-us{
       width:12rem;
@@ -270,7 +294,7 @@ html, body {
       justify-content: center;
       font-weight: 600;
       transition: 0.5s box-shadow ;
-      transition: 0.2s color;
+      transition: 0.3s color;
       align-items: center;
     }
     .contact-us::after{
@@ -287,7 +311,7 @@ html, body {
     .contact-us:hover{
       z-index: 0;
       color:white;
-      box-shadow:  10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(31, 2, 191, 0.39);
+      /* box-shadow:  10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(31, 2, 191, 0.39); */
     }
     
     .div-button{
@@ -878,8 +902,8 @@ html, body {
     .second-section{
       
       /* background:rgb(255, 255, 255) url("images/drugafejdslika.png"); */
-    background-position: 0% 10%;
-    background-image: url(image3.png);
+    background-position: -40% 20%;
+    /*  background-image: url(image3.png);*/
     background-repeat: no-repeat;
     background-size: auto;
     padding-top: 100px;
@@ -1031,9 +1055,9 @@ html, body {
     }
     
     .key-frames{
-
-      padding:30px ;
-border-radius: 20px;
+          
+      padding:10px 10px ;
+border-radius: 0px;
 
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1058,7 +1082,7 @@ box-shadow: none;
 }
 .kf-naslovveliki{
   opacity: 0;
-  text-align: center;
+  text-align:center;
   transform: translateY(20px);  
   transition: opacity 0.6s ease-out, transform 0.8s ease-out;
   background: linear-gradient(180deg, hsla(242, 100%, 29%), hsl(0, 0%, 0%));
@@ -1477,7 +1501,7 @@ color:rgb(92, 92, 92);
       grid-row-gap: 24px;
       text-align: center;
       font-family: Poppins, sans-serif;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns:  1fr 1fr 1fr;
       grid-auto-columns: 1fr;
       max-width: 1140px;
       margin:auto;
@@ -1572,6 +1596,23 @@ color:rgb(92, 92, 92);
     @media screen and (max-width:1108px){
       .cetiri{
         grid-template-columns: 1fr 1fr 1fr ;
+      }
+    }
+    @media screen and (min-width:600px) and (max-width: 900px){
+      .naslovi{
+      font-size: 40px;
+      }
+      
+    }
+    @media screen and (max-width:600px) {
+      .naslovi{
+        font-size: 30px;
+        text-shadow: 
+      5px 5px 10px #ffffff43,
+      
+      5px 5px 10px #150080a8; 
+        font-weight: 800;
+        margin-top: 60px;
       }
     }
     @media screen and (max-width: 1050px){
@@ -1893,6 +1934,11 @@ button {
 
 }
 
+@media screen and (max-width:656px) {
+  .openIcon{
+    padding-top: 5px;
+  }
+}
 
 :root {
   color-scheme: light !important; /* Forces light mode rendering */
@@ -1913,7 +1959,9 @@ button {
     <div class="navbar">
       <div class="nav-container">
         <div class="div-with-pitcure">
+          <a class="linkedin-logo" href="index.html">
           <img class="logo"src="img1-removebg-preview.png">
+          </a>
         </div>
 
         <button aria-label="toggle menu"
@@ -1951,7 +1999,7 @@ button {
         </div>
         <div class="div-button">
           <button class="contact-us">
-            Call: +38765384235
+            Contact Us
             <!-- <svg style="
             width:25px;
             height:25px;
@@ -1970,7 +2018,7 @@ button {
       <div class="tanglineinner">
         <img class="rocket-icon" src="rocket-icon.png">
         <div class="text-block2">
-          Business software solutions
+          Tailored software solutions
           - from vision to execution!!!
         </div>
       </div>
@@ -2094,10 +2142,7 @@ button {
           </div>
         </div>
         
-      <div class="box3-4 box3">
-       <div class="box3-4-1"> <button class="dugme">Contact us<svg class="svg" style="width:20px; 
-        height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg></button></div>
-      </div>
+      
     </div>
 
 
@@ -2324,23 +2369,25 @@ button {
       <div class="container2">
         <div class="div1">
           <div class="footer1">MENU</div>
-          <div class="footer2">About Us</div>
-          <div class="footer2">Services</div>
-          <div class="footer2">Use Cases</div>
+          <div class="footer2"><a href="strategy.html">IT / AI strategy</a></div>
+          <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
+          <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
+          <div class="footer2"><a href="custom_software.html">Custom software</a></div>
         </div>
         <div class="div1">
-          <div class="footer1">CONTACT US</div>
+          <div class="footer1 footer1_1">CONTACT US</div>
           <div class="footer2"><svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px"  fill="#5c5c5c"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>info@dragit.net</div>
           <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+387 65 384 235</div>
-          <div class="footer2"><a class="linkedin-logo" href="https://www.dragit.net"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>www.dragit.net</a></div>
-          <div class="footer2"><a class="linkedin-logo" href="https://ba.linkedin.com/in/dragit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>Linkedin Profile</a></div>
+          <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+381 64 371 9470</div>
+          <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>www.dragit.net</a></div>
+          <!-- <div class="footer2"><a class="linkedin-logo" href="https://ba.linkedin.com/in/dragit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>Linkedin Profile</a></div> -->
         </div>
         
       </div>
     </div>
     <div class="w-layout-blockcontainer container-21 new w-container">
       <div class="social_net">
-        <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
+        <!-- <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
           <img src="images/facebook.svg">
         </a>
 
@@ -2354,10 +2401,10 @@ button {
 
         <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
           <img src="images/instagram.svg">
-        </a>
+        </a> -->
 
-        <a href="tiktok.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/tiktok.png" class="tt-picture">
+        <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
+          <img src="images/linkedin_logo.png" class="tt-picture">
         </a>
 
       </div>
@@ -2376,7 +2423,35 @@ button {
     responsiveMenuButton.classList.toggle('open');
   })
 
-  
+  //skrol na contact us
+
+  document.querySelector(".contact-us").addEventListener("click", () => {
+  const footerTitle = document.querySelector(".footer1_1");
+  if (footerTitle) {
+    footerTitle.scrollIntoView({ behavior: "smooth" });
+
+    // kratko naglašavanje naslova
+    footerTitle.classList.add("highlight");
+    setTimeout(() => {
+      footerTitle.classList.remove("highlight");
+    }, 800); // efekat traje 0.8 sekundi
+  }
+});
+    document.querySelector(".contact-us1").addEventListener("click", () => {
+  const footerTitle = document.querySelector(".footer1_1");
+  if (footerTitle) {
+    footerTitle.scrollIntoView({ behavior: "smooth" });
+
+    // kratko naglašavanje naslova
+    footerTitle.classList.add("highlight");
+    setTimeout(() => {
+      footerTitle.classList.remove("highlight");
+    }, 800); // efekat traje 0.8 sekundi
+  }
+});
+
+
+
   document.addEventListener('DOMContentLoaded', function() {
             const logoItems = document.querySelectorAll('.logo-item');
             const observerOptions = {
