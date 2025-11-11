@@ -533,12 +533,15 @@
         }
 
         .w-container {
-            max-width: 900px;
+            max-width: 900px !important;
             margin-left: auto;
             margin-right: auto;
         }
 
         .container-21 {
+            max-width: 900px;
+            margin-left: 90px;
+            margin-right: 0px;
             grid-column-gap: 72px;
             grid-row-gap: 72px;
             max-width: 1215px;
@@ -647,7 +650,11 @@
                 align-self: flex-start;
             }
         }
-
+        @media screen and (max-width:800px) {
+            .footer-container2{
+                grid-template-columns: 1fr;
+            }
+        }
         @media screen and (max-width: 479px) {
             .services-hero {
                 height: 25rem;
@@ -665,7 +672,7 @@
             .footer-container2 {
                 grid-column-gap: 22px;
                 grid-row-gap: 45px;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns:  1fr;
                 margin-left: 30px;
                 margin-top: 30px;
             }

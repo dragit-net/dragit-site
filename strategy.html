@@ -542,12 +542,15 @@
         }
 
         .w-container {
-            max-width: 900px;
+            max-width: 900px !important;
             margin-left: auto;
             margin-right: auto;
         }
 
         .container-21 {
+            max-width: 900px;
+            margin-left: 90px;
+            margin-right: 0px;
             grid-column-gap: 72px;
             grid-row-gap: 72px;
             max-width: 1215px;
@@ -622,7 +625,11 @@
                 column-gap: 30px;
             }
         }
-
+        @media screen and (max-width:800px) {
+            .footer-container2{
+                grid-template-columns: 1fr;
+            }
+        }
         @media screen and (max-width: 767px) {
             .services-hero {
                 height: 30rem;
@@ -674,7 +681,7 @@
             .footer-container2 {
                 grid-column-gap: 22px;
                 grid-row-gap: 45px;
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 margin-left: 30px;
                 margin-top: 30px;
             }
@@ -931,6 +938,7 @@
           </a></div>
             <div class="footer-container2">
                 <div class="div1">
+                    <div class="footer1">MENU</div>
                     <div class="footer2"><a href="strategy.html">IT / AI strategy</a></div>
           <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
           <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
