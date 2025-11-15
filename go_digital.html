@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Transformation | dragIT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
+        rel="stylesheet">
     <style>
         /* Reset and Base Styles */
         * {
@@ -15,12 +18,16 @@
             box-sizing: border-box;
             font-family: Mulish, Arial;
         }
-            a {
-  text-decoration: none; /* skida liniju ispod teksta */
-  color: inherit; /* preuzima boju teksta od roditelja */
-}
 
-        html, body {
+        a {
+            text-decoration: none;
+            /* skida liniju ispod teksta */
+            color: inherit;
+            /* preuzima boju teksta od roditelja */
+        }
+
+        html,
+        body {
             background-color: #ffffff !important;
             color: #000000 !important;
             color-scheme: light !important;
@@ -51,9 +58,11 @@
                 opacity: 0;
                 transform: translateY(-100px);
             }
+
             80% {
                 opacity: 0.6;
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -82,10 +91,12 @@
             justify-content: space-around;
             flex: 1;
         }
-.x-picture{
-  width: 28px;
-  height: 28px;
-}
+
+        .x-picture {
+            width: 28px;
+            height: 28px;
+        }
+
         .bar a {
             font-family: Mulish, Arial;
             font-weight: 600;
@@ -96,14 +107,15 @@
         }
 
         .bar a:hover {
-        border-bottom: 1px solid rgba(0, 0, 74, 0.639);
-        border-top: 1px solid rgba(0, 0, 74, 0.639);
-    }
-          .bar div{
-      display: flex;
-      vertical-align: center;
-      max-width: 100%;
-    }
+            border-bottom: 1px solid rgba(0, 0, 74, 0.639);
+            border-top: 1px solid rgba(0, 0, 74, 0.639);
+        }
+
+        .bar div {
+            display: flex;
+            vertical-align: center;
+            max-width: 100%;
+        }
 
         .contact-us {
             width: 12rem;
@@ -345,23 +357,30 @@
         .section--accent {
             background: #f4fbff;
         }
-               .meeting-slika {
-    animation: levitate 5s ease-in-out infinite;
-    
-}
+
+        .meeting-slika {
+            animation: levitate 5s ease-in-out infinite;
+
+        }
+
         .meeting {
-    animation: levitate 5s ease-in-out infinite;
-    
-}
-@keyframes levitate {
-    0%, 100% {
-        transform: translateY(0);
-        
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
+            animation: levitate 5s ease-in-out infinite;
+
+        }
+
+        @keyframes levitate {
+
+            0%,
+            100% {
+                transform: translateY(0);
+
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         .cta-row {
             margin-top: 2rem;
         }
@@ -384,10 +403,12 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
         }
-        .tt-picture{
-  width:20px;
-  height: auto;
-}
+
+        .tt-picture {
+            width: 20px;
+            height: auto;
+        }
+
         .btn-hero {
             background: #0b63ff;
             color: #fff;
@@ -418,26 +439,29 @@
             color: black;
             font-family: Poppins, sans-serif;
         }
-        
-      .footer1_1 {
-        transition: all 0.8s ease; /* tranzicija za efekat */
-        transition-delay: 0.3s;
-      }
 
-      .footer1_1.highlight {
-        transform: scale(1.03);
-        /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
-        color: #02006c;
-      }
-      .fufi {
-        transition: all 0.8s ease; /* tranzicija za efekat */
-      }
+        .footer1_1 {
+            transition: all 0.8s ease;
+            /* tranzicija za efekat */
+            transition-delay: 0.3s;
+        }
 
-      .fufi.highlight {
-        transform: scale(1.03);
-        /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
-        color: #02006c;
-      }
+        .footer1_1.highlight {
+            transform: scale(1.03);
+            /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
+            color: #02006c;
+        }
+
+        .fufi {
+            transition: all 0.8s ease;
+            /* tranzicija za efekat */
+        }
+
+        .fufi.highlight {
+            transform: scale(1.03);
+            /* box-shadow: 0 0 15px rgba(0, 7, 102, 0.6); */
+            color: #02006c;
+        }
 
         .footer-container2 {
             grid-column-gap: 3vw;
@@ -461,37 +485,44 @@
             margin-bottom: 20px;
             margin-top: 8px;
         }
-           #responsiveMenuToggleButton{
-      background-color: transparent;
-      border: 0;
-      cursor: pointer;
-      display: none;
-      position: absolute;
-      top:0;
-      right:0;
-    }
-    #responsiveMenuToggleButton svg{
-      height: 2.2rem;
-      width: 2.2rem;
-      /* border: 1px solid rgb(4, 14, 128); */
-      border-radius: 3px;
-      color:rgb(1, 8, 90);
-      position: absolute;
-      top:1.75rem;
-      right:0.75rem;
-    }
-    #responsiveMenuToggleButton .openIcon{
-      display: block;
-    }
-    #responsiveMenuToggleButton .closeIcon{
-       display: none;
-    }
-    #responsiveMenuToggleButton.open .openIcon{
-      display: none;
-    }
-    #responsiveMenuToggleButton.open .closeIcon{
-      display: block;
-    }
+
+        #responsiveMenuToggleButton {
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #responsiveMenuToggleButton svg {
+            height: 2.2rem;
+            width: 2.2rem;
+            /* border: 1px solid rgb(4, 14, 128); */
+            border-radius: 3px;
+            color: rgb(1, 8, 90);
+            position: absolute;
+            top: 1.75rem;
+            right: 0.75rem;
+        }
+
+        #responsiveMenuToggleButton .openIcon {
+            display: block;
+        }
+
+        #responsiveMenuToggleButton .closeIcon {
+            display: none;
+        }
+
+        #responsiveMenuToggleButton.open .openIcon {
+            display: none;
+        }
+
+        #responsiveMenuToggleButton.open .closeIcon {
+            display: block;
+        }
+
         .footer2 {
             margin-bottom: 10px;
             font-weight: 700;
@@ -588,15 +619,17 @@
                 background-color: rgb(8, 0, 53);
             }
         }
+
         @media screen and (max-width:496px) {
-    .btn2{
-        margin-top: 20px;
-    
-    }
-    .services-hero{
-        padding-top: 80px;
-    }
-}
+            .btn2 {
+                margin-top: 20px;
+
+            }
+
+            .services-hero {
+                padding-top: 80px;
+            }
+        }
 
         @media screen and (max-width: 991px) {
             .services-hero h1 {
@@ -635,7 +668,8 @@
                 font-size: 2rem;
             }
 
-            .features, .cards {
+            .features,
+            .cards {
                 grid-template-columns: 1fr;
             }
 
@@ -650,11 +684,13 @@
                 align-self: flex-start;
             }
         }
+
         @media screen and (max-width:800px) {
-            .footer-container2{
+            .footer-container2 {
                 grid-template-columns: 1fr;
             }
         }
+
         @media screen and (max-width: 479px) {
             .services-hero {
                 height: 25rem;
@@ -672,7 +708,7 @@
             .footer-container2 {
                 grid-column-gap: 22px;
                 grid-row-gap: 45px;
-                grid-template-columns:  1fr;
+                grid-template-columns: 1fr;
                 margin-left: 30px;
                 margin-top: 30px;
             }
@@ -684,83 +720,93 @@
                 margin-bottom: 20px;
             }
         }
+
         @media screen and (max-width: 700px) {
-    .w-container {
-        margin-left: 30px;
-        margin-right: 30px;
-    }
-}
-@media screen and (max-width: 750px) {
-    .container2 {
-        grid-template-columns: 1fr;
-    }
-}
-        @media screen and (max-width:1199px){
-      #responsiveMenuToggleButton {
-        display: block;
-        
-        margin-top: 7px;
-      }
-      .bar{
-        flex-direction: column;
-      }
-      /* .bar.open{
+            .w-container {
+                margin-left: 30px;
+                margin-right: 30px;
+            }
+        }
+
+        @media screen and (max-width: 750px) {
+            .container2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width:1199px) {
+            #responsiveMenuToggleButton {
+                display: block;
+
+                margin-top: 7px;
+            }
+
+            .bar {
+                flex-direction: column;
+            }
+
+            /* .bar.open{
         display: block;
         
       } */
 
-      
-    }
-    @media screen and (max-width:630px) {
-      #responsiveMenuToggleButton{
-        margin-top: 0;
-      }
-      
-    }
+
+        }
+
+        @media screen and (max-width:630px) {
+            #responsiveMenuToggleButton {
+                margin-top: 0;
+            }
+
+        }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <div class="navbar">
         <div class="nav-container">
             <div class="div-with-pitcure">
-               <a class="linkedin-logo" href="index.html">
-          <img class="logo"src="img1-removebg-preview.png">
-          </a>
+                <a class="linkedin-logo" href="index.html">
+                    <img class="logo" src="img1-removebg-preview.png">
+                </a>
             </div>
-            <button aria-label="toggle menu"
-          id="responsiveMenuToggleButton"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="openIcon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="closeIcon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-          
-          
-        </button>
+            <button aria-label="toggle menu" id="responsiveMenuToggleButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="openIcon">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="closeIcon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+
+
+            </button>
 
             <div class="bar">
                 <div>
                     <a href="index.html">Home</a>
                 </div>
                 <div>
-                   <a href="strategy.html">IT / AI Strategy</a>
+                    <a href="strategy.html">IT / AI Strategy</a>
                 </div>
                 <div>
-                    <a href="go_digital.html" style="border-bottom: 2px solid rgb(0, 0, 87); border-top: 2px solid rgb(0, 0, 90);">Go Digital</a>
+                    <a href="go_digital.html"
+                        style="border-bottom: 2px solid rgb(0, 0, 87); border-top: 2px solid rgb(0, 0, 90);">Go
+                        Digital</a>
                 </div>
                 <div>
                     <a href="d365_f&o.html">D365 F&O</a>
                 </div>
                 <div>
                     <a href="custom_software.html">Custom Software</a>
-                </div> 
+                </div>
             </div>
             <div class="div-button">
                 <button class="contact-us">
-                        <b>Call Us Now!</b>
+                    <b>Call Us Now!</b>
                 </button>
             </div>
         </div>
@@ -771,7 +817,8 @@
         <div class="services-hero-content">
             <h1>Digital Transformation that Delivers</h1>
             <p class="lead">
-                Redefine how your organization operates — connect people, processes, and technology to achieve measurable performance and agility.
+                Redefine how your organization operates — connect people, processes, and technology to achieve
+                measurable performance and agility.
             </p>
             <p class="hero-cta">
                 <a class="btn btn1 btn-primary skroluj ">Start your transformation</a>
@@ -787,7 +834,10 @@
                 <div class="col">
                     <h2>The challenge</h2>
                     <p>
-                        Many companies start digital initiatives without a clear change framework or measurable goals. As a result, projects stall, ROI remains unclear, and adoption is slow. We help you design and execute transformations that create <strong>business value, operational agility, and empowered teams</strong>.
+                        Many companies start digital initiatives without a clear change framework or measurable goals.
+                        As a result, projects stall, ROI remains unclear, and adoption is slow. We help you design and
+                        execute transformations that create <strong>business value, operational agility, and empowered
+                            teams</strong>.
                     </p>
 
                     <ul class="bullet-list">
@@ -797,7 +847,8 @@
                         <li>Unclear digital vision or prioritization</li>
                     </ul>
 
-                    <p class="muted">Not sure where to start? <a href="/contact">Schedule a digital readiness review</a>.</p>
+                    <p class="muted">Not sure where to start? <a href="/contact">Schedule a digital readiness
+                            review</a>.</p>
                 </div>
 
                 <div class="col">
@@ -817,27 +868,32 @@
             <div class="features">
                 <article class="feature">
                     <h3>Vision & roadmap</h3>
-                    <p>We define your transformation goals and translate them into a phased roadmap with measurable milestones.</p>
+                    <p>We define your transformation goals and translate them into a phased roadmap with measurable
+                        milestones.</p>
                 </article>
 
                 <article class="feature">
                     <h3>Process redesign</h3>
-                    <p>We streamline processes through automation, data integration, and digital workflows for efficiency and quality.</p>
+                    <p>We streamline processes through automation, data integration, and digital workflows for
+                        efficiency and quality.</p>
                 </article>
 
                 <article class="feature">
                     <h3>Technology enablement</h3>
-                    <p>We leverage modern platforms like Microsoft D365, Azure, and low-code tools to accelerate innovation and scalability.</p>
+                    <p>We leverage modern platforms like Microsoft D365, Azure, and low-code tools to accelerate
+                        innovation and scalability.</p>
                 </article>
 
                 <article class="feature">
                     <h3>Change & adoption</h3>
-                    <p>Transformation succeeds only when people adopt it — we build engagement, communication and capability programs.</p>
+                    <p>Transformation succeeds only when people adopt it — we build engagement, communication and
+                        capability programs.</p>
                 </article>
 
                 <article class="feature">
                     <h3>Performance tracking</h3>
-                    <p>We implement measurable KPIs: efficiency, lead time reduction, digital adoption rates and ROI.</p>
+                    <p>We implement measurable KPIs: efficiency, lead time reduction, digital adoption rates and ROI.
+                    </p>
                 </article>
 
                 <article class="feature">
@@ -859,7 +915,9 @@
                     <div class="card-body">
                         <h3>Smart manufacturing transformation</h3>
                         <p>
-                            A production company achieved a <strong>12–18% increase in OEE</strong> (Overall Equipment Effectiveness) by connecting machines, analytics, and maintenance workflows through IoT and D365.
+                            A production company achieved a <strong>12–18% increase in OEE</strong> (Overall Equipment
+                            Effectiveness) by connecting machines, analytics, and maintenance workflows through IoT and
+                            D365.
                         </p>
                     </div>
                 </article>
@@ -869,7 +927,9 @@
                     <div class="card-body">
                         <h3>ERP & cloud modernization</h3>
                         <p>
-                            A distribution company reduced operational costs by <strong>15%</strong> and improved order accuracy by <strong>20%</strong> after migrating legacy ERP to Microsoft D365 and automating order flows.
+                            A distribution company reduced operational costs by <strong>15%</strong> and improved order
+                            accuracy by <strong>20%</strong> after migrating legacy ERP to Microsoft D365 and automating
+                            order flows.
                         </p>
                     </div>
                 </article>
@@ -879,7 +939,8 @@
                     <div class="card-body">
                         <h3>Data-driven performance management</h3>
                         <p>
-                            A service provider reduced decision cycle time by <strong>25%</strong> using Power BI dashboards and automated KPI tracking integrated across departments.
+                            A service provider reduced decision cycle time by <strong>25%</strong> using Power BI
+                            dashboards and automated KPI tracking integrated across departments.
                         </p>
                     </div>
                 </article>
@@ -908,7 +969,8 @@
                 <div class="col">
                     <figure class="figure">
                         <img src="images/d1.jpeg" alt="Digital collaboration team">
-                        <figcaption>Empowering teams through digital capability building and continuous improvement.</figcaption>
+                        <figcaption>Empowering teams through digital capability building and continuous improvement.
+                        </figcaption>
                     </figure>
                 </div>
             </div>
@@ -930,35 +992,46 @@
     <div class="new_footer">
         <div class="footer-container">
             <div class="container1"><a class="linkedin-logo" href="index.html">
-          <img class="logo"src="img1-removebg-preview.png">
-          </a></div>
+                    <img class="logo" src="img1-removebg-preview.png">
+                </a></div>
             <div class="footer-container2">
                 <div class="div1">
                     <div class="footer1">MENU</div>
                     <div class="footer2"><a href="strategy.html">IT / AI Strategy</a></div>
-          <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
-          <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
-          <div class="footer2"><a href="custom_software.html">Custom Software</a></div>
+                    <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
+                    <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
+                    <div class="footer2"><a href="custom_software.html">Custom Software</a></div>
                 </div>
                 <div class="div1">
                     <div class="footer1 footer1_1">CONTACT US</div>
                     <div class="footer2">
-                        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
-                            <path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/>
+                        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px"
+                            viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
+                            <path
+                                d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z" />
                         </svg>
                         info@dragit.net
                     </div>
                     <div class="footer2">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
-                            <path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px"
+                            fill="#5c5c5c">
+                            <path
+                                d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
                         </svg>
                         +387 65 384 235
                     </div>
-                    <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+381 64 371 9470</div>
+                    <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
+                            width="25px" fill="#5c5c5c">
+                            <path
+                                d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
+                        </svg>+381 64 371 9470</div>
                     <div class="footer2">
-                        <a class="linkedin-logo" href="https://www.dragit.net" style="text-decoration: none; color: rgb(108,107,107);">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999">
-                                <path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/>
+                        <a class="linkedin-logo" href="https://www.dragit.net"
+                            style="text-decoration: none; color: rgb(108,107,107);">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px"
+                                fill="#999999">
+                                <path
+                                    d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z" />
                             </svg>
                             www.dragit.net
                         </a>
@@ -984,68 +1057,69 @@
                     <img src="images/instagram.svg" alt="Instagram">
                 </a> -->
                 <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/linkedin_logo.png" class="tt-picture">
-        </a>
+                    <img src="images/linkedin_logo.png" class="tt-picture">
+                </a>
             </div>
             <div class="text-block-39">© 2025 — dragIT</div>
         </div>
     </div>
 
     <script>
-        const responsiveMenuButton=document.getElementById(
-    'responsiveMenuToggleButton'
-  );
-  const navBarLinks = document.querySelector('.bar')
-  responsiveMenuButton.addEventListener('click', ()=>{
-    navBarLinks.classList.toggle('open');
-    responsiveMenuButton.classList.toggle('open');
-  })
+        const responsiveMenuButton = document.getElementById(
+            'responsiveMenuToggleButton'
+        );
+        const navBarLinks = document.querySelector('.bar')
+        responsiveMenuButton.addEventListener('click', () => {
+            navBarLinks.classList.toggle('open');
+            responsiveMenuButton.classList.toggle('open');
+        })
         // Simple script for mobile menu toggle (if needed)
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             console.log('Digital Transformation page loaded');
         });
 
 
-    document.querySelector(".contact-us").addEventListener("click", () => {
-  const footerTitle = document.querySelector(".footer1_1");
-  if (footerTitle) {
-    footerTitle.scrollIntoView({ behavior: "smooth" });
+        document.querySelector(".contact-us").addEventListener("click", () => {
+            const footerTitle = document.querySelector(".footer1_1");
+            if (footerTitle) {
+                footerTitle.scrollIntoView({ behavior: "smooth" });
 
-    // kratko naglašavanje naslova
-    footerTitle.classList.add("highlight");
-    setTimeout(() => {
-      footerTitle.classList.remove("highlight");
-    }, 800); // efekat traje 0.8 sekundi
-  }
-});
-document.querySelectorAll(".btn1").forEach(btn1 => {
-  btn1.addEventListener("click", (e) => {
-    e.preventDefault();
-    const footerEl = document.querySelector(".footer1_1");
-    if (footerEl) {
-      footerEl.scrollIntoView({ behavior: "smooth" });
+                // kratko naglašavanje naslova
+                footerTitle.classList.add("highlight");
+                setTimeout(() => {
+                    footerTitle.classList.remove("highlight");
+                }, 800); // efekat traje 0.8 sekundi
+            }
+        });
+        document.querySelectorAll(".btn1").forEach(btn1 => {
+            btn1.addEventListener("click", (e) => {
+                e.preventDefault();
+                const footerEl = document.querySelector(".footer1_1");
+                if (footerEl) {
+                    footerEl.scrollIntoView({ behavior: "smooth" });
 
-      // dodaj highlight efekat
-      footerEl.classList.add("highlight");
-      setTimeout(() => footerEl.classList.remove("highlight"), 800);
-    }
-  });
-});
+                    // dodaj highlight efekat
+                    footerEl.classList.add("highlight");
+                    setTimeout(() => footerEl.classList.remove("highlight"), 800);
+                }
+            });
+        });
 
 
-document.querySelectorAll(".btn2").forEach(btn2 => {
-  btn2.addEventListener("click", (e) => {
-    e.preventDefault();
-    const footerEl = document.querySelector(".fufi");
-    if (footerEl) {
-      footerEl.scrollIntoView({ behavior: "smooth" });
+        document.querySelectorAll(".btn2").forEach(btn2 => {
+            btn2.addEventListener("click", (e) => {
+                e.preventDefault();
+                const footerEl = document.querySelector(".fufi");
+                if (footerEl) {
+                    footerEl.scrollIntoView({ behavior: "smooth" });
 
-      // dodaj highlight efekat
-      footerEl.classList.add("highlight");
-      setTimeout(() => footerEl.classList.remove("highlight"), 800);
-    }
-  });
-});
+                    // dodaj highlight efekat
+                    footerEl.classList.add("highlight");
+                    setTimeout(() => footerEl.classList.remove("highlight"), 800);
+                }
+            });
+        });
     </script>
 </body>
+
 </html>
