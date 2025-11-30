@@ -136,7 +136,8 @@
 
               <div class="ono-dugacko">
                 <p>
-                  Empowering businesses to drive efficiency, cut costs, and scale through intelligent, high-impact software solutions.
+                  Empowering businesses to drive efficiency, cut costs, and scale through intelligent, high-impact
+                  software solutions.
                 </p>
               </div>
               <div class="poslednji-red">
@@ -773,9 +774,11 @@
     // alert(langEn);
     if (langEn !== 'en') {
       // Dohvati geolokaciju preko IP-a2q
-      fetch('https://ipapi.co/json/')
+      // fetch('https://ipapi.co/json/')
+      fetch('https://geolocation-db.com/json/')
         .then(response => response.json())
         .then(data => {
+          //console.log('Geolokacija:', data); // <-- vidi ceo objekat
           const countryCode = data.country_code;
 
           if (targetCountries.includes(countryCode)) {
