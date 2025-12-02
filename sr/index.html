@@ -1,2702 +1,661 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-BTF2W65KZB');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="color-scheme" content="light only">
 
-<!-- or "dark only" if you prefer dark mode -->
-  <title>DragIT</title>
+  <title>dragIT - srpski</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
+    rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/index.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
-
-<!--Raleway-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap" rel="stylesheet">
-  <style>
-  
-        /* body { 
-            opacity: 0;
-            transition: opacity 0.3s ease-in;
-        } */
-        /* Prikaži "loading" overlay dok se čeka prevod */
-        #loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            z-index: 9999;
-        }
-    /* .top-bar{
-      background-color: white;
-      box-shadow: 0px 0px 50px rgba(34, 0, 255, 0.3);
-      width:100%;
-      height:80px;
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-    } */
-     *{
-      font-family: Mulish, Arial;
-     }
-     a{
-      text-decoration: none;
-      color: black;
-     }
-    html, body {
- 
-      /* overflow-x: hidden !important; */
-      max-width: 100% !important;
-          flex-wrap:wrap !important;
-      position: relative;
-      overflow-x: clip;
-    }
-:root {
-  color-scheme: light !important; /* Forces light mode rendering */
-}
-
-html, body {
-  background-color: #ffffff !important; /* Your fixed background color */
-
-  color-scheme: light !important;
-}
-
-     html{
-      color-scheme: light !important;
-     }
-     body{
-      zoom: inherit;
-      width: 100%;
-      background-color: white;
-      min-height: 100%;
-      margin:0;
-      display: block;
-      /* overflow-x: hidden !important; */
-     }
-     img {
-  max-width: 100% !important; /* Ensures images scale down */
-  height: auto;
-}
-    /* .site_wrapper {
-      overflow: hidden;
-    } */
-    .hero_section{
-      background-color: #ffffff00;
-      /* background-image:url("../img1.1.png"); */
-      background-image:url("../velika5.png");
-      background-position: center 14vh;
-      background-size: cover;
-      background-repeat: no-repeat;
-     
-      position: relative;
-      height:60rem;
-      width: 100vw;
-      overflow: visible;
-     }
-     img{
-      vertical-align: middle;
-      display: inline-block;
-     }
-    
-    .navbar{
-      background-color: white;
-      max-width:100%;
-      padding-top:1.25rem;
-      padding-bottom:1.68rem;
-      z-index:10;
-      position: sticky !important;
-      /* border-bottom: 2px solid rgb(0, 0, 83);; */
-      top:0;
-      left:0;
-      right:0;
-      box-shadow: 0 0 1.26rem rgba(0, 31, 134, 0.5);
-      background: transparent;
-      backdrop-filter: blur(17px);
-      animation:padni 0.7s ease-out forwards;
-      width: 100vw;
-    }
-    @keyframes padni{
-      0% {
-        opacity:0;
-      transform:translateY(-100px);
-      }
-      80%{
-        opacity: 0.6;
-      }
-      100%{
-      opacity:1;
-      transform:translateY(0);}
-    }
-    #responsiveMenuToggleButton{
-      background-color: transparent;
-      border: 0;
-      cursor: pointer;
-      display: none;
-      position: absolute;
-      top:0;
-      right:0;
-    }
-    #responsiveMenuToggleButton svg{
-      height: 2.2rem;
-      width: 2.2rem;
-      /* border: 1px solid rgb(4, 14, 128); */
-      border-radius: 3px;
-      color:rgb(1, 8, 90);
-      position: absolute;
-      top:1.75rem;
-      right:0.75rem;
-    }
-    #responsiveMenuToggleButton .openIcon{
-      display: block;
-    }
-    #responsiveMenuToggleButton .closeIcon{
-       display: none;
-    }
-    #responsiveMenuToggleButton.open .openIcon{
-      display: none;
-    }
-    #responsiveMenuToggleButton.open .closeIcon{
-      display: block;
-    }
-    .nav-container{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 1.56rem;
-      padding-right: 1.56rem;
-      margin-top:0px;
-     
-    }
-    @media screen and (max-width:1199px){
-      #responsiveMenuToggleButton {
-        display: block;
-        
-        margin-top: 7px;
-      }
-      .bar{
-        flex-direction: column;
-      }
-
-      
-    }
-    @media screen and (max-width:630px) {
-      #responsiveMenuToggleButton{
-        margin-top: 0;
-      }
-      
-    }
-    @media screen and (max-width:480px) {
-      .contact-us1{
-        height: 55px !important;
-        margin-left: 0px !important;
-      }
-      
-    }
-    .logo{
-      width: 12rem;
-      height: 3.1rem;
-      line-height: 21px;
-      filter:contrast(130%);
-      
-    }
-    .bar{
-      display: flex;
-      vertical-align: center;
-      justify-content: space-around;
-      flex:1;
-    }
-    .bar a{
-      font-family: Mulish, Arial;
-      font-weight: 600;
-    }
-    .bar a {
-  position: relative;
-  display: inline-block;
-  overflow: hidden;
-  padding: 0.3rem 0;
-}
-.bar a:hover{
-  color:#030148;
-}
-.bar a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 1.7px;
-  width: 100%;
-  background-color: #030148;
-  transform: translateX(-105%);
-  transition: transform 0.3s ease-in-out;
-}
-.bar a::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 1.7px;
-  width: 100%;
-  background-color: #030148;
-  transform: translateX(105%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.bar a:hover::after,
-.bar a:hover::before {
-  transform: translateX(0);
-}
-
-    .reci{
-      border:none;
-      transform: border-bottom 1s;
-    }
-    .reci:hover{
-      border-bottom: 2px solid blue;
-      border-top: 2px solid blue;
-    }
-
-    .contact-us{
-      width:15rem;
-      height: 4rem;
-      color:black;
-      font-size:1rem;
-      font-weight:500;
-      font-family: Mulish, Arial;
-      background: rgba(255, 255, 255);
-      /* border: 0.125rem solid white; */
-      border:none;
-      border-radius: 100px;
-      
-      position: relative;
-      display: flex;
-      justify-content: center;
-      font-weight: 600;
-      transition: 0.5s box-shadow ;
-      transition: 0.2s color;
-      align-items: center;
-    }
-    .contact-us::after{
-      content:'';
-      position:absolute;
-      background-image: linear-gradient( to bottom right,rgb(5, 11, 74),rgb(9, 6, 63) );
-      height: 108%;
-      width: 103%;
-      border-radius: 100px;
-      z-index: -1;
-      
-
-    }
-    .contact-us:hover{
-      z-index: 0;
-      color:white;
-      /* box-shadow:  10px 0 40px rgba(3, 0, 55, 0.422), -10px 0 40px rgba(31, 2, 191, 0.39); */
-    }
-    
-    .div-button{
-      display: flex;
-      vertical-align: center;
-    }
-    .bar div{
-      display: flex;
-      vertical-align: center;
-      max-width: 100%;
-    }
-    .layout{
-      display: grid;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding-top: 4rem;
-      row-gap: 1.25rem;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1143px;
-      box-sizing: border-box;
-      
-    }
-    .heroparent {
-      flex-direction: column;
-      justify-content: center;
-      /* margin-left: auto;
-      margin-right: auto; */
-      width: 100%;
-      padding-top: 0px;
-      padding-bottom: 4.625rem;
-      display: flex;
-    }
-    .herocontentbox {
-      text-align: center;
-      flex-flow: column;
-      justify-content: center;
-      align-self: center;
-      align-items: center;
-      max-width: 100%;
-      margin: 0 !important;
-      box-sizing: border-box;
-      /* margin-left: 10%;
-      margin-right: 10%; */
-      padding-top: 0.6rem;
-      display: flex;
-      width:50rem;
-      
-    }
-    @keyframes appear {
-      from{
-        transform: translateY(100px);
-        opacity:0;
-      }
-      to{
-        transform: translateY(0px);
-        opacity:1;
-      }
-    }
-   .heroheading{
-      text-align: center;
-      text-transform: uppercase;
-      margin-top: 0;
-      margin-bottom: 0;
-      font-family: Outfit, Arial; 
-      font-size: 4.2rem;
-      font-weight: 900;
-      line-height: 5.65rem;
-      /* text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
-      text-shadow: 
-      20px 20px 30px #ffffff,
-      
-      25px 25px 10px #15008058; */
-      /* background: linear-gradient(180deg, hsl(240, 100%, 35%), hsl(225, 100%, 6%)); */
-      background: linear-gradient(180deg, hsla(242, 100%, 29%), hsl(0, 0%, 0%));
-      background-clip: text;
-      color:transparent;
-      
-    }
-   
-    .tanglineinner{
-      justify-content: center;
-      align-items: center;
-      margin-left: auto;
-      margin-right: auto;
-      box-sizing: border-box;
-      display: flex;
-      /* background-color: #bec4ff23; */
-      background: rgba(232, 235, 251, 0.817) ;
-      backdrop-filter:blur(19px);
-      border:0px solid rgba(0, 39, 165, 0.817);
-      border-radius: 1.9rem;
-      color:rgb(7, 0, 81);
-      font-family: Poppins, sans-serif;
-      box-shadow: 0 0 0.4rem rgba(0, 31, 134, 0.5);
-      opacity: 0;
-      animation: sponuj 1.5s ease forwards;
-      animation-delay: 0.5s;
-    }
-    @keyframes sponuj{
-      from{
-        opacity: 0;
-      }
-      to{
-        opacity: 1;
-      }
-    }
-    .text-block2 {
-      font-size: 1rem;
-      font-weight: 500;
-      line-height: 3.125rem;
-      margin-right:20px;
-    }
-    .rocket-icon{
-      vertical-align: middle;
-      max-width: 100%;
-      display: inline-block;
-      height:1.25rem;
-      width: 1.25rem;
-      margin-right: 1.25rem;
-      margin-left: 20px;
-    } 
-    .heroheading1{
-      animation: appear 0.8s ease-out forwards;
-      animation-delay: 0.2s;
-      opacity: 0;
-    }
-    .heroheading2{
-      animation: appear 0.8s ease-out forwards;
-      animation-delay: 0.4s;
-      opacity: 0;
-    }
-    .heroheading3{
-      opacity: 0;
-      animation: appear 0.8s ease-out 0.6s forwards;
-    }
-    .ono-dugacko{
-      overflow: hidden;
-      width:100%;
-      margin-left:6rem;
-      margin-right: 6rem;
-      font-family: Poppins, sans-serif !important;
-      color:rgb(0, 5, 20);
-      /* s */
-      padding: 1rem 1rem;
-      border-radius: 20px;
-      font-weight: 700;
-      box-sizing: border-box;
-      opacity: 0;
-
-
-      font-size: 1.5rem;
-      font-style: italic;
-      display: flex;
-      justify-content: center;
-    }
-    .menu{
-      display:none;
-    }
-   
-    .poslednji-red{
-      margin-top:1rem;
-      display: flex;
-      vertical-align: center;
-      justify-items: center;
-    }
-    .contact-us1{
-      width:13rem;
-      height: 4rem;
-      color:white;
-      font-size:1.25rem;
-      font-weight:500;
-      cursor: pointer;
-      padding-bottom: 5px;
-      font-family: Roboto, Arial;
-      background: linear-gradient(180deg, rgb(6, 6, 72), rgb(12, 9, 74));
-
-      /* border: 0.125rem solid white; */
-      border:none;
-      border-radius: 30px;
-      transition:0.2s box-shadow ;
-      opacity: 0;
-      transition: 0.15s box-shadow;
-      margin-left: 1rem;
-    }
-    .ono-dugacko{
-      opacity: 0;
-      transform: translateY(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
- 
-    }
-    .ono-dugacko.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .contact-us1{
-      opacity: 0;
-      transform: translateY(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
- 
-    }
-    .contact-us1.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .contact-us1:hover{
-      transform:scale(110%);
-      box-shadow: 0.1875rem 1rem 1.25rem rgba(16, 0, 139, 0.3);
-    }
-    .logo1{
-      width: 12rem;
-      height: 3rem;
-      line-height: 21px;
-      filter:contrast(130%);
-      margin-top:0.6rem;
-      display:none;
-    }
-
-    
-    /* .menu{
-        margin-top:auto;
-        margin-bottom: auto;
-        margin-left:0.3rem;
-        width:0.5rem;
-        height:0.5rem;
-      } */
-    /* @media(max-width:767px){
-      .bar{
-        display: none;
-      }
-    }
-
-
-    @media(min-width:768px) and (max-width:992px){
-      .bar{
-        display: none;
-      }
-      
-      .menu{
-        margin-top:auto;
-        margin-bottom: auto;
-        margin-left:0.3rem;
-        width:0.5rem;
-        height:0.5rem;
-      }
-      .hero_section{
-        background-size: contain;
-      }
-      .herocontentbox p{
-        font-size: 10vw;
-      }
-      .hero_section{
-        background-size: 150%;
-        background-position: 60% 50%;
-      }
-    } */
-    @media screen and (max-width: 479px) {
-      
-      .hero_section {
-        height: auto;
-        padding: 0;
-        background-position: center 16vh;
-      }
-      .contact-us1 {
-        border-radius: 30px;
-        width: auto;
-        min-width: 152px;
-        padding-left: 15px;
-        padding-right: 14px;
-        font-size: 18px;
-      }
-      
-      .logo {
-        max-width: 150px;
-        height: 45px;
-      }
-      .logo1{
-        max-width: 150px;
-        height: 45px;
-      }
-      .text-block2 {
-        text-align: left;
-        border-radius: 50px;
-        align-self: center;
-        margin-bottom: 0;
-        margin-left: 0;
-        padding: 0;
-        font-size: 11px;
-        line-height: 16px;
-      }
-      
-      /* .ono-dugacko {
-        width: 100%;
-        margin-top: 0;
-        margin-bottom: 30px;
-        font-size: 14px;
-        line-height: 19px;
-        overflow-wrap: break-word;
-      } */
-      .layout {
-        flex-flow: column;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-      
-      .heroheading {
-        margin-top: 0;
-        margin-bottom: 20px;
-        
-        line-height: 25px !important;
-        display: block;
-        
-      }
-      .herocontentbox{
-        padding-top:23px !important;
-      }
-      .ono-dugacko{
-        padding-top: 0px;
-      }
-
-      
-    }
-    
-    @media screen and (max-width: 767px) {
-      .w-nav-brand {
-        padding-left: 10px;
-      }
-      .logo {
-        width: auto;
-        line-height: 21px;
-      }
-      .hero_section {
-        height: auto;
-        padding: 0;
-      }
-      .layout {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-      
-      
-      .text-block2{
-        align-self: center;
-        margin-left: 0;
-        font-size: 12px;
-        line-height: 38px;
-      }
-      .heroheading {
-        font-size: 40px;
-        line-height: 49px;
-      }
-      .layout{
-        row-gap: 0;
-      }
-      .ono-dugacko p{
-        width: 450px;
-        margin-top: 10px;
-        margin-bottom: 0px;
-        font-size: 15px;
-        line-height: 22px;
-        
-        word-wrap: break-word;
-
-      }
-    }
-    
-    @media screen and (max-width: 991px) {
-
-      .hero_section {
-        height: auto;
-        padding: 0;
-      }
-      .heroheading {
-        margin-top: 10px;
-        margin-bottom: 0;
-        font-size: 48px;
-        line-height: 50px;
-      }
-      .ono-dugacko{
-        width: 700px;
-        font-size: 2.2vw;
-        font-weight: 550;
-        
-      }
-      .navbar{
-        position: sticky !important;
-      }
-      .hero_section{
-        padding-top: 0px;
-      }
-      .herocontentbox{
-        padding-top: 40px;
-      }
-      .herocontentbox{
-        padding-top: 20px;
-      }
-      
-      
-    }
-    @media screen and (min-width:631px) and (max-width:766px) {
-      /* .hero_section{
-        padding-top: 100px;
-      } */
-      .herocontentbox{
-        padding-top: 20px
-      }
-    }
-    
-    @media screen and (max-width:1200px) {
-      .bar{
-        display: none;
-        flex-direction: column;
-        width: 100%;
-      }
-      .bar a:hover{
-        color:#f1f6fd;
-      }
-      .contact-us{
-        display: none;
-      }
-      .nav-container{
-        flex-direction: column;
-        align-items: flex-start;
-        width:100% ;
-        padding: 0;
-        padding-top: 10px;
-      }
-      
-      .logo{
-        margin-left: 10px;
-      }
-
-      .bar{
-        padding-top: 20px;
-      }
-      .bar.open{
-        display: block;
-        
-      }
-      
-      .bar a{
-        color:rgb(255, 255, 255);
-        width: 100%;
-        flex-direction: column;
-        padding: 1rem;
-        background-color: rgb(8, 0, 53);
-      }
-      
-    }
-    @media screen and (max-width:630px) {
-      .ono-dugacko{
-        max-width:390px;
-        font-size:1rem;
-        margin:10px 10px;
-        padding-bottom: 0;
-        padding-left: 10px;
-        padding-right: 10px;
-        overflow-wrap: break-word;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .contact-us{
-        display: none;
-      }
-      .navbar{
-        background-color: white;
-      }
-      
-    }
-    @media screen and (max-width:380px){
-      .ono-dugacko{
-        max-width:350px;
-        font-size:1rem;
-        margin:10px 10px;
-        padding-bottom: 0;
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top:0;
-        overflow-wrap: break-word;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .hero_section{
-        background-position: center 20vh;
-      }
-      .herocontentbox{
-        padding-top: 7px;
-      }
-      
-      .heroheading{
-        font-size: 40px;
-      }
-      
-    }
-    @media screen and (max-width: 360px) {
-      .heroheading{
-        font-size: 30px;
-      }
-    }
-
-    .container{
-
-      /* display: grid;
-      grid-template-columns: 18vw 1fr;
-      
-      grid-column-gap: 5vw;
-      /* justify-content: flex-end;
-      align-items: flex-start; 
-      padding-left: 0;
-      padding-right: 0;
-      display: grid;
-      background-color: #26262a;
-      box-shadow: 0 -8px 50px #6d58f7; 
-      color:white;
-      font-family: Poppins, sans-serif; */
-      grid-column-gap: 72px;
-    grid-row-gap: 72px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 0;
-    padding-right: 0;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 840px;
-    color:black;
-    font-family:Poppins, sans-serif;
-      
-    }
-    @media screen and (max-width:600px) {
-      
-      .heroheading{
-        font-size: 40px;
-        line-height: 40px;
-      }
-    }
-    @media screen and (max-width:500px) {
-      
-      .heroheading{
-        font-size: 32px;
-      }
-    }
-    @media screen and (max-width:400px) {
-      
-      .heroheading{
-        font-size: 28px;
-      }
-    }
-    @media screen and (max-width:350px) {
-      
-      .heroheading{
-        font-size: 25px;
-      }
-      .tanglineinner{
-        max-width: 100%;
-      }
-      .rocket-icon{
-        width: 20px;
-        height: auto;
-      }
-      .text-block2{
-        font-size: 10px;
-      }
-    }
-
-    .new_footer {
-      background-color: #e3e3e3b7;
-      padding-top: 88px;
-      padding-bottom: 88px;
-      position: relative;
-    } 
-    .container2{
-      grid-column-gap: 3vw;
-      grid-row-gap: 7vh;
-      grid-template-rows: auto;
-      grid-template-columns: 1fr 1fr  ;
-      grid-auto-columns: 1fr;
-      max-width: 450px;
-      display: grid;
-    }
-    @media screen and (max-width:991px){
-      .container2{
-        grid-template-columns: 1fr 1fr ;
-      }
-      .container{
-        padding-left: 7vw;
-        padding-right:10vw;
-        padding-right: 10px;
-        max-width: 721px;
-        column-gap: 30px;
-      }
-    }
-    @media screen and (max-width:479px){
-      .container2{
-        grid-column-gap: 22px;
-        grid-row-gap: 45px;
-        grid-template-columns: 1fr 1fr;
-        margin-left: 30px;
-        margin-top: 30px;
-      }
-      .container{
-        grid-column-gap: 27px;
-        grid-row-gap: 27px;
-        flex-flow: column;
-        margin-bottom: 20px;
-        /* flex-flow: column;
-        grid-column-gap: 7vw; */
-      }
-    }
-    @media screen and (max-width:600px) {
-      .logo-footer{
-        width:170px !important;
-      }
-    }
-    @media screen and (max-width:750px) {
-      .container2{
-        grid-template-columns: 1fr ;
-      }
-      .container{
-        column-gap: 60px;
-      }
-    }
-
-    
-    .second-section{
-      
-      /* background:rgb(255, 255, 255) url("../images/drugafejdslika.png"); */
-    background-position: 0% 10%;
-    background-image: url(../image3.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    padding-top: 100px;
-    margin-bottom: 0;
-    padding-bottom: 180px;
-    /* box-shadow: 0 -8px 50px #523fd7 inset; */
-    }
-    .prelaz{
-      height:130px;
-      background: linear-gradient(180deg,white, black);
-      display: none;
-    }
-    .naslov{
-      font-size:100px;
-      text-align: center;
-      color:white;
-      margin-top: 0;
-      font-family: Poppins, sans-serif;
-      display:none;
-    }
-    .tri{
-      /* display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      column-gap:10vw;  */
-      grid-column-gap: 1.5vw;
-      grid-row-gap: 24px;
-      text-align: center;
-      grid-template-rows: auto;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-auto-columns: 1fr;
-      max-width: 1140px;
-      margin-bottom: 100px;
-      margin-left: auto;
-      margin-right: auto;
-      display: grid;
-      padding: 30px 20px;
-      /* box-shadow: 0 0px 60px #523fd7 inset; */
-      border-radius: 30px;
-
-    }
-    .box1{
-      border-radius: 16px;
-      padding: 64px 32px 8px;
-      text-decoration: none;
-      height: auto !important;
-      font-family: Poppins,sans-serif;
-      
-      /* background: rgba(45, 38, 123, 0.436) url("../images/fejd-odozgo.png"); */
-      background-image: url(../mala4.png);
-      background-size: cover;
-      
-      color:white;
-    }
-    .box1-1 {
-      opacity: 0;
-      transform: translateX(-30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
-      text-align: center;
-      
-    }
-
-
-/* Class added when element is in view */
-    .box1-1.scrolled {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-
-    .box1-2 {
-      opacity: 0;
-      transform: translateY(-30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
- 
-    }
-    .box1-2.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .box1-3.scrolled {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-
-    .box1-3 {
-      opacity: 0;
-      transform: translateX(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
-    }
-    .slicica{
-      margin-bottom: 40px;
-    }
-    .text1{
-      color: #fff;
-      text-transform: uppercase;
-      margin-bottom: 32px;
-      font-family: Poppins, sans-serif;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 29px;
-    }
-    .text2{
-      color: #fff;
-      margin-bottom: 8px;
-      font-family: Poppins, sans-serif;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 28px;
-    }
-    .text3{
-      color: #eef3f9;
-      margin-bottom: 40px;
-      font-family: Poppins, sans-serif;
-    }
-    .text3-1{
-      margin-bottom: 30px;
-    }
-    .text4{
-      color: #fff;
-      margin-bottom: 8px;
-      font-family: Poppins, sans-serif;
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 28px;
-    }
-    .text5{
-      color: #eef6ff;
-      margin-bottom: 40px;
-      font-family: Poppins, sans-serif;
-    }
-    .box2{
-      border-radius: 16px;
-      padding: 64px 32px 8px;
-      text-decoration: none;
-      height: auto;
-      color:rgb(255, 255, 255);
-      font-family:Poppins, sans-serif ;
-      /* background: rgb(179, 168, 219) url("../images/fejd-odozgo.png"); */
-
-      /* background: rgba(45, 38, 123, 0.436) url("../images/pozadinazamale.png"); */
-      background-image: url(../mala1.jpg);
-      
-      background-size: cover;
-      /* box-shadow: 0 -2px 20px #523fd7   ; */
-      
-    }
-    
-    .key-frames{
-padding:10px ;
-border-radius: 5px;
-
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-column-gap: 10px;
-row-gap: 10px;
-max-width: 900px;
-margin-right: auto;
-margin-top: 60px;
-margin-left: auto;
-box-shadow: none;
-  
-  /* Transition for smooth fade-in */
-  transition: box-shadow 1s ease-in-out;
-}
-.key-frames.active {
-  box-shadow: 0 0 10px rgba(0, 0, 75, 0.452) ;
-  /* box-shadow: 0 0 10px rgba(0, 0, 75, 0.452) inset; */
-}
-
-.dva_holder{
-  margin-top: 100px !important;
-}
-.kf-naslovveliki{
-  opacity: 0;
-  text-align: center;
-  transform: translateY(20px);  
-  transition: opacity 0.6s ease-out, transform 0.8s ease-out;
-  background: linear-gradient(180deg, hsla(242, 100%, 29%), hsl(0, 0%, 0%));
-  background-clip: text;
-  color:transparent;
-  font-size: 50px;
-  font-weight: 700;
-}
-.kf-naslovveliki.scrolled {
-opacity: 1;
-transform: translateY(0);
-}
-.kf1{
-border: 3px solid rgb(163, 163, 163);
-padding: 25px 15px 15px;
-display: flex;
-opacity: 0;
-border-radius: 5px;
-flex-direction: column;
-justify-content: center;
-text-align: center;
-/* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.267); */
-transform: translateY(20px);
-background-color: white;
-box-shadow: 0 0 10px rgba(0, 4, 57, 0.329) inset;
-}
-.kf-img{
-width:100px;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 20px;
-}
-.kf-naslov{
-font-size: 25px;
-color: rgb(0, 0, 112);
-font-weight: 700;
-margin-bottom: 10px;
-}
-.kf-text{
-color:rgb(92, 92, 92);
-}
-
-.kf1-2{
-            opacity: 0;
-            transform: translateY(20px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            
-        
-        }
-        .kf1-2.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-3{
-            opacity: 0;
-            transform: translateY(20px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            
-        
-        }
-        .kf1-3.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-6{
-            opacity: 0;
-            transform: translateY(40px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.2s;
-        
-        }
-        .kf1-6.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-7{
-            opacity: 0;
-            transform: translateY(40px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.2s;
-        
-        }
-        .kf1-7.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-1{
-            opacity: 0;
-            transform: translateY(20px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.4s;
-        
-        }
-        .kf1-1.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-4{
-            opacity: 0;
-            transform: translateY(20px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.4s;
-        
-        }
-        .kf1-4.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-5{
-            opacity: 0;
-            transform: translateY(40px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.5s;
-        
-        }
-        .kf1-5.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .kf1-8{
-            opacity: 0;
-            transform: translateY(40px); /* Start slightly below */
-            transition: opacity 0.6s ease-in-out, transform 0.8s ease-in-out;
-            transition-delay: 0.5s;
-        
-        }
-        .kf1-8.scrolled {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-@media screen and (max-width:773px) {
-.key-frames{
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-.kf1{
-    max-width: 180px;
-}
-.kf1-1,
-            .kf1-2,
-            .kf1-3,
-            .kf1-4,
-            .kf1-5,
-            .kf1-6,
-            .kf1-7,
-            .kf1-8{
-                transition: opacity 0.6s ease-out, transform 0.8s ease-out;
-            }
-            
-            .kf1-1{
-                transform: translateY(20px);
-                transition-delay: 0s;
-            }
-            .kf1-2{
-                transform: translateY(20px);
-                transition-delay: 0.15s;
-            }
-            .kf1-3{
-                transform: translateY(20px);
-                transition-delay: 0.3s;
-            }
-            .kf1-4{
-                transform: translateY(20px);
-                transition-delay: 0.45s;
-            }
-            .kf1-5{
-                transform: translateY(20px);
-                transition-delay: 0.6s;
-            }
-            .kf1-6{
-                transform: translateY(20px);
-                transition-delay: 0.75s;
-            }
-            .kf1-7{
-                transform: translateY(20px);
-                transition-delay: 0.9s;
-            }
-            .kf1-8{
-                transform: translateY(20px);
-                transition-delay: 1.1s;
-            }
-}
-@media screen and (max-width:630px) {
-.key-frames{
-    grid-template-columns: 1fr 1fr ;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 450px;
-}
-            .kf1-1{
-                transform: translateX(-15px);
-                transition-delay: 0s;
-            }
-            .kf1-3{
-                transform: translateX(-15px);
-                transition-delay: 0.25s;
-            }
-            .kf1-5{
-                transform: translateX(-15px);
-                transition-delay: 0.5s;
-            }
-            .kf1-7{
-                transform: translateX(-15px);
-                transition-delay: 0.75s;
-            }
-
-            .kf1-2{
-                transform: translateX(15px);
-                transition-delay: 0s;
-            }
-            .kf1-4{
-                transform: translateX(15px);
-                transition-delay: 0.25s;
-            }
-            .kf1-6{
-                transform: translateX(15px);
-                transition-delay: 0.5s;
-            }
-            .kf1-8{
-                transform: translateX(15px);
-                transition-delay: 0.75s;
-            }
-}
-@media screen and (max-width:470px) {
-  .key-frames{
-    grid-template-columns: 1fr 1fr ;
-    margin-left: 10px;
-    margin-right: 10px;
-    max-width: 450px;
-    column-gap: 10px;
-  }
-  .kf1{
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media screen and (max-width:410px) {
-  .key-frames{
-    grid-template-columns: 1fr 1fr ;
-    margin-left: 10px;
-    margin-right: 10px;
-    max-width: 450px;
-
-  }
-  .kf-naslov{
-    font-size: 20px;
-  }
-  
-  .kf-naslovveliki{
-    /* background: linear-gradient(180deg, rgb(255, 255, 255), hsl(0, 1%, 85%));
-  background-clip: text;
-  color:transparent; */
-  margin-left: 20px;
-  margin-right: 20px;
-  font-size: 40px;
-  /* text-shadow: 0 0 10px #ffffff; */
-  }
-}
-
-
-    .logo-footer{
-      width: 190px;
-      height: auto;
-    }
-    
-    @media screen and (max-width:920px) {
-      .logo-footer{
-        width:210px;
-      }
-    
-    }
-    @media screen and (max-width:476px) {
-      .logo-footer{
-        width:200px;
-      }
-    
-    }
-    .box3-1,
-    .box3-2,
-    .box3-3{
-      /* color: #fff;
-      text-align: center;
-      /* background-image: linear-gradient(241deg, #090047, #1a00c4cc); 
-      border-image: linear-gradient(241deg,#523fd7,#7c6de0);
-      border-radius: 26px;
-      padding: 49px 24px 50px;
-      box-shadow: 0 -8px 40px #1700ac;
-      */
-      color: #fff;
-    text-align: center;
-    vertical-align: center;
-    /* box-shadow: 0 0 10px rgb(0, 0, 19); */
-
-    /* background-image: linear-gradient(241deg, #10007b, #050022); */
-    background-image: url(../mala4.png);
-    border-radius: 26px;
-    padding: 49px 24px 50px;
-    /* box-shadow: 0 -5px 50px #0c005a; */
-    }
-    .box3-4-1{
-      align-self: center;
-      text-align: center;
-      background-image: linear-gradient( #110081, #020012);
-      height:81px;
-      border-radius: 90px;
-      width:214px;
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-    }
-    .box3-4{
-      align-self: center;
-      text-align: center;
-    }
-    /* .box3.active {
-      animation: fadeUp 0.6s ease-out forwards;
-    }
-    .box3:nth-child(1) { animation-delay: 0.1s; }
-    .box3:nth-child(2) { animation-delay: 0.3s; }
-    .box3:nth-child(3) { animation-delay: 0.5s; }
-    .box3:nth-child(4) { animation-delay: 0.7s; }
-    .box3{
-      opacity: 0;
-      transform: translateY(40px);
-    } */
-
-
-    .box3-1,
-    .box3-2,
-    .box3-3,
-    .box3-4 {
-      opacity: 0;
-      transform: translateY(40px); /* Start slightly below */
-      transition: opacity 0.5s ease-out, transform 0.6s ease-out;
- 
-    }
-    .box3:nth-child(1) { transition-delay: 0.1s; }
-    .box3:nth-child(2) { transition-delay: 0.2s; }
-    .box3:nth-child(3) { transition-delay: 0.4s; }
-    .box3:nth-child(4) { transition-delay: 0.6s; }
-
-    .box3-1.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .box3-2.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .box3-3.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .box3-4.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .footer-svg{
-      margin-top: 5px;
-    }
-    .dugme{
-      width:205px;
-      text-align: center;
-      background:  linear-gradient(141deg, #0e0067, #020012);
-      height: 75px;
-      font-weight: 600;
-      color:#ffffff;
-      font-size: 20px;
-      border-radius: 50px;
-      border:none;
-      transition: 0.3s color;
-    }
-    .dugme:hover{
-      background: white;
-      color: rgb(4, 0, 78);
-      box-shadow: 0 8px 20px rgb(12, 0, 71);
-    }
-    
-    
-    .box2,
-    .box1{
-      height:500px;
-    }
-    .dva_holder{
-      margin:auto;
-      max-width: 1140px;
-
-    }
-    .dva{
-      grid-column-gap: 1.5vw;
-      grid-row-gap: 24px;
-      text-align: center;
-      grid-template-columns: 1fr 1fr ;
-      grid-auto-columns: 1fr;
-      max-width: 1140px;
-      margin-bottom: 150px;
-      margin-left: 27px;
-      margin-right: 27px;
-      display: grid;
-      
-      padding-left: 40px;
-      padding-right: 40px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      border-radius: 30px;
-      /* box-shadow: 0 -8px 50px #523fd7 inset; */
-      
-    }
-    .cetiri{
-      grid-column-gap:1.52vw;
-      grid-row-gap: 24px;
-      text-align: center;
-      font-family: Poppins, sans-serif;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-auto-columns: 1fr;
-      max-width: 1140px;
-      margin:auto;
-      display: grid;
-    }
-    .text1-1{
-      margin-bottom: 40px;
-      font-size: large;
-      font-weight: 800;
-      color:rgb(255, 255, 255);
-    }
-    .text2-2{
-      margin-bottom: 20px;
-      color:rgb(247, 246, 254);
-    }
-    .div-sa-tackama{
-      text-align: start;
-      font-size: 14.5px;
-      margin-left: 8px;
-    }
-    .naslovi{
-      text-align: center;
-      background: linear-gradient(180deg, rgb(3, 0, 94), hsl(0, 0%, 0%));
-      background-clip: text;
-      color:transparent;
-      font-size: 50px;
-      font-weight: 700;
-      text-shadow: 0 0px 20px rgba(0, 10, 154, 0.329)  ; 
-      
-      
-    }
-    .one {
-  text-align: center;
-  text-transform: uppercase;
-  padding-bottom: 5px;
-}
-.one:before {
-  width: 28px;
-  height: 5px;
-  display: block;
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 50%;
-  margin-left: -14px;
-  background-color: #020031;
-}
-.one:after {
-  width: 100px;
-  height: 1px;
-  display: block;
-  content: "";
-  position: relative;
-  margin-top: 25px;
-  left: 50%;
-  margin-left: -50px;
-  background-color: #020031;
-}
-    
-    .naslovi {
-      opacity: 0;
-      transform: translateY(20px); /* Start slightly below */
-      transition: opacity 0.5s ease-out, transform 0.6s ease-out;
- 
-    }
-    .naslovi.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media screen and (max-width:410px) {
-      .naslovi{
-        font-size: 35px;
-        text-shadow: 
-      5px 5px 10px #ffffff43,
-      
-      5px 5px 10px #150080a8; 
-        font-weight: 800;
-        margin-top: 60px;
-      }
-      .kf-naslovveliki{
-        text-shadow: 
-      5px 5px 10px #ffffff43,
-      
-      5px 5px 10px #150080a8; 
-      }
-    }
-    @media screen and (max-width:976px) {
-      .second-section{
-        background-position: 0 0;
-      }
-    }
-    @media screen and (max-width:1108px){
-      .cetiri{
-        grid-template-columns: 1fr 1fr 1fr ;
-      }
-    }
-    @media screen and (max-width: 1050px){
-      .tri{
-        margin:0px 5vw ;
-        margin-bottom: 80px;
-        grid-template-columns: 1fr 1fr  ;
-      }
-      .box1-1.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .box1-1 {
-      opacity: 0;
-      transform: translateY(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
-      transition-delay: 0.1s ;
-    }
-
-
-    .box1-2 {
-      opacity: 0;
-      
-      transform: translateY(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
-      transition-delay: 0.3s ;
-    }
-    .box1-2.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .box1-3.scrolled {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-
-    .box1-3 {
-      opacity: 0;
-      
-      transform: translateY(30px); /* Start slightly below */
-      transition: opacity 0.8s ease-out, transform 0.9s ease-out;
-      transition-delay: 0.5s ;
-    }
-
-    }
-    @media screen and (max-width:820px){
-      .cetiri{
-        grid-template-columns: 1fr 1fr  ;
-        margin-left: 3vw;
-        column-gap: 3vw;
-        margin-right: 3vw;
-      }
-      .dva{
-        padding:0;
-      }
-    }
-    @media screen and (max-width:800px){
-      .dva{
-        grid-template-columns: 1fr ;
-        margin-bottom: 25px;
-        
-      }
-      .tri{
-        grid-template-columns: 1fr ;
-        margin-bottom: 25px;
-        padding:0;
-      }
-    }
-    @media screen and (max-width:420px){
-      .second-section{
-        background-position: 65% ;
-        padding-bottom: 70px;
-        
-      }
-      
-      
-    }
-    @media screen and (max-width:525px) and (min-width:389px){
-      .cetiri{
-        grid-template-columns: 1fr ;
-        margin:0px 10vw;
-      }
-    }
-    @media screen and (max-width:388px){
-      .cetiri{
-        grid-template-columns: 1fr ;
-      }
-
-      .tri{
-        grid-template-columns: 1fr ;
-        margin:0px 10px;
-        margin-bottom: 25px;
-      }
-      .dva{
-        grid-template-columns: 1fr ;
-        margin:0px 10px;
-        margin-bottom: 25px;
-      }
-    }
-    button:focus {
-  outline: none !important;
-}
-
-/* If it's an anchor tag styled as a button */
-a:focus {
-  outline: none !important;
-}
-
-/* For mobile Safari/iOS tap highlight */
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.footer1
-{
-  color:#0e0067;
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-top: 8px;
-}
-.footer2{
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 17px;
-  color:rgb(108, 107, 107) ;
-  transition: 0.3s color;
-}
-.footer2 a {
-  transition: 0.3s color;
-}
-
-.footer2 a:hover{
-  color:#030148;
-
-}
-.footer2 a{
-  position: relative;
-  padding: 0.3rem 0;
-  color:rgb(108, 107, 107) ;
-}
-
-.footer2 a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  transition: transform 0.3s ease-in-out;
-  height: 1.5px;
-  width: 100%;
-  background-color: #08064b ;
-}
-
-.footer2 a:hover::before {
-  transform: translateX(-50%) scale(1);
-}
-
-.logos-section {
-            padding: 4rem 1rem;
-            background: #f8f9fa;
-        }
-
-        .logos-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            grid-auto-rows: 1fr;
-        }
-        
-        .logo-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            opacity: 0;
-            transform: translateY(20px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo-item img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
-        }
-
-        .logo-item.active {
-            animation: fadeUp 0.6s ease-out forwards;
-        }
-        @media screen and (max-width:480px) {
-          .svg{
-            width:16px !important;
-            height:20px !important;
-          }
-        }
-
-        @keyframes fadeUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logos-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .nepotrebni{
-              display: none;
-            }
-            
-
-        }
-
-        /* Animation delays */
-        .logo-item:nth-child(1) { animation-delay: 0.1s; }
-        .logo-item:nth-child(2) { animation-delay: 0.3s; }
-        .logo-item:nth-child(3) { animation-delay: 0.5s; }
-        .logo-item:nth-child(4) { animation-delay: 0.7s; }
-        .logo-item:nth-child(6) { animation-delay: 0.9s; }
-        .logo-item:nth-child(7) { animation-delay: 1.1s; }
-
-
-
-        .js-scroll {
-  opacity: 0;
-  transform: translateY(20px); /* Start slightly below */
-  transition: opacity 0.6s ease-out, transform 0.8s ease-out;
-  text-align: center;
-  
-}
-
-
-/* Class added when element is in view */
-.js-scroll.scrolled {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.container-21.new {
-    align-items: center;
-    margin-top: 30px;
-}
-.container-21 {
-    grid-column-gap: 72px;
-    grid-row-gap: 72px;
-
-    max-width: 1215px;
-    padding-left: 0;
-    padding-right: 0;
-    display: flex;
-}
-.tt-picture{
-  width:20px;
-  height: auto;
-}
-.x-picture{
-  width: 28px;
-  height: 28px;
-}
-.text-block-39 {
-    color: #8b949e;
-    /* color:#0e0067; */
-    margin-left: auto;
-    font-family: Poppins, sans-serif;
-    font-size: 13px;
-}
-.w-layout-blockcontainer {
-    max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.social_net {
-    grid-column-gap: 12px;
-    grid-row-gap: 12px;
-    display: flex
-;
-}
-.link-block-2 {
-    border: 1px solid #ffffff;
-    border-radius: 100%;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    display: flex
-;
-}
-.w-inline-block {
-    max-width: 100%;
-    background-color: #0e0067;
-}
-.w-container {
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.linkedin-logo{
-  text-decoration: none;
-  color: rgb(108,107,107);
-}
-@media screen and (max-width: 410px) {
-  .fade-element{
-    font-size: 25px;
-  }
-}
-@media screen and (max-width:990px) {
-  .w-container{
-    max-width: 630px;
-    margin-top: 50px !important;
-  }
-}
-@media screen and (max-width:700px) {
-  .w-container{
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-}
-@media screen and (max-width:554px) {
-  .container-21{
-    flex-direction: column;
-    gap:30px;
-    justify-content: start;
-    align-self: flex-start;
-  }
-  .social_net{
-    align-self: flex-start;
-  }
-  
-}
-
-@media (prefers-color-scheme: light) {
-  :root, body, html, header, footer, div, section, article,
-  button, input, textarea, a, p, h1, h2, h3, h4, h5, h6 {
-    color-scheme: light !important;
-  }
-}
-.en-sr{
-  background-color: #bcbaff;
-}
-</style>
 </head>
+
 <body>
-
-
-<div class="site-wrapper">
-  <section class="hero_section">
-    <div class="navbar">
-      <div class="nav-container">
-        <div class="div-with-pitcure">
-          <img class="logo"src="../img1-removebg-preview.png">
-        </div>
-
-        <button aria-label="toggle menu"id="responsiveMenuToggleButton">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="openIcon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="closeIcon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-          
-          
-        </button>
-
-        <div class="bar">
-          <div>
-            <a href="o-nama.html"  target="_blank" style="display: inline-block;">O nama</a>
-            
-          </div> 
-          <div>
-            <a href="usluge.html"  target="_blank">Usluge</a>
-            
-          </div> 
-          <div>
-            <a href="projekti.html"  target="_blank">Projekti</a>
-            
-          </div> 
-          <div>
-            <a href="kontakt.html"  target="_blank">Kontakt</a>
-            
-          </div> 
-        </div>
-        <div class="div-button">
-          <button class="contact-us">
-            Pozovite: +381 64 371 9470
-            <!-- <svg style="
-            width:25px;
-            height:25px;
-            padding-top:8px;
-            margin-left:0px;
-            color:white; -->
-          
-          </button>
-
-          <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></div>
-          
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="en-sr">
-        <a href="../index.html?lang=en" class="en">En</a>
-        <a>|</a>
-        <a href="index.html" class="en">Sr</a>
-      </div>
-    </div>
-    <div class="layout">
-      <div class="tanglineinner">
-        <img class="rocket-icon" src="../rocket-icon.png">
-        <div class="text-block2">
-          Softverska rešenja „po meri“ - od ideje do realizacije!
-        </div>
-      </div>
-      <div class="heroparent">
-          <div class="herocontentbox">
-            <p class="heroheading heroheading1">KONTROLA.</p>
-            <p class="heroheading heroheading2">POVERENJE. REZULTAT.</p>
-            <p class="heroheading heroheading3">USPEH.</p>
-
-            <div class="ono-dugacko">
-              <p>
-                Pomažemo klijentima da povećaju produktivnost, unaprede efikasnost i smanje troškove kroz inovativna ISV rešenja.
-            </p>
+  <div id="content" style="display: none;">
+    <div class="site-wrapper">
+      <section class="hero_section">
+        <div class="navbar">
+          <div class="nav-container">
+            <div class="div-with-pitcure">
+              <a class="linkedin-logo" href="index.html">
+                <img class="logo" src="../images/img1-removebg-preview.webp" alt="dragIT logo">
+              </a>
             </div>
-            <div class="poslednji-red">
+
+            <button aria-label="toggle menu" id="responsiveMenuToggleButton">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="openIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="closeIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <div class="bar">
               <div>
-                <img class="logo1" src="../img1-removebg-preview.png">
+                <a href="strategy.html">IT / AI strategija</a>
               </div>
-              <button class="contact-us1">
-                Kontaktirajte nas
-                <!-- <svg style="
-                width:25px;
-                height:25px;
-                padding-top:8px;
-                margin-left:0px;
-                color:white; -->
-                <svg class="svg" style="width:20px; 
-                height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg>
+              <div>
+                <a href="go_digital.html">Digitalna transformacija</a>
               </div>
+              <div>
+                <a href="d365_f&o.html">D365 F&amp;O</a>
+              </div>
+              <div>
+                <a href="custom_software.html">Softverska rešenja</a>
+              </div>
+            </div>
+            <div class="div-button">
+              <button class="contact-us">
+                <b>Zakažite sastanak</b>
+              </button>
+
+              <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                  width="24px" fill="#000000">
+                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg></div>
+
+            </div>
           </div>
+        </div>
+        <div class="layout">
+          <div class="tanglineinner">
+            <img class="rocket-icon" src="../images/rocket-icon.webp" alt="rocket">
+            <div class="text-block2">
+              Poslovna softverska rešenja
+              — od vizije do realizacije!
+            </div>
           </div>
-      </div>
-      
-    </div>
-  </section>
-  <div class="prelaz"></div>
-  <div class="second-section">
-    <div>
+          <div class="heroparent">
+            <div class="herocontentbox">
+              <p class="heroheading heroheading1">Uzmi kontrolu</p>
+              <p class="heroheading heroheading2">Ostvari uticaj</p>
+
+              <div class="ono-dugacko">
+                <p>
+                  Pomažemo preduzećima da povećaju efikasnost, smanje troškove i ostvare rast pomoću inteligentnih
+                  softverskih rešenja.
+                </p>
+              </div>
+              <div class="poslednji-red">
+                <div>
+                  <img class="logo1" src="../images/img1-removebg-preview.webp" alt="dragIT">
+                </div>
+                <button class="contact-us1">
+                  Pozovite
+                  <svg class="svg" style="width:20px; 
+                height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                      stroke-width="0.288"></g>
+                    <g id="SVGRepo_iconCarrier">
+                      <line x1="7" y1="17" x2="17" y2="7"></line>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </g>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
     </div>
-    
-    <div class="tri">
-      
-      <div class="box1 box1-1">
-        <img class="slicica" src="../images/slikica1.svg">
-        <div class="text1">UNAPREDITE PROIZVODNJU</div>
-        <div class="text2">Prilagođena automatizacija i
-          personalizacija</div>
-        <div class="text3">Implementirajte ISV rešenja koja
-          automatizuju procese specifične za
-          vašu industriju – od ERP ekstenzija,
-          do AI podržane realizacije
-          zadataka, oslobodite timove da se
-          fokusiraju na stalna operativna i
-          strategijska poboljšanja.
+    </section>
+    <div class="prelaz"></div>
+    <div class="second-section">
+      <div>
+
+      </div>
+
+      <div class="tri">
+
+        <div class="box1 box1-1">
+          <img class="slicica" src="../images/slikica1.svg" alt="icon">
+          <div class="text1">POVEĆAJTE PRODUKTIVNOST</div>
+          <div class="text2">Izgradite prilagođenu automatizaciju</div>
+          <div class="text3">Prilagođena <b>softverska rešenja</b> koja automatizuju
+            industrijske procese, od proširenja ERP-a do
+            AI-pokretanih zadataka, oslobađajući timove za
+            poboljšanja.
+          </div>
+          <div class="text4">Vidljivost u realnom vremenu</div>
+          <div class="text5">Ugradite <b>kontrolne table sa podacima u realnom vremenu</b> u aplikacije,
+            omogućavajući proaktivne prilagodbe i veću agilnost.
+          </div>
         </div>
-        <div class="text4">Operativna vidljivost u realnom vremenu</div>
-        <div class="text5">Integrišite komandne table i vaše
-          postojeće aplikacije, pristupute
-          ključnim podacima u realnom
-          vremenu, omogućite preventivne
-          intervencije i povećajte spremnost
-          sistema za dinamične promene.
+        <div class="box1 box1-2">
+          <img class="slicica" src="../images/slikica2.svg" alt="icon">
+
+          <div class="text1">OPTIMIZUJTE EFIKASNOST</div>
+          <div class="text2">Uskladite operacije i tokove rada</div>
+          <div class="text3 text3-1">Implementirajte lean digitalne metodologije i ERP
+            integracije kako biste eliminisali redundancije, sinhronizovali
+            lance snabdevanja i smanjili zastoje u održavanju.
+          </div>
+          <div class="text4">Optimizacija resursa zasnovana na podacima</div>
+          <div class="text5">Uskladite mašine, radnu snagu i materijale pametnim
+            algoritmima za raspodelu kako biste maksimizirali proizvodnju i
+            smanjili otpad.
+          </div>
+        </div>
+        <div class="box1 box1-3">
+          <img class="slicica" src="../images/slikica3.svg" alt="icon">
+          <div class="text1">SMAKNJITE TROŠKOVE</div>
+          <div class="text2">Smanjite operativni otpad</div>
+          <div class="text3">Identifikujte i <b>eliminišite skrivene troškove</b> kao što su prekomerna
+            potrošnja energije, neaktivne mašine ili neefikasne
+            prakse održavanja.
+          </div>
+          <div class="text4">Skalabilna cloud-first rešenja</div>
+          <div class="text5">Implementirajte <b>pay-as-you-go industrijski softver</b> kako biste smanjili
+            početne troškove i dugoročni overhead.
+          </div>
         </div>
       </div>
-      <div class="box1 box1-2">
-        <img class="slicica" src="../images/slikica2.svg">
-        
-        <div class="text1">POVEĆAJTE EFIKASNOST</div>
-        <div class="text2">Optimizacija procesa
-          i operacija</div>
-        <div class="text3 text3-1">Implementirajte lean metodologiju i
-          ERP integraciju da eliminište čekanje
-          i dupliranje posla, sinhronizujete
-          lanac snabdevanja i smanjite
-          zastoje, uključujući održavanje.
-        </div>
-        <div class="text4">Pametna alokacija resursa</div>
-        <div class="text5">Usaglasite mašine/opremu, radnu
-          snagu i materijale pomoću pametnih
-          algoritama – povećaj kapacitete,
-          smanji gubitke u proizvodnim
-          linijama.
-        </div>
-      </div>
-      <div class="box1 box1-3">
-        <img class="slicica" src="../images/slikica3.svg">
-        <div class="text1">SMANJITE TROŠKOVE</div>
-        <div class="text2">Eliminišite operativne gubitke</div>
-        <div class="text3">Identifikujte i eliminišite skrivene
-          troškove: prekomernu potrošnju
-          energenata, neiskorišćene
-          mašine/opremu ili zastarele
-          prakse održavanja.
-        </div>
-        <div class="text4">Scalable cloud rešenja</div>
-        <div class="text5">Implementirajte softver sa
-          modelom plaćanje po potrošnji –
-          smanjite početne investicije i
-          dugoročne operativne troškove.
-        </div>
-      </div>
-    </div>
 
 
-    <p class="naslovi one">OUR SERVICES</p>
-    <div class="cetiri">
-      
-      <div class="box3-1 box3">
-        <div class="text1-1">SOFTVERSKA REŠENJA
-          „PO VAŠOJ MERI“</div>
-        <div class="text2-2">Naše strategije digitalne
-          transformacione koncipirane su za
-          proizvodne i uslužne sisteme,
-          spajajući domensku ekspertizu sa vrhunskim tehnologijama u ISV
-          rešenja koja implementiramo
-          „prema vašoj meri“, kako
-          bi ostvarili merljive rezultate u
-          produktivnosti, efikasnosti i
-          smanjenju troškova.</div>
-      </div>
-      <div class="box3-2 box3">
-        <div class="text1-1">MENJAMO INDUSTRIJU NA BOLJE</div>
-        <div class="text2-2">
-          Naša ISV rešenja su oblikovana za
-proizvodnju, transport i
-održavanje – pretvaraju softver
-u opipljive operativne dobitke:
+      <p class="naslovi one">ZAŠTO NAŠE USLUGE?</p>
+      <div class="cetiri">
+
+        <div class="box3-1 box3">
+          <div class="text1-1">PRILAGOĐENO VAŠOJ INDUSTRIJI</div>
+          <div class="text2-2">Naše strategije digitalne transformacije su dizajnirane za <b>proizvodne i servisne
+              operacije</b>,
+            kombinujući stručnost u domenima sa digitalnim tehnologijama kako bi doneli merljive dobitke u
+            produktivnosti,
+            efikasnosti i uštedi troškova.</div>
         </div>
+        <div class="box3-2 box3">
+          <div class="text1-1">IZRAĐENO ZA INDUSTRIJSKI UTICAJ</div>
+          <div class="text2-2">
+            Naša softverska rešenja su projektovana za proizvodnju, transport i održavanje,
+            prevodeći softverske inovacije u opipljive operativne koristi:
+          </div>
           <div class="div-sa-tackama">
-            <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automatizacija procesa
-              i operacija: od narudžbe do
-              isporuke proizvoda.</div>
-          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimizacija lanca
-            snabdevanja: sinhronizacija
-            akcija bez kašnjenja i uskih  
-            grla..</div>
-          <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predviđanje kvarova
-            opreme pre nego što
-            izazovu haos: podaci +
-            mašinsko učenje
-            = vidovitost.</div>
-         <div><span style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Manje rasipanje
-          energenata, materijala i
-          rada: bez kompromitovanja
-          kvaliteta.</div>
+            <div><span
+                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automatizujte
+              masovne proizvodne linije.</div>
+            <div><span
+                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimizujte
+              proizvodnju,
+              lance snabdevanja i skladišne tokove rada.</div>
+            <div><span
+                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predvidite
+              kvarove opreme pre nego što poremete rad.</div>
+            <div><span
+                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Smanjite
+              otpad u energiji, materijalima i radu bez ugrožavanja kvaliteta.</div>
           </div>
-        
-      </div>
-        <div class="box3-3 box3">
-          <div class="text1-1">ZAŠTO SE NAŠA ISV REŠENJA
-            IZDVAJAJU</div>
-          <div class="text2-2">Kombinujemo stručnost u
-            upravljanju lancem snabdevanja,
-            proizvodnji i održavanu, sa
-            sigurnim i skalabilnim softverskim sistemima.</div>
-          <div class="text3-3">
-            Isporučujemo hibridna
-web/mobile softverska rešenja
-koja omogućavaju maksimalnu
-automatizaciju, smanjuju
-troškove i poboljšavaju korisničko
-iskustvo kroz intuitivne,
-personalizovane, namenski
-razvijene interfejse.
-          </div>
-          <div class="text3-3" style="margin-top: 10px;">Integracijom AI podržanih
-            algoritama u vaše poslovne
-            procese, postižemo merljiva
-            poboljšanja u proizvodnji,
-            iskorišćenju resursa i uštedi.</div>
+
         </div>
-        
-      <div class="box3-4 box3">
-       <div class="box3-4-1"> <button class="dugme">Kontaktirajte nas<svg class="svg" style="width:20px; 
-        height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.288"></g><g id="SVGRepo_iconCarrier"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></g></svg></button></div>
-      </div>
-    </div>
+        <div class="box3-3 box3">
+          <div class="text1-1">ŠTA NAŠA SOFTVERSKA REŠENJA IZDVAJA</div>
+          <div class="text2-2">Spajamo <b>stručnost u upravljanju lancem snabdevanja</b> sa sigurnim,
+            skalabilnim softverskim dizajnom — isporučujući rešenja koja unapređuju automatizaciju, smanjuju troškove i
+            poboljšavaju korisničko
+            iskustvo kroz intuitivne, svrhom građe alate.</div>
+          <div class="text3-3">
+            Ugrađivanjem inteligencije u fizičke procese, postižemo merljive
+            poboljšanja u izlazu, iskorišćenju resursa i uštedama.
+          </div>
+        </div>
 
 
-    <div class="dva_holder">
-      <div class="kf-naslovveliki one">
-          KEY FEATURES
       </div>
-      <div class="key-frames">
+
+
+      <div class="dva_holder">
+        <div class="kf-naslovveliki one">
+          KLJUČNE KARAKTERISTIKE
+        </div>
+        <div class="key-frames">
           <div class="kf1 kf1-1">
-              <img src="../images/keyfeatures1.png" class="kf-img">
-              <div class="kf-naslov">
-                Komandne table
+            <img src="../images/keyfeatures1.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Personalizovani kontrolni paneli
+            </div>
+            <div>
+              <div class="kf-text">
+                Sve-u-jednom
               </div>
-              <div>
-                  <div class="kf-text">
-                    Sve bitno na jednom mestu
-                  </div>
-                  <div class="kf-text">
-                    Intuitivna prezentacija
-                  </div>
-                  <div class="kf-text">
-                    Detalji na jedan klik
-                  </div>
-                  
-                  <div class="kf-text">
-                    Prilagođen za mobilne uređaje.
-                  </div>
+              <div class="kf-text">
+                Intuitivna prezentacija
+              </div>
+              <div class="kf-text">
+                Lako uvlačenje u detalje
+              </div>
 
+              <div class="kf-text">
+                Mobile-first dizajn
               </div>
+
+            </div>
           </div>
 
           <div class="kf1 kf1-2">
-              <img src="../images/keyfeatures2.png" class="kf-img">
-              <div class="kf-naslov">
-                Performanse procesa
+            <img src="../images/keyfeatures2.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Upravljanje performansama
+            </div>
+            <div>
+              <div class="kf-text">
+                Postavite merljive ciljeve
               </div>
-              <div>
-                  <div class="kf-text">
-                    Postavite ciljeve
-                  </div>
-                  <div class="kf-text">
-                    Motivišite i informišite
-                  </div>
-                  <div class="kf-text">
-                    Pratite i kontrolišite
-                  </div>
-                  <div class="kf-text">
-                    Prioritizujte i smanjite rizike
-                  </div>
-                  
-
+              <div class="kf-text">
+                Motivacija i informisanje
               </div>
+              <div class="kf-text">
+                Nadzor i kontrola
+              </div>
+              <div class="kf-text">
+                Prioritizacija i upravljanje rizikom
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-3">
-              <img src="../images/keyfeatures3.png" class="kf-img">
-              <div class="kf-naslov">
-                  Analytical Processing
+            <img src="../images/keyfeatures3.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Analitička obrada
+            </div>
+            <div>
+              <div class="kf-text">
+                On-line pivot izveštavanje
               </div>
-              <div>
-                  <div class="kf-text">
-                    On-line pivot izveštavanje
-                  </div>
-                  <div class="kf-text">
-                    Multi-dimenzionalnost
-                  </div>
-                  <div class="kf-text">
-                    Kompleksne kalkulacije
-                  </div>
-                  <div class="kf-text">
-                    Hronologija i analitika
-                  </div>
-                  
-
+              <div class="kf-text">
+                Višedimenzionalno
               </div>
+              <div class="kf-text">
+                Kompleksni proračuni
+              </div>
+              <div class="kf-text">
+                Time intelligence
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-4">
-              <img src="../images/keyfeatures4.png" class="kf-img">
-              <div class="kf-naslov">
-                  Scheduled Reporting
+            <img src="../images/keyfeatures4.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Zakazano izveštavanje
+            </div>
+            <div>
+              <div class="kf-text">
+                Definišite primaoce
               </div>
-              <div>
-                  <div class="kf-text">
-                    Definišite primaoce
-                  </div>
-                  <div class="kf-text">
-                    Planirajte vreme izveštaja
-                  </div>
-                  <div class="kf-text">
-                    Proverite imejl
-                  </div>
-                  <div class="kf-text">
-                    Preuzmite akciju
-                  </div>
-                  
-
+              <div class="kf-text">
+                Zakazivanje dostave
               </div>
+              <div class="kf-text">
+                Primit ćete informativne mejlove
+              </div>
+              <div class="kf-text">
+                Preduzmite akcije
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-5">
-              <img src="../images/keyfeatures5.png" class="kf-img">
-              <div class="kf-naslov">
-                Saradnja tima
+            <img src="../images/keyfeatures5.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Saradnja tima
+            </div>
+            <div>
+              <div class="kf-text">
+                Upravljanje zadacima
               </div>
-              <div>
-                  <div class="kf-text">
-                    Upravljanje zadacima
-                  </div>
-                  <div class="kf-text">
-                    Status zadatka na imejl
-                  </div>
-                  <div class="kf-text">
-                    Istorijat komentara
-                  </div>
-                  <div class="kf-text">
-                    Kanban kartice
-                  </div>
-                  
-
+              <div class="kf-text">
+                Notifikacije o statusu putem mejla
               </div>
+              <div class="kf-text">
+                Istorijat komentara
+              </div>
+              <div class="kf-text">
+                Kanban kartice
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-6">
-              <img src="../images/keyfeatures6.png" class="kf-img">
-              <div class="kf-naslov">
-                  Alerts & Notifications
+            <img src="../images/keyfeatures6.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Upozorenja i obaveštenja
+            </div>
+            <div>
+              <div class="kf-text">
+                Akcijski alerti
               </div>
-              <div>
-                  <div class="kf-text">
-                    Alerti pokrenuti akcijama
-                  </div>
-                  <div class="kf-text">
-                    Imejl obaveštenja
-                  </div>
-                  <div class="kf-text">
-                    Alerti na komandnim tablama Izveštajima i evidencijama
-                  </div>
-                  
-                 
+              <div class="kf-text">
+                Email notifikacije
               </div>
+              <div class="kf-text">
+                Alerti na nivou kontrolne table, izveštaja i zapisa
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-7">
-              <img src="../images/keyfeatures7.png" class="kf-img">
-              <div class="kf-naslov">
-                  Records Of Data (CRUD)
+            <img src="../images/keyfeatures7.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Upravljanje podacima (CRUD)
+            </div>
+            <div>
+              <div class="kf-text">
+                Digitalizujte podatke
               </div>
-              <div>
-                  <div class="kf-text">
-                    Digitalizacija podataka
-                  </div>
-                  <div class="kf-text">
-                    Efukasan obuhvat podataka
-                  </div>
-                  <div class="kf-text">
-                    Kontrola podataka
-                  </div>
-                  <div class="kf-text">
-                    Mobilnost podataka
-                  </div>
-                  
-
+              <div class="kf-text">
+                Prikupljajte podatke efikasno
               </div>
+              <div class="kf-text">
+                Primena kontrola i pravila
+              </div>
+              <div class="kf-text">
+                Povećajte upotrebljivost podataka
+              </div>
+            </div>
           </div>
 
           <div class="kf1 kf1-8">
-              <img src="../images/keyfeatures8.png" class="kf-img">
-              <div class="kf-naslov">
-                  Integration To Existing Systems
+            <img src="../images/keyfeatures8.png" class="kf-img" alt="feature">
+            <div class="kf-naslov">
+              Integracija sa postojećim sistemima
+            </div>
+            <div>
+              <div class="kf-text">
+                Integracija legacy sistema: ERP, BI, BPM, MES, CRM ...
               </div>
-              <div>
-                  <div class="kf-text">
-                    Integrišite postojeće sisteme: ERP, BI, BPM, MES, CRM ...
-                  </div>
-                  <div class="kf-text">
-                    Maksimalno iskoristite sve raspoložive podatke
-                  </div>
-                  
+              <div class="kf-text">
+                Unapredite svoje podatke
               </div>
+            </div>
           </div>
-          
+
+        </div>
       </div>
-  </div>
-  </div>
 
-  
+      <p class="naslovi one dva_holder">PROCES ISPORUKE</p>
+      <div class="tri">
 
+        <div class="box3-1 box3">
+          <div class="text1-1">1. Istraživanje i predlog</div>
+          <div class="text2-2">
+            Duboko ulazimo u vaše poslovanje, otkrivamo izazove i prilike, i kreiramo prilagođenu strategiju i predlog
+            koji
+            maksimalno utiču na vaše digitalne inicijative.
+          </div>
+        </div>
+        <div class="box3-2 box3">
+          <div class="text1-1">2. Planiranje i izvršenje</div>
+          <div class="text2-2">
+            Od roadmap-a do realizacije — planiramo i efikasno izvršavamo svako rešenje, bilo da je reč o prilagođenom
+            softveru, AI integraciji, D365 F&amp;O rešenju ili punoj digitalnoj transformaciji.
+          </div>
+        </div>
+        <div class="box3-3 box3">
+          <div class="text1-1">3. Isporuka i podrška</div>
+          <div class="text2-2">Isporučujemo visokokvalitetna rešenja na vreme i pružamo kontinuiranu podršku,
+            optimizaciju i skalabilna rešenja koja rastu sa vašim poslovanjem.</div>
+        </div>
 
-  
-  <div class="div-h2"><h1 class="fade-element js-scroll">Trusted By Companies</h1></div>
-    <div class="logos-section">
-      
-      <div class="logos-container">
+      </div>
+
+      <div class="div-h2">
+        <h1 class="fade-element js-scroll">Ključni partneri</h1>
+      </div>
+      <div class="logos-section">
+
+        <div class="logos-container">
+          <div class="nepotrebni"></div>
           <div class="logo-item">
-              <img src="../images/partner1.png" alt="Client 1">
+            <img src="../images/partner5.webp" alt="Partner 1">
           </div>
           <div class="logo-item">
-              <img src="../images/partner2.jpg" alt="Client 2">
-          </div>
-          <div class="logo-item">
-              <img src="../images/partner3.png" alt="Client 3">
-          </div>
-          <div class="logo-item">
-              <img src="../images/parther4.png" alt="Client 4">
+            <img src="../images/partner6.webp" alt="Partner 2">
           </div>
           <div class="nepotrebni"></div>
-        <div class="logo-item">
-          <img src="../images/partner5.png" alt="Client 1">
         </div>
-        <div class="logo-item">
-            <img src="../images/partner6.png" alt="Client 2">
-        </div>
-        <div class="nepotrebni"></div>
       </div>
+
     </div>
 
-
-
-  <div class="new_footer">
-    
-    <div class="container">
-      <div class="container1"><img src="../img1-removebg-preview.png" class="logo-footer"></div>
-      <div class="container2">
-        <div class="div1">
-          <div class="footer1">MENI</div>
-          
+    <div class="new_footer">
+      <div class="container">
+        <div class="container1"><img src="../images/img1-removebg-preview.webp" class="logo-footer" alt="dragIT"></div>
+        <div class="container2">
+          <div class="div1">
+            <div class="footer1">MENI</div>
+            <div class="footer2"><a href="strategy.html">IT / AI strategija</a></div>
+            <div class="footer2"><a href="go_digital.html">Digitalna transformacija</a></div>
+            <div class="footer2"><a href="d365_f&o.html">D365 F&amp;O</a></div>
+            <div class="footer2"><a href="custom_software.html">Softverska rešenja</a></div>
+          </div>
+          <div class="div1">
+            <div class="footer1 footer1_1">KONTAKT</div>
+            <div class="footer2"><svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px"
+                viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
+                <path
+                  d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z" />
+              </svg>info@dragit.net</div>
+            <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
+                width="25px" fill="#5c5c5c">
+                <path
+                  d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
+              </svg>+387 65 384 235</div>
+            <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
+                width="25px" fill="#5c5c5c">
+                <path
+                  d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
+              </svg>+381 64 371 9470</div>
             <div class="footer2">
-              <a href="o-nama.html">O nama</a>
+              <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="25px" viewBox="0 -960 960 960" fill="none"
+                stroke="#5c5c5c" stroke-width="40">
+                <circle cx="480" cy="-480" r="400" />
+                <line x1="80" y1="-480" x2="880" y2="-480" />
+                <line x1="480" y1="-880" x2="480" y2="-80" />
+                <path d="M240-720 C400-600, 400-360, 240-240" />
+                <path d="M720-720 C560-600, 560-360, 720-240" />
+              </svg>www.dragit.net
             </div>
+          </div>
 
-            <div class="footer2">
-              <a href="usluge.html">Usluge</a>
-            </div>
-            <div class="footer2">
-              <a href="projekti.html">Projekti</a>
-            </div>
         </div>
-        <div class="div1">
-          <div class="footer1">KONTAKT</div>
-          <div class="footer2" id="text-to-copy"><svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px"  fill="#5c5c5c"><path d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z"/></svg>mimi@gmail.com <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" style="margin-left: 3px; cursor:pointer;" width="20px" fill="#666666"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg></div>
-          <div class="footer2" id="text-to-copy1"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"style="margin-left: 0px; cursor:pointer;" width="25px" fill="#5c5c5c"><path d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z"/></svg>+22348739824838 <svg class="copy-icon1"xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" style="margin-left: 3px; cursor:pointer;" width="20px" fill="#666666"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg></div>
-          <div class="footer2"><svg  xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg><a class="linkedin-logo" target="_blank" href="https://ba.linkedin.com/in/dragit">Linkedin Profil</a> </div>
+      </div>
+      <div class="w-layout-blockcontainer container-21 new w-container">
+        <div class="social_net">
+          <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
+            <img src="../images/linkedin_logo.png" class="tt-picture" alt="LinkedIn">
+          </a>
+
         </div>
-        
+        <div class="text-block-39">© 2025 — dragIT</div>
       </div>
-    </div>
-    <div class="w-layout-blockcontainer container-21 new w-container">
-      <div class="social_net">
-        <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="../images/facebook.svg">
-        </a>
-
-        <a href="https://www.youtube.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="../images/youtube.svg">
-        </a>
-
-        <a href="twitter.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="../images/x(1).png" class="x-picture">
-        </a>
-
-        <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="../images/instagram.svg">
-        </a>
-
-        <a href="tiktok.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="../images/tiktok.png" class="tt-picture">
-        </a>
-
-      </div>
-      <div class="text-block-39">© 2024 — Copyright</div>
     </div>
   </div>
-</div>
   <script>
-  const responsiveMenuButton=document.getElementById(
-    'responsiveMenuToggleButton'
-  );
-  const navBarLinks = document.querySelector('.bar')
-  responsiveMenuButton.addEventListener('click', ()=>{
-    navBarLinks.classList.toggle('open');
-    responsiveMenuButton.classList.toggle('open');
-  })
-
-  
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-            const logoItems = document.querySelectorAll('.logo-item');
-            const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '0px'
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        logoItems.forEach(item => {
-                            item.classList.add('active');
-                        });
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            observer.observe(document.querySelector('.logos-container'));
-        });
-
-
-
-        
-
-           // Detect when the element is in the viewport
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('scrolled');
-      // Optional: Stop observing after animation
-      observer.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
-
-// Apply to all elements with the .js-scroll class
-document.querySelectorAll('.js-scroll').forEach(el => {
-  observer.observe(el);
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-            const logoItems1 = document.querySelectorAll('.kf1');
-            const observerOptions1 = {
-                threshold: 0.2,
-                rootMargin: '0px'
-            };
-
-            const observer1 = new IntersectionObserver((entries, observer1) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        logoItems1.forEach(item => {
-                            item.classList.add('active');
-                        });
-                        observer1.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions1);
-
-            observer1.observe(document.querySelector('.key-frames'));
-        });
-        
-
-        const observer1 = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('scrolled');
-      // Optional: Stop observing after animation
-      observer1.unobserve(entry.target);
-    }
-  });
-}, { rootMargin: '0px 0px -20px 0px' }); // Adjust trigger point
-
-// Apply to all elements with the .js-scroll class
-document.querySelectorAll('.kf-naslovveliki').forEach(el => {
-  observer1.observe(el);
-});
-
-    document.querySelectorAll('.box1-1').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box1-2').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box1-3').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.naslovi').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.ono-dugacko').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.contact-us1').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.kf1-1').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-2').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-3').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-4').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-5').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-6').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-7').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.kf1-8').forEach(el => {
-  observer1.observe(el);
-});
-
-document.querySelectorAll('.box3-1').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.box3-2').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.box3-3').forEach(el => {
-  observer1.observe(el);
-});
-document.querySelectorAll('.box3-4').forEach(el => {
-  observer1.observe(el);
-});
-//copy-button
-document.querySelector('.copy-icon').addEventListener('click', function() {
-  const textToCopy = document.getElementById('text-to-copy').textContent;
-  
-  navigator.clipboard.writeText(textToCopy)
-    .then(() => {
-      alert('Text copied to clipboard!');
+    const responsiveMenuButton = document.getElementById(
+      'responsiveMenuToggleButton'
+    );
+    const navBarLinks = document.querySelector('.bar')
+    responsiveMenuButton && responsiveMenuButton.addEventListener('click', () => {
+      navBarLinks.classList.toggle('open');
+      responsiveMenuButton.classList.toggle('open');
     })
-    .catch(err => {
-      console.error('Failed to copy: ', err);
-    });
-});
-document.querySelector('.copy-icon1').addEventListener('click', function() {
-  const textToCopy = document.getElementById('text-to-copy1').textContent;
-  
-  navigator.clipboard.writeText(textToCopy)
-    .then(() => {
-      alert('Text copied to clipboard!');
-    })
-    .catch(err => {
-      console.error('Failed to copy: ', err);
-    });
-});
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  const element = document.querySelector('.key-frames');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Wait 1 second, then add the class (which triggers the transition)
+    // skrol na kontakt
+    document.querySelector(".contact-us")?.addEventListener("click", () => {
+      const footerTitle = document.querySelector(".footer1_1");
+      if (footerTitle) {
+        footerTitle.scrollIntoView({ behavior: "smooth" });
+        footerTitle.classList.add("highlight");
         setTimeout(() => {
-          entry.target.classList.add('active');
-        }, 300);
-      } else {
-        // Remove the class when exiting viewport (optional)
-        entry.target.classList.remove('active');
+          footerTitle.classList.remove("highlight");
+        }, 800);
       }
     });
-  }, { threshold: 0.2 }); // Trigger when 50% visible
+    document.querySelector(".contact-us1")?.addEventListener("click", () => {
+      const footerTitle = document.querySelector(".footer1_1");
+      if (footerTitle) {
+        footerTitle.scrollIntoView({ behavior: "smooth" });
+        footerTitle.classList.add("highlight");
+        setTimeout(() => {
+          footerTitle.classList.remove("highlight");
+        }, 800);
+      }
+    });
 
-  observer.observe(element);
-});
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoItems = document.querySelectorAll('.logo-item');
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            logoItems.forEach(item => {
+              item.classList.add('active');
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const logosContainer = document.querySelector('.logos-container');
+      if (logosContainer) observer.observe(logosContainer);
+    });
+
+    // Detect when the element is in the viewport
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scrolled');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -100px 0px' });
+
+    document.querySelectorAll('.js-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const logoItems1 = document.querySelectorAll('.kf1');
+      const observerOptions1 = {
+        threshold: 0.2,
+        rootMargin: '0px'
+      };
+
+      const observer1 = new IntersectionObserver((entries, observer1) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            logoItems1.forEach(item => {
+              item.classList.add('active');
+            });
+            observer1.unobserve(entry.target);
+          }
+        });
+      }, observerOptions1);
+
+      const keyFramesEl = document.querySelector('.key-frames');
+      if (keyFramesEl) observer1.observe(keyFramesEl);
+    });
+
+    const observer1 = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scrolled');
+          observer1.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.kf-naslovveliki').forEach(el => {
+      observer1.observe(el);
+    });
+
+    // ... observe other elements safely
+    document.querySelectorAll('.box1-1, .box1-2, .box1-3, .naslovi, .ono-dugacko, .contact-us1, .kf1-1, .kf1-2, .kf1-3, .kf1-4, .kf1-5, .kf1-6, .kf1-7, .kf1-8, .box3-1, .box3-2, .box3-3, .box3-4').forEach(el => {
+      observer1.observe(el);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const element = document.querySelector('.key-frames');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('active');
+            }, 800);
+          } else {
+            entry.target.classList.remove('active');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      element && observer.observe(element);
+    });
+
+    // Ako se stranica već nalazi u /sr/ folderu, prikaži sadržaj bez redirekcije
+    if (window.location.pathname.includes('/sr/')) {
+      document.getElementById('content').style.display = 'block';
+    } else {
+      // originalna logika za preusmeravanje po potrebi (ostavljena ali prilagođena)
+      const targetCountries = ['XX'];
+      function redirectToSerbian() {
+        window.location.href = 'sr/';
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const langEn = urlParams.get('lang');
+
+      if (langEn !== 'en') {
+        fetch('https://geolocation-db.com/json/')
+          .then(response => response.json())
+          .then(data => {
+            const countryCode = data.country_code;
+            if (targetCountries.includes(countryCode)) {
+              redirectToSerbian();
+            } else {
+              const overlay = document.getElementById('loading-overlay');
+              if (overlay) overlay.style.display = 'none';
+              document.getElementById('content').style.display = 'block';
+            }
+          })
+          .catch(error => {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) overlay.style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+          });
+      } else {
+        document.getElementById('content').style.display = 'block';
+      }
+    }
   </script>
 </body>
+
 </html>
