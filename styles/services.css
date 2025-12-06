@@ -60,8 +60,10 @@
   }
 
   .logo {
-      width: 12rem;
-      height: 3.1rem;
+        width: 9rem;
+        height: 2.5rem;
+        /*width: 12rem;
+        height: 3rem;*/
       line-height: 21px;
       filter: contrast(130%);
   }
