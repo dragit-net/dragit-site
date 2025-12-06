@@ -214,7 +214,7 @@ img {
 
 }
 
-.logo {
+logo. {
   width: 12rem;
   height: 3.1rem;
   line-height: 21px;
@@ -563,8 +563,10 @@ border-radius: 6px;
 }
 
 .logo1 {
-  width: 12rem;
-  height: 3rem;
+  width: 9rem;
+  height: 2.5rem;
+  /*width: 12rem;
+  height: 3rem;*/
   line-height: 21px;
   filter: contrast(130%);
   margin-top: 0.6rem;
@@ -628,12 +630,12 @@ border-radius: 6px;
 
   .logo {
     max-width: 150px;
-    height: 45px;
+    height: 35px;
   }
 
   .logo1 {
     max-width: 150px;
-    height: 45px;
+    height: 35px;
   }
 
   .text-block2 {
@@ -2294,9 +2296,12 @@ button {
             margin-top: 0px;
         }
 
+
         .logo {
-            width: 12rem;
-            height: 3.1rem;
+            width: 9rem;
+            height: 2.5rem;
+            /*width: 12rem;
+            height: 3rem;*/
             line-height: 21px;
             filter: contrast(130%);
         }
