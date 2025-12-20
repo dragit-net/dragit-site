@@ -761,3 +761,15 @@
       }
 
   }
+
+  .image-container {
+    display: flex;           /* omogućava fleks-kontejner */
+    justify-content: center; /* horizontalno centriranje */
+    align-items: center;     /* vertikalno centriranje ako je potrebno */
+}
+
+.image-container img {
+    max-width: 100%;   /* slika neće prelaziti širinu roditelja */
+    height: auto;      /* proporcionalno skaliranje visine */
+    display: block;    /* uklanja eventualni whitespace ispod slike */
+}
