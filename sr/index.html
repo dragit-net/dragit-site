@@ -644,7 +644,7 @@
       const langEn = urlParams.get('lang');
 
       if (langEn !== 'en') {
-        fetch('https://geolocation-db.com/json/')
+        fetch('https://ipwhois.app/json/')
           .then(response => response.json())
           .then(data => {
             const countryCode = data.country_code;
