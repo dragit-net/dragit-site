@@ -1690,6 +1690,7 @@ color:transparent; */
 }
 
 .cetiri {
+  padding-top: 20px;
   grid-column-gap: 1.52vw;
   grid-row-gap: 24px;
   text-align: center;
