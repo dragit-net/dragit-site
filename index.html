@@ -815,7 +815,7 @@
     if (langEn !== 'en') {
       // Dohvati geolokaciju preko IP-a2q
       // fetch('https://ipapi.co/json/')
-      fetch('https://geolocation-db.com/json/')
+      fetch('https://ipwhois.app/json/')
         .then(response => response.json())
         .then(data => {
           console.log('Geolokacija:', data); // <-- vidi ceo objekat
@@ -845,5 +845,6 @@
       document.getElementById('content').style.display = 'block';
   </script>
 </body>
+
 
 </html>
