@@ -38,7 +38,7 @@
         <div class="navbar">
           <div class="nav-container">
             <div class="div-with-pitcure">
-              <a class="linkedin-logo" href="index.html">
+              <a class="linkedin-logo" href="/sr/index.html">
                 <img class="logo" src="../images/img1-removebg-preview.webp" alt="dragIT logo">
               </a>
             </div>
@@ -481,7 +481,11 @@
 
     <div class="new_footer">
       <div class="container">
-        <div class="container1"><img src="../images/img1-removebg-preview.webp" class="logo-footer" alt="dragIT"></div>
+        <div class="container1">
+          <a class="linkedin-logo" href="/sr/index.html">
+            <img src="../images/img1-removebg-preview.webp" class="logo-footer" alt="dragIT">
+          </a>
+        </div>
         <div class="container2">
           <div class="div1">
             <div class="footer1">MENI</div>
@@ -556,16 +560,16 @@
     //     }, 800);
     //   }
     // });
-    document.querySelector(".contact-us1")?.addEventListener("click", () => {
-      const footerTitle = document.querySelector(".footer1_1");
-      if (footerTitle) {
-        footerTitle.scrollIntoView({ behavior: "smooth" });
-        footerTitle.classList.add("highlight");
-        setTimeout(() => {
-          footerTitle.classList.remove("highlight");
-        }, 800);
-      }
-    });
+    // document.querySelector(".contact-us1")?.addEventListener("click", () => {
+    //   const footerTitle = document.querySelector(".footer1_1");
+    //   if (footerTitle) {
+    //     footerTitle.scrollIntoView({ behavior: "smooth" });
+    //     footerTitle.classList.add("highlight");
+    //     setTimeout(() => {
+    //       footerTitle.classList.remove("highlight");
+    //     }, 800);
+    //   }
+    // });
 
     document.addEventListener('DOMContentLoaded', function () {
       const logoItems = document.querySelectorAll('.logo-item');
