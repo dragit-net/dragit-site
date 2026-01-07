@@ -1058,7 +1058,7 @@
             toolIcon = '<i class="fas fa-video"></i>';
             toolClass = 'online-tool';
             break;
-          case 'Uživo':
+          case 'Face-to-Face':
             toolIcon = '<i class="fas fa-handshake"></i>';
             toolClass = 'live-tool';
             break;
@@ -1075,7 +1075,7 @@
                             </div>
                         </div>
                         <div class="appointment-details">
-                            <div><i class="fas fa-user"></i> <strong>Korisnik:</strong> ${appointment.firstName} ${appointment.lastName}</div>
+                            <div><i class="fas fa-user"></i> <strong>User:</strong> ${appointment.firstName} ${appointment.lastName}</div>
                             <div><i class="far fa-envelope"></i> <strong>Email:</strong> ${appointment.email}</div>
                             ${appointment.phone ? `<div><i class="fas fa-phone"></i> <strong>Phone Number:</strong> ${appointment.phone}</div>` : ''}
                             <div><i class="far fa-clock"></i> <strong>Meeting Time:</strong> ${appointment.time}</div>
