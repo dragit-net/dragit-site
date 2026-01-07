@@ -54,7 +54,9 @@
             </div>
 
             <div class="div-button">
-                <button class="contact-us"><b>Zakažite sastanak</b></button>
+                <button class="contact-us">
+                    <a href="/sr/book_meeting.html"><b>Zakažite sastanak</b></a>
+                </button>
             </div>
 
         </div>
@@ -69,7 +71,7 @@
                 integracije i razvoj — od strategije do isporuke.
             </p>
             <p class="hero-cta">
-                <a class="btn btn1 btn-primary" href="#kontakt">Zakažite konsultacije</a>
+                <a class="btn btn1 btn-primary" href="/sr/book_meeting.html">Zakažite konsultacije</a>
                 <a class="btn btn2 btn-outline" href="#approach">Pogledajte našu ekspertizu</a>
             </p>
         </div>
@@ -231,7 +233,7 @@
                     </ul>
 
                     <p class="cta-row">
-                        <a class="btn btn1 btn-primary" href="#kontakt">Razgovarajte sa konsultantom</a>
+                        <a class="btn btn1 btn-primary" href="/sr/book_meeting.html">Razgovarajte sa konsultantom</a>
                         <a class="btn btn2 btn-outline" href="index.html">Pogledajte ostale servise</a>
                     </p>
                 </div>
@@ -258,7 +260,7 @@
                     Dobijte jasne preporuke, poboljšanje performansi i prilagođene ekstenzije koje odgovaraju
                     vašem poslovanju.
                 </p>
-                <a class="btn btn1 btn-hero" href="#kontakt">Zakažite konsultacije</a>
+                <a class="btn btn1 btn-hero" href="/sr/book_meeting.html">Zakažite konsultacije</a>
             </div>
         </div>
     </section>
@@ -342,18 +344,18 @@
             }
         });
 
-        document.querySelectorAll(".btn1").forEach(btn1 => {
-            btn1.addEventListener("click", (e) => {
-                e.preventDefault();
-                const footerEl = document.querySelector(".footer1_1");
-                if (footerEl) {
-                    footerEl.scrollIntoView({ behavior: "smooth" });
+        // document.querySelectorAll(".btn1").forEach(btn1 => {
+        //     btn1.addEventListener("click", (e) => {
+        //         e.preventDefault();
+        //         const footerEl = document.querySelector(".footer1_1");
+        //         if (footerEl) {
+        //             footerEl.scrollIntoView({ behavior: "smooth" });
 
-                    footerEl.classList.add("highlight");
-                    setTimeout(() => footerEl.classList.remove("highlight"), 800);
-                }
-            });
-        });
+        //             footerEl.classList.add("highlight");
+        //             setTimeout(() => footerEl.classList.remove("highlight"), 800);
+        //         }
+        //     });
+        // });
 
         document.querySelectorAll(".btn2").forEach(btn2 => {
             btn2.addEventListener("click", (e) => {

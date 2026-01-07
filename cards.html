@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @property --rotate {
+      syntax: "<angle>";
+      initial-value: 132deg;
+      inherits: false;
+    }
+
+    :root {
+      --card-height: 65vh;
+      --card-width: calc(var(--card-height) / 1.5);
+    }
+
+
+    body {
+      min-height: 100vh;
+      background: #212534;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      box-sizing: border-box;
+    }
+
+
+    .card {
+      background: #191c29;
+      width: var(--card-width);
+      height: var(--card-height);
+      padding: 3px;
+      position: relative;
+      border-radius: 6px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      display: flex;
+      font-size: 1.5em;
+      color: rgb(88 199 250 / 0%);
+      cursor: pointer;
+      font-family: cursive;
+    }
+
+    .card:hover {
+      color: rgb(88 199 250 / 100%);
+      transition: color 1s;
+    }
+
+    .card:hover:before,
+    .card:hover:after {
+      animation: none;
+      opacity: 0;
+    }
+
+
+    .card::before {
+      content: "";
+      width: 104%;
+      height: 102%;
+      border-radius: 8px;
+      background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      top: -1%;
+      left: -2%;
+      animation: spin 2.5s linear infinite;
+    }
+
+    .card::after {
+      position: absolute;
+      content: "";
+      top: calc(var(--card-height) / 6);
+      left: 0;
+      right: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      transform: scale(0.8);
+      filter: blur(calc(var(--card-height) / 6));
+      background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+      opacity: 1;
+      transition: opacity .5s;
+      animation: spin 2.5s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        --rotate: 0deg;
+      }
+
+      100% {
+        --rotate: 360deg;
+      }
+    }
+
+    a {
+      color: #212534;
+      text-decoration: none;
+      font-family: sans-serif;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+
+    .process {
+      background: #ffffff;
+      padding: 100px 5%;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .process h2 {
+      font-size: 48px;
+      font-weight: 800;
+      color: #0a1a3a;
+      letter-spacing: 2px;
+    }
+
+    .line {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #1f4fff, #00c6ff);
+      margin: 20px auto 60px;
+      border-radius: 5px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #0a1a3a, #102b5c);
+      color: #fff;
+      padding: 40px 30px;
+      border-radius: 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* glow efekat */
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(31, 79, 255, 0.35);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #dce6ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    Magic Card
+  </div>
+
+  <a href="https://mythrillfiction.com/" target="_blank">Mythrill</a>
+
+  <section class="process">
+    <h2>PROCES ISPORUKE</h2>
+    <div class="line"></div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>1. Analiza i predlog rešenja</h3>
+        <p>
+          Duboko analiziramo vaše poslovanje, otkrivamo izazove i prilike
+          i kreiramo prilagođenu strategiju koja daje maksimalne rezultate.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>2. Dizajn i realizacija</h3>
+        <p>
+          Od ideje do realizacije — dizajniramo i implementiramo softverska
+          rešenja, AI integracije i digitalne sisteme.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>3. Isporuka i podrška</h3>
+        <p>
+          Isporučujemo pouzdana rešenja na vreme i pružamo stalnu podršku,
+          optimizaciju i skaliranje.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

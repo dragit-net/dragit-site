@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem za Zakazivanje Sastanka</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Outfit, Arial;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      color-scheme: light !important;
+      overflow-x: hidden;
+      max-width: 100% !important;
+      width: 100%;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Hero Section Background (ako je potrebno) */
+    /* .hero_section {
+      background-color: #ffffff00;
+      background-position: center 14vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      width: 100vw;
+      overflow: visible;
+    } */
+
+    /* Navbar Styles */
+    .navbar {
+      background-color: white;
+      max-width: 100%;
+      padding-top: 1.25rem;
+      padding-bottom: 1.68rem;
+      z-index: 10;
+      position: relative !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 0 1.26rem rgba(0, 31, 134, 0.5);
+      background: transparent;
+      backdrop-filter: blur(17px);
+      animation: padni 0.7s ease-out forwards;
+      width: 100vw;
+    }
+
+    @keyframes padni {
+      0% {
+        opacity: 0;
+        transform: translateY(-100px);
+      }
+
+      80% {
+        opacity: 0.6;
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1.56rem;
+      padding-right: 1.56rem;
+      margin-top: 0px;
+    }
+
+    .logo {
+      width: 12rem;
+      height: 3.1rem;
+      line-height: 21px;
+      filter: contrast(130%);
+    }
+
+    /* Navigation Links */
+    .bar {
+      display: flex;
+      vertical-align: center;
+      justify-content: space-around;
+      flex: 1;
+    }
+
+    .bar a {
+      font-family: Outfit, Arial;
+      font-weight: 600;
+      text-decoration: none;
+      color: #000;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s;
+      font-family: Outfit, Arial;
+    }
+
+    .bar a:hover {
+      border-bottom: 1px solid rgba(0, 0, 74, 0.639);
+      border-top: 1px solid rgba(0, 0, 74, 0.639);
+    }
+
+    .bar div {
+      display: flex;
+      vertical-align: center;
+      max-width: 100%;
+    }
+
+    /* Contact Button */
+    .contact-us {
+      width: 12rem;
+      height: 4rem;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      font-weight: 500;
+
+      font-family: Outfit, Arial !important;
+      background-image: linear-gradient(to bottom right, rgb(16, 22, 88), rgb(10, 9, 40));
+      border: none;
+      /* background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%); */
+      border-radius: 100px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      transition: 0.5s box-shadow;
+      transition: 0.3s color;
+      align-items: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s ease-out;
+    }
+
+    .contact-us:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 46, 0.426);
+    }
+
+    .div-button {
+      display: flex;
+      vertical-align: center;
+    }
+
+    #responsiveMenuToggleButton {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    #responsiveMenuToggleButton svg {
+      height: 2.2rem;
+      width: 2.2rem;
+      border-radius: 3px;
+      color: rgb(1, 8, 90);
+      position: absolute;
+      top: 1.75rem;
+      right: 0.75rem;
+    }
+
+    #responsiveMenuToggleButton .openIcon {
+      display: block;
+    }
+
+    #responsiveMenuToggleButton .closeIcon {
+      display: none;
+    }
+
+    #responsiveMenuToggleButton.open .openIcon {
+      display: none;
+    }
+
+    #responsiveMenuToggleButton.open .closeIcon {
+      display: block;
+    }
+
+    @media screen and (max-width: 1200px) {
+      .bar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .contact-us {
+        display: none;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+        padding-top: 10px;
+      }
+
+      .logo {
+        margin-left: 10px;
+      }
+
+      .bar {
+        padding-top: 20px;
+      }
+
+      .bar.open {
+        display: block;
+      }
+
+      .bar a {
+        color: rgb(255, 255, 255);
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: rgb(8, 0, 53);
+      }
+
+      #responsiveMenuToggleButton {
+        display: block;
+        margin-top: 7px;
+      }
+
+      .bar {
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 479px) {
+      .hero_section {
+        height: auto;
+        padding: 0;
+        background-position: center 16vh;
+      }
+
+      .logo {
+        max-width: 150px;
+        height: 35px;
+      }
+
+      .layout {
+        flex-flow: column;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      .w-nav-brand {
+        padding-left: 10px;
+      }
+
+      .logo {
+        width: auto;
+        line-height: 21px;
+      }
+
+      .hero_section {
+        height: auto;
+        padding: 0;
+      }
+
+      .layout {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    @media screen and (max-width: 991px) {
+      .hero_section {
+        height: auto;
+        padding: 0;
+      }
+
+      .navbar {
+        position: sticky !important;
+      }
+    }
+
+    @media screen and (max-width: 630px) {
+      #responsiveMenuToggleButton {
+        margin-top: 0;
+      }
+
+      .contact-us {
+        display: none;
+      }
+
+      .navbar {
+        background-color: white;
+      }
+    }
+
+    @media screen and (max-width: 380px) {
+      .hero_section {
+        background-position: center 20vh;
+      }
+    }
+
+    button:focus {
+      outline: none !important;
+    }
+
+    a:focus {
+      outline: none !important;
+    }
+
+    button {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 60px !important;
+      padding: 0 10px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      background: linear-gradient(to right, #162a58, #091a3b);
+      background-image: linear-gradient(to bottom right, rgb(16, 22, 88), rgb(10, 9, 40));
+
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.161);
+    }
+
+    h1 {
+
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      font-family: Outfit, Arial;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .booking-form,
+    .appointments-list {
+      flex: 1;
+      min-width: 300px;
+      background-color: rgb(255, 255, 255);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .form-title {
+      font-size: 1.8rem;
+      color: #182848;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+      font-family: Outfit, Arial;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-family: Outfit, Arial;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .required::after {
+      content: " *";
+      color: #e74c3c;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: Outfit, Arial;
+      transition: border 0.3s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #4b6cb7;
+    }
+
+    .tool-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .tool-option {
+      display: flex;
+    }
+
+    .tool-option input[type="radio"] {
+      display: none;
+    }
+
+    .tool-option label {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 10px;
+      background-color: #f9f9f9;
+      border: 2px solid #eee;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+    }
+
+    .tool-option label i {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #1d3160;
+    }
+
+    .tool-option input[type="radio"]:checked+label {
+      background-color: #e8efff;
+      border-color: #4b6cb7;
+      color: #182848;
+    }
+
+    .tool-option label:hover {
+      background-color: #f0f5ff;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(to right, #162a58, #091a3b);
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s;
+      width: 100%;
+      margin-top: 10px;
+      font-family: Outfit, Arial;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(75, 108, 183, 0.3);
+    }
+
+    .btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .appointments-list h2 {
+      font-size: 1.8rem;
+      color: #182848;
+      margin-bottom: 25px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .appointment-item {
+      background-color: #f9f9f9;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border-left: 5px solid #20315d;
+      transition: transform 0.3s;
+    }
+
+    .appointment-item:hover {
+      transform: translateX(5px);
+    }
+
+    .appointment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .appointment-date {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #182848;
+    }
+
+    .appointment-tool {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: #e8efff;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #29427f;
+    }
+
+    .appointment-details {
+      color: #666;
+      margin-top: 10px;
+    }
+
+    .appointment-notes {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: white;
+      border-radius: 5px;
+      font-style: italic;
+    }
+
+    .empty-appointments {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+    }
+
+    .empty-appointments i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .notification {
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .notification.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .notification.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+    .service-options {
+      background-color: #f0f7ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      border-left: 4px solid #4b6cb7;
+      font-family: Outfit, Arial;
+    }
+
+    .service-options h3 {
+      color: #182848;
+      margin-bottom: 15px;
+      font-family: Outfit, Arial;
+    }
+
+    .service-options ul {
+      padding-left: 20px;
+      font-family: Outfit, Arial;
+    }
+
+    .service-options li {
+      margin-bottom: 10px;
+      font-family: Outfit, Arial;
+    }
+
+    @media (max-width: 1024px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      .form-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .booking-form,
+      .appointments-list {
+        padding: 20px;
+        width: 100%;
+        min-width: unset;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        font-size: 0.95rem;
+      }
+
+      .form-title {
+        font-size: 1.4rem;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 16px;
+        padding: 10px;
+      }
+
+      .btn {
+        padding: 12px;
+        font-size: 1rem;
+      }
+
+      .appointment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .appointment-date {
+        font-size: 1.1rem;
+      }
+
+      footer {
+        font-size: 0.8rem;
+        padding-top: 15px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <section class="hero_section">
+    <div class="navbar">
+      <div class="nav-container">
+        <div class="div-with-pitcure">
+          <a class="linkedin-logo" href="index.html">
+            <img class="logo" src="images/img1-removebg-preview.webp" alt="dragIT logo">
+          </a>
+        </div>
+
+        <button aria-label="toggle menu" id="responsiveMenuToggleButton">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="openIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="closeIcon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="bar">
+          <div>
+            <a href="index.html">Home</a>
+          </div>
+          <div>
+            <a href="strategy.html">IT / AI Strategy</a>
+          </div>
+          <div>
+            <a href="go_digital.html">Go Digital</a>
+          </div>
+          <div>
+            <a href="d365_f&o.html">D365 F&O</a>
+          </div>
+          <div>
+            <a href="custom_software.html">Custom Software</a>
+          </div>
+        </div>
+        <div class="div-button">
+          <button class="contact-us">
+            <a href="book_meeting.html"><b>Schedule Meeting</b></a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-calendar-alt"></i> Meeting Scheduling Form</h1>
+      <p class="subtitle">Select a date, time, and communication method</p>
+    </header>
+
+    <div id="notification" class="notification"></div>
+
+    <div class="content-wrapper">
+      <section class="booking-form">
+        <h2 class="form-title">Schedule a New Meeting</h2>
+        <form id="appointmentForm">
+          <div class="form-group">
+            <label for="firstName" class="required"><i class="fas fa-user"></i> Name</label>
+            <input type="text" id="firstName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName" class="required"><i class="fas fa-user"></i> Surname</label>
+            <input type="text" id="lastName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="required"><i class="fas fa-envelope"></i> Email</label>
+            <input type="email" id="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+            <input type="tel" id="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="appointmentDate" class="required"><i class="far fa-calendar"></i> Meeting Date</label>
+            <input type="date" id="appointmentDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="appointmentTime" class="required"><i class="far fa-clock"></i> Meeting Time</label>
+            <input type="time" id="appointmentTime" required>
+          </div>
+
+          <div class="form-group">
+            <label class="required"><i class="fas fa-tools"></i> Select Communication Method</label>
+            <div class="tool-options">
+              <div class="tool-option">
+                <input type="radio" id="toolPhone" name="communicationTool" value="Phone" checked>
+                <label for="toolPhone">
+                  <i class="fas fa-phone-alt"></i>
+                  <span>Phone Call</span>
+                </label>
+              </div>
+
+              <div class="tool-option">
+                <input type="radio" id="toolOnline" name="communicationTool" value="Online">
+                <label for="toolOnline">
+                  <i class="fas fa-video"></i>
+                  <span>Online</span>
+                </label>
+              </div>
+
+              <div class="tool-option">
+                <input type="radio" id="toolLive" name="communicationTool" value="Face-to-Face">
+                <label for="toolLive">
+                  <i class="fas fa-handshake"></i>
+                  <span>Face-to-Face</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="appointmentNotes"><i class="far fa-sticky-note"></i> Note</label>
+            <textarea id="appointmentNotes" placeholder="Add any additional notes regarding the meeting…"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="emailNotification" checked disabled>
+              <i class="fas fa-bell"></i> Send confirmation and reminder to our email
+            </label>
+          </div>
+
+          <button type="submit" class="btn" id="submitBtn">
+            <i class="fas fa-calendar-plus"></i> Schedule a Meeting
+          </button>
+        </form>
+
+        <!--         <div class="service-options">
+          <h3>Besplatni servisi za email obaveštenja:</h3>
+          <p>Za slanje automatskih email obaveštenja možete koristiti:</p>
+          <ul>
+            <li><strong>EmailJS</strong> - do 200 emailova mesečno besplatno</li>
+            <li><strong>Formspree</strong> - do 50 prijava mesečno besplatno</li>
+            <li><strong>Calendly</strong> - osnovni plan besplatan (preusmerava na eksterni kalendar)</li>
+          </ul>
+          <p style="font-family: Outfit, Arial;"><em>Napomena: Ovaj demo koristi simulaciju slanja emaila. Za pravu
+              implementaciju potrebno je podesiti
+              jedan od gore navedenih servisa.</em></p>
+        </div> -->
+      </section>
+
+      <section class="appointments-list">
+        <h2 class="form-title">Scheduled Meetings</h2>
+        <div id="appointmentsContainer">
+          <div class="empty-appointments">
+            <i class="far fa-calendar-times"></i>
+            <p>No meetings scheduled yet. Book your first meeting using the form.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>Meeting Scheduling System &copy; 2023. All rights reserved.</p>
+      <p>Supported Tools: Phone, Online Meeting, In-Person Meeting</p>
+    </footer>
+  </div>
+
+  <script>
+    // Toggle responzivan meni
+    const responsiveMenuButton = document.getElementById('responsiveMenuToggleButton');
+    const navBarLinks = document.querySelector('.bar');
+
+    responsiveMenuButton && responsiveMenuButton.addEventListener('click', () => {
+      navBarLinks.classList.toggle('open');
+      responsiveMenuButton.classList.toggle('open');
+    });
+
+
+    document.addEventListener('click', (event) => {
+      const isClickInsideMenu = navBarLinks.contains(event.target);
+      const isClickOnMenuButton = responsiveMenuButton.contains(event.target);
+
+      if (window.innerWidth <= 1200 && !isClickInsideMenu && !isClickOnMenuButton && navBarLinks.classList.contains('open')) {
+        navBarLinks.classList.remove('open');
+        responsiveMenuButton.classList.remove('open');
+      }
+    });
+
+    document.querySelectorAll('.bar a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1200) {
+          navBarLinks.classList.remove('open');
+          responsiveMenuButton.classList.remove('open');
+        }
+      });
+    });
+
+    // document.querySelector(".contact-us")?.addEventListener("click", () => {
+    //   // Ovde dodajte logiku za skrolovanje do kontakt sekcije
+    //   // ili otvaranje kontakt forme po potrebi
+    //   console.log("Contact button clicked");
+    //   // Primer: window.location.href = "contact.html";
+    // });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1200) {
+        navBarLinks.classList.remove('open');
+        responsiveMenuButton.classList.remove('open');
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('Navbar initialized');
+    });
+
+
+
+
+    // Postavi minimalni datum na današnji
+    document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+
+    // Postavi podrazumevano vreme na sledeći sat
+    const now = new Date();
+    const nextHour = new Date(now.getTime() + 60 * 60 * 1000);
+    const nextHourString = nextHour.getHours().toString().padStart(2, '0') + ':00';
+    document.getElementById('appointmentTime').value = nextHourString;
+
+    // Niz za čuvanje zakazanih sastanaka
+    let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
+
+    // Prikazivanje postojećih sastanaka prilikom učitavanja stranice
+    document.addEventListener('DOMContentLoaded', displayAppointments);
+
+    // Dodavanje event listenera za formu
+    document.getElementById('appointmentForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Onemogući dugme dok se ne završi proces
+      const submitBtn = document.getElementById('submitBtn');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Scheduling in progress…';
+
+      // Uzimanje vrednosti iz forme
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const date = document.getElementById('appointmentDate').value;
+      const time = document.getElementById('appointmentTime').value;
+      const tool = document.querySelector('input[name="communicationTool"]:checked').value;
+      const notes = document.getElementById('appointmentNotes').value;
+      const sendEmail = document.getElementById('emailNotification').checked;
+
+      // Formatiranje datuma za prikaz
+      const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+
+      // Kreiranje objekta sastanka
+      const appointment = {
+        id: Date.now(),
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        date: date,
+        formattedDate: formattedDate,
+        time: time,
+        tool: tool,
+        notes: notes,
+        createdAt: new Date().toISOString()
+      };
+
+      try {
+        // Simulacija slanja email obaveštenja
+        let emailSent = false;
+        if (sendEmail) {
+          emailSent = await sendEmailNotification(appointment);
+        }
+
+        // Dodavanje sastanka u niz
+        appointments.push(appointment);
+
+        // Čuvanje u localStorage
+        localStorage.setItem('appointments', JSON.stringify(appointments));
+
+        // Prikazivanje ažurirane liste
+        displayAppointments();
+
+        // Resetovanje forme
+        document.getElementById('appointmentForm').reset();
+
+        // Postavljanje minimalnog datuma i podrazumevanog vremena
+        document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
+        document.getElementById('appointmentTime').value = nextHourString;
+
+        // Prikaz poruke o uspešnom zakazivanju
+        showNotification(`Meeting successfully scheduled!${emailSent ? ' We’ve sent a confirmation to your email.' : ''}`, 'success');
+
+      } catch (error) {
+        console.error('Scheduling Error:', error);
+        showNotification('There was an error scheduling the meeting. Please try again.', 'error');
+      } finally {
+        // Ponovo omogući dugme
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-calendar-plus"></i> Book a Meeting';
+      }
+    });
+
+    // Funkcija za prikazivanje sastanaka
+    function displayAppointments() {
+      const container = document.getElementById('appointmentsContainer');
+
+      // Ako nema sastanaka
+      if (appointments.length === 0) {
+        container.innerHTML = `
+                    <div class="empty-appointments">
+                        <i class="far fa-calendar-times"></i>
+                        <p>No meetings scheduled yet. Book your first meeting using the form.</p>
+                    </div>
+                `;
+        return;
+      }
+
+      // Sortiranje sastanaka po datumu (najraniji prvi)
+      appointments.sort((a, b) => new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time));
+
+      // Generisanje HTML za sastanke
+      let appointmentsHTML = '';
+
+      appointments.forEach(appointment => {
+        // Određivanje ikone za način komunikacije
+        let toolIcon = '';
+        let toolClass = '';
+
+        switch (appointment.tool) {
+          case 'Phone':
+            toolIcon = '<i class="fas fa-phone-alt"></i>';
+            toolClass = 'phone-tool';
+            break;
+          case 'Online':
+            toolIcon = '<i class="fas fa-video"></i>';
+            toolClass = 'online-tool';
+            break;
+          case 'Uživo':
+            toolIcon = '<i class="fas fa-handshake"></i>';
+            toolClass = 'live-tool';
+            break;
+        }
+
+        appointmentsHTML += `
+                    <div class="appointment-item" data-id="${appointment.id}">
+                        <div class="appointment-header">
+                            <div class="appointment-date">
+                                <i class="far fa-calendar"></i> ${appointment.formattedDate}
+                            </div>
+                            <div class="appointment-tool ${toolClass}">
+                                ${toolIcon} ${appointment.tool}
+                            </div>
+                        </div>
+                        <div class="appointment-details">
+                            <div><i class="fas fa-user"></i> <strong>Korisnik:</strong> ${appointment.firstName} ${appointment.lastName}</div>
+                            <div><i class="far fa-envelope"></i> <strong>Email:</strong> ${appointment.email}</div>
+                            ${appointment.phone ? `<div><i class="fas fa-phone"></i> <strong>Phone Number:</strong> ${appointment.phone}</div>` : ''}
+                            <div><i class="far fa-clock"></i> <strong>Meeting Time:</strong> ${appointment.time}</div>
+                            <div><i class="fas fa-tools"></i> <strong>Communication Method:</strong> ${appointment.tool}</div>
+                        </div>
+                        ${appointment.notes ? `<div class="appointment-notes"><i class="far fa-sticky-note"></i> <strong>Note:</strong> ${appointment.notes}</div>` : ''}
+                        <button class="cancel-btn" onclick="cancelAppointment(${appointment.id})" style="margin-top: 10px; padding: 5px 15px; background-color: #ffebee; color: #c62828; border: 1px solid #ffcdd2; border-radius: 5px; cursor: pointer; font-size: 0.9rem;">
+                            <i class="fas fa-times-circle"></i> Cancel Meeting
+                        </button>
+                    </div>
+                `;
+      });
+
+      container.innerHTML = appointmentsHTML;
+    }
+
+    function cancelAppointment(id) {
+      if (!confirm('Are you sure you want to cancel this meeting?')) return;
+
+      // Pronađi sastanak po ID-u
+      let appointment = appointments.find(app => app.id === id);
+
+      if (!appointment) {
+        showNotification('Meeting not found.', 'error');
+        return;
+      }
+
+      // Pošalji email otkazivanja
+      emailjs.send('service_h3zp9ie', 'template_otkazivanje', {
+        to_name: `${appointment.firstName} ${appointment.lastName}`,
+        to_email: appointment.email,
+        date: appointment.formattedDate,
+        time: appointment.time,
+        tool: appointment.tool,
+        notes: appointment.notes,
+        phone: appointment.phone,
+        subject: 'Cancellation of Meeting',
+        title: 'The meeting has been canceled.',
+        //footer: 'Thank you, and we look forward to the meeting!',
+        label_name: 'Name',
+        label_email: 'Email',
+        label_tool: 'Communication Method',
+        label_phone: 'Phone Number',
+        label_date_time: 'Date & Time',
+        label_notes: 'Notes'
+      })
+        .then(() => {
+          // Samo ako je email uspešno poslat, briši sastanak
+          appointments = appointments.filter(app => app.id !== id);
+          localStorage.setItem('appointments', JSON.stringify(appointments));
+          displayAppointments();
+          showNotification('Meeting successfully canceled. Confirmation email sent.', 'success');
+        })
+        .catch(() => {
+          showNotification('An error occurred while sending the email. The meeting was not canceled.', 'error');
+        });
+    }
+
+
+    // Funkcija za prikazivanje notifikacija
+    function showNotification(message, type) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = `notification ${type}`;
+      notification.style.display = 'block';
+
+      // Sakrij notifikaciju nakon 5 sekundi
+      setTimeout(() => {
+        notification.style.display = 'none';
+      }, 5000);
+    }
+
+    // Simulacija slanja email obaveštenja
+    // U realnoj implementaciji ovo bi bilo zamenjeno sa EmailJS, Formspree ili sličnim servisom
+    async function sendEmailNotification(appointment) {
+      // Simuliramo API poziv
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('Email notification sent to:', appointment.email);
+          console.log('Email Content:');
+          console.log('---');
+          console.log(`Dear ${appointment.firstName} ${appointment.lastName},`);
+          console.log(`Your meeting is scheduled for ${appointment.formattedDate} u ${appointment.time}.`);
+          console.log(`Communication Method:${appointment.tool}`);
+          if (appointment.notes) console.log(`Your Note: ${appointment.notes}`);
+          console.log('Thank you for scheduling!');
+          console.log('---');
+
+          // U realnoj implementaciji ovde bi bio kod za slanje emaila
+          // Primer za EmailJS (zahteva registraciju na emailjs.com):
+
+          emailjs.send('service_h3zp9ie', 'template_korisnik', {
+            to_name: `${appointment.firstName} ${appointment.lastName}`,
+            to_email: appointment.email,
+            date: appointment.formattedDate,
+            time: appointment.time,
+            tool: appointment.tool,
+            notes: appointment.notes,
+            phone: appointment.phone,
+            subject: 'Meeting Scheduled Successfully',
+            title: 'Scheduled a New Meeting',
+            footer: 'Thank you, and we look forward to the meeting!',
+            label_name: 'Name',
+            label_email: 'Email',
+            label_tool: 'Communication Method',
+            label_phone: 'Phone Number',
+            label_date_time: 'Date & Time',
+            label_notes: 'Notes'
+          })
+            .then(() => resolve(true))
+            .catch(() => resolve(false));
+
+
+          resolve(true);
+        }, 1000);
+      });
+    }
+
+    // Primer integracije sa Calendly (eksterni servis)
+    function openCalendly() {
+      // Calendly otvara prozor za zakazivanje
+      // Potrebno je napraviti nalog na calendly.com
+      window.open('https://calendly.com/your-username', '_blank');
+    }
+
+  </script>
+
+  <!-- Primer koda za integraciju sa EmailJS (zahteva registraciju) -->
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // Inicijalizacija EmailJS (zamenite USER_ID sa vašim)
+    emailjs.init("i1p0W5B3E7I--jYYV"); //   public key
+  </script>
+
+</body>
+
+</html>
