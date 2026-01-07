@@ -58,7 +58,7 @@
             </div>
             <div class="div-button">
                 <button class="contact-us">
-                    <b>Schedule Meeting</b>
+                    <a href="book_meeting.html"><b>Schedule Meeting</b></a>
                 </button>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 measurable performance and agility.
             </p>
             <p class="hero-cta">
-                <a class="btn btn1 btn-primary skroluj ">Start your transformation</a>
+                <a class="btn btn1 btn-primary skroluj " href="book_meeting.html">Start your transformation</a>
                 <a class="btn btn2 btn-outline" href="#approach">See how we help</a>
             </p>
         </div>
@@ -213,7 +213,7 @@
                         <li>Independent, transparent advisory free from vendor bias</li>
                     </ul>
                     <p class="cta-row">
-                        <a class="btn btn1 btn-primary skroluj" href="/contact">Talk to a consultant</a>
+                        <a class="btn btn1 btn-primary skroluj" href="book_meeting.html">Talk to a consultant</a>
                         <a class="btn btn2 btn-outline" href="/services">Explore our services</a>
                     </p>
                 </div>
@@ -235,7 +235,7 @@
             <div class="promo">
                 <h2>Ready to start your digital transformation?</h2>
                 <p class="lead">We turn transformation from buzzword to measurable business success.</p>
-                <a class="btn btn1 btn-hero" href="footer1_1">Book a consultation</a>
+                <a class="btn btn1 btn-hero" href="book_meeting.html">Book a consultation</a>
             </div>
         </div>
     </section>
@@ -338,31 +338,31 @@
         });
 
 
-        document.querySelector(".contact-us").addEventListener("click", () => {
-            const footerTitle = document.querySelector(".footer1_1");
-            if (footerTitle) {
-                footerTitle.scrollIntoView({ behavior: "smooth" });
+        // document.querySelector(".contact-us").addEventListener("click", () => {
+        //     const footerTitle = document.querySelector(".footer1_1");
+        //     if (footerTitle) {
+        //         footerTitle.scrollIntoView({ behavior: "smooth" });
 
-                // kratko naglašavanje naslova
-                footerTitle.classList.add("highlight");
-                setTimeout(() => {
-                    footerTitle.classList.remove("highlight");
-                }, 800); // efekat traje 0.8 sekundi
-            }
-        });
-        document.querySelectorAll(".btn1").forEach(btn1 => {
-            btn1.addEventListener("click", (e) => {
-                e.preventDefault();
-                const footerEl = document.querySelector(".footer1_1");
-                if (footerEl) {
-                    footerEl.scrollIntoView({ behavior: "smooth" });
+        //         // kratko naglašavanje naslova
+        //         footerTitle.classList.add("highlight");
+        //         setTimeout(() => {
+        //             footerTitle.classList.remove("highlight");
+        //         }, 800); // efekat traje 0.8 sekundi
+        //     }
+        // });
+        // document.querySelectorAll(".btn1").forEach(btn1 => {
+        //     btn1.addEventListener("click", (e) => {
+        //         e.preventDefault();
+        //         const footerEl = document.querySelector(".footer1_1");
+        //         if (footerEl) {
+        //             footerEl.scrollIntoView({ behavior: "smooth" });
 
-                    // dodaj highlight efekat
-                    footerEl.classList.add("highlight");
-                    setTimeout(() => footerEl.classList.remove("highlight"), 800);
-                }
-            });
-        });
+        //             // dodaj highlight efekat
+        //             footerEl.classList.add("highlight");
+        //             setTimeout(() => footerEl.classList.remove("highlight"), 800);
+        //         }
+        //     });
+        // });
 
 
         document.querySelectorAll(".btn2").forEach(btn2 => {

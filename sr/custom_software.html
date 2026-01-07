@@ -56,7 +56,9 @@
             </div>
 
             <div class="div-button">
-                <button class="contact-us"><b>Zakažite sastanak</b></button>
+                <button class="contact-us">
+                    <a href="/sr/book_meeting.html"><b>Zakažite sastanak</b></a>
+                </button>
             </div>
 
         </div>
@@ -75,7 +77,7 @@
             </p>
 
             <p class="hero-cta">
-                <a class="btn btn1 btn-primary" href="#kontakt">Razgovarajmo o projektu</a>
+                <a class="btn btn1 btn-primary" href="/sr/book_meeting.html">Razgovarajmo o projektu</a>
                 <a class="btn btn2 btn-outline" href="#approach">Saznajte kako radimo</a>
             </p>
 
@@ -237,7 +239,7 @@
                     </ul>
 
                     <p class="cta-row">
-                        <a class="btn btn1 btn-primary" href="#kontakt">Razgovarajmo o projektu</a>
+                        <a class="btn btn1 btn-primary" href="/sr/book_meeting.html">Razgovarajmo o projektu</a>
                         <a class="btn btn2 btn-outline" href="index.html">Pogledajte ostale servise</a>
                     </p>
 
@@ -263,7 +265,7 @@
             <div class="promo">
                 <h2>Napravite softver koji odgovara vašem biznisu</h2>
                 <p class="lead">Pretvorite svoju ideju u stabilno, skalabilno i efikasno rešenje.</p>
-                <a class="btn btn1 btn-hero" href="#kontakt">Zakažite konsultacije</a>
+                <a class="btn btn1 btn-hero" href="/sr/book_meeting.html">Zakažite konsultacije</a>
             </div>
         </div>
     </section>
@@ -346,15 +348,15 @@
             setTimeout(() => el.classList.remove("highlight"), 800);
         });
 
-        document.querySelectorAll(".btn1").forEach(b =>
-            b.addEventListener("click", (e) => {
-                e.preventDefault();
-                const el = document.querySelector(".footer1_1");
-                el.scrollIntoView({ behavior: "smooth" });
-                el.classList.add("highlight");
-                setTimeout(() => el.classList.remove("highlight"), 800);
-            })
-        );
+        // document.querySelectorAll(".btn1").forEach(b =>
+        //     b.addEventListener("click", (e) => {
+        //         e.preventDefault();
+        //         const el = document.querySelector(".footer1_1");
+        //         el.scrollIntoView({ behavior: "smooth" });
+        //         el.classList.add("highlight");
+        //         setTimeout(() => el.classList.remove("highlight"), 800);
+        //     })
+        // );
 
         document.querySelectorAll(".btn2").forEach(b =>
             b.addEventListener("click", (e) => {

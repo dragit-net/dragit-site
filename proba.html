@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .naslovi {
+      text-align: center;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+
+      /* RESPONSIVE SIZE */
+      font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+
+      /* PREMIUM GRADIENT TEXT */
+      background: linear-gradient(180deg,
+          #0b1c6d 0%,
+          #050a2a 60%,
+          #000000 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      /* SUBTLE DEPTH (no neon) */
+      text-shadow:
+        0 2px 6px rgba(11, 28, 109, 0.25);
+
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+
+    .naslovi::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -18px;
+
+      width: 56px;
+      height: 3px;
+
+      background: linear-gradient(90deg,
+          #5b7cfa,
+          #00c6ff);
+
+      border-radius: 2px;
+    }
+
+    @media (max-width: 480px) {
+      .naslovi {
+        letter-spacing: -0.01em;
+        margin-bottom: 2.5rem;
+      }
+
+      .naslovi::after {
+        width: 40px;
+      }
+    }
+
+    .copy-btn {
+      font-size: 16px;
+      font-family: Outfit, Arial;
+      padding: 2px 18px;
+      cursor: pointer;
+    }
+
+    /* TOAST */
+    .copy-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      font-family: Outfit, Arial;
+      transform: translateX(-50%) scale(0.95);
+      background: #2d2d2da5;
+      color: #fff;
+      padding: 10px 28px;
+      border-radius: 20px;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .copy-toast svg {
+      vertical-align: middle;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="naslovi">Zašto naša rešenja</p>
+
+
+  <div class="hover-box">Hover me!</div>
+
+
+  <a href="https://www.dragit.net" id="copyLink" target="_blank">
+    www.dragit.net
+  </a>
+
+  <button class="copy-btn" onclick="copyText()">
+    Copy
+  </button>
+
+  <div class="copy-toast" id="copyToast"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+      width="20px" fill="#FFFFFF">
+      <path d="M389-267 195-460l51-52 143 143 325-324 51 51-376 375Z" />
+    </svg> Copied</div>
+
+
+
+</body>
+<script>
+  function copyText() {
+    const text = document.getElementById("copyLink").href;
+    const toast = document.getElementById("copyToast");
+
+    navigator.clipboard.writeText(text).then(() => {
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 1300);
+    });
+  }
+</script>
+
+
+</html>
