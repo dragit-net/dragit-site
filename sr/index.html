@@ -80,6 +80,31 @@
             </div>
           </div>
         </div>
+
+
+        <button id="switchToEN">EN</button>
+
+        <script>
+          document.getElementById("switchToEN").addEventListener("click", function () {
+            localStorage.setItem("fromSR", "true");
+            window.location.href = "index.html";
+          });
+        </script>
+        <button id="switchToSR" style="display:none;">SR</button>
+
+        <script>
+          if (localStorage.getItem("fromSR") === "true") {
+            document.getElementById("switchToSR").style.display = "inline-block";
+          }
+
+          document.getElementById("switchToSR").addEventListener("click", function () {
+            localStorage.removeItem("fromSR");
+            window.location.href = "/sr";
+          });
+        </script>
+
+
+
         <div class="layout">
           <div class="tanglineinner">
             <img class="rocket-icon" src="../images/rocket-icon.webp" alt="rocket">
@@ -535,7 +560,7 @@
           </a>
 
         </div>
-        <div class="text-block-39">© 2025 — dragIT</div>
+        <div class="text-block-39">© 2026 — dragIT</div>
       </div>
     </div>
   </div>
