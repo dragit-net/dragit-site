@@ -959,7 +959,10 @@
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
       const date = document.getElementById('appointmentDate').value;
-      const time = document.getElementById('appointmentTime').value;
+      //const time = document.getElementById('appointmentTime').value;
+      const rawTime = document.getElementById('appointmentTime').value;
+      const time = buildTimeWithZones(date, rawTime);
+
       const tool = document.querySelector('input[name="communicationTool"]:checked').value;
       const notes = document.getElementById('appointmentNotes').value;
       const sendEmail = document.getElementById('emailNotification').checked;
@@ -1200,6 +1203,29 @@
       // Potrebno je napraviti nalog na calendly.com
       window.open('https://calendly.com/your-username', '_blank');
     }
+
+    function buildTimeWithZones(date, time) {
+      const clientTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const dragitTZ = "Europe/Belgrade";
+
+      const localDateTime = new Date(`${date}T${time}`);
+
+      const clientTime = new Intl.DateTimeFormat("en-US", {
+        timeStyle: "short",
+        timeZone: clientTZ
+      }).format(localDateTime);
+
+      const dragitTime = new Intl.DateTimeFormat("en-US", {
+        timeStyle: "short",
+        timeZone: dragitTZ
+      }).format(localDateTime);
+
+      const shortClientTZ = clientTZ.split('/').pop().replace('_', ' ');
+      const shortDragitTZ = "CET";
+
+      return `${clientTime} (${shortClientTZ}) / ${dragitTime} (${shortDragitTZ})`;
+    }
+
 
   </script>
 
