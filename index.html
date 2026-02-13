@@ -834,12 +834,14 @@
     if (langEn !== 'en') {
       // Dohvati geolokaciju preko IP-a2q
       // fetch('https://ipapi.co/json/')
-      fetch('https://ipwhois.app/json/')
+      // fetch('https://ipwhois.app/json/')
+      fetch('https://country.is/')
+
         .then(response => response.json())
         .then(data => {
           console.log('Geolokacija:', data); // <-- vidi ceo objekat
-          const countryCode = data.country_code;
-
+          //const countryCode = data.country_code;
+          const countryCode = data.country;
           if (targetCountries.includes(countryCode)) {
             redirectToSerbian();
           } else {

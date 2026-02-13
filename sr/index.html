@@ -702,10 +702,12 @@
       const langEn = urlParams.get('lang');
 
       if (langEn !== 'en') {
-        fetch('https://ipwhois.app/json/')
+        //   fetch('https://ipwhois.app/json/')
+        fetch('https://country.is/')
           .then(response => response.json())
           .then(data => {
-            const countryCode = data.country_code;
+            //      const countryCode = data.country_code;
+            const countryCode = data.country;
             if (targetCountries.includes(countryCode)) {
               redirectToSerbian();
             } else {
