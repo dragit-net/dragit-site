@@ -1,420 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamics 365 F&O Consulting & Development | dragIT</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/services.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D365 F&amp;O Delivery &amp; Observability | dragIT</title>
+  <meta name="description" content="Dynamics 365 F&O consulting, implementation, migration, integration and custom development — plus real-time observability (Mission Control). From strategy to go-live to monitoring.">
+  <meta property="og:title" content="D365 F&O Delivery & Observability — dragIT">
+  <meta property="og:description" content="D365 F&O implementation and a real-time monitoring layer. See your ERP before your users do.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.dragit.net/d365_f&amp;o.html">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/design-system.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-BTF2W65KZB');
+  </script>
 </head>
-
 <body>
-    <!-- Navigation -->
-    <div class="navbar">
-        <div class="nav-container">
-            <div class="div-with-pitcure"><a class="linkedin-logo" href="index.html">
-                    <img class="logo" src="img1-removebg-preview.png">
-                </a>
-            </div>
-            <button aria-label="toggle menu" id="responsiveMenuToggleButton">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="openIcon">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="closeIcon">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
 
-
-            </button>
-
-            <div class="bar">
-                <div>
-                    <a href="index.html">Home</a>
-                </div>
-                <div>
-                    <a href="strategy.html">IT / AI Strategy</a>
-                </div>
-                <div>
-                    <a href="go_digital.html">Go Digital</a>
-                </div>
-                <div>
-                    <a href="d365_f&o.html"
-                        style="border-bottom: 2px solid rgb(0, 0, 88); border-top: 2px solid rgb(0, 0, 98);">D365
-                        F&O</a>
-                </div>
-                <div>
-                    <a href="custom_software.html">Custom Software</a>
-                </div>
-            </div>
-            <div class="div-button">
-                <button class="contact-us">
-                    <a href="book_meeting.html"><b>Schedule Meeting</b></a>
-                </button>
-            </div>
-        </div>
+<nav class="nav">
+  <div class="container">
+    <a class="nav-logo" href="/">dragIT</a>
+    <ul class="nav-links">
+      <li><a href="index.html#niches">Services</a></li>
+      <li><a href="cases.html">Case Studies</a></li>
+      <li><a href="d365_f&amp;o.html" class="nav-active">D365 F&amp;O</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="book_meeting.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="/sr/d365_f&amp;o.html">SR</a>
+        <a href="/d365_f&amp;o.html" class="active">EN</a>
+      </div>
+      <a class="btn btn-primary nav-cta" href="book_meeting.html">Book a Call</a>
     </div>
+  </div>
+</nav>
 
-    <!-- HERO -->
-    <section class="services-hero">
-        <div class="services-hero-content">
-            <h1>Dynamics 365 F&O Consulting & Development</h1>
-            <p class="lead">
-                Optimize your business operations with tailored D365 Finance & Operations consulting, integration, and
-                custom development — from strategy to delivery.
-            </p>
-            <p class="hero-cta">
-                <a class="btn btn1 btn-primary" href="book_meeting.html">Request a consultation</a>
-                <a class="btn btn2 btn-outline" href="#approach">See our expertise</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section id="problem" class="section">
-        <div class="container">
-            <div class="section-inner">
-                <div class="col">
-                    <h2>The challenge</h2>
-                    <p>
-                        Many organizations face performance bottlenecks, customization complexity, or poor user adoption
-                        in their D365 F&O environments.
-                        Our mission is to help companies <strong>design, extend, and optimize</strong> their Dynamics
-                        ecosystem — ensuring agility, compliance, and scalability.
-                    </p>
-
-                    <ul class="bullet-list">
-                        <li>Complex and slow customizations that block upgrades</li>
-                        <li>Underused standard features due to limited training</li>
-                        <li>Integration issues across ERP, CRM, and third-party systems</li>
-                        <li>High cost of change and delayed project delivery</li>
-                    </ul>
-
-                    <p class="muted">We turn Dynamics challenges into measurable business improvements.</p>
-                </div>
-
-                <div class="col">
-                    <figure class="figure">
-                        <img src="images/erp1.jpg" class="meeting"
-                            alt="ERP consultants optimizing finance and operations">
-                        <figcaption>From diagnostics to full-cycle implementation and support.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section id="approach" class="section section--light">
-        <div class="container">
-            <h2 class="fufi">Our consulting & development approach</h2>
-
-            <div class="features">
-                <article class="feature">
-                    <h3>Solution Architecture</h3>
-                    <p>We design scalable D365 F&O architectures aligned with your business model — secure, modular, and
-                        cloud-ready.</p>
-                </article>
-
-                <article class="feature">
-                    <h3>Process Optimization</h3>
-                    <p>We improve financial, supply chain, and production processes by leveraging standard D365
-                        capabilities and automation tools.</p>
-                </article>
-
-                <article class="feature">
-                    <h3>Customization & Extensions</h3>
-                    <p>We develop lightweight extensions using X++, Power Platform, and Azure services — upgrade-safe
-                        and performance-optimized.</p>
-                </article>
-
-                <article class="feature">
-                    <h3>System Integration</h3>
-                    <p>We connect D365 with third-party systems (MES, WMS, CRM, BI) using OData, REST APIs, and Azure
-                        Integration Services.</p>
-                </article>
-
-                <article class="feature">
-                    <h3>Performance & Support</h3>
-                    <p>We monitor and fine-tune performance, ensuring stability, reliability, and continuous improvement
-                        of your ERP environment.</p>
-                </article>
-
-                <article class="feature">
-                    <h3>Training & Enablement</h3>
-                    <p>We provide targeted training to key users and IT teams — accelerating adoption and internal
-                        capability growth.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES -->
-    <section id="use-cases" class="section">
-        <div class="container">
-            <h2>Use cases</h2>
-
-            <div class="cards">
-                <article class="card">
-                    <img src="images/erp22.jpg" alt="Finance automation in Dynamics 365">
-                    <div class="card-body">
-                        <h3>Finance Process Automation</h3>
-                        <p>
-                            A multinational manufacturer reduced month-end closing time by <strong>30%</strong> using
-                            D365 automation and Power Automate integrations.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="images/erp3.jpg" alt="Supply chain analytics dashboard">
-                    <div class="card-body">
-                        <h3>Supply Chain Visibility</h3>
-                        <p>
-                            A distribution company improved delivery accuracy by <strong>20%</strong> and reduced
-                            inventory costs by <strong>10%</strong> through D365 and Power BI integration.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <img src="images/erp4.svg" alt="Custom development for ERP systems">
-                    <div class="card-body">
-                        <h3>Custom Extensions & Integrations</h3>
-                        <p>
-                            A logistics enterprise integrated external WMS and invoicing systems with D365, reducing
-                            manual entry by <strong>35%</strong> and improving data accuracy.
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- OBSERVABILITY / MISSION CONTROL TEASER -->
-    <section id="observability" class="section section--light">
-        <div class="container">
-            <h2 class="fufi" style="text-align:center;">See your ERP before your users do</h2>
-            <p class="lead" style="text-align:center;max-width:640px;margin:0 auto 28px;">
-                Beyond delivery — real-time observability of the D365 F&amp;O systems your business runs on.
-                Built for teams who need to catch failures, batch jobs and integration issues <em>before</em> they become incidents.
-            </p>
-
-            <div class="features" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
-                <article class="feature" style="text-align:center;">
-                    <h3 style="font-size:1rem;">Order &amp; Load Flow</h3>
-                    <p>Live view of sales orders, load and NVV process across environments (UAT/TRAIN/PROD).</p>
-                </article>
-                <article class="feature" style="text-align:center;">
-                    <h3 style="font-size:1rem;">Batch Job Health</h3>
-                    <p>Critical and high-priority batch jobs monitored in real time, with drill-down to root cause.</p>
-                </article>
-                <article class="feature" style="text-align:center;">
-                    <h3 style="font-size:1rem;">DMF / BizTalk Integration</h3>
-                    <p>Integration pipelines (DMF, BizTalk/TCS) visible alongside ERP — no blind spots.</p>
-                </article>
-                <article class="feature" style="text-align:center;">
-                    <h3 style="font-size:1rem;">IT / App Insights</h3>
-                    <p>Azure Application Insights and Log Analytics (ADX + KQL) as the monitoring backbone.</p>
-                </article>
-            </div>
-
-            <p class="cta-row" style="text-align:center;margin-top:24px;">
-                <a class="btn btn1 btn-primary" href="book_meeting.html">See it on your environment</a>
-                <a class="btn btn2 btn-outline" href="cases.html">See a live reference</a>
-            </p>
-        </div>
-    </section>
-
-    <!-- WHY DRAGIT -->
-    <section id="why" class="section section--accent">
-        <div class="container">
-            <div class="section-inner">
-                <div class="col">
-                    <h2>Why dragIT</h2>
-                    <ul class="bullet-list">
-                        <li>20+ years of experience in ERP implementation and software engineering</li>
-                        <li>Deep knowledge of X++, OData, and Power Platform extensions</li>
-                        <li>Proven track record in process digitalization and system integration</li>
-                        <li>Strong focus on performance, upgrade safety, and maintainability</li>
-                    </ul>
-                    <p class="cta-row">
-                        <a class="btn btn1 btn-primary" href="book_meeting.html">Talk to an expert</a>
-                        <a class="btn btn2 btn-outline" href="index.html">Explore other services</a>
-                    </p>
-                </div>
-
-                <div class="col">
-                    <figure class="figure">
-                        <img src="images/erp5.jpg" alt="ERP consultants at work">
-                        <figcaption>Partnering for sustainable growth and innovation in ERP ecosystems.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section id="final-cta" class="section text-center">
-        <div class="container">
-            <div class="promo">
-                <h2>Optimize your D365 F&O platform today</h2>
-                <p class="lead">Get actionable insights, performance improvements, and tailored extensions that fit your
-                    business needs.</p>
-                <a class="btn btn1 btn-hero" href="book_meeting.html">Schedule a consultation</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <div class="new_footer">
-        <div class="footer-container">
-            <div class="container1"><a class="linkedin-logo" href="index.html">
-                    <img class="logo" src="img1-removebg-preview.png">
-                </a></div>
-            <div class="footer-container2">
-                <div class="div1">
-                    <div class="footer1">MENU</div>
-                    <div class="footer2"><a href="strategy.html">IT / AI Strategy</a></div>
-                    <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
-                    <div class="footer2"><a href="d365_f&o.html">D365 F&O</a></div>
-                    <div class="footer2"><a href="custom_software.html">Custom Software</a></div>
-                </div>
-                <div class="div1">
-                    <div class="footer1 footer1_1">CONTACT US</div>
-                    <div class="footer2">
-                        <svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px"
-                            viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
-                            <path
-                                d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z" />
-                        </svg>
-                        info@dragit.net
-                    </div>
-                    <div class="footer2">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="25px"
-                            fill="#5c5c5c">
-                            <path
-                                d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
-                        </svg>
-                        +387 65 384 235
-                    </div>
-                    <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
-                            width="25px" fill="#5c5c5c">
-                            <path
-                                d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
-                        </svg>+381 64 371 9470</div>
-                    <div class="footer2">
-                        <a class="linkedin-logo" href="https://www.dragit.net"
-                            style="text-decoration: none; color: rgb(108,107,107);">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="25px" viewBox="0 -960 960 960"
-                                fill="none" stroke="#5c5c5c" stroke-width="40">
-                                <!-- spoljašnji krug -->
-                                <circle cx="480" cy="-480" r="400" />
-                                <!-- horizontalna linija (ekvator) -->
-                                <line x1="80" y1="-480" x2="880" y2="-480" />
-                                <!-- vertikalna linija (meridijan) -->
-                                <line x1="480" y1="-880" x2="480" y2="-80" />
-                                <!-- dva zakrivljena meridijana/paralele -->
-                                <path d="M240-720 C400-600, 400-360, 240-240" />
-                                <path d="M720-720 C560-600, 560-360, 720-240" />
-                            </svg>
-                            www.dragit.net
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="w-layout-blockcontainer container-21 new w-container">
-            <div class="social_net">
-                <!-- <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
-                    <img src="images/facebook.svg" alt="Facebook">
-                </a>
-
-                <a href="https://www.youtube.com" class="link-block-2 w-inline-block" target="_blank">
-                    <img src="images/youtube.svg" alt="YouTube">
-                </a>
-
-                <a href="twitter.com" class="link-block-2 w-inline-block" target="_blank">
-                    <img src="images/x(1).png" class="x-picture" alt="Twitter">
-                </a>
-
-                <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
-                    <img src="images/instagram.svg" alt="Instagram">
-                </a> -->
-                <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
-                    <img src="images/linkedin_logo.png" class="tt-picture">
-                </a>
-            </div>
-            <div class="text-block-39">© 2025 — dragIT</div>
-        </div>
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">D365 F&amp;O &amp; ERP Delivery</p>
+    <h1 class="hero-name">Dynamics 365 F&amp;O<br>Consulting &amp; Development</h1>
+    <p class="hero-tag">
+      Optimize your operations with tailored D365 Finance &amp; Operations consulting, integration and custom
+      development — from strategy to delivery.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="book_meeting.html">Request a consultation</a>
+      <a class="btn btn-outline" href="#approach">See our expertise</a>
     </div>
+  </div>
+</header>
 
-    <script>
-        const responsiveMenuButton = document.getElementById(
-            'responsiveMenuToggleButton'
-        );
-        const navBarLinks = document.querySelector('.bar')
-        responsiveMenuButton.addEventListener('click', () => {
-            navBarLinks.classList.toggle('open');
-            responsiveMenuButton.classList.toggle('open');
-        })
-        // Simple script for mobile menu toggle (if needed)
-        document.addEventListener('DOMContentLoaded', function () {
-            console.log('D365 F&O page loaded');
-        });
+<!-- PROBLEM -->
+<section id="problem" class="section section--alt">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="section-head">
+          <h2 class="section-title">The challenge</h2>
+          <p class="section-subtitle">
+            Many organizations face performance bottlenecks, customization complexity or poor user adoption in their
+            D365 F&amp;O environments. We help companies design, extend and optimize their Dynamics ecosystem —
+            ensuring agility, compliance and scalability.
+          </p>
+        </div>
+        <ul class="bullets">
+          <li>Complex, slow customizations that block upgrades</li>
+          <li>Underused standard features due to limited training</li>
+          <li>Integration issues across ERP, CRM and third-party systems</li>
+          <li>High cost of change and delayed project delivery</li>
+        </ul>
+        <p class="section-subtitle">We turn Dynamics challenges into measurable business improvements.</p>
+      </div>
+      <figure>
+        <img src="images/erp1.jpg" alt="ERP consultants optimizing finance and operations" loading="lazy">
+        <figcaption>From diagnostics to full-cycle implementation and support.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
+<!-- APPROACH -->
+<section id="approach" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <p class="section-label">Approach</p>
+      <h2 class="section-title">Consulting &amp; Development</h2>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-tile">
+        <div class="ft-icon">🏛</div>
+        <h3>Solution Architecture</h3>
+        <p>Scalable D365 F&amp;O architectures aligned with your business model — secure, modular, cloud-ready.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">📈</div>
+        <h3>Process Optimization</h3>
+        <p>Improve financial, supply chain and production processes by leveraging standard D365 capabilities and automation.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">🧩</div>
+        <h3>Customization &amp; Extensions</h3>
+        <p>Lightweight extensions using X++, Power Platform and Azure — upgrade-safe and performance-optimized.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">🔗</div>
+        <h3>System Integration</h3>
+        <p>Connect D365 with MES, WMS, CRM and BI using OData, REST APIs and Azure Integration Services.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">⚡</div>
+        <h3>Performance &amp; Support</h3>
+        <p>Monitor and fine-tune performance for stability, reliability and continuous improvement of your ERP.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">🎓</div>
+        <h3>Training &amp; Enablement</h3>
+        <p>Targeted training for key users and IT teams — accelerating adoption and internal capability growth.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
+<!-- OBSERVABILITY / MISSION CONTROL -->
+<section id="observability" class="section section--dark">
+  <div class="container">
+    <div class="section-head center">
+      <p class="section-label">Observability — Mission Control</p>
+      <h2 class="section-title">See your ERP before your users do</h2>
+      <p class="section-subtitle">
+        Beyond delivery — real-time observability of the D365 F&amp;O systems your business runs on.
+        Built for teams who need to catch failures, batch jobs and integration issues <em>before</em> they become incidents.
+      </p>
+    </div>
+    <div class="feature-grid center">
+      <article class="feature-tile">
+        <div class="ft-icon">📦</div>
+        <h3>Order &amp; Load Flow</h3>
+        <p>Live view of sales orders, load and NVV process across UAT / TRAIN / PROD.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">⚙️</div>
+        <h3>Batch Job Health</h3>
+        <p>Critical and high-priority batch jobs monitored in real time, with drill-down to root cause.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">🔄</div>
+        <h3>DMF / BizTalk Integration</h3>
+        <p>Integration pipelines (DMF, BizTalk/TCS) visible alongside ERP — no blind spots.</p>
+      </article>
+      <article class="feature-tile">
+        <div class="ft-icon">📊</div>
+        <h3>IT / App Insights</h3>
+        <p>Azure Application Insights and Log Analytics (ADX + KQL) as the monitoring backbone.</p>
+      </article>
+    </div>
+    <div class="text-center mt-8">
+      <a class="btn btn-primary" href="book_meeting.html">See it on your environment</a>
+    </div>
+  </div>
+</section>
 
-        // document.querySelector(".contact-us").addEventListener("click", () => {
-        //     const footerTitle = document.querySelector(".footer1_1");
-        //     if (footerTitle) {
-        //         footerTitle.scrollIntoView({ behavior: "smooth" });
+<!-- WHY -->
+<section id="why" class="section section--alt">
+  <div class="container">
+    <div class="split">
+      <figure>
+        <img src="images/erp5.jpg" alt="ERP consultants at work" loading="lazy">
+        <figcaption>Partnering for sustainable growth and innovation in ERP ecosystems.</figcaption>
+      </figure>
+      <div>
+        <div class="section-head">
+          <h2 class="section-title">Why dragIT</h2>
+        </div>
+        <ul class="bullets">
+          <li>20+ years in ERP implementation and software engineering</li>
+          <li>Deep knowledge of X++, OData and Power Platform extensions</li>
+          <li>Proven track record in process digitalization and integration</li>
+          <li>Strong focus on performance, upgrade safety and maintainability</li>
+        </ul>
+        <a class="btn btn-primary" href="book_meeting.html">Talk to an expert</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        //         // kratko naglašavanje naslova
-        //         footerTitle.classList.add("highlight");
-        //         setTimeout(() => {
-        //             footerTitle.classList.remove("highlight");
-        //         }, 800); // efekat traje 0.8 sekundi
-        //     }
-        // });
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-block">
+      <h2>Optimize your D365 F&amp;O platform today</h2>
+      <p class="cta-lead">Get actionable insights, performance improvements and tailored extensions that fit your business.</p>
+      <div class="cta-alt-row">
+        <a class="btn btn-primary" href="book_meeting.html">Schedule a consultation</a>
+        <a class="btn btn-invert-outline" href="cases.html">See a live reference</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // document.querySelectorAll(".btn1").forEach(btn1 => {
-        //     btn1.addEventListener("click", (e) => {
-        //         e.preventDefault();
-        //         const footerEl = document.querySelector(".footer1_1");
-        //         if (footerEl) {
-        //             footerEl.scrollIntoView({ behavior: "smooth" });
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">dragIT</div>
+        <div class="footer-blurb">
+          Enterprise ERP and D365 F&amp;O delivery. Observability. Custom software. One architect, no layers.
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="d365_f&amp;o.html">D365 F&amp;O Delivery</a></li>
+          <li><a href="d365_f&amp;o.html#observability">Observability / Mission Control</a></li>
+          <li><a href="custom_software.html">Custom Software &amp; Portal</a></li>
+          <li><a href="strategy.html">IT / AI Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Proof</h4>
+        <ul>
+          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="cases.html#ragn-sells">Ragn-Sells</a></li>
+          <li><a href="cases.html#boksit">Boksit</a></li>
+          <li><a href="cases.html#drina">Drina Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@dragit.net">info@dragit.net</a></li>
+          <li><a href="tel:+38765384235">+387 65 384 235</a></li>
+          <li><a href="tel:+381643719470">+381 64 371 9470</a></li>
+          <li><a href="https://ba.linkedin.com/in/dragit" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 dragIT — Dr Zoran Dragićević, PhD. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
-        //             // dodaj highlight efekat
-        //             footerEl.classList.add("highlight");
-        //             setTimeout(() => footerEl.classList.remove("highlight"), 800);
-        //         }
-        //     });
-        // });
-
-
-        document.querySelectorAll(".btn2").forEach(btn2 => {
-            btn2.addEventListener("click", (e) => {
-                e.preventDefault();
-                const footerEl = document.querySelector(".fufi");
-                if (footerEl) {
-                    footerEl.scrollIntoView({ behavior: "smooth" });
-
-                    // dodaj highlight efekat
-                    footerEl.classList.add("highlight");
-                    setTimeout(() => footerEl.classList.remove("highlight"), 800);
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
