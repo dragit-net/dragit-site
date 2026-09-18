@@ -1,938 +1,272 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en" class="region-gate">
 <head>
   <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-BTF2W65KZB');
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="color-scheme" content="light only">
-
-  <!-- or "dark only" if you prefer dark mode -->
-  <title>dragIT | Enterprise ERP & D365 F&O Delivery — Dr Zoran Dragićević, PhD</title>
-  <meta name="description" content="Enterprise ERP & D365 F&O delivery — on time, on budget, with real-time visibility. 25+ years, 19 projects on time and on budget. D365 F&O, Observability, Portal, custom software.">
-  <meta property="og:title" content="dragIT | Enterprise ERP & D365 F&O Delivery">
-  <meta property="og:description" content="19 projects on time, on budget. Ragn-Sells, ArcelorMittal, Boksit, Soligna, Drina. Book a discovery call.">
+  <title>dragIT | Dr Zoran Dragićević, PhD — Enterprise D365 F&O Delivery</title>
+  <meta name="description" content="Enterprise ERP & D365 F&O delivery — on time, on budget, with real-time observability. 19 projects delivered. Ragn-Sells, ArcelorMittal, Boksit, Soligna, Drina. Book a discovery call.">
+  <meta property="og:title" content="Dr Zoran Dragićević, PhD — Enterprise D365 F&O Delivery">
+  <meta property="og:description" content="19 projects on time, on budget. Real-time ERP observability. Book a 30-minute discovery call.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.dragit.net/">
   <meta property="og:image" content="https://www.dragit.net/images/Portal.png">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-    rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-    rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-    rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-    rel="stylesheet">
-
-  <!--Raleway-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="styles/index.css?v=1">
-
-</head>
-
-<body>
-  <div id="content" style="display: none;">
-    <div class="site-wrapper">
-      <section class="hero_section">
-        <div class="navbar">
-          <div class="nav-container">
-            <div class="div-with-pitcure">
-              <a class="linkedin-logo" href="index.html">
-                <img class="logo" src="images/img1-removebg-preview.webp">
-              </a>
-            </div>
-
-            <button aria-label="toggle menu" id="responsiveMenuToggleButton">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="openIcon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="closeIcon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-              </svg>
-
-
-            </button>
-
-            <div class="bar">
-              <!--        <div>
-            <a style="display: inline-block;">About Us</a>
-            
-          </div>  -->
-              <div>
-                <a href="strategy.html">IT / AI Strategy</a>
-              </div>
-              <div>
-                <a href="go_digital.html">Go Digital</a>
-              </div>
-              <div>
-                <a href="d365_f&amp;o.html">D365 F&amp;O</a>
-
-              </div>
-              <div>
-                <a href="cases.html">Case Studies</a>
-              </div>
-              <div>
-                <a href="custom_software.html">Custom Software</a>
-
-              </div>
-            </div>
-            <div class="div-button">
-              <button class="contact-us">
-                <a href="book_meeting.html"><b>Schedule Meeting</b></a>
-              </button>
-
-              <div class="menu"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
-                  width="24px" fill="#000000">
-                  <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-                </svg></div>
-
-            </div>
-          </div>
-        </div>
-        <div class="layout">
-          <div class="tanglineinner">
-            <img class="rocket-icon" src="images/rocket-icon.webp">
-            <div class="text-block2">
-              Business Software & Applied AI Solutions
-            </div>
-          </div>
-          <div class="heroparent">
-            <div class="herocontentbox">
-              <!-- Phase 4: personal brand block -->
-              <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;flex-wrap:wrap;justify-content:center;">
-                <img src="images/zoran_phd.jpg" alt="Dr Zoran Dragicevic, PhD" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #0b63ff;flex-shrink:0;box-shadow:0 0 0 4px rgba(11,99,255,.25);">
-                <div style="text-align:left;line-height:1.3;">
-                  <strong style="font-size:1.1rem;color:#fff;letter-spacing:.01em;">Dr Zoran Dragicevic, PhD</strong><br>
-                  <span style="opacity:.9;font-size:.85rem;">Founder @ dragIT - 25+ years enterprise ERP &amp; D365 F&amp;O delivery</span>
-                </div>
-              </div>
-              <p class="heroheading heroheading1">Take Control</p>
-              <p class="heroheading heroheading2">Maximize Impact</p>
-              <!-- <p class="heroheading heroheading3">Success.</p> -->
-
-              <div class="ono-dugacko">
-                <p>
-                  Enterprise ERP &amp; D365 F&amp;O delivery — on time, on budget, with real-time visibility into the systems your business runs on.
-                </p>
-              </div>
-              <div class="poslednji-red">
-                <div>
-                  <img class="logo1" src="images/img1-removebg-preview.webp">
-                </div>
-                <button class="contact-us1">
-                  <a href="book_meeting.html">
-                    Book a Discovery Call
-                  </a>
-                  <!-- <svg style="
-                width:25px;
-                height:25px;
-                padding-top:8px;
-                margin-left:0px;
-                color:white; -->
-                  <svg class="svg" style="width:20px; 
-                height:20px; padding-top: 5px; " width="64px" height="64px" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#ffffff" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up-right">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
-                      stroke-width="0.288"></g>
-                    <g id="SVGRepo_iconCarrier">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </g>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-    </div>
-    </section>
-    <div class="prelaz"></div>
-    <div class="second-section">
-      <div>
-
-      </div>
-
-      <div class="tri">
-
-        <div class="box1 box1-1">
-          <img class="slicica" src="images/slikica1.svg">
-          <div class="text1">BOOST PRODUCTIVITY</div>
-          <div class="text2">Build tailored automation</div>
-          <div class="text3">Custom <b> software solutions</b> that automate
-            industry-specific processes, from ERP extensions to
-            AI-driven task handling, freeing teams to focus on
-            improvenemts.
-          </div>
-          <div class="text4">Real-time operational visibility</div>
-          <div class="text5">Embed <b>real-time data dashboards</b> into software
-            applications, enabling proactive adjustments and
-            boosting operational agility.
-          </div>
-        </div>
-        <div class="box1 box1-2">
-          <img class="slicica" src="images/slikica2.svg">
-
-          <div class="text1">OPTIMIZE EFFICIENCY</div>
-          <div class="text2">Streamline operations &amp; workflows</div>
-          <div class="text3 text3-1">Implement lean digital methodologies and ERP
-            integrations to eliminate redundancies, synchronize
-            supply chains, and reduce downtime in maintenance.
-          </div>
-          <div class="text4">Data-driven resource optimization</div>
-          <div class="text5">Align machinery, labor, and materials with smart
-            allocation algorithms, maximizing output while
-            minimizing waste in production lines.
-          </div>
-        </div>
-        <div class="box1 box1-3">
-          <img class="slicica" src="images/slikica3.svg">
-          <div class="text1">REDUCE COSTS</div>
-          <div class="text2">Cut operational waste</div>
-          <div class="text3">Identify and <b>eliminate hidden costs</b> like energy
-            overconsumption, idle machinery, or inefficient
-            maintenance practices.
-          </div>
-          <div class="text4">Scalable cloud-first solutions</div>
-          <div class="text5">Deploy <b>pay-as-you-go industrial software</b> to slash
-            upfront costs and long-term overhead.
-          </div>
-        </div>
-      </div>
-
-
-      <p class="naslovi one">WHY OUR SERVICES?</p>
-      <div class="line"></div>
-      <div class="cetiri">
-
-        <div class="box3-1 box3">
-          <div class="text1-1">TAILORED TO YOUR INDUSTRY</div>
-          <div class="text2-2">Our <b>digital transformation</b> strategies are designed for <b>production and service
-              operations</b>,
-            combining domain-specific expertise with digital technologies to drive measurable gains in productivity,
-            efficiency, and cost savings.
-            <br /> <br />
-            By leveraging advanced analytics and automation, we enable faster decision-making, risk reduction, and
-            resource optimization tailored to the specifics of your industry.
-          </div>
-        </div>
-        <div class="box3-2 box3">
-          <div class="text1-1">BUILT FOR INDUSTRIAL IMPACT</div>
-          <div class="text2-2">
-            Our software solutions are engineered for manufacturing, transportation, and maintenance
-            sectors, translating software innovation into tangible operational gains:
-          </div>
-          <div class="div-sa-tackama">
-            <div><span
-                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Automate high-volume
-              production lines.</div>
-            <div><span
-                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Optimize production,
-              supply chain and warehouse workflows.</div>
-            <div><span
-                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Predict
-              equipment failures before they disrupt operations.</div>
-            <div><span
-                style="display: inline-block; font-size: 24px; color: #ffffff; background: #ffffff00; border-radius: 25px; padding: 0px 8px;">•</span>Slash
-              waste in energy, materials, and labor without compromising quality.</div>
-          </div>
-
-        </div>
-        <div class="box3-3 box3">
-          <div class="text1-1">WHY OUR SOLUTIONS STAND OUT</div>
-          <div class="text2-2">We blend <b>domain-specific expertise in supply chain management</b> with secure,
-            scalable
-            software design—delivering solutions that drive automation, slash costs, and elevate user
-            experiences through intuitive, purpose-built tools</div>
-          <div class="text3-3">
-            By <b>embedding intelligence</b> into your physical processes, we drive measurable
-            improvements in output, resource utilization, and bottom-line savings.
-          </div>
-        </div>
-
-
-      </div>
-
-
-      <div style="max-width:1000px;margin:80px auto 0;padding:40px 24px;background:linear-gradient(135deg,#020031,#0b63ff);border-radius:24px;color:#fff;">
-        <div style="font-size:1.4rem;font-weight:800;font-family:Outfit,arial;text-align:center;margin-bottom:6px;">Our delivery track record</div>
-        <div style="opacity:.8;font-size:.9rem;text-align:center;margin-bottom:28px;font-family:Outfit,arial;">Numbers from client projects (Ragn-Sells, Boksit, ArcelorMittal, Soligna, Drina)</div>
-        <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
-          <div style="text-align:center;min-width:150px;">
-            <div style="font-size:2.4rem;font-weight:900;line-height:1;">19</div>
-            <div style="font-size:.78rem;opacity:.85;margin-top:4px;">projects delivered on time, on budget</div>
-          </div>
-          <div style="text-align:center;min-width:150px;">
-            <div style="font-size:2.4rem;font-weight:900;line-height:1;">38%</div>
-            <div style="font-size:.78rem;opacity:.85;margin-top:4px;">company revenue growth during IT strategy leadership (Boksit, 2005-2024)</div>
-          </div>
-          <div style="text-align:center;min-width:150px;">
-            <div style="font-size:2.4rem;font-weight:900;line-height:1;">300+</div>
-            <div style="font-size:.78rem;opacity:.85;margin-top:4px;">users of MIS2Open + Portal (Boksit group)</div>
-          </div>
-          <div style="text-align:center;min-width:150px;">
-            <div style="font-size:2.4rem;font-weight:900;line-height:1;">5</div>
-            <div style="font-size:.78rem;opacity:.85;margin-top:4px;">Mission Control dashboards over 20+ external systems (Ragn-Sells, D365 F&amp;O)</div>
-          </div>
-        </div>
-      </div>
-      <div style="max-width:1100px;margin:50px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
-        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(2,0,49,.06);">
-          <div style="font-weight:700;font-size:1rem;margin-bottom:6px;font-family:Outfit,arial;">D365 F&amp;O &amp; ERP Delivery</div>
-          <div style="font-size:.88rem;color:#374151;line-height:1.5;">Implementations, migrations (AX 2012 / GP &rarr; F&amp;O), integrations, architecture. Ragn-Sells reference in Sweden.</div>
-          <div style="margin-top:12px;"><a href="d365_f&amp;o.html" style="color:#0b63ff;font-weight:600;font-size:.85rem;">See capabilities &rarr;</a></div>
-        </div>
-        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(2,0,49,.06);">
-          <div style="font-weight:700;font-size:1rem;margin-bottom:6px;font-family:Outfit,arial;">Observability / Mission Control</div>
-          <div style="font-size:.88rem;color:#374151;line-height:1.5;">Real-time D365 F&amp;O monitoring on Azure (APPI, LAW, ADX, KQL) — see failures before users do.</div>
-          <div style="margin-top:12px;"><a href="d365_f&amp;o.html" style="color:#0b63ff;font-weight:600;font-size:.85rem;">See how it works &rarr;</a></div>
-        </div>
-        <div style="background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:22px;box-shadow:0 6px 18px rgba(2,0,49,.06);">
-          <div style="font-weight:700;font-size:1rem;margin-bottom:6px;font-family:Outfit,arial;">Portal — active product</div>
-          <div style="font-size:.88rem;color:#374151;line-height:1.5;">The operational layer over your ERP: KPI dashboards, alerts, CRUD, reporting. Sold regionally (BiH/SRB/CG/MK) as a repeatable product.</div>
-          <div style="margin-top:12px;"><a href="custom_software.html" style="color:#0b63ff;font-weight:600;font-size:.85rem;">Portal capabilities &rarr;</a></div>
-        </div>
-      </div>
-      <p class="naslovi one" style="margin-top: 100px;">Portal</p>
-      <div class="line"></div>
-
-      <div class="image-container" style="margin-top: 50px;">
-        <img src="../images/Portal.png" alt="Portal - dragIT">
-      </div>
-
-
-
-      <div class="dva_holder">
-        <!--  <div class="kf-naslovveliki one"> -->
-        <div class="naslovi one">
-          Key Features
-        </div>
-        <div class="line"></div>
-
-        <div class="key-frames">
-          <div class="kf1 kf1-1">
-            <img src="images/keyfeatures1.png" class="kf-img">
-            <div class="kf-naslov">
-              Personalised Dashboards
-            </div>
-            <div>
-              <div class="kf-text">
-                All-in-one
-              </div>
-              <div class="kf-text">
-                Intuitive presentation
-              </div>
-              <div class="kf-text">
-                Easy drill into details
-              </div>
-
-              <div class="kf-text">
-                Mobile-first design
-              </div>
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-2">
-            <img src="images/keyfeatures2.png" class="kf-img">
-            <div class="kf-naslov">
-              Performance Managment
-            </div>
-            <div>
-              <div class="kf-text">
-                Set measurable goals
-              </div>
-              <div class="kf-text">
-                Motivate & inform
-              </div>
-              <div class="kf-text">
-                Monitor & control
-              </div>
-              <div class="kf-text">
-                Prioritize & fire risk
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-3">
-            <img src="images/keyfeatures3.png" class="kf-img">
-            <div class="kf-naslov">
-              Analytical Processing
-            </div>
-            <div>
-              <div class="kf-text">
-                On-line pivot reporting
-              </div>
-              <div class="kf-text">
-                Multi-dimensional
-              </div>
-              <div class="kf-text">
-                Complex calculations
-              </div>
-              <div class="kf-text">
-                Time intelligence
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-4">
-            <img src="images/keyfeatures4.png" class="kf-img">
-            <div class="kf-naslov">
-              Scheduled Reporting
-            </div>
-            <div>
-              <div class="kf-text">
-                Define recivers
-              </div>
-              <div class="kf-text">
-                Schedule delivery
-              </div>
-              <div class="kf-text">
-                Get informative emails
-              </div>
-              <div class="kf-text">
-                Take actions
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-5">
-            <img src="images/keyfeatures5.png" class="kf-img">
-            <div class="kf-naslov">
-              Team Colaboration
-            </div>
-            <div>
-              <div class="kf-text">
-                Task managment
-              </div>
-              <div class="kf-text">
-                Email task state info
-              </div>
-              <div class="kf-text">
-                Comment's history
-              </div>
-              <div class="kf-text">
-                Kanban cards
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-6">
-            <img src="images/keyfeatures6.png" class="kf-img">
-            <div class="kf-naslov">
-              Alerts & Notifications
-            </div>
-            <div>
-              <div class="kf-text">
-                Action-driven alerts
-              </div>
-              <div class="kf-text">
-                Email notifications
-              </div>
-              <div class="kf-text">
-                Dashboard, report & record level alerts
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-7">
-            <img src="images/keyfeatures7.png" class="kf-img">
-            <div class="kf-naslov">
-              Data Management (CRUD)
-            </div>
-            <div>
-              <div class="kf-text">
-                Digitalize your data
-              </div>
-              <div class="kf-text">
-                Collect data efficiently
-              </div>
-              <div class="kf-text">
-                Apply control & rules
-              </div>
-              <div class="kf-text">
-                Make data more usable
-              </div>
-
-
-            </div>
-          </div>
-
-          <div class="kf1 kf1-8">
-            <img src="images/keyfeatures8.png" class="kf-img">
-            <div class="kf-naslov">
-              Integration To Existing Systems
-            </div>
-            <div>
-              <div class="kf-text">
-                Integrate your legacy systems: ERP, BI, BPM, MES, CRM ...
-              </div>
-              <div class="kf-text">
-                Emprove your data
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-
-      <p class="naslovi one dva_holder">DELIVERY PROCESS</p>
-      <div class="line"></div>
-
-      <div class="tri">
-
-        <div class="box3-1 box3">
-          <div class="text1-1"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960"
-              width="35px" fill="#FFFFFF">
-              <path
-                d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Zm0 192h72v-384H384v72h96v312Z" />
-            </svg> Discovery & Proposal</div>
-          <div class="text2-2 text2-2-1">
-            We dive deep into your business, uncovering challenges and opportunities, then craft a tailored strategy and
-            proposal that maximizes impact across all your digital initiatives.</div>
-        </div>
-        <div class="box3-2 box3">
-          <div class="text1-1"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960"
-              width="35px" fill="#FFFFFF">
-              <path
-                d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312ZM360-288h240v-72H432v-84h96q29.7 0 50.85-21.15Q600-486.3 600-516v-84q0-29.7-21.15-50.85Q557.7-672 528-672H360v72h168v84h-96q-29.7 0-50.85 21.15Q360-473.7 360-444v156Z" />
-            </svg> Planing & Execution</div>
-          <div class="text2-2 text2-2-1">
-            From roadmap to reality, we plan and execute each solution efficiently — whether it’s custom software, AI
-            integration, D365 F&O solution or a full digital transformation.
-          </div>
-        </div>
-        <div class="box3-3 box3">
-          <div class="text1-1"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960"
-              width="35px" fill="#FFFFFF">
-              <path
-                d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312ZM360-288h168q29.7 0 50.85-21.15Q600-330.3 600-360v-72q0-20-14-34t-34-14q20 0 34-14t14-34v-72q0-29.7-21.15-50.85Q557.7-672 528-672H360v72h168v84h-96v72h96v84H360v72Z" />
-            </svg> Delivery & Support</div>
-          <div class="text2-2 text2-2-1">We deliver high-quality solutions on time and provide ongoing support,
-            continuous
-            optimization, and scalable solutions that grow with your business.</div>
-        </div>
-
-
-      </div>
-
-
-      <div class="div-h2">
-        <h1 class="fade-element js-scroll">Key Partners</h1>
-      </div>
-      <div class="logos-section">
-
-        <div class="logos-container">
-          <!--           <div class="logo-item">
-              <img src="images/partner1.webp" alt="Client 1">
-          </div>
-          <div class="logo-item">
-              <img src="images/partner2.jpg" alt="Client 2">
-          </div>
-          <div class="logo-item">
-              <img src="images/partner3.webp" alt="Client 3">
-          </div>
-          <div class="logo-item">
-              <img src="images/parther4.webp" alt="Client 4">
-          </div> -->
-          <div class="nepotrebni"></div>
-          <div class="logo-item">
-            <img src="images/partner5.webp" alt="Client 1">
-          </div>
-          <div class="logo-item">
-            <img src="images/partner6.webp" alt="Client 2">
-          </div>
-          <div class="nepotrebni"></div>
-        </div>
-      </div>
-
-
-    </div>
-
-    <div class="new_footer">
-      <div class="container">
-        <div class="container1">
-          <a class="linkedin-logo" href="index.html">
-            <img src="images/img1-removebg-preview.webp" class="logo-footer">
-          </a>
-        </div>
-        <div class="container2">
-          <div class="div1">
-            <div class="footer1">MENU</div>
-            <div class="footer2"><a href="strategy.html">IT / AI Strategy</a></div>
-            <div class="footer2"><a href="go_digital.html">Go Digital</a></div>
-            <div class="footer2"><a href="d365_f&amp;o.html">D365 F&amp;O</a></div>
-            <div class="footer2"><a href="cases.html">Case Studies</a></div>
-            <div class="footer2"><a href="blog.html">Blog / Insights</a></div>
-            <div class="footer2"><a href="custom_software.html">Custom Software</a></div>
-          </div>
-          <div class="div1">
-            <div class="footer1 footer1_1">CONTACT US</div>
-            <div class="footer2"><svg class="footer-svg" xmlns="http://www.w3.org/2000/svg" height="16px"
-                viewBox="0 -960 960 960" width="25px" fill="#5c5c5c">
-                <path
-                  d="M168-192q-29.7 0-50.85-21.16Q96-234.32 96-264.04v-432.24Q96-726 117.15-747T168-768h624q29.7 0 50.85 21.16Q864-725.68 864-695.96v432.24Q864-234 842.85-213T792-192H168Zm312-240L168-611v347h624v-347L480-432Zm0-85 312-179H168l312 179Zm-312-94v-85 432-347Z" />
-              </svg>info@dragit.net</div>
-            <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
-                width="25px" fill="#5c5c5c">
-                <path
-                  d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
-              </svg>+387 65 384 235</div>
-            <div class="footer2"><svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960"
-                width="25px" fill="#5c5c5c">
-                <path
-                  d="M763-145q-121-9-229.5-59.5T339-341q-86-86-135.5-194T144-764q-2-21 12.29-36.5Q170.57-816 192-816h136q17 0 29.5 10.5T374-779l24 106q2 13-1.5 25T385-628l-97 98q20 38 46 73t57.97 65.98Q422-361 456-335.5q34 25.5 72 45.5l99-96q8-8 20-11.5t25-1.5l107 23q17 5 27 17.5t10 29.5v136q0 21.43-16 35.71Q784-143 763-145ZM255-600l70-70-17.16-74H218q5 38 14 73.5t23 70.5Zm344 344q35.1 14.24 71.55 22.62Q707-225 744-220v-90l-75-16-70 70ZM255-600Zm344 344Z" />
-              </svg>+381 64 371 9470</div>
-            <div class="footer2">
-              <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="25px" viewBox="0 -960 960 960" fill="none"
-                stroke="#5c5c5c" stroke-width="40">
-                <!-- spoljašnji krug -->
-                <circle cx="480" cy="-480" r="400" />
-                <!-- horizontalna linija (ekvator) -->
-                <line x1="80" y1="-480" x2="880" y2="-480" />
-                <!-- vertikalna linija (meridijan) -->
-                <line x1="480" y1="-880" x2="480" y2="-80" />
-                <!-- dva zakrivljena meridijana/paralele -->
-                <path d="M240-720 C400-600, 400-360, 240-240" />
-                <path d="M720-720 C560-600, 560-360, 720-240" />
-              </svg>www.dragit.net</a>
-            </div>
-            <!-- <div class="footer2"><a class="linkedin-logo" href="https://ba.linkedin.com/in/dragit"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="25px" fill="#999999"><path d="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.29-49 61.29-17 124.5-17t124.71 17Q666-398 721-366q22 13 34.5 34t12.5 44v96H192Zm72-72h432v-24q0-5.18-3.03-9.41-3.02-4.24-7.97-6.59-46-28-98-42t-107-14q-55 0-107 14t-98 42q-5 4-8 7.72-3 3.73-3 8.28v24Zm216.21-288Q510-552 531-573.21t21-51Q552-654 530.79-675t-51-21Q450-696 429-674.79t-21 51Q408-594 429.21-573t51 21Zm-.21-72Zm0 360Z"/></svg>Linkedin Profile</a></div> -->
-          </div>
-
-        </div>
-      </div>
-      <div class="w-layout-blockcontainer container-21 new w-container">
-        <div class="social_net">
-          <!-- <a href="facebook.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/facebook.svg">
-        </a>
-
-        <a href="https://www.youtube.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/youtube.svg">
-        </a>
-
-        <a href="twitter.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/x(1).webp" class="x-picture">
-        </a>
-
-        <a href="ig.com" class="link-block-2 w-inline-block" target="_blank">
-          <img src="images/instagram.svg">
-        </a> -->
-
-          <a href="https://ba.linkedin.com/in/dragit" class="link-block-2 w-inline-block" target="_blank">
-            <img src="images/linkedin_logo.png" class="tt-picture">
-          </a>
-
-        </div>
-        <div class="text-block-39">© 2026 — dragIT</div>
-      </div>
-    </div>
-  </div>
-  </div>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/design-system.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
   <script>
-    const responsiveMenuButton = document.getElementById(
-      'responsiveMenuToggleButton'
-    );
-    const navBarLinks = document.querySelector('.bar')
-    responsiveMenuButton.addEventListener('click', () => {
-      navBarLinks.classList.toggle('open');
-      responsiveMenuButton.classList.toggle('open');
-    })
-
-    //skrol na contact us
-
-    // document.querySelector(".contact-us").addEventListener("click", () => {
-    //   const footerTitle = document.querySelector(".footer1_1");
-    //   if (footerTitle) {
-    //     footerTitle.scrollIntoView({ behavior: "smooth" });
-
-    //     // kratko naglašavanje naslova
-    //     footerTitle.classList.add("highlight");
-    //     setTimeout(() => {
-    //       footerTitle.classList.remove("highlight");
-    //     }, 800); // efekat traje 0.8 sekundi
-    //   }
-    // });
-    // document.querySelector(".contact-us1").addEventListener("click", () => {
-    //   const footerTitle = document.querySelector(".footer1_1");
-    //   if (footerTitle) {
-    //     footerTitle.scrollIntoView({ behavior: "smooth" });
-
-    //     // kratko naglašavanje naslova
-    //     footerTitle.classList.add("highlight");
-    //     setTimeout(() => {
-    //       footerTitle.classList.remove("highlight");
-    //     }, 800); // efekat traje 0.8 sekundi
-    //   }
-    // });
-
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Phase 4 GA4 event listeners
-      document.querySelectorAll('a[href="book_meeting.html"], .contact-us1').forEach(a => {
-        a.addEventListener('click', () => gtag('event', 'cta_click', { cta_label: 'book_meeting' }));
-      });
-      document.querySelectorAll('a[href*="d365_f"]').forEach(a => {
-        a.addEventListener('click', () => gtag('event', 'cta_click', { cta_label: 'd365_page' }));
-      });
-      const form = document.getElementById('appointmentForm');
-      if (form) form.addEventListener('submit', () => gtag('event', 'form_start', { form_label: 'appointment' }));
-
-      const logoItems = document.querySelectorAll('.logo-item');
-      const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px'
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            logoItems.forEach(item => {
-              item.classList.add('active');
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      observer.observe(document.querySelector('.logos-container'));
-    });
-
-
-
-
-
-    // Detect when the element is in the viewport
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('scrolled');
-          // Optional: Stop observing after animation
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -100px 0px' }); // Adjust trigger point
-
-    // Apply to all elements with the .js-scroll class
-    document.querySelectorAll('.js-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const logoItems1 = document.querySelectorAll('.kf1');
-      const observerOptions1 = {
-        threshold: 0.2,
-        rootMargin: '0px'
-      };
-
-      const observer1 = new IntersectionObserver((entries, observer1) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            logoItems1.forEach(item => {
-              item.classList.add('active');
-            });
-            observer1.unobserve(entry.target);
-          }
-        });
-      }, observerOptions1);
-
-      observer1.observe(document.querySelector('.key-frames'));
-    });
-
-
-    const observer1 = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('scrolled');
-          // Optional: Stop observing after animation
-          observer1.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -20px 0px' }); // Adjust trigger point
-
-    // Apply to all elements with the .js-scroll class
-    document.querySelectorAll('.kf-naslovveliki').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.box1-1').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box1-2').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box1-3').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.naslovi').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.ono-dugacko').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.contact-us1').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.kf1-1').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-2').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-3').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-4').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-5').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-6').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-7').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.kf1-8').forEach(el => {
-      observer1.observe(el);
-    });
-
-    document.querySelectorAll('.box3-1').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box3-2').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box3-3').forEach(el => {
-      observer1.observe(el);
-    });
-    document.querySelectorAll('.box3-4').forEach(el => {
-      observer1.observe(el);
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const element = document.querySelector('.key-frames');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            // Wait 1 second, then add the class (which triggers the transition)
-            setTimeout(() => {
-              entry.target.classList.add('active');
-            }, 800);
-          } else {
-            // Remove the class when exiting viewport (optional)
-            entry.target.classList.remove('active');
-          }
-        });
-      }, { threshold: 0.2 }); // Trigger when 50% visible
-
-      observer.observe(element);
-    });
-
-    const targetCountries = ['RS', 'ME', 'HR', 'BA', 'MK'];
-    //const targetCountries = ['XX'];
-
-    // Funkcija za preusmjeravanje .....
-    function redirectToSerbian() {
-      window.location.href = 'sr/'; // Promijenite putanju prema potrebi
-    }
-    // Proveri redirekciju sa druge strane
-    const urlParams = new URLSearchParams(window.location.search);
-    const langEn = urlParams.get('lang');
-    // alert(langEn);
-    if (langEn !== 'en') {
-      // Dohvati geolokaciju preko IP-a2q
-      // fetch('https://ipapi.co/json/')
-      // fetch('https://ipwhois.app/json/')
-      fetch('https://api.country.is/')
-
-        .then(response => response.json())
-        .then(data => {
-          console.log('Geolokacija:', data); // <-- vidi ceo objekat
-          //const countryCode = data.country_code;
-          const countryCode = data.country;
-          if (targetCountries.includes(countryCode)) {
-            redirectToSerbian();
-          } else {
-            // Sakrij loading overlay i prikaži sadržaj
-            // document.getElementById('loading-overlay').style.display = 'none';
-            // document.getElementById('content').style.display = 'block';
-            const overlay = document.getElementById('loading-overlay');
-            if (overlay) overlay.style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-          }
-        })
-        .catch(error => {
-          //console.error('Greška pri dohvatu lokacije:', error);
-          //document.getElementById('loading-overlay').style.display = 'none';
-          //document.getElementById('content').style.display = 'block';
-          const overlay = document.getElementById('loading-overlay');
-          if (overlay) overlay.style.display = 'none';
-          document.getElementById('content').style.display = 'block';
-        });
-    }
-    else
-      document.getElementById('content').style.display = 'block';
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-BTF2W65KZB');
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Zoran Dragićević",
+    "jobTitle": "Solution Architect & Director, dragIT",
+    "sameAs": ["https://ba.linkedin.com/in/dragit"],
+    "email": "info@dragit.net",
+    "telephone": "+38765384235"
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <a class="nav-logo" href="/">dragIT</a>
+    <ul class="nav-links">
+      <li><a href="#niches">Services</a></li>
+      <li><a href="cases.html">Case Studies</a></li>
+      <li><a href="d365_f&amp;o.html">D365 F&amp;O</a></li>
+      <li><a href="strategy.html">Strategy</a></li>
+      <li><a href="book_meeting.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <a href="/sr/" title="Srpski">SR</a>
+        <a href="/?lang=en" class="active" title="English">EN</a>
+      </div>
+      <a class="btn btn-primary nav-cta" href="#cta">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-avatar">
+      <img src="images/zoran_phd.jpg" alt="Dr Zoran Dragićević, PhD">
+    </div>
+    <p class="hero-eyebrow">Enterprise D365 F&amp;O &amp; ERP Delivery</p>
+    <h1 class="hero-name">Dr&nbsp;Zoran Dragićević, PhD</h1>
+    <p class="hero-tag">
+      19 projects delivered on time and on budget — from single-site manufacturing to multi-plant operations.
+      Real-time visibility. No surprises.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#cta">
+        <svg class="btn-icon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2Z"/></svg>
+        Book a Discovery Call
+      </a>
+      <a class="btn btn-outline" href="cases.html">View Case Studies</a>
+    </div>
+
+    <!-- Proof strip -->
+    <div class="proof-strip">
+      <div class="proof-item">
+        <div class="proof-value">19</div>
+        <div class="proof-label">Projects on time,<br>on budget</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-value">38%</div>
+        <div class="proof-label">Revenue growth<br>(Boksit, 2005–2024)</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-value">300+</div>
+        <div class="proof-label">Users in production<br>(ERP + Portal)</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-value">5</div>
+        <div class="proof-label">Custom observability<br>dashboards</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- NICHES -->
+<section id="niches" class="section">
+  <div class="container">
+    <p class="section-label">What I Deliver</p>
+    <h2 class="section-title">Three Focused Capabilities</h2>
+    <p class="section-subtitle">No generalist. No 50-line capability matrix. One clear path per engagement.</p>
+    <div class="niche-list mt-8">
+      <a class="niche-row" href="d365_f&amp;o.html">
+        <div class="niche-icon">⚙</div>
+        <div class="niche-content">
+          <h3>D365 F&amp;O &amp; ERP Delivery</h3>
+          <p>Implementation, migration (AX2012 / GP → F&amp;O), custom extensions, multi-entity configurations.</p>
+        </div>
+        <span class="niche-arrow">→</span>
+      </a>
+      <a class="niche-row" href="d365_f&amp;o.html#observability">
+        <div class="niche-icon">📡</div>
+        <div class="niche-content">
+          <h3>Observability — Mission Control</h3>
+          <p>Real-time batch, integration (DMF / BizTalk), and order-flow monitoring across UAT / TRAIN / PROD.</p>
+        </div>
+        <span class="niche-arrow">→</span>
+      </a>
+      <a class="niche-row" href="custom_software.html">
+        <div class="niche-icon">🔧</div>
+        <div class="niche-content">
+          <h3>Custom Software &amp; Portal</h3>
+          <p>Agentic automation (n8n), custom ERP extensions, operational KPI dashboards — active product offering.</p>
+        </div>
+        <span class="niche-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CASE TEASER -->
+<section class="section section--alt">
+  <div class="container">
+    <p class="section-label">Track Record</p>
+    <h2 class="section-title">Evidence, Not Adjectives</h2>
+    <p class="section-subtitle">Five engagements, published with real numbers. No anonymous "major client" blurbs.</p>
+    <div class="cases-grid mt-8">
+      <a class="case-card" href="cases.html#ragn-sells">
+        <h3>Ragn-Sells — D365 F&amp;O</h3>
+        <div class="case-metric">Multi-site, live ERP</div>
+        <p>Full D365 F&amp;O implementation across multiple sites, with real-time monitoring (Mission Control) now active in production.</p>
+        <span class="case-link">Read case →</span>
+      </a>
+      <a class="case-card" href="cases.html#boksit">
+        <h3>Boksit Group — IT Strategy + ERP</h3>
+        <div class="case-metric">38% revenue growth</div>
+        <p>IT strategy, ERP platform, and custom Portal — 300+ users in production across a 19-year engagement.</p>
+        <span class="case-link">Read case →</span>
+      </a>
+      <a class="case-card" href="cases.html#drina">
+        <h3>Drina Insurance — ERP Hard Transition</h3>
+        <div class="case-metric">20% → 100%</div>
+        <p>Hard ERP migration over 2 years: raised functional coverage from 20–30% to full production readiness.</p>
+        <span class="case-link">Read case →</span>
+      </a>
+    </div>
+    <div class="text-center mt-12">
+      <a class="btn btn-ghost" href="cases.html">View all 5 case studies →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta" class="section">
+  <div class="container">
+    <div class="cta-block">
+      <h2>Let's Walk Through Your Environment</h2>
+      <p class="cta-lead">
+        30 minutes. No prep. We look at your D365 F&amp;O (or ERP) together and I'll tell you where the blind spots are — and what I'd do about them.
+      </p>
+      <div class="cta-calendly">
+        <iframe
+          src="https://calendly.com/dragit/discovery-call"
+          title="Book a Discovery Call — dragIT"
+          loading="lazy">
+        </iframe>
+      </div>
+      <p class="cta-alt-hint">Prefer email? Or if Calendly isn't working for you:</p>
+      <div class="cta-alt-row">
+        <a class="btn btn-invert-outline" href="book_meeting.html">Schedule via Form</a>
+        <a class="btn btn-invert-outline" href="mailto:info@dragit.net">Email directly</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">dragIT</div>
+        <div class="footer-blurb">
+          Enterprise ERP and D365 F&amp;O delivery. Observability. Custom software. One architect, no layers.
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="d365_f&amp;o.html">D365 F&amp;O Delivery</a></li>
+          <li><a href="d365_f&amp;o.html#observability">Observability / Mission Control</a></li>
+          <li><a href="custom_software.html">Custom Software &amp; Portal</a></li>
+          <li><a href="strategy.html">IT / AI Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Proof</h4>
+        <ul>
+          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="cases.html#ragn-sells">Ragn-Sells</a></li>
+          <li><a href="cases.html#boksit">Boksit</a></li>
+          <li><a href="cases.html#drina">Drina Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@dragit.net">info@dragit.net</a></li>
+          <li><a href="tel:+38765384235">+387 65 384 235</a></li>
+          <li><a href="tel:+381643719470">+381 64 371 9470</a></li>
+          <li><a href="https://ba.linkedin.com/in/dragit" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 dragIT — Dr Zoran Dragićević, PhD. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- REGION GATE: two-faces mechanism (RS/ME/HR/BA/MK → /sr/, ?lang=en bypass) -->
+<div class="region-loading" id="regionLoading">
+  <div class="region-loading-spinner"></div>
+</div>
+
+<script>
+  (function () {
+    var html = document.documentElement;
+    var REGION = ['RS', 'ME', 'HR', 'BA', 'MK'];
+    var params = new URLSearchParams(location.search);
+
+    function reveal() {
+      html.classList.remove('region-gate');
+      var o = document.getElementById('regionLoading');
+      if (o) o.style.display = 'none';
+    }
+
+    // Explicit English bypass — stay on the EU/EN face
+    if (params.get('lang') === 'en') { reveal(); return; }
+
+    fetch('https://api.country.is/')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var cc = (d.country || '').toUpperCase();
+        if (REGION.indexOf(cc) !== -1) { location.replace('/sr/'); }
+        else { reveal(); }
+      })
+      .catch(reveal); // fail-open to EN face
+  })();
+</script>
+
 </body>
-
-
 </html>
