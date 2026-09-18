@@ -603,18 +603,19 @@ h3 { font-size: var(--text-xl); }
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* ── REGION GATE (two-faces mechanism) ── */
+/* ── REGION GATE (two faces: EN / SR, routed by geolocation, no visible switch) ── */
 html.region-gate body { visibility: hidden; }
 .region-loading {
   position: fixed;
   inset: 0;
   z-index: 9999;
   background: var(--white);
-  display: flex;
+  display: none; /* shown only while html.region-gate is set */
   align-items: center;
   justify-content: center;
   pointer-events: none;
 }
+html.region-gate .region-loading { display: flex; }
 .region-loading-spinner {
   width: 32px;
   height: 32px;
@@ -625,26 +626,9 @@ html.region-gate body { visibility: hidden; }
 }
 @keyframes rg-spin { to { transform: rotate(360deg); } }
 
-/* ── LANGUAGE SWITCHER ── */
-.lang-switch {
-  display: inline-flex;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  overflow: hidden;
-  font-size: var(--text-xs);
-  font-weight: 600;
-}
-.lang-switch a {
-  padding: 5px 12px;
-  color: var(--text-muted);
-  transition: all 0.2s;
-}
-.lang-switch a:hover { color: var(--accent); }
-.lang-switch a.active {
-  background: var(--navy);
-  color: var(--white);
-}
-.nav .lang-switch a.active { background: var(--navy); }
+/* Language switching is intentionally NOT a visible control:
+   the EN/SR face is resolved by geolocation (js/site.js region gate).
+   ?lang=en / ?lang=sr remain as URL bypasses for testing only. */
 
 /* ── UTILITIES ── */
 .center { text-align: center; }
