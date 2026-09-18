@@ -7,6 +7,7 @@
   <title>Sistem za Zakazivanje Sastanka</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -962,11 +963,13 @@
     let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
 
     // Prikazivanje postojećih sastanaka prilikom učitavanja stranice
-    // ===== Phase 4 lead-capture configuration =====
-// POSTAVITI kad se kreira Formspree nalog (besplatan do 50 mjesečno).
-// Kreira se na formspree.io -> New Form -> copy endpoint.
-const FORMSPREE_ENDPOINT = ""; // npr. "https://formspree.io/f/xzqqdabc"
-// ==============================================
+    // ===== Phase 4 lead-capture configuration (EmailJS) =====
+// Kreira se na emailjs.com -> Account -> Public Key + Services + Templates.
+// Besplatan plan: 200 emailova mjesečno.
+const EMAILJS_PUBLIC_KEY  = "";            // npr. "Abc123xyz"
+const EMAILJS_SERVICE_ID  = "service_h3zp9ie";  // postojeći u demo-u
+const EMAILJS_TEMPLATE_ID = "template_korisnik"; // postojeći u demo-u
+// ==========================================================
 
 // Prikazivanje postojećih sastanaka prilikom učitavanja stranice
 
@@ -1032,29 +1035,25 @@ const FORMSPREE_ENDPOINT = ""; // npr. "https://formspree.io/f/xzqqdabc"
         const interest = document.getElementById('interest').value;
 
         let submitted = false;
-        if (FORMSPREE_ENDPOINT) {
-          const payload = {
-            _subject: `New meeting request: ${firstName} ${lastName} (${interest})`,
-            Name: `${firstName} ${lastName}`,
-            Email: email,
-            Phone: phone,
-            Date: date,
-            Time: time,
-            Method: tool,
-            Interest: interest,
-            Notes: notes,
-            SendConfirmation: sendEmail ? 'yes' : 'no',
-            Created: appointment.createdAt,
-          };
-          const resp = await fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-          submitted = resp.ok;
+        if (EMAILJS_PUBLIC_KEY) {
+          emailjs.init(EMAILJS_PUBLIC_KEY);
+          await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_name: firstName + ' ' + lastName,
+            to_email: email,
+            phone: phone,
+            date: formattedDate,
+            time: time,
+            tool: tool,
+            interest: interest,
+            notes: notes,
+            send_confirmation: sendEmail ? 'yes' : 'no',
+            _subject: 'New meeting request: ' + firstName + ' ' + lastName,
+            from_name: 'dragIT meeting form',
+            from_email: 'info@dragit.net',
+          }).then(() => { submitted = true; }, () => { submitted = false; });
           if (window.gtag) gtag('event', 'form_submit', { form: 'appointment', ok: submitted, interest: interest });
         } else {
-          // Bez backend-a: evidentiraj lokalno kao fallback (ne gubi se do aktivacije endpoint-a)
+          // Bez backend-a: lokalni fallback (ne gubi se do aktivacije EmailJS)
           appointments.push(appointment);
           localStorage.setItem('appointments', JSON.stringify(appointments));
           displayAppointments();
