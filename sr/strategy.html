@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr" class="region-gate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,16 +20,12 @@
     <a class="nav-logo" href="/sr/">dragIT</a>
     <ul class="nav-links">
       <li><a href="/sr/index.html#usluge">Usluge</a></li>
-      <li><a href="/sr/cases.html">Case Studies</a></li>
+      <li><a href="/sr/cases.html">Studije slučaja</a></li>
       <li><a href="/sr/d365_f&amp;o.html">D365 F&amp;O</a></li>
       <li><a href="/sr/strategy.html" class="nav-active">Strategija</a></li>
       <li><a href="/sr/book_meeting.html">Kontakt</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-switch">
-        <a href="/sr/strategy.html" class="active">SR</a>
-        <a href="/strategy.html">EN</a>
-      </div>
       <a class="btn btn-primary nav-cta" href="/sr/book_meeting.html">Zakaži</a>
     </div>
   </div>
@@ -61,7 +57,7 @@
       <article class="feature-tile"><div class="ft-icon">🗺️</div><h3>Radni roadmaps</h3><p>Od koncepta do izvođenja — roadmaps koji balansiraju inovacije, efikasnost troškova i skalabilnost.</p></article>
       <article class="feature-tile"><div class="ft-icon">💠</div><h3>Poslovna vrednost u prvom planu</h3><p>Fokus na merljive KPI: efikasnost, smanjenje troškova i pametnije odluke.</p></article>
       <article class="feature-tile"><div class="ft-icon">⚖️</div><h3>Neutralan savet po dobavljačima</h3><p>Nezavisno vođenje — preporučujemo rešenje koje odgovara vašim potrebama, ne provizijama.</p></article>
-      <article class="feature-tile"><div class="ft-icon">⚡</div><h3>Brzi model isporuke</h3><p>Nаш Accelerator Model ubrzava isporuku uz visok kvalitet, evolvibilnost i bezbednost.</p></article>
+      <article class="feature-tile"><div class="ft-icon">⚡</div><h3>Brzi model isporuke</h3><p>Naš Accelerator Model ubrzava isporuku uz visok kvalitet, evolvibilnost i bezbednost.</p></article>
     </div>
   </div>
 </section>
@@ -102,5 +98,11 @@
   </div>
 </footer>
 
+<!-- REGION GATE: two faces (EN/SR), resolved by geolocation - no visible switch -->
+<div class="region-loading" id="regionLoading">
+  <div class="region-loading-spinner"></div>
+</div>
+
+<script src="../js/site.js"></script>
 </body>
 </html>

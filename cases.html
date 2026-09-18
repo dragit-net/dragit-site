@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="region-gate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,10 +35,6 @@
       <li><a href="book_meeting.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-switch">
-        <a href="/sr/cases.html">SR</a>
-        <a href="/cases.html" class="active">EN</a>
-      </div>
       <a class="btn btn-primary nav-cta" href="book_meeting.html">Book a Call</a>
     </div>
   </div>
@@ -228,6 +224,13 @@
     </div>
   </div>
 </footer>
+
+<!-- REGION GATE: two faces (EN/SR), resolved by geolocation — no visible switch -->
+<div class="region-loading" id="regionLoading">
+  <div class="region-loading-spinner"></div>
+</div>
+
+<script src="js/site.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="region-gate">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,10 +48,6 @@
       <li><a href="book_meeting.html">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-switch">
-        <a href="/sr/" title="Srpski">SR</a>
-        <a href="/?lang=en" class="active" title="English">EN</a>
-      </div>
       <a class="btn btn-primary nav-cta" href="#cta">Book a Call</a>
     </div>
   </div>
@@ -237,36 +234,12 @@
   </div>
 </footer>
 
-<!-- REGION GATE: two-faces mechanism (RS/ME/HR/BA/MK → /sr/, ?lang=en bypass) -->
+<!-- REGION GATE: two faces (EN/SR), resolved by geolocation — no visible switch -->
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>
 
-<script>
-  (function () {
-    var html = document.documentElement;
-    var REGION = ['RS', 'ME', 'HR', 'BA', 'MK'];
-    var params = new URLSearchParams(location.search);
-
-    function reveal() {
-      html.classList.remove('region-gate');
-      var o = document.getElementById('regionLoading');
-      if (o) o.style.display = 'none';
-    }
-
-    // Explicit English bypass — stay on the EU/EN face
-    if (params.get('lang') === 'en') { reveal(); return; }
-
-    fetch('https://api.country.is/')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        var cc = (d.country || '').toUpperCase();
-        if (REGION.indexOf(cc) !== -1) { location.replace('/sr/'); }
-        else { reveal(); }
-      })
-      .catch(reveal); // fail-open to EN face
-  })();
-</script>
+<script src="js/site.js"></script>
 
 </body>
 </html>

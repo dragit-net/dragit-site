@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- EN face (Dr Zoran Dragic - personal brand, EU/US) -->
   <url><loc>https://www.dragit.net/</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://www.dragit.net/strategy.html</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://www.dragit.net/go_digital.html</loc><lastmod>2026-09-18</lastmod></url>
@@ -8,6 +9,12 @@
   <url><loc>https://www.dragit.net/custom_software.html</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://www.dragit.net/book_meeting.html</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://www.dragit.net/privacy.html</loc><lastmod>2026-09-18</lastmod></url>
+  <!-- SR face (dragIT corporate, regional RS/ME/HR/BA/MK) -->
   <url><loc>https://www.dragit.net/sr/</loc><lastmod>2026-09-18</lastmod></url>
   <url><loc>https://www.dragit.net/sr/cases.html</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://www.dragit.net/sr/strategy.html</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://www.dragit.net/sr/d365_f&amp;o.html</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://www.dragit.net/sr/custom_software.html</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://www.dragit.net/sr/go_digital.html</loc><lastmod>2026-09-18</lastmod></url>
+  <url><loc>https://www.dragit.net/sr/book_meeting.html</loc><lastmod>2026-09-18</lastmod></url>
 </urlset>

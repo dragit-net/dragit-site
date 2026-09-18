@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="sr" class="region-gate">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,16 +29,12 @@
     <a class="nav-logo" href="/sr/">dragIT</a>
     <ul class="nav-links">
       <li><a href="#usluge">Usluge</a></li>
-      <li><a href="cases.html">Case Studies</a></li>
+      <li><a href="cases.html">Studije slučaja</a></li>
       <li><a href="d365_f&amp;o.html">D365 F&amp;O</a></li>
       <li><a href="strategy.html">Strategija</a></li>
       <li><a href="book_meeting.html">Kontakt</a></li>
     </ul>
     <div class="nav-right">
-      <div class="lang-switch">
-        <a href="/sr/" class="active" title="Srpski">SR</a>
-        <a href="/?lang=en" title="English">EN</a>
-      </div>
       <a class="btn btn-primary nav-cta" href="book_meeting.html">Zakaži</a>
     </div>
   </div>
@@ -58,7 +54,7 @@
         <svg class="btn-icon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2Z"/></svg>
         Zakažite besplatnu procenu
       </a>
-      <a class="btn btn-outline" href="cases.html">Case Studies</a>
+      <a class="btn btn-outline" href="cases.html">Studije slučaja</a>
     </div>
 
     <!-- LOCAL proof strip -->
@@ -94,7 +90,7 @@
         <div class="niche-icon">🧭</div>
         <div class="niche-content">
           <h3>IT / AI strategija</h3>
-          <p>Celestratija digitalizacije, izbor tehnologija i model operativnosti — prilagođen vašem poslu.</p>
+          <p>Strategija digitalizacije, izbor tehnologija i model operativnosti — prilagođen vašem poslu.</p>
         </div>
         <span class="niche-arrow">→</span>
       </a>
@@ -102,7 +98,7 @@
         <div class="niche-icon">🛠</div>
         <div class="niche-content">
           <h3>ERP + Portal (aktivan proizvod)</h3>
-          <p>Cele implementacije ERP-a i operativni sloj Portal — KPI dasbordi, alarmi, CRUD, izveštavanje.</p>
+          <p>Kompletne implementacije ERP-a i operativni sloj Portal — KPI dasbordi, alarmi, CRUD, izveštavanje.</p>
         </div>
         <span class="niche-arrow">→</span>
       </a>
@@ -110,7 +106,7 @@
         <div class="niche-icon">⚙️</div>
         <div class="niche-content">
           <h3>Automatizacija (agentic / n8n)</h3>
-          <p>Agentic automatizacija procesa i integracija sistema — od vizije do radećeg sistema.</p>
+          <p>Agentic automatizacija procesa i integracija sistema — od vizije do operativnog sistema.</p>
         </div>
         <span class="niche-arrow">→</span>
       </a>
@@ -139,13 +135,13 @@
       </a>
       <a class="case-card" href="cases.html#soligna">
         <h3>Soligna — Portal AM</h3>
-        <div class="case-metric">Wood industry</div>
+        <div class="case-metric">Drvna industrija</div>
         <p>Custom Portal za radnu snagu i materijale — operativni KPI dasbordi iznad ERP-a.</p>
         <span class="case-link">Pročitaj →</span>
       </a>
     </div>
     <div class="text-center mt-12">
-      <a class="btn btn-ghost" href="cases.html">Sva 5 case studies →</a>
+      <a class="btn btn-ghost" href="cases.html">Sve studije slučaja →</a>
     </div>
   </div>
 </section>
@@ -155,7 +151,7 @@
   <div class="container">
     <div class="cta-block">
       <h2>Započnimo besplatnom procenom</h2>
-      <p class="cta-lead">30 minuta. Prikazujemo vam gde su skriveni troškovi i šta bi vaš brojke mogle da izgledaju. Bez obaveza.</p>
+      <p class="cta-lead">30 minuta. Prikazujemo vam gde su skriveni troškovi i kako bi izgledale vaše brojke. Bez obaveza.</p>
       <div class="cta-calendly">
         <iframe
           src="https://calendly.com/dragit-net"
@@ -194,7 +190,7 @@
       <div>
         <h4>Dokaz</h4>
         <ul>
-          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="cases.html">Studije slučaja</a></li>
           <li><a href="cases.html#boksit">Boksit</a></li>
           <li><a href="cases.html#drina">Drina</a></li>
           <li><a href="cases.html#soligna">Soligna</a></li>
@@ -219,5 +215,11 @@
   </div>
 </footer>
 
+<!-- REGION GATE: two faces (EN/SR), resolved by geolocation - no visible switch -->
+<div class="region-loading" id="regionLoading">
+  <div class="region-loading-spinner"></div>
+</div>
+
+<script src="../js/site.js"></script>
 </body>
 </html>
