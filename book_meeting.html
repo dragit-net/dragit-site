@@ -836,9 +836,29 @@
           </div>
 
           <div class="form-group">
+            <label for="interest" class="required"><i class="fas fa-tag"></i> What do you need help with?</label>
+            <select id="interest" required>
+              <option value="" disabled selected>Select an area…</option>
+              <option>D365 F&amp;O / ERP delivery</option>
+              <option>Observability / Mission Control</option>
+              <option>IT / AI strategy &amp; automation</option>
+              <option>Portal (custom software)</option>
+              <option>Not sure yet — discovery call</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label>
-              <input type="checkbox" id="emailNotification" checked disabled>
-              <i class="fas fa-bell"></i> Send confirmation and reminder to our email
+              <input type="checkbox" id="emailNotification" checked>
+              <i class="fas fa-bell"></i> Send confirmation to my email
+            </label>
+          </div>
+
+          <div class="form-group" style="margin-top:8px;">
+            <label style="font-weight:400;font-size:.82rem;">
+              <input type="checkbox" id="gdprConsent" required style="margin-right:8px;">
+              I agree to dragIT processing my contact details to respond to this request
+              (GDPR). Data is stored securely and never shared.
             </label>
           </div>
 
@@ -942,7 +962,14 @@
     let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
 
     // Prikazivanje postojećih sastanaka prilikom učitavanja stranice
-    document.addEventListener('DOMContentLoaded', displayAppointments);
+    // ===== Phase 4 lead-capture configuration =====
+// POSTAVITI kad se kreira Formspree nalog (besplatan do 50 mjesečno).
+// Kreira se na formspree.io -> New Form -> copy endpoint.
+const FORMSPREE_ENDPOINT = ""; // npr. "https://formspree.io/f/xzqqdabc"
+// ==============================================
+
+// Prikazivanje postojećih sastanaka prilikom učitavanja stranice
+
 
     // Dodavanje event listenera za formu
     document.getElementById('appointmentForm').addEventListener('submit', async function (e) {
@@ -991,36 +1018,65 @@
       };
 
       try {
-        // Simulacija slanja email obaveštenja
-        let emailSent = false;
-        if (sendEmail) {
-          emailSent = await sendEmailNotification(appointment);
+        // === Phase 4 backend ===
+        // Lead capture: slanje u pravi backend (Formspree) + GA4 event.
+        // Endpoint se definise u konfigu ispod — kad se kreira Formspree nalog,
+        // samo se zameni FORMSPREE_ENDPOINT sa prvim https://formspree.io/f/XXXXX
+        const gdpr = document.getElementById('gdprConsent').checked;
+        if (!gdpr) {
+          showNotification('Please agree to data processing (GDPR) to continue.', 'error');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-calendar-plus"></i> Book a Meeting';
+          return;
+        }
+        const interest = document.getElementById('interest').value;
+
+        let submitted = false;
+        if (FORMSPREE_ENDPOINT) {
+          const payload = {
+            _subject: `New meeting request: ${firstName} ${lastName} (${interest})`,
+            Name: `${firstName} ${lastName}`,
+            Email: email,
+            Phone: phone,
+            Date: date,
+            Time: time,
+            Method: tool,
+            Interest: interest,
+            Notes: notes,
+            SendConfirmation: sendEmail ? 'yes' : 'no',
+            Created: appointment.createdAt,
+          };
+          const resp = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          submitted = resp.ok;
+          if (window.gtag) gtag('event', 'form_submit', { form: 'appointment', ok: submitted, interest: interest });
+        } else {
+          // Bez backend-a: evidentiraj lokalno kao fallback (ne gubi se do aktivacije endpoint-a)
+          appointments.push(appointment);
+          localStorage.setItem('appointments', JSON.stringify(appointments));
+          displayAppointments();
+          if (window.gtag) gtag('event', 'form_submit', { form: 'appointment', ok: false, interest: interest, note: 'no-backend' });
         }
 
-        // Dodavanje sastanka u niz
-        appointments.push(appointment);
-
-        // Čuvanje u localStorage
-        localStorage.setItem('appointments', JSON.stringify(appointments));
-
-        // Prikazivanje ažurirane liste
-        displayAppointments();
-
-        // Resetovanje forme
+        // Reset forma + min datum
         document.getElementById('appointmentForm').reset();
-
-        // Postavljanje minimalnog datuma i podrazumevanog vremena
         document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
         document.getElementById('appointmentTime').value = nextHourString;
 
-        // Prikaz poruke o uspešnom zakazivanju
-        showNotification(`Meeting successfully scheduled!${emailSent ? ' We’ve sent a confirmation to your email.' : ''}`, 'success');
+        if (submitted) {
+          showNotification(`Thank you, ${firstName}! Your request was received — we will confirm your meeting by email within one business day.`, 'success');
+        } else {
+          showNotification(`Your request was recorded locally. Please also email info@dragit.net to confirm.`, 'warning');
+        }
 
       } catch (error) {
         console.error('Scheduling Error:', error);
-        showNotification('There was an error scheduling the meeting. Please try again.', 'error');
+        if (window.gtag) gtag('event', 'form_submit', { form: 'appointment', ok: false, error: String(error).slice(0,120) });
+        showNotification('There was an error submitting. Please email info@dragit.net directly.', 'error');
       } finally {
-        // Ponovo omogući dugme
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fas fa-calendar-plus"></i> Book a Meeting';
       }

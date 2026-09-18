@@ -841,9 +841,28 @@
           </div>
 
           <div class="form-group">
+            <label for="interest" class="required"><i class="fas fa-tag"></i> Sa čim vam treba pomoć?</label>
+            <select id="interest" required>
+              <option value="" disabled selected>Izaberite oblast…</option>
+              <option>D365 F&amp;O / ERP isporuka</option>
+              <option>Opažljivost / Mission Control</option>
+              <option>IT / AI strategija i automatizacija</option>
+              <option>Portal (prilagođen softver)</option>
+              <option>Još nisam siguran — otkrivenje</option>
+            </select>
+          </div>
+
+          <div class="form-group">
             <label>
-              <input type="checkbox" id="emailNotification" checked disabled>
-              <i class="fas fa-bell"></i> Pošaljite nam potvrdu i podsetnik na email
+              <input type="checkbox" id="emailNotification" checked>
+              <i class="fas fa-bell"></i> Pošaljite mi potvrdu na email
+            </label>
+          </div>
+
+          <div class="form-group" style="margin-top:8px;">
+            <label style="font-weight:400;font-size:.82rem;">
+              <input type="checkbox" id="gdprConsent" required style="margin-right:8px;">
+              Saglasan sam da dragIT obrađuje moje podatke radi odgovora na ovaj zahtev (GDPR). Podaci se čuvaju bezbedno i ne dele se.
             </label>
           </div>
 
@@ -951,7 +970,13 @@
     let appointments = JSON.parse(localStorage.getItem('appointments')) || [];
 
     // Prikazivanje postojećih sastanaka prilikom učitavanja stranice
-    document.addEventListener('DOMContentLoaded', displayAppointments);
+    // ===== Phase 4 lead-capture konfiguracija =====
+// POSTAVITI kad se kreira Formspree nalog (besplatan do 50 mesecno).
+const FORMSPREE_ENDPOINT = ""; // npr. "https://formspree.io/f/xzqqdabc"
+// =================================================
+
+// Prikazivanje postojećih sastanaka prilikom učitavanja
+
 
     // Dodavanje event listenera za formu
     document.getElementById('appointmentForm').addEventListener('submit', async function (e) {
@@ -997,36 +1022,60 @@
       };
 
       try {
-        // Simulacija slanja email obaveštenja
-        let emailSent = false;
-        if (sendEmail) {
-          emailSent = await sendEmailNotification(appointment);
+        // === Phase 4 backend ===
+        const gdpr = document.getElementById('gdprConsent').checked;
+        if (!gdpr) {
+          showNotification('Molimo potvrdite obrađivanje podataka (GDPR) za nastavak.', 'error');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-calendar-plus"></i> Zakaži sastanak';
+          return;
+        }
+        const interest = document.getElementById('interest').value;
+
+        let submitted = false;
+        if (FORMSPREE_ENDPOINT) {
+          const payload = {
+            _subject: `Novi zahtev za sastanak: ${firstName} ${lastName} (${interest})`,
+            Ime: `${firstName} ${lastName}`,
+            Email: email,
+            Telefon: phone,
+            Datum: date,
+            Vreme: time,
+            Metoda: tool,
+            Oblast: interest,
+            Napomena: notes,
+            Potvrda: sendEmail ? 'da' : 'ne',
+            Kreirano: appointment.createdAt,
+          };
+          const resp = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          submitted = resp.ok;
+          if (window.gtag) gtag('event', 'form_submit', { form: 'appointment_sr', ok: submitted, interest: interest });
+        } else {
+          appointments.push(appointment);
+          localStorage.setItem('appointments', JSON.stringify(appointments));
+          displayAppointments();
+          if (window.gtag) gtag('event', 'form_submit', { form: 'appointment_sr', ok: false, interest: interest, note: 'no-backend' });
         }
 
-        // Dodavanje sastanka u niz
-        appointments.push(appointment);
-
-        // Čuvanje u localStorage
-        localStorage.setItem('appointments', JSON.stringify(appointments));
-
-        // Prikazivanje ažurirane liste
-        displayAppointments();
-
-        // Resetovanje forme
         document.getElementById('appointmentForm').reset();
-
-        // Postavljanje minimalnog datuma i podrazumevanog vremena
         document.getElementById('appointmentDate').min = new Date().toISOString().split('T')[0];
         document.getElementById('appointmentTime').value = nextHourString;
 
-        // Prikaz poruke o uspešnom zakazivanju
-        showNotification(`Sastanak je uspešno zakazan!${emailSent ? ' Potvrda je poslata na vaš email.' : ''}`, 'success');
+        if (submitted) {
+          showNotification(`Hvala, ${firstName}! Vaš zahtev je primljen — potvrdu sastanka šaljemo emailom u roku od jednog radnog dana.`, 'success');
+        } else {
+          showNotification(`Vaš zahtev je evidentiran lokalno. Molimo nas kontaktirajte i na info@dragit.net.`, 'warning');
+        }
 
       } catch (error) {
         console.error('Greška pri zakazivanju:', error);
-        showNotification('Došlo je do greške pri zakazivanju sastanka. Pokušajte ponovo.', 'error');
+        if (window.gtag) gtag('event', 'form_submit', { form: 'appointment_sr', ok: false, error: String(error).slice(0,120) });
+        showNotification('Došlo je do greške. Molimo nas kontaktirajte direktno: info@dragit.net.', 'error');
       } finally {
-        // Ponovo omogući dugme
         submitBtn.disabled = false;
         submitBtn.innerHTML = '<i class="fas fa-calendar-plus"></i> Zakaži sastanak';
       }
