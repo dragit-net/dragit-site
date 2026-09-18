@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /_preview/
+Disallow: /.vscode/
+
+Sitemap: https://www.dragit.net/sitemap.xml
