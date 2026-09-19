@@ -80,3 +80,16 @@
     })
     .catch(function () { clearTimeout(timer); reveal(); });
 })();
+  // ===== Mobile burger nav toggle =====
+  var burger = document.querySelector('.nav-burger');
+  if (burger) {
+    burger.addEventListener('click', function () {
+      document.querySelector('.nav').classList.toggle('open');
+    });
+    // close the mobile menu after tapping a link
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        document.querySelector('.nav').classList.remove('open');
+      });
+    });
+  }

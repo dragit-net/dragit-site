@@ -31,6 +31,9 @@
       <li><a href="/sr/strategy.html">Strategija</a></li>
       <li><a href="#top">Kontakt</a></li>
     </ul>
+    <button class="nav-burger" aria-label="Menu" type="button">
+      <span></span><span></span><span></span>
+    </button>
     <a class="btn btn-primary nav-cta" href="#calendly">Zakažite</a>
   </div>
 </nav>
@@ -70,7 +73,11 @@
         <h3>Pošaljite poruku</h3>
         <p class="form-intro">Četiri polja. Jedan odgovor u &lt;48h. Bez drip kampanja, bez CRM-a.</p>
 
-        <div class="form-grid">
+                <div class="form-honeypot" aria-hidden="true">
+          <label>Website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+<div class="form-grid">
           <div class="form-group">
             <label for="lf-name">Vaše ime</label>
             <input type="text" id="lf-name" name="name" required autocomplete="name">
@@ -151,6 +158,14 @@
     if (!gdpr) {
       status.classList.add('err');
       status.textContent = 'Molimo potvrdite GDPR saglasnost za nastavak.';
+      return;
+    }
+
+    // Honeypot: ako je bot popunio skriveno polje, tiho se odbaci.
+    if (fd.get('company_website')) {
+      status.className = 'form-status ok';
+      status.textContent = 'Hvala - vaša poruka je zabeležena.';
+      this.reset();
       return;
     }
 
