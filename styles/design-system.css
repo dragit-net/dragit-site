@@ -1032,3 +1032,45 @@ body.page-doc { padding: var(--space-16) 0; }
 .hero-pain { font-size: 1.02rem; line-height: 1.55; color: var(--muted, #5a6472);
   max-width: 42rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border, #e5e8ef); }
 .hero-pain strong { color: var(--ink, #111); font-weight: 600; }
+
+/* ---- ABOUT / PERSONAL PROFILE PAGE ---- */
+.about-hero { display: flex; gap: var(--space-8, 2.5rem); align-items: flex-start; padding: 4rem 0 3rem; }
+.about-hero .hero-avatar { flex: 0 0 220px; }
+.about-hero .hero-avatar img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%;
+  box-shadow: 0 12px 40px rgba(0,0,0,.18); }
+.about-hero-meta { flex: 1; }
+.about-hero-meta h1 { font-family: var(--font-heading); font-size: var(--text-3xl); line-height: 1.1;
+  margin: .2rem 0 .6rem; }
+.about-hero-meta .hero-tag { max-width: 46rem; }
+/* Timeline */
+.timeline { margin-top: var(--space-8, 2.5rem); border-left: 2px solid var(--border); padding-left: 1.6rem; }
+.timeline-item { position: relative; padding-bottom: 1.6rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content: ""; position: absolute; left: -2.25rem; top: .35rem;
+  width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+.timeline-item .t-role { font-weight: 600; font-size: 1.02rem; }
+.timeline-item .t-org { color: var(--muted); font-size: .9rem; margin: .1rem 0 .45rem; }
+.timeline-item ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.timeline-item li { margin-bottom: .3rem; font-size: .92rem; line-height: 1.5; }
+.timeline-item li::marker { color: var(--accent); }
+/* Credentials */
+.cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem; margin-top: var(--space-8, 2.5rem); }
+.cred-card { background: #f6f8fb; border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.3rem 1.4rem; }
+.cred-card .cred-ico { font-size: 1.6rem; margin-bottom: .5rem; }
+.cred-card h3 { font-family: var(--font-heading); font-size: 1rem; margin: 0 0 .5rem; }
+.cred-card p { font-size: .85rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.cred-card ul { margin: .4rem 0 0; padding-left: 1.1rem; }
+.cred-card li { font-size: .85rem; line-height: 1.55; }
+.pub-list { list-style: none; padding: 0; margin: var(--space-6, 1.5rem) 0 0; }
+.pub-list li { font-size: .88rem; line-height: 1.5; padding: .5rem 0; border-bottom: 1px solid var(--border); }
+.pub-list li:last-child { border-bottom: 0; }
+.pub-list .pub-auth { font-weight: 600; }
+@media (max-width: 768px) {
+  .about-hero { flex-direction: column; align-items: center; text-align: center; }
+  .about-hero .hero-avatar { flex: none; }
+  .about-hero .hero-avatar img { width: 160px; height: 160px; }
+  .about-hero-meta { flex: none; }
+  .about-hero-meta .hero-tag { margin: 0 auto; }
+}
