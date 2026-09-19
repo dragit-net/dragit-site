@@ -1004,3 +1004,31 @@ body.page-doc { padding: var(--space-16) 0; }
 
 /* Honeypot anti-spam (hidden from humans) */
 .form-honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ---- TRUST STRIP / WHY TABLE / HERO PAIN (Phase-4 polish) ---- */
+.client-strip-block { padding: 2.2rem 0; background: #f6f8fb;
+  border-top: 1px solid var(--border, #e5e8ef); border-bottom: 1px solid var(--border, #e5e8ef); }
+.client-label { text-align: center; font-size: .78rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted, #5a6472); margin-bottom: 1.1rem; }
+.client-strip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.6rem 2.4rem; }
+.client-wordmark { font-family: var(--font-heading, inherit); font-weight: 600; font-size: 1.05rem;
+  color: var(--ink, #111); opacity: .62; letter-spacing: .02em; transition: opacity .2s; }
+.client-wordmark:hover { opacity: 1; }
+.trust-line { text-align: center; color: var(--muted, #5a6472); font-size: .85rem; margin-top: 1.25rem; }
+/* Why comparison table */
+.why-table { overflow-x: auto; }
+.why-cols { display: grid; grid-template-columns: 1.45fr 1fr 1fr 1fr; min-width: 640px;
+  border: 1px solid var(--border, #e5e8ef); border-radius: 14px; overflow: hidden; }
+.why-row { display: contents; }
+.why-cell { padding: .85rem 1rem; border-bottom: 1px solid var(--border, #e5e8ef); font-size: .92rem; color: var(--ink, #111); }
+.why-cols .why-row:last-child .why-cell { border-bottom: 0; }
+.why-head .why-cell { font-weight: 700; background: #f6f8fb; }
+.why-dim { color: var(--muted, #5a6472); font-weight: 500; }
+.why-cell.m-yes, .why-cell.m-no, .why-cell.m-mid { font-weight: 500; }
+.why-cell.m-yes::before { content: "\2713 "; color: #0a7d3f; font-weight: 700; margin-right: .3rem; }
+.why-cell.m-no::before  { content: "\2715 "; color: #c0392b; font-weight: 700; margin-right: .3rem; }
+.why-cell.m-mid::before { content: "\7e "; color: #8a6d00; font-weight: 700; margin-right: .3rem; }
+/* Hero pain-mirror line */
+.hero-pain { font-size: 1.02rem; line-height: 1.55; color: var(--muted, #5a6472);
+  max-width: 42rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border, #e5e8ef); }
+.hero-pain strong { color: var(--ink, #111); font-weight: 600; }
