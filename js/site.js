@@ -16,6 +16,8 @@
 (function () {
   'use strict';
   var REGION = ['RS', 'ME', 'HR', 'BA', 'MK'];
+  // EN-only pages that have NO /sr/ equivalent — regional visitors stay on EN.
+  var EN_ONLY = ['about.html'];
   var html = document.documentElement;
   var params = new URLSearchParams(location.search);
 
@@ -26,15 +28,32 @@
     return { isSr: isSr, file: seg.length ? seg.join('/') : 'index.html' };
   }
 
+  // Channel signal: ?src=email (or utm_source) marks an email/social link.
+  // Google/organic traffic carries no such param and gets source='direct'.
+  // (referrer is NOT used as a hard signal — many mail clients strip it.)
+  function sourceDim() {
+    var s = params.get('src');
+    if (s) return s;
+    var utm = params.get('utm_source');
+    if (utm) return utm;
+    var ref = document.referrer || '';
+    if (ref && /mail\.google|gmail\.com|linkedin\.com|wa\.me/i.test(ref)) return 'email_or_social';
+    return 'direct';
+  }
+
   function fireEvents() {
     if (window.gtag) {
       var f = facePath();
       gtag('event', 'face_reached', {
         face: f.isSr ? 'sr' : 'en',
-        page: '/' + (f.file === 'index.html' ? 'home' : f.file)
+        page: '/' + (f.file === 'index.html' ? 'home' : f.file),
+        source: sourceDim()
       });
       if (document.querySelector('.cta-calendly iframe')) {
-        gtag('event', 'calendly_embed', { page: location.pathname });
+        gtag('event', 'calendly_embed', {
+          page: location.pathname,
+          source: sourceDim()
+        });
       }
     }
   }
@@ -71,6 +90,12 @@
         return;
       }
       if (!f.isSr && regional) {
+        // EN-only pages (e.g. the personal about page) have no /sr/ twin:
+        // a regional visitor stays on EN rather than hitting a 404.
+        if (EN_ONLY.indexOf(f.file) !== -1) {
+          reveal();
+          return;
+        }
         // Regional visitor on the EN face → SR equivalent
         var sr = f.file === 'index.html' ? '/sr/' : '/sr/' + f.file;
         location.replace(sr + hash);
