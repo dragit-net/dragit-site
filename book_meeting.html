@@ -32,6 +32,9 @@
       <li><a href="strategy.html">Strategy</a></li>
       <li><a href="#top">Contact</a></li>
     </ul>
+    <button class="nav-burger" aria-label="Menu" type="button">
+      <span></span><span></span><span></span>
+    </button>
     <a class="btn btn-primary nav-cta" href="#calendly">Book a Call</a>
   </div>
 </nav>
@@ -74,7 +77,11 @@
         <h3>Send a note</h3>
         <p class="form-intro">Four fields. One reply in &lt;48h. No drip campaign, no CRM.</p>
 
-        <div class="form-grid">
+                <div class="form-honeypot" aria-hidden="true">
+          <label>Website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+<div class="form-grid">
           <div class="form-group">
             <label for="lf-name">Your name</label>
             <input type="text" id="lf-name" name="name" required autocomplete="name">
@@ -158,6 +165,14 @@
     if (!gdpr) {
       status.classList.add('err');
       status.textContent = 'Please agree to the GDPR consent to continue.';
+      return;
+    }
+
+    // Honeypot: if a bot filled the hidden field, silently drop it.
+    if (fd.get('company_website')) {
+      status.className = 'form-status ok';
+      status.textContent = 'Thank you - your note is in.';
+      this.reset();
       return;
     }
 
