@@ -14,6 +14,7 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BTF2W65KZB');</script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav">
   <div class="container">
@@ -37,6 +38,7 @@
     </div>
   </div>
 </nav>
+<main id="main">
 
 <header class="hero">
   <div class="container hero-inner">
@@ -96,6 +98,8 @@
   </div>
 </section>
 
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-bottom">
@@ -106,11 +110,32 @@
 </footer>
 
 
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Quick booking">
+  <div class="sc-inner">
+    <div class="sc-text"><strong>30 min, no prep.</strong>Find the blind spots in your environment.</div>
+    <a class="sc-btn" href="book_meeting.html">Book a call &rarr;</a>
+  </div>
+</div>
+
+<!-- DESKTOP EXIT-INTENT NUDGE -->
+<div class="exit-nudge" id="exitNudge" role="dialog" aria-labelledby="enTitle">
+  <button class="en-close" aria-label="Dismiss">&times;</button>
+  <div class="en-title" id="enTitle">Before you go&hellip;</div>
+  <div class="en-sub">A free 30-minute call is the fastest way to know what the blind spots are.</div>
+  <div class="en-actions">
+    <a class="btn btn-primary" href="book_meeting.html">Book now</a>
+    <a class="btn btn-outline" href="cases.html">See case studies</a>
+  </div>
+</div>
+
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation — no visible switch -->
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>
 
 <script src="js/site.js"></script>
+<script src="js/ux.js"></script>
   </body>
 </html>

@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main">Preskoči na sadržaj</a>
 
 <nav class="nav">
   <div class="container">
@@ -39,6 +40,7 @@
     </div>
   </div>
 </nav>
+<main id="main">
 <header class="hero">
   <div class="container hero-inner">
     <p class="hero-eyebrow">Digitalna transformacija</p>
@@ -91,6 +93,8 @@
     </div>
   </div>
 </section>
+</main>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -132,12 +136,33 @@
   </div>
 </footer>
 
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta" role="complementary" aria-label="Quick booking">
+  <div class="sc-inner">
+    <div class="sc-text"><strong>30 min, bez pripreme.</strong>Pronađimo slepe ugle u vašoj okruženja.</div>
+    <a class="sc-btn" href="book_meeting.html">Zakažite &rarr;</a>
+  </div>
+</div>
+
+<!-- DESKTOP EXIT-INTENT NUDGE -->
+<div class="exit-nudge" id="exitNudge" role="dialog" aria-labelledby="enTitle">
+  <button class="en-close" aria-label="Dismiss">&times;</button>
+  <div class="en-title" id="enTitle">Pre nego što odete&hellip;</div>
+  <div class="en-sub">Besplatan poziv od 30 minuta je najbrži način da saznate gde su slepi uglovi.</div>
+  <div class="en-actions">
+    <a class="btn btn-primary" href="book_meeting.html">Zakažite sada</a>
+    <a class="btn btn-outline" href="cases.html">Studije slučaja</a>
+  </div>
+</div>
+
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation - no visible switch -->
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>
 
 <script src="../js/site.js"></script>
+<script src="../js/ux.js"></script>
 
 </body>
 </html>

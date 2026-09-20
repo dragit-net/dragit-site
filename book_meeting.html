@@ -20,6 +20,7 @@
   </script>
 </head>
 <body>
+<a class="skip-link" href="#top">Skip to content</a>
 
 <!-- NAV -->
 <nav class="nav">
@@ -50,16 +51,16 @@
   <!-- OBA: Calendly + 4-field form, two tabs -->
   <div class="container maxw-840 mt-8">
     <div class="tabs" role="tablist">
-      <button class="tab active" id="tab-calendly" onclick="showTab('calendly')" role="tab" aria-selected="true">
+      <button class="tab active" id="tab-calendly" data-tab="calendly" onclick="showTab('calendly')" role="tab" aria-selected="true" aria-controls="panel-calendly" tabindex="0">
         📅 Pick a slot
       </button>
-      <button class="tab" id="tab-form" onclick="showTab('form')" role="tab" aria-selected="false">
+      <button class="tab" id="tab-form" data-tab="form" onclick="showTab('form')" role="tab" aria-selected="false" aria-controls="panel-form" tabindex="-1">
         ✉️ Send a note
       </button>
     </div>
 
     <!-- TAB 1: Calendly -->
-    <div id="panel-calendly" class="tab-panel active">
+    <div id="panel-calendly" class="tab-panel active" role="tabpanel" aria-labelledby="tab-calendly">
       <div class="cta-calendly">
         <iframe
           src="https://calendly.com/dragit-net"
@@ -73,7 +74,7 @@
     </div>
 
     <!-- TAB 2: Lead form (4 fields + consent) -->
-    <div id="panel-form" class="tab-panel">
+    <div id="panel-form" class="tab-panel" role="tabpanel" aria-labelledby="tab-form" hidden>
       <form class="lead-form" id="leadForm" novalidate>
         <h3>Send a note</h3>
         <p class="form-intro">Four fields. One reply in &lt;48h. No drip campaign, no CRM.</p>
@@ -140,14 +141,22 @@
 <script>
   // ===== Tab switching =====
   function showTab(id) {
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.remove('active');
+      p.setAttribute('hidden', '');
+    });
     document.querySelectorAll('.tab').forEach(b => {
       b.classList.remove('active');
       b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
     });
-    document.getElementById('panel-' + id).classList.add('active');
-    document.getElementById('tab-' + id).classList.add('active');
-    document.getElementById('tab-' + id).setAttribute('aria-selected', 'true');
+    const panel = document.getElementById('panel-' + id);
+    const tab = document.getElementById('tab-' + id);
+    panel.classList.add('active');
+    panel.removeAttribute('hidden');
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
   }
 
   // ===== Lead form backend (EmailJS) =====
@@ -209,6 +218,7 @@
 </div>
 
 <script src="js/site.js"></script>
+<script src="js/ux.js"></script>
 
 </body>
 </html>
