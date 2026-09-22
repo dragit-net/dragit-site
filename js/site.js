@@ -2,7 +2,7 @@
    dragIT — shared site script
    ----------------------------------------------------------------
    1. REGION GATE (two-faces mechanism, no visible switch):
-      - EN face  = personal brand (Dr Zoran Dragičević)
+      - EN face  = personal brand (Zoran Dragičević, PhD)
       - SR face  = dragIT corporate (regional: RS/ME/HR/BA/MK)
       Geolocation via api.country.is routes the visitor to the
       correct face — on every page, deep links included:
