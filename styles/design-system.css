@@ -1036,7 +1036,7 @@ body.page-doc { padding: var(--space-16) 0; }
 
 /* ---- ABOUT / PERSONAL PROFILE PAGE ---- */
 .about-hero { display: flex; gap: var(--space-8, 2.5rem); align-items: flex-start; padding: 4rem 0 3rem; }
-.about-hero .hero-avatar { flex: 0 0 220px; }
+.about-hero .hero-avatar { flex: 0 0 220px; width: 220px; height: 220px; margin: 0; }
 .about-hero .hero-avatar img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%;
   box-shadow: 0 12px 40px rgba(0,0,0,.18); }
 .about-hero-meta { flex: 1; }
@@ -1070,7 +1070,7 @@ body.page-doc { padding: var(--space-16) 0; }
 .pub-list .pub-auth { font-weight: 600; }
 @media (max-width: 768px) {
   .about-hero { flex-direction: column; align-items: center; text-align: center; }
-  .about-hero .hero-avatar { flex: none; }
+  .about-hero .hero-avatar { flex: none; width: 160px; height: 160px; }
   .about-hero .hero-avatar img { width: 160px; height: 160px; }
   .about-hero-meta { flex: none; }
   .about-hero-meta .hero-tag { margin: 0 auto; }
