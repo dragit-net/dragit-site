@@ -1031,7 +1031,8 @@ body.page-doc { padding: var(--space-16) 0; }
 .why-cell.m-mid::before { content: "\7e "; color: #8a6d00; font-weight: 700; margin-right: .3rem; }
 /* Hero pain-mirror line */
 .hero-pain { font-size: 1.02rem; line-height: 1.55; color: var(--muted, #5a6472);
-  max-width: 42rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border, #e5e8ef); }
+  text-align: center; max-width: 42rem; margin: 1rem auto 0; padding-top: 1rem;
+  border-top: 1px solid var(--border, #e5e8ef); }
 .hero-pain strong { color: var(--ink, #111); font-weight: 600; }
 
 /* ---- ABOUT / PERSONAL PROFILE PAGE ---- */
@@ -1326,7 +1327,7 @@ body.page-doc { padding: var(--space-16) 0; }
 }
 
 /* ---- Authority / research components (Phase 4.5) ---- */
-.hero-cred-chip { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .8rem; }
+.hero-cred-chip { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .8rem; justify-content: center; }
 .hero-cred-chip span { font-size: .76rem; font-weight: 600; letter-spacing: .01em;
   color: var(--ink); background: #eef1f7; border: 1px solid var(--border);
   padding: .32rem .7rem; border-radius: 999px; }
