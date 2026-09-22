@@ -1058,10 +1058,11 @@ body.page-doc { padding: var(--space-16) 0; }
 .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.2rem; margin-top: var(--space-8, 2.5rem); }
 .cred-card { background: #f6f8fb; border: 1px solid var(--border); border-radius: 12px;
-  padding: 1.3rem 1.4rem; }
+  padding: 1.3rem 1.4rem; display: flex; flex-direction: column; }
 .cred-card .cred-ico { font-size: 1.6rem; margin-bottom: .5rem; }
-.cred-card h3 { font-family: var(--font-heading); font-size: 1rem; margin: 0 0 .5rem; }
+.cred-card h3 { font-family: var(--font-heading); font-size: 1rem; margin: 0 0 .5rem; min-height: 2.6em; }
 .cred-card p { font-size: .85rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.cred-card p.form-note { text-align: left; margin: .5rem 0 0; }
 .cred-card ul { margin: .4rem 0 0; padding-left: 1.1rem; }
 .cred-card li { font-size: .85rem; line-height: 1.55; }
 .pub-list { list-style: none; padding: 0; margin: var(--space-6, 1.5rem) 0 0; }
