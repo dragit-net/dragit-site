@@ -1126,7 +1126,7 @@ body.page-doc { padding: var(--space-16) 0; }
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: var(--space-8);
-  align-items: center;
+  align-items: start;
 }
 .vouch-quote {
   background: var(--surface);
@@ -1177,7 +1177,7 @@ body.page-doc { padding: var(--space-16) 0; }
   display: flex;
   flex-wrap: wrap;
   gap: 10px 22px;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: var(--space-6);
   font-size: var(--text-xs);
   color: var(--muted);
