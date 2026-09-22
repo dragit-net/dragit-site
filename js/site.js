@@ -65,8 +65,22 @@
     fireEvents();
   }
 
-  // Explicit bypass — used for testing and pinned language
-  if (params.get('lang') === 'en' || params.get('lang') === 'sr') {
+  // Language pin (dev/QA override): ?lang=en or ?lang=sr keeps the chosen
+  // face for the ENTIRE browser session, so internal links (nav, footer,
+  // CTAs) that carry no query string stay on the pinned face. The pin is
+  // stored in sessionStorage and cleared automatically when the tab closes.
+  // Production visitors are unaffected: the key is only written when the
+  // ?lang param is present; without it, geo-routing works as designed.
+  var LANG_KEY = 'dragit_lang';
+  var langParam = params.get('lang');
+  if (langParam === 'en' || langParam === 'sr') {
+    try { sessionStorage.setItem(LANG_KEY, langParam); } catch (e) { /* private mode */ }
+    reveal();
+    return;
+  }
+  var pinned = null;
+  try { pinned = sessionStorage.getItem(LANG_KEY); } catch (e) { /* ignore */ }
+  if (pinned === 'en' || pinned === 'sr') {
     reveal();
     return;
   }
@@ -104,7 +118,6 @@
       reveal();
     })
     .catch(function () { clearTimeout(timer); reveal(); });
-})();
   // ===== Mobile burger nav toggle =====
   var burger = document.querySelector('.nav-burger');
   if (burger) {
@@ -118,3 +131,4 @@
       });
     });
   }
+})();
