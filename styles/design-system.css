@@ -1340,3 +1340,16 @@ body.page-doc { padding: var(--space-16) 0; }
   .hero-cred-chip { gap: .4rem; }
   .hero-cred-chip span { font-size: .7rem; padding: .28rem .55rem; }
 }
+
+
+/* === Phase H polish (rev3) === */
+.scroll-hint { display: none; }
+@media (max-width: 768px) {
+  .scroll-hint { display: block; font-size: var(--text-xs); color: var(--muted); margin: 0 0 8px; }
+}
+.footer ul li a, .footer-links a { display: inline-block; padding: 5px 0; }
+.cta-calendly { position: relative; }
+.cal-placeholder { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  padding: 24px; background: var(--surface); color: var(--muted); font-size: var(--text-sm);
+  border-radius: var(--radius); }
+.cta-calendly iframe { position: relative; z-index: 1; }
