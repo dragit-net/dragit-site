@@ -19,9 +19,7 @@
 <meta name="twitter:description" content="How dragIT handles your data: what we collect from the booking form, how it is used, your GDPR rights and retention. Contact info@dragit.net.">
 <meta name="twitter:image" content="https://www.dragit.net/images/Portal.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/fonts.css">
 <link rel="stylesheet" href="styles/design-system.css">
 <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
 <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
@@ -38,21 +36,21 @@
   <p>When you submit our discovery-call form, we collect: your name, company, email address, the area of interest you select, and any notes you provide. This data is used solely to respond to your inquiry and schedule your meeting.</p>
 
   <h2>How we use it</h2>
-  <p>Your form data is stored securely and is never sold. We share it only with the processors listed below, and only for the purposes stated there. We use Google Analytics (GA4) to understand site usage in aggregate — no personally identifiable information is sent to GA4.</p>
+  <p>Your form data is stored securely and is never sold. We share it only with the processors listed below, and only for the purposes stated there. Google Analytics (GA4) loads only after you allow analytics in the consent banner; if you decline, it is not loaded at all. When allowed, we use it to understand site usage in aggregate — no personally identifiable information is sent to GA4.</p>
 
   <h2>Third-party services and cookies</h2>
   <p>We do not use advertising or profiling cookies. The services below help us run the site; each may process your IP address and some may set their own cookies:</p>
   <ul>
     <li><strong>Calendly</strong> (Calendly LLC, USA) — the booking calendar. It loads only after you click “Load the calendar”, which connects you to calendly.com and may set Calendly cookies. Purpose: scheduling a call. <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">Calendly privacy notice</a>.</li>
     <li><strong>EmailJS</strong> (EmailJS, USA) — delivers the contact-form submission to our mailbox. Purpose: answering your request. Active only on the booking page.</li>
-    <li><strong>Google Analytics 4</strong> (Google Ireland Ltd.) — aggregate, anonymous usage statistics; sets analytics cookies.</li>
-    <li><strong>Google Fonts</strong> (Google Ireland Ltd.) — web fonts; your IP address is transmitted to Google when the font files are requested.</li>
+    <li><strong>Google Analytics 4</strong> (Google Ireland Ltd.) — aggregate, anonymous usage statistics; sets analytics cookies. Loads only after you allow analytics in the consent banner.</li>
+    <li><strong>Fonts</strong> — Inter and Space Grotesk are self-hosted on this site; font requests never reach third-party providers.</li>
     <li><strong>api.country.is</strong> — resolves your country from your IP address so we can show the correct language version of the site. The result is kept only in your browser session, never on our servers.</li>
   </ul>
   <p>Where a provider is based outside the EU/EEA, the transfer relies on that provider’s standard contractual clauses.</p>
 
   <h2>Legal basis</h2>
-  <p>Form data is processed to take steps at your request before entering a contract (Art. 6(1)(b) GDPR) and to answer your enquiry (Art. 6(1)(f)). Site analytics rest on our legitimate interest in understanding how the site is used (Art. 6(1)(f)); you may object at any time by emailing us.</p>
+  <p>Form data is processed to take steps at your request before entering a contract (Art. 6(1)(b) GDPR) and to answer your enquiry (Art. 6(1)(f)). Site analytics rest on your consent (Art. 6(1)(a) GDPR), given through the consent banner; you can withdraw it at any time by declining in the banner or clearing this site’s browser storage.</p>
 
   <h2>Your rights (GDPR)</h2>
   <p>Under GDPR (applicable to EU data subjects) and BiH/SRB data protection laws, you have the right to: access your data, correct it, request deletion, or object to processing. To exercise these rights, email <a href="mailto:info@dragit.net">info@dragit.net</a>.</p>
@@ -69,6 +67,53 @@
 </div>
 
 </main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-logo">dragIT</h2>
+        <div class="footer-blurb">
+          Enterprise ERP and D365 F&amp;O delivery. Observability. Custom software. One architect, no layers.
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="d365_f&amp;o.html">D365 F&amp;O Delivery</a></li>
+          <li><a href="d365_f&amp;o.html#observability">Observability / Mission Control</a></li>
+          <li><a href="custom_software.html">Custom Software &amp; Portal</a></li>
+          <li><a href="strategy.html">IT / AI Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Proof</h3>
+        <ul>
+          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="cases.html#ragn-sells">Ragn-Sells</a></li>
+          <li><a href="cases.html#boksit">Boksit</a></li>
+          <li><a href="cases.html#drina">Drina Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:info@dragit.net">info@dragit.net</a></li>
+          <li><a href="tel:+38765384235">+387 65 384 235</a></li>
+          <li><a href="tel:+381643719470">+381 64 371 9470</a></li>
+          <li><a href="https://ba.linkedin.com/in/dragit" target="_blank" rel="noopener">LinkedIn &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 dragIT &mdash; Zoran Dragi&#269;evi&#263;, PhD. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation — no visible switch -->
 <div class="region-loading" id="regionLoading">

@@ -21,14 +21,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.dragit.net/sr/cases.html">
   <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
   <link rel="stylesheet" href="../styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-BTF2W65KZB');</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/sr/"},{"@type":"ListItem","position":2,"name":"Studije slučaja","item":"https://www.dragit.net/sr/cases.html"}]}</script>
 </head>
 <body>
@@ -158,7 +154,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">dragIT</div>
+        <h2 class="footer-logo">dragIT</h2>
         <div class="footer-blurb">Poslovni softver i D365 F&amp;O isporuka. Nadzor. Prilagođeni softver. Jedan arhitekt, bez slojeva.</div>
       </div>
       <div>
@@ -217,6 +213,14 @@
 </div>
 
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation - no visible switch -->
+<!-- GA4 consent banner: GA4 loads only after "Allow" (js/site.js) -->
+<div class="consent-banner" id="consentBanner" hidden role="region" aria-label="Saglasnost za kola&#269;i&#263;e">
+  <p>Koristimo Google Analytics da razumemo kako se sajt koristi &mdash; bez reklama i profilisanja. Analitika se u&#269;itava samo ako je dozvolite. <a href="/sr/privacy.html">Politika privatnosti</a>.</p>
+  <div class="consent-actions">
+    <button class="btn btn-outline" id="consentNo" type="button">Odbij</button>
+    <button class="btn btn-primary" id="consentYes" type="button">Dozvoli analitiku</button>
+  </div>
+</div>
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>

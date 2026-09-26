@@ -585,7 +585,7 @@ h3 { font-size: var(--text-xl); }
   font-weight: 700;
   font-size: var(--text-xl);
   color: var(--white);
-  margin-bottom: 12px;
+  margin: 0 0 12px;
 }
 .footer-blurb {
   max-width: 280px;
@@ -1367,3 +1367,32 @@ body.page-doc { padding: var(--space-16) 0; }
 .cal-facade-note { margin: 0; max-width: 48ch; font-size: var(--text-sm); color: var(--muted); }
 .cal-facade-note a { text-decoration: underline; }
 .cta-calendly.cal-loaded .cal-facade { display: none; }
+
+/* ── GA4 CONSENT BANNER (deferred Consent Mode) ── */
+.consent-banner {
+  position: fixed;
+  left: var(--space-4, 1rem);
+  bottom: var(--space-4, 1rem);
+  z-index: 70;
+  max-width: 420px;
+  background: var(--white, #fff);
+  border: 1px solid var(--border, #e5e8ef);
+  border-radius: 14px;
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.1rem;
+}
+.consent-banner[hidden] { display: none; }
+.consent-banner p { margin: 0 0 .75rem; font-size: .85rem; line-height: 1.5; color: var(--text, #1a1d2e); }
+.consent-banner a { text-decoration: underline; color: inherit; }
+.consent-actions { display: flex; gap: .5rem; }
+.consent-actions .btn { flex: 1; justify-content: center; padding: .5rem .75rem; font-size: .85rem; }
+
+/* ── INLINE SVG ICONS (emoji replacement, O8) ── */
+.svg-ico { display: inline-block; vertical-align: middle; flex-shrink: 0; }
+.ft-icon .svg-ico { width: 28px; height: 28px; color: var(--accent); }
+.niche-icon .svg-ico { width: 24px; height: 24px; color: var(--navy); }
+.cred-card .cred-ico .svg-ico { width: 26px; height: 26px; color: var(--accent); }
+.tab .svg-ico { width: 16px; height: 16px; margin-right: .4rem; position: relative; top: -1px; }
+
+/* Links inside running text: distinguish by more than color (axe link-in-text-block, O17) */
+.form-note a, .error-sub a, .section-subtitle a, .doc-back a, .cta-lead a { text-decoration: underline; text-underline-offset: 2px; }

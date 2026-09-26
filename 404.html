@@ -6,15 +6,35 @@
   <title>404 — dragIT</title>
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="/styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav">
+  <div class="container">
+    <a class="nav-logo" href="/">dragIT</a>
+    <ul class="nav-links">
+      <li><a href="/index.html#niches">Services</a></li>
+      <li><a href="/cases.html">Case Studies</a></li>
+      <li><a href="/d365_f&amp;o.html">D365 F&amp;O</a></li>
+      <li><a href="/strategy.html">Strategy</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/book_meeting.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="nav-burger" aria-label="Menu" type="button">
+        <span></span>
+<span></span>
+<span></span>
+      </button>
+
+      <a class="btn btn-primary nav-cta" href="/book_meeting.html">Book a Call</a>
+    </div>
+  </div>
+</nav>
   <main class="section" id="main">
     <div class="container center maxw-640">
       <p class="section-label">Error 404</p>
@@ -23,12 +43,61 @@
       <p class="section-subtitle error-sub mx-auto">
         The page you were looking for has been moved or is gone. Let's get you back on track.
       </p>
+      <p class="section-subtitle mx-auto" style="margin-top:1rem">
+        Lost something specific? Write to <a href="mailto:info@dragit.net">info@dragit.net</a> &mdash; we reply within one business day.
+      </p>
       <div class="cta-alt-row">
         <a class="btn btn-primary" href="/">Go to dragIT home</a>
         <a class="btn btn-outline" href="/cases.html">View case studies</a>
       </div>
     </div>
   </main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-logo">dragIT</h2>
+        <div class="footer-blurb">
+          Enterprise ERP and D365 F&amp;O delivery. Observability. Custom software. One architect, no layers.
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/d365_f&amp;o.html">D365 F&amp;O Delivery</a></li>
+          <li><a href="/d365_f&amp;o.html#observability">Observability / Mission Control</a></li>
+          <li><a href="/custom_software.html">Custom Software &amp; Portal</a></li>
+          <li><a href="/strategy.html">IT / AI Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Proof</h3>
+        <ul>
+          <li><a href="/cases.html">Case Studies</a></li>
+          <li><a href="/cases.html#ragn-sells">Ragn-Sells</a></li>
+          <li><a href="/cases.html#boksit">Boksit</a></li>
+          <li><a href="/cases.html#drina">Drina Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:info@dragit.net">info@dragit.net</a></li>
+          <li><a href="tel:+38765384235">+387 65 384 235</a></li>
+          <li><a href="tel:+381643719470">+381 64 371 9470</a></li>
+          <li><a href="https://ba.linkedin.com/in/dragit" target="_blank" rel="noopener">LinkedIn &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 dragIT &mdash; Zoran Dragi&#269;evi&#263;, PhD. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
   <div class="region-loading" id="regionLoading">
     <div class="region-loading-spinner"></div>
   </div>

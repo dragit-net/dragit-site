@@ -22,19 +22,11 @@
   <meta name="twitter:image" content="https://www.dragit.net/images/Portal.png">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-BTF2W65KZB');
-  </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Book a Discovery Call","url":"https://www.dragit.net/book_meeting.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/"},{"@type":"ListItem","position":2,"name":"Book a Call","item":"https://www.dragit.net/book_meeting.html"}]}</script>
 </head>
@@ -71,10 +63,10 @@
   <div class="container maxw-840 mt-8">
     <div class="tabs" role="tablist">
       <button class="tab active" id="tab-calendly" data-tab="calendly" onclick="showTab('calendly')" role="tab" aria-selected="true" aria-controls="panel-calendly" tabindex="0">
-        📅 Pick a slot
+        <svg class="svg-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Pick a slot
       </button>
       <button class="tab" id="tab-form" data-tab="form" onclick="showTab('form')" role="tab" aria-selected="false" aria-controls="panel-form" tabindex="-1">
-        ✉️ Send a note
+        <svg class="svg-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> Send a note
       </button>
     </div>
 
@@ -154,6 +146,41 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-logo">dragIT</h2>
+        <div class="footer-blurb">
+          Enterprise ERP and D365 F&amp;O delivery. Observability. Custom software. One architect, no layers.
+        </div>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="d365_f&amp;o.html">D365 F&amp;O Delivery</a></li>
+          <li><a href="d365_f&amp;o.html#observability">Observability / Mission Control</a></li>
+          <li><a href="custom_software.html">Custom Software &amp; Portal</a></li>
+          <li><a href="strategy.html">IT / AI Strategy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Proof</h3>
+        <ul>
+          <li><a href="cases.html">Case Studies</a></li>
+          <li><a href="cases.html#ragn-sells">Ragn-Sells</a></li>
+          <li><a href="cases.html#boksit">Boksit</a></li>
+          <li><a href="cases.html#drina">Drina Insurance</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:info@dragit.net">info@dragit.net</a></li>
+          <li><a href="tel:+38765384235">+387 65 384 235</a></li>
+          <li><a href="tel:+381643719470">+381 64 371 9470</a></li>
+          <li><a href="https://ba.linkedin.com/in/dragit" target="_blank" rel="noopener">LinkedIn &#8599;</a></li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-bottom">
       <span>© 2026 dragIT — Zoran Dragičević, PhD.</span>
       <div class="footer-links">
@@ -246,6 +273,14 @@
 </script>
 
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation — no visible switch -->
+<!-- GA4 consent banner: GA4 loads only after "Allow" (js/site.js) -->
+<div class="consent-banner" id="consentBanner" hidden role="region" aria-label="Cookie consent">
+  <p>We use Google Analytics to understand how the site is used &mdash; no ads, no profiling. Analytics loads only if you allow it. <a href="/privacy.html">Privacy policy</a>.</p>
+  <div class="consent-actions">
+    <button class="btn btn-outline" id="consentNo" type="button">Decline</button>
+    <button class="btn btn-primary" id="consentYes" type="button">Allow analytics</button>
+  </div>
+</div>
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>

@@ -100,18 +100,10 @@
 }
 </script>
   <link rel="icon" type="image/png" href="../favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/fonts.css">
   <link rel="stylesheet" href="../styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date()); gtag('config', 'G-BTF2W65KZB');
-  </script>
 </head>
 <body>
 
@@ -198,7 +190,7 @@
     <p class="section-subtitle">Povećanje produktivnosti, optimizacija efikasnosti i snižavanje troškova — kroz strategiju, softver i automatizaciju.</p>
     <div class="niche-list mt-8">
       <a class="niche-row" href="strategy.html">
-        <div class="niche-icon">🧭</div>
+        <div class="niche-icon"><svg class="svg-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z"/></svg></div>
         <div class="niche-content">
           <h3>IT / AI strategija</h3>
           <p>Strategija digitalizacije, izbor tehnologija i model operativnosti — prilagođen vašem poslu.</p>
@@ -206,7 +198,7 @@
         <span class="niche-arrow">→</span>
       </a>
       <a class="niche-row" href="custom_software.html">
-        <div class="niche-icon">🛠</div>
+        <div class="niche-icon"><svg class="svg-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></svg></div>
         <div class="niche-content">
           <h3>ERP + Portal (aktivan proizvod)</h3>
           <p>Kompletne implementacije ERP-a i operativni sloj Portal — KPI paneli, alarmi, CRUD, izveštavanje.</p>
@@ -214,7 +206,7 @@
         <span class="niche-arrow">→</span>
       </a>
       <a class="niche-row" href="custom_software.html">
-        <div class="niche-icon">⚙️</div>
+        <div class="niche-icon"><svg class="svg-ico" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.9l.1.1a2 2 0 01-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.9-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 01-4 0v-.1a1.7 1.7 0 00-1-1.6 1.7 1.7 0 00-1.9.3l-.1.1a2 2 0 01-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.9 1.7 1.7 0 00-1.5-1H3a2 2 0 010-4h.1a1.7 1.7 0 001.6-1 1.7 1.7 0 00-.3-1.9l-.1-.1a2 2 0 012.8-2.8l.1.1a1.7 1.7 0 001.9.3h0a1.7 1.7 0 001-1.5V3a2 2 0 014 0v.1a1.7 1.7 0 001 1.5h0a1.7 1.7 0 001.9-.3l.1-.1a2 2 0 012.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.9v0a1.7 1.7 0 001.5 1H21a2 2 0 010 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></div>
         <div class="niche-content">
           <h3>Automatizacija (agentska / n8n)</h3>
           <p>Agentska automatizacija procesa i integracija sistema — od vizije do operativnog sistema.</p>
@@ -390,7 +382,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">dragIT</div>
+        <h2 class="footer-logo">dragIT</h2>
         <div class="footer-blurb">
           Poslovni softver i AI rešenja za industriju u regionu. Portal, ERP, agentska automatizacija, D365 F&amp;O.
         </div>
@@ -453,6 +445,14 @@
 </div>
 
 <!-- REGION GATE: two faces (EN/SR), resolved by geolocation - no visible switch -->
+<!-- GA4 consent banner: GA4 loads only after "Allow" (js/site.js) -->
+<div class="consent-banner" id="consentBanner" hidden role="region" aria-label="Saglasnost za kola&#269;i&#263;e">
+  <p>Koristimo Google Analytics da razumemo kako se sajt koristi &mdash; bez reklama i profilisanja. Analitika se u&#269;itava samo ako je dozvolite. <a href="/sr/privacy.html">Politika privatnosti</a>.</p>
+  <div class="consent-actions">
+    <button class="btn btn-outline" id="consentNo" type="button">Odbij</button>
+    <button class="btn btn-primary" id="consentYes" type="button">Dozvoli analitiku</button>
+  </div>
+</div>
 <div class="region-loading" id="regionLoading">
   <div class="region-loading-spinner"></div>
 </div>

@@ -19,6 +19,7 @@
    ================================================================ */
 (function () {
   'use strict';
+  var faceFired = false;
   var REGION = ['RS', 'ME', 'HR', 'BA', 'MK'];
   // EN-only pages that have NO /sr/ equivalent — regional visitors stay on EN.
   var EN_ONLY = ['about.html'];
@@ -46,7 +47,8 @@
   }
 
   function fireEvents() {
-    if (window.gtag) {
+    if (window.gtag && !faceFired) {
+      faceFired = true;
       var f = facePath();
       gtag('event', 'face_reached', {
         face: f.isSr ? 'sr' : 'en',
@@ -162,5 +164,53 @@
       }
     });
   });
+
+  // ===== GA4 consent (deferred loading, Consent Mode v2 semantics) =====
+  // GA4 is NOT loaded on page load. It loads only after the visitor allows
+  // analytics in the consent banner (or on a later visit when the stored
+  // choice is "granted"). Declining means Google is never contacted at all.
+  // Pages without the banner (privacy, 404) never load GA4.
+  var CONSENT_KEY = 'dragit_consent';
+  var GA4_ID = 'G-BTF2W65KZB';
+  var consentBanner = document.getElementById('consentBanner');
+  if (consentBanner) {
+    var storedConsent = null;
+    try { storedConsent = localStorage.getItem(CONSENT_KEY); } catch (e) { /* private mode */ }
+
+    var loadGA4 = function () {
+      if (document.getElementById('ga4-script') || window.gtag) return; // QA stub respected
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      gtag('consent', 'default', {
+        analytics_storage: 'granted', ad_storage: 'denied',
+        ad_user_data: 'denied', ad_personalization: 'denied'
+      });
+      var s = document.createElement('script');
+      s.id = 'ga4-script';
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', GA4_ID);
+      fireEvents();
+    };
+
+    if (storedConsent === 'granted') {
+      loadGA4();
+    } else if (storedConsent !== 'denied') {
+      consentBanner.hidden = false;
+      var consentYes = document.getElementById('consentYes');
+      var consentNo = document.getElementById('consentNo');
+      if (consentYes) consentYes.addEventListener('click', function () {
+        try { localStorage.setItem(CONSENT_KEY, 'granted'); } catch (e) { /* ignore */ }
+        consentBanner.hidden = true;
+        loadGA4();
+      });
+      if (consentNo) consentNo.addEventListener('click', function () {
+        try { localStorage.setItem(CONSENT_KEY, 'denied'); } catch (e) { /* ignore */ }
+        consentBanner.hidden = true;
+      });
+    }
+  }
 
 })();
