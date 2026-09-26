@@ -9,6 +9,10 @@
         * non-regional visitor on /sr/…  → redirects to EN equivalent
         * regional visitor on EN page   → redirects to /sr/… equivalent
       Fail-open: if the lookup fails or times out, stay where you are.
+      The country is resolved once per browser session (sessionStorage
+      `dragit_geo`); every later page routes without a network call.
+      No-JS: each page carries a <noscript> reveal + a 4.5 s inline
+      safety timer, so the content is never left hidden behind the gate.
       Bypass for testing: ?lang=en or ?lang=sr keeps the current face.
    2. GA4: fires `face_reached` (which face was shown) and
       `calendly_embed` (when a page embeds the Calendly CTA).
@@ -72,52 +76,64 @@
   // Production visitors are unaffected: the key is only written when the
   // ?lang param is present; without it, geo-routing works as designed.
   var LANG_KEY = 'dragit_lang';
+  var GEO_KEY = 'dragit_geo';
   var langParam = params.get('lang');
+  var pinned = null;
+  try { pinned = sessionStorage.getItem(LANG_KEY); } catch (e) { /* ignore */ }
+
+  // Routing decision for a resolved country code (2-letter, uppercase).
+  function route(cc) {
+    var regional = REGION.indexOf(cc) !== -1;
+    var f = facePath();
+    var hash = location.hash;
+
+    if (f.isSr && !regional) {
+      // Non-regional visitor on the SR face → EN equivalent
+      var en = f.file === 'index.html' ? '/' : '/' + f.file;
+      location.replace(en + hash);
+      return;
+    }
+    if (!f.isSr && regional) {
+      // EN-only pages (e.g. the personal about page) have no /sr/ twin:
+      // a regional visitor stays on EN rather than hitting a 404.
+      if (EN_ONLY.indexOf(f.file) !== -1) {
+        reveal();
+        return;
+      }
+      // Regional visitor on the EN face → SR equivalent
+      var sr = f.file === 'index.html' ? '/sr/' : '/sr/' + f.file;
+      location.replace(sr + hash);
+      return;
+    }
+    reveal();
+  }
+
+  // The country is resolved once per browser session: every following page
+  // routes from sessionStorage — no geo API call, no hidden wait.
+  var geo = null;
+  try { geo = sessionStorage.getItem(GEO_KEY); } catch (e) { /* ignore */ }
+
   if (langParam === 'en' || langParam === 'sr') {
     try { sessionStorage.setItem(LANG_KEY, langParam); } catch (e) { /* private mode */ }
     reveal();
-    return;
-  }
-  var pinned = null;
-  try { pinned = sessionStorage.getItem(LANG_KEY); } catch (e) { /* ignore */ }
-  if (pinned === 'en' || pinned === 'sr') {
+  } else if (pinned === 'en' || pinned === 'sr') {
     reveal();
-    return;
+  } else if (geo) {
+    route(geo.toUpperCase());
+  } else {
+    // Safety: never keep the page hidden for more than 4 seconds
+    var timer = setTimeout(reveal, 4000);
+
+    fetch('https://api.country.is/')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        clearTimeout(timer);
+        var cc = (d.country || '').toUpperCase();
+        try { if (cc) sessionStorage.setItem(GEO_KEY, cc); } catch (e) { /* ignore */ }
+        route(cc);
+      })
+      .catch(function () { clearTimeout(timer); reveal(); });
   }
-
-  // Safety: never keep the page hidden for more than 4 seconds
-  var timer = setTimeout(reveal, 4000);
-
-  fetch('https://api.country.is/')
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
-      clearTimeout(timer);
-      var cc = (d.country || '').toUpperCase();
-      var regional = REGION.indexOf(cc) !== -1;
-      var f = facePath();
-      var hash = location.hash;
-
-      if (f.isSr && !regional) {
-        // Non-regional visitor on the SR face → EN equivalent
-        var en = f.file === 'index.html' ? '/' : '/' + f.file;
-        location.replace(en + hash);
-        return;
-      }
-      if (!f.isSr && regional) {
-        // EN-only pages (e.g. the personal about page) have no /sr/ twin:
-        // a regional visitor stays on EN rather than hitting a 404.
-        if (EN_ONLY.indexOf(f.file) !== -1) {
-          reveal();
-          return;
-        }
-        // Regional visitor on the EN face → SR equivalent
-        var sr = f.file === 'index.html' ? '/sr/' : '/sr/' + f.file;
-        location.replace(sr + hash);
-        return;
-      }
-      reveal();
-    })
-    .catch(function () { clearTimeout(timer); reveal(); });
   // ===== Mobile burger nav toggle =====
   var burger = document.querySelector('.nav-burger');
   if (burger) {

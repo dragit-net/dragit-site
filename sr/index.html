@@ -53,7 +53,7 @@
       "name": "Šta sadrži besplatna procena od 30 minuta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Zajedno pogledamo vašu D365 F&O ili ERP okruženja. Pokazujem gde su slepi uglovi — batch poslovi, integracije, pristup, nadzor — i šta ću s tim. Bez pripreme, bez prodajne prezentacije, bez obaveza."
+        "text": "Zajedno gledamo vašu D365 F&O ili ERP okruženja. Pokazujem gde su slepi uglovi — batch poslovi, integracije, pristup, nadzor — i šta ću s tim. Bez pripreme, bez prodajne prezentacije, bez obaveza. Većina poziva se završi sa dva ili tri konkretna sledeća koraka."
       }
     },
     {
@@ -61,12 +61,12 @@
       "name": "Radite li sa timovima van regiona (EU / US)?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Da. Lokalno imamo Boksit, Drinu i Solignu (38% rast, 300+ korisnika); za EU/US region referenca je Ragn-Sells u Švedskoj — isporuka i nadzor u realnom vremenu od 2021."
+        "text": "Da. Moja referenca je Ragn-Sells u Švedskoj — kompletna D365 F&O implementacija plus nadzor u realnom vremenu preko međunarodnih timova, u produkciji od 2021. Radim na engleskom, u EU vremenskoj zoni, a gde je potreban tim za izgradnju angažujem partnera-integratora."
       }
     },
     {
       "@type": "Question",
-      "name": "Kako izdržavate godišnje Microsoft nadogradnje D365 F&O?",
+      "name": "Kako rukujete Microsoftovim polugodišnjim D365 F&O nadogradnjama?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Osnova je arhitektura otporna na nadogradnje: lagana, standard-first kastomizacija tako da nadogradnja platforme ne slomi prilagođeni kod. Mission Control služi upravo da vidite uticaj nadogradnje na batch i integracije pre nego što korisnici to vide."
@@ -74,7 +74,7 @@
     },
     {
       "@type": "Question",
-      "name": "Šta sadrži Mission Control (nadzor)?",
+      "name": "Šta uključuje Mission Control (nadzor)?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Pet poslovnih panela kroz UAT / TRAIN / PROD na Azure App Insights, Log Analytics, Azure Data Explorer i KQL: tok porudžbina/opterećenja, batch poslovi, integracije DMF (Data Migration Framework) / BizTalk / ISV i aplikacija treće strane, i IT pregled — 20+ spoljnih sistema."
@@ -85,7 +85,7 @@
       "name": "Možete li da radite uz postojećeg integratora ili partnera?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To je uobičajeni oblik. Mi donosimo arhitekturu, koordinaciju isporuke i monitoring sloj; lokalni integrator vodi tim. Jedan odgovoran vlasnik na arhitekturi — bez slojeva između vas i čoveka koji je dizajnirao."
+        "text": "Da, to je čest oblik saradnje. Ja donosim arhitekturu, koordinaciju isporuke i monitoring sloj; lokalni integrator vodi build tim. Jedan odgovorni vlasnik na arhitekturi — bez slojeva između vas i čoveka koji je dizajnirao."
       }
     },
     {
@@ -104,6 +104,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/design-system.css">
+  <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
+  <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -252,12 +254,12 @@
       </a>
       <a class="case-card" href="cases.html#drina">
         <h3>Drina Osiguranje — ERP tranzicija</h3>
-        <div class="case-metric">20% → 100%</div>
-        <p>Prvi veb-baziran ERP u osiguranju u RS (2009). Hard tranzicija ERP-a u 2 godine: pokrivenost funkcija podignuta sa 20–30% na potpunu pripremljenost za produkciju.</p>
+        <div class="case-metric">20–30% → 100%</div>
+        <p>Prvi veb-baziran ERP u osiguranju u RS (2009, prema dostupnim podacima). Hard tranzicija ERP-a u 2 godine: pokrivenost funkcija podignuta sa 20–30% na potpunu pripremljenost za produkciju.</p>
         <span class="case-link">Pročitaj →</span>
       </a>
       <a class="case-card" href="cases.html#soligna">
-        <h3>Soligna — Portal AM</h3>
+        <h3>Soligna — Drvna industrija / Portal</h3>
         <div class="case-metric">Drvna industrija</div>
         <p>Prilagođeni Portal za radnu snagu i materijale — operativni KPI paneli iznad ERP-a.</p>
         <span class="case-link">Pročitaj →</span>
@@ -305,7 +307,7 @@
           <div class="vouch-stat"><div class="vs-num">19</div><div class="vs-lbl">projekata isporučenih na vreme, u opsegu, u budžetu</div></div>
           <div class="vouch-stat"><div class="vs-num">20+</div><div class="vs-lbl">spoljnih sistema u jednom sloju nadzora u realnom vremenu (Ragn-Sells)</div></div>
           <div class="vouch-stat"><div class="vs-num">+38%</div><div class="vs-lbl">prihodi kompanije tokom IT-strategijskog rukovodstva (Boksit, 2005–2024)</div></div>
-          <div class="vouch-stat"><div class="vs-num">20→100%</div><div class="vs-lbl">pokrivenost funkcija u 2-godišnjoj hard ERP tranziciji (Drina osiguranje)</div></div>
+          <div class="vouch-stat"><div class="vs-num">20–30%→100%</div><div class="vs-lbl">pokrivenost funkcija u 2-godišnjoj hard ERP tranziciji (Drina osiguranje)</div></div>
         </div>
       </div>
       <div>

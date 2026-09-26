@@ -58,7 +58,7 @@
       !sessionStorage.getItem(SESS_KEY)) {
     var fired = false;
     document.addEventListener('mouseout', function (ev) {
-      if (ev.relatedTarget || ev.clientY <= 0) {
+      if (!ev.relatedTarget && ev.clientY <= 0) {
         // Pointer left the window from the top edge.
         if (!fired) {
           fired = true;

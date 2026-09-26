@@ -397,6 +397,7 @@ h3 { font-size: var(--text-xl); }
   gap: var(--space-8);
   margin-bottom: var(--space-12);
 }
+.footer h3,
 .footer h4 {
   color: var(--white);
   font-size: var(--text-base);

@@ -26,6 +26,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles/design-system.css">
+  <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
+  <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTF2W65KZB"></script>
   <script>
@@ -74,7 +76,7 @@
     </div>
 
     <div id="panel-calendly" class="tab-panel active" role="tabpanel" aria-labelledby="tab-calendly">
-      <div class="cta-calendly">
+      <div class="cta-calendly" id="calendly">
         <div class="cal-placeholder">Učitavanje kalendara… <a href="mailto:info@dragit.net">info@dragit.net</a></div>
         <iframe
           src="https://calendly.com/dragit-net"
@@ -88,7 +90,7 @@
     </div>
 
     <div id="panel-form" class="tab-panel" role="tabpanel" aria-labelledby="tab-form" hidden>
-      <form class="lead-form" id="leadForm" novalidate>
+      <form class="lead-form" id="leadForm">
         <h3>Pošaljite poruku</h3>
         <p class="form-intro">Četiri polja. Jedan odgovor u &lt;48h. Bez drip kampanja, bez CRM-a.</p>
 
@@ -169,6 +171,13 @@
     tab.setAttribute('aria-selected', 'true');
     tab.setAttribute('tabindex', '0');
   }
+
+  // Deep link: nav "Book a Call" (#calendly) must also open the booking tab
+  window.addEventListener('hashchange', function () {
+    if (location.hash !== '#calendly') return;
+    showTab('calendly');
+    document.getElementById('calendly').scrollIntoView();
+  });
 
   const EMAILJS_PUBLIC_KEY  = "i1p0W5B3E7I--jYYV";
   const EMAILJS_SERVICE_ID  = "service_h3zp9ie";
