@@ -15,7 +15,7 @@
       safety timer, so the content is never left hidden behind the gate.
       Bypass for testing: ?lang=en or ?lang=sr keeps the current face.
    2. GA4: fires `face_reached` (which face was shown) and
-      `calendly_embed` (when a page embeds the Calendly CTA).
+      `calendly_embed` (when the visitor deliberately loads the Calendly iframe).
    ================================================================ */
 (function () {
   'use strict';
@@ -53,12 +53,6 @@
         page: '/' + (f.file === 'index.html' ? 'home' : f.file),
         source: sourceDim()
       });
-      if (document.querySelector('.cta-calendly iframe')) {
-        gtag('event', 'calendly_embed', {
-          page: location.pathname,
-          source: sourceDim()
-        });
-      }
     }
   }
 
@@ -147,4 +141,26 @@
       });
     });
   }
+  // ===== Calendly consent facade =====
+  // The Calendly iframe carries data-src and stays hidden until the visitor
+  // deliberately loads it, so no third-party cookies are set before that.
+  var calBlocks = document.querySelectorAll('.cta-calendly');
+  Array.prototype.forEach.call(calBlocks, function (block) {
+    var frame = block.querySelector('iframe[data-src]');
+    var btn = block.querySelector('.cal-load');
+    if (!frame || !btn) return;
+    btn.addEventListener('click', function () {
+      frame.setAttribute('src', frame.getAttribute('data-src'));
+      frame.removeAttribute('data-src');
+      frame.hidden = false;
+      block.classList.add('cal-loaded');
+      if (window.gtag) {
+        gtag('event', 'calendly_embed', {
+          page: location.pathname,
+          source: sourceDim()
+        });
+      }
+    });
+  });
+
 })();

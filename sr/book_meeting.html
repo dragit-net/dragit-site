@@ -77,11 +77,17 @@
 
     <div id="panel-calendly" class="tab-panel active" role="tabpanel" aria-labelledby="tab-calendly">
       <div class="cta-calendly" id="calendly">
-        <div class="cal-placeholder">Učitavanje kalendara… <a href="mailto:info@dragit.net">info@dragit.net</a></div>
+        <div class="cal-facade">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18"/><path d="M9 14.5l1.8 1.8 3.7-3.9"/></svg>
+          <p class="cal-facade-title">Izaberite termin koji vam odgovara</p>
+          <p class="cal-facade-note">Kalendar zakazivanja obezbeđuje <strong>Calendly</strong>. Učitavanjem se uspostavlja veza sa calendly.com i mogu se postaviti Calendly kolačići — vidi <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">Calendly obaveštenje o privatnosti</a>.</p>
+          <button type="button" class="btn btn-primary cal-load">Učitaj kalendar</button>
+        </div>
         <iframe
-          src="https://calendly.com/dragit-net"
+          data-src="https://calendly.com/dragit-net"
           title="Izaberite termin — 30-minutni uvodni razgovor sa dr Zoranom Dragičevićem"
-          loading="lazy">
+          loading="lazy"
+          hidden>
         </iframe>
       </div>
       <p class="form-note">
