@@ -46,6 +46,15 @@
     return 'direct';
   }
 
+  // Clean page_location for GA4: the internal ?lang= QA pin must not
+  // create phantom pages in analytics (routing itself still uses it).
+  function cleanLocation() {
+    var q = new URLSearchParams(location.search);
+    q.delete('lang');
+    var s = q.toString();
+    return location.origin + location.pathname + (s ? '?' + s : '');
+  }
+
   function fireEvents() {
     if (window.gtag && !faceFired) {
       faceFired = true;
@@ -161,7 +170,28 @@
           page: location.pathname,
           source: sourceDim()
         });
+        gtag('event', 'book_call', {
+          page: location.pathname,
+          source: sourceDim()
+        });
       }
+    });
+  });
+
+  // ===== GA4 CTA click tracking =====
+  // One delegated listener: primary buttons and CTA links report
+  // `cta_click` with a readable label (booking CTAs, hero CTAs, sticky CTA).
+  document.addEventListener('click', function (e) {
+    var el = e.target && e.target.closest
+      ? e.target.closest('a.btn, button.btn, .nav-cta, .sc-btn, .cta-link')
+      : null;
+    if (!el || !window.gtag || el.closest('#consentBanner')) return;
+    var label = (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+    gtag('event', 'cta_click', {
+      cta: label,
+      href: el.getAttribute('href') || '',
+      page: location.pathname,
+      source: sourceDim()
     });
   });
 
@@ -191,7 +221,7 @@
       s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
       document.head.appendChild(s);
       gtag('js', new Date());
-      gtag('config', GA4_ID);
+      gtag('config', GA4_ID, { page_location: cleanLocation() });
       fireEvents();
     };
 
