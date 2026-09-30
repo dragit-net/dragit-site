@@ -267,7 +267,15 @@
             location.hostname.replace(/^www\./, '');
         }
       });
-      location.reload();
+      // Pages that carry the banner re-offer it on reload; pages without one
+      // (privacy, 404) send the visitor to the face home so the choice is
+      // re-presented instead of the link appearing dead.
+      if (consentBanner) {
+        location.reload();
+      } else {
+        var face = facePath();
+        location.replace(face.isSr ? '/sr/' : '/');
+      }
     });
   }
 

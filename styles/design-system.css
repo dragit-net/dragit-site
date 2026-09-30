@@ -882,7 +882,7 @@ body.page-doc { padding: var(--space-16) 0; }
   border-radius: var(--radius-lg);
   padding: 2rem;
 }
-.lead-form h3 {
+.lead-form h2 {
   font-size: var(--text-xl);
   margin-bottom: 8px;
 }
