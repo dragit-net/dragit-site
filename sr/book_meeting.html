@@ -22,11 +22,18 @@
   <meta name="twitter:image" content="https://www.dragit.net/images/og-card-sr.png">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A0A2E">
   <link rel="stylesheet" href="../styles/fonts.css">
   <link rel="stylesheet" href="../styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS browser SDK v4.4.1, self-hosted (pinned): sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS -->
+  <script src="../js/vendor/emailjs-browser-4.4.1.min.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Zakažite uvodni razgovor","url":"https://www.dragit.net/sr/book_meeting.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/sr/"},{"@type":"ListItem","position":2,"name":"Zakažite","item":"https://www.dragit.net/sr/book_meeting.html"}]}</script>
 </head>
@@ -54,7 +61,7 @@
   <div class="container center">
     <p class="section-label">Kontakt</p>
     <h1 class="section-title">Zakažite uvodni razgovor<br>ili pošaljite poruku</h1>
-    <p class="section-subtitle mx-auto">30 minuta, bez pripreme. Zajedno gledamo vaše okruženje i pokazujem vam gde su slepi uglovi.</p>
+    <p class="section-subtitle mx-auto">30 minuta, bez pripreme. Zajedno gledamo vaše okruženje i pokazujem vam gde su uska grla / kritična mesta.</p>
   </div>
 
   <div class="container maxw-840 mt-8">
@@ -72,7 +79,7 @@
         <div class="cal-facade">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M8 2.5v4M16 2.5v4M3 9.5h18"/><path d="M9 14.5l1.8 1.8 3.7-3.9"/></svg>
           <p class="cal-facade-title">Izaberite termin koji vam odgovara</p>
-          <p class="cal-facade-note">Kalendar zakazivanja obezbeđuje <strong>Calendly</strong>. Učitavanjem se uspostavlja veza sa calendly.com i mogu se postaviti Calendly kolačići — vidi <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">Calendly obaveštenje o privatnosti</a>.</p>
+          <p class="cal-facade-note">Kalendar zakazivanja pruža <strong>Calendly</strong>. Učitavanjem se uspostavlja veza sa calendly.com i mogu se postaviti Calendly kolačići — vidi <a href="https://calendly.com/legal/privacy-notice" target="_blank" rel="noopener">obaveštenje o privatnosti</a>.</p>
           <button type="button" class="btn btn-primary cal-load">Učitaj kalendar</button>
         </div>
         <iframe
@@ -90,10 +97,10 @@
     <div id="panel-form" class="tab-panel" role="tabpanel" aria-labelledby="tab-form" hidden>
       <form class="lead-form" id="leadForm">
         <h3>Pošaljite poruku</h3>
-        <p class="form-intro">Četiri polja. Jedan odgovor u &lt;48h. Bez drip kampanja, bez CRM-a.</p>
+        <p class="form-intro">Četiri polja. Jedan odgovor u roku od 48 sati. Bez automatizovanih mejl-kampanja, bez CRM-a.</p>
 
                 <div class="form-honeypot" aria-hidden="true">
-          <label>Website<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
+          <label>Veb-sajt<input type="text" name="company_website" tabindex="-1" autocomplete="off"></label>
         </div>
 
 <div class="form-grid">
@@ -143,13 +150,13 @@
     <div class="footer-grid">
       <div>
         <h2 class="footer-logo">dragIT</h2>
-        <div class="footer-blurb">Poslovni softver i D365 F&amp;O isporuka. Nadzor. Prilago&#273;eni softver. Jedan arhitekt, bez slojeva.</div>
+        <div class="footer-blurb">Poslovni softver i D365 F&amp;O isporuka. Monitoring. Prilagođeni softver. Jedan softver arhitekta, bez slojevitog odlučivanja.</div>
       </div>
       <div>
         <h3>Usluge</h3>
         <ul>
           <li><a href="/sr/d365-fo.html">D365 F&amp;O isporuka</a></li>
-          <li><a href="/sr/d365-fo.html#observability">Nadzor / Mission Control</a></li>
+          <li><a href="/sr/d365-fo.html#observability">Monitoring / Mission Control</a></li>
           <li><a href="/sr/custom_software.html">Prilago&#273;eni softver i Portal</a></li>
           <li><a href="/sr/strategy.html">IT / AI strategija</a></li>
           <li><a href="/sr/go_digital.html">Digitalna transformacija</a></li>
@@ -178,6 +185,7 @@
       <div class="footer-links">
         <a href="/sr/privacy.html">Politika privatnosti</a>
         <a href="mailto:info@dragit.net">info@dragit.net</a>
+        <a href="#" data-consent-revoke>Promeni izbor analitike</a>
       </div>
     </div>
   </div>

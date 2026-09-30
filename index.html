@@ -22,6 +22,12 @@
   <meta property="og:url" content="https://www.dragit.net/">
   <meta property="og:image" content="https://www.dragit.net/images/og-card.png">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A0A2E">
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
@@ -52,17 +58,17 @@
     "@type": "FAQPage",
     "mainEntity": [
       {"@type":"Question","name":"What does the 30-minute discovery call involve?",
-       "acceptedAnswer":{"@type":"Answer","text":"We look at your D365 F&O or ERP environment together. I walk you through where the blind spots are - batch jobs, integrations, access, monitoring - and tell you what I'd do about them. No prep, no sales deck, no obligation."}},
+       "acceptedAnswer":{"@type":"Answer","text":"We look at your D365 F&O or ERP environment together. I walk you through where the blind spots are — batch jobs, integrations, access, monitoring — and tell you what I'd do about them. No prep, no sales deck, no obligation. Most calls end with two or three concrete next steps."}},
       {"@type":"Question","name":"Do you work with teams outside the region (EU / US)?",
-       "acceptedAnswer":{"@type":"Answer","text":"Yes. My anchor reference is Ragn-Sells in Sweden - a full D365 F&O implementation plus a live real-time monitoring layer across international teams, running in production since 2021. I work in English, in the EU time zone, and hand off to partner integrators where a delivery team is required."}},
+       "acceptedAnswer":{"@type":"Answer","text":"Yes. My anchor reference is Ragn-Sells in Sweden — a full D365 F&O implementation plus a live real-time monitoring layer across international teams, running in production since July 2026. I work in English, in the EU time zone, and hand off to partner integrators (e.g. Daxact) where a delivery team is required."}},
       {"@type":"Question","name":"How do you handle Microsoft's biannual D365 F&O updates?",
        "acceptedAnswer":{"@type":"Answer","text":"The core of the practice is upgrade-safe architecture: light, standard-first customization so that a platform update doesn't break custom code. Mission Control exists precisely to see the effect of an update on batch and integrations before your users do."}},
       {"@type":"Question","name":"What is included in Mission Control (observability)?",
-       "acceptedAnswer":{"@type":"Answer","text":"Five business dashboards across UAT / TRAIN / PROD built on Azure App Insights, Log Analytics, Azure Data Explorer and KQL: order / load flow, batch jobs, DMF (Data Migration Framework) / BizTalk / ISV & third-party app integrations, and an IT overview - 20+ external systems wired in."}},
+       "acceptedAnswer":{"@type":"Answer","text":"Five business dashboards across UAT / TRAIN / PROD built on Azure App Insights, Log Analytics, Azure Data Explorer and KQL: order / load flow, batch jobs, DMF (Data Migration Framework) / BizTalk / ISV & third-party app integrations, and an IT overview — 20+ external systems wired in."}},
       {"@type":"Question","name":"Can you work alongside our existing integrator or partner?",
-       "acceptedAnswer":{"@type":"Answer","text":"That's the usual shape. I bring architecture, delivery coordination and the monitoring layer; a local integrator carries the build team. One accountable owner on architecture - no layers between you and the person who designed it."}},
-      {"@type":"Question","name":"What does 'on time, on budget' mean in practice?",
-       "acceptedAnswer":{"@type":"Answer","text":"It means a fixed, transparent scope with a named owner and a published definition of done - 19 projects have held that line. When a milestone is at risk you hear it from me, not from a status report, with a recommended path before the date, not after."}}
+       "acceptedAnswer":{"@type":"Answer","text":"That's the usual shape. I bring architecture, delivery coordination and the monitoring layer; a local integrator (Daxact, M&I Systems) carries the build team. One accountable owner on architecture — no layers between you and the person who designed it."}},
+      {"@type":"Question","name":"What does \"on time, on budget\" mean in practice?",
+       "acceptedAnswer":{"@type":"Answer","text":"It means a fixed, transparent scope with a named owner and a published definition of done — 19 projects have held that line. When a milestone is at risk you hear it from me, not from a status report, with a recommended path before the date, not after."}}
     ]
   }
   </script>
@@ -194,7 +200,7 @@
       <span class="client-wordmark">ArcelorMittal</span>
       <span class="client-wordmark">Boksit</span>
       <span class="client-wordmark">Soligna</span>
-      <span class="client-wordmark">Drina</span>
+      <span class="client-wordmark">Drina Insurance</span>
     </div>
     <p class="trust-line">Enterprise delivery on Microsoft Dynamics 365 &amp; Azure.</p>
   </div>
@@ -332,7 +338,7 @@
         <div class="faq-body"><p>We look at your D365 F&O or ERP environment together. I walk you through where the blind spots are — batch jobs, integrations, access, monitoring — and tell you what I'd do about them. No prep, no sales deck, no obligation. Most calls end with two or three concrete next steps.</p></div>
       </details>
       <details class="faq-item"><summary>Do you work with teams outside the region (EU / US)?</summary>
-        <div class="faq-body"><p>Yes. My anchor reference is Ragn-Sells in Sweden — a full D365 F&O implementation plus a live real-time monitoring layer across international teams, running in production since 2021. I work in English, in the EU time zone, and hand off to partner integrators (e.g. Daxact) where a delivery team is required.</p></div>
+        <div class="faq-body"><p>Yes. My anchor reference is Ragn-Sells in Sweden — a full D365 F&O implementation plus a live real-time monitoring layer across international teams, running in production since July 2026. I work in English, in the EU time zone, and hand off to partner integrators (e.g. Daxact) where a delivery team is required.</p></div>
       </details>
       <details class="faq-item"><summary>How do you handle Microsoft's biannual D365 F&O updates?</summary>
         <div class="faq-body"><p>The core of the practice is <em>upgrade-safe</em> architecture: light, standard-first customization so that a platform update doesn't break custom code. Mission Control exists precisely to see the effect of an update on batch and integrations before your users do.</p></div>
@@ -427,6 +433,7 @@
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="sitemap.xml">Sitemap</a>
+        <a href="#" data-consent-revoke>Change analytics choice</a>
       </div>
     </div>
   </div>

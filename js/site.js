@@ -243,4 +243,32 @@
     }
   }
 
+  // ===== GDPR art. 7(3): withdrawing consent as easily as giving it =====
+  // Every footer carries a [data-consent-revoke] link. It drops the stored
+  // choice, tells GA4 to stop (Consent Mode update), clears the _ga cookies and
+  // reloads, so the banner is offered again and nothing is measured until the
+  // visitor makes a new explicit choice.
+  var revokeLink = document.querySelector('[data-consent-revoke]');
+  if (revokeLink) {
+    revokeLink.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      try { localStorage.removeItem(CONSENT_KEY); } catch (e) { /* private mode */ }
+      if (window.gtag) {
+        gtag('consent', 'update', {
+          analytics_storage: 'denied', ad_storage: 'denied',
+          ad_user_data: 'denied', ad_personalization: 'denied'
+        });
+      }
+      document.cookie.split(';').forEach(function (cookie) {
+        var name = cookie.split('=')[0].trim();
+        if (name === '_ga' || name.indexOf('_ga_') === 0) {
+          document.cookie = name + '=; Max-Age=0; path=/';
+          document.cookie = name + '=; Max-Age=0; path=/; domain=' +
+            location.hostname.replace(/^www\./, '');
+        }
+      });
+      location.reload();
+    });
+  }
+
 })();

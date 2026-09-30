@@ -22,11 +22,18 @@
   <meta name="twitter:image" content="https://www.dragit.net/images/og-card.png">
   <meta name="robots" content="noindex,follow">
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0A0A2E">
   <link rel="stylesheet" href="styles/fonts.css">
   <link rel="stylesheet" href="styles/design-system.css">
   <noscript><style>html.region-gate body{visibility:visible}html.region-gate .region-loading{display:none}</style></noscript>
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS browser SDK v4.4.1, self-hosted (pinned): sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS -->
+  <script src="js/vendor/emailjs-browser-4.4.1.min.js"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Book a Discovery Call","url":"https://www.dragit.net/book_meeting.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/"},{"@type":"ListItem","position":2,"name":"Book a Call","item":"https://www.dragit.net/book_meeting.html"}]}</script>
 </head>
@@ -187,6 +194,7 @@
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="mailto:info@dragit.net">info@dragit.net</a>
+        <a href="#" data-consent-revoke>Change analytics choice</a>
       </div>
     </div>
   </div>
