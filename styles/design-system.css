@@ -785,6 +785,10 @@ html.region-gate .region-loading { display: flex; }
   color: var(--text-muted);
   margin: var(--space-4) 0 0;
 }
+.section-note a {
+  color: var(--primary);
+  text-decoration: underline;
+}
 .feature-tile .ft-icon {
   font-size: 1.75rem;
   margin-bottom: var(--space-3);
