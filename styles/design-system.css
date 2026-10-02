@@ -788,6 +788,11 @@ html.region-gate .region-loading { display: flex; }
   color: var(--text-muted);
   line-height: 1.55;
 }
+/* Tiles with two paragraphs (the "three steps" row) read as one block; the second
+   paragraph carries the concrete outcome and gets its own breathing room. */
+.feature-tile p + p {
+  margin-top: var(--space-4);
+}
 .section-note {
   font-size: var(--text-xs);
   color: var(--text-muted);
