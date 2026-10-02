@@ -39,6 +39,16 @@ C:/Python313/python site_dev/release/release.py
 `release.py` piše dokaz svake isporuke u `site_dev/release/deploy-<datum>.md`
 (HTTP statusi i sadržajne probe na produkciji).
 
+
+## Identitet commita
+
+Svi commitovi na ovom repu idu preko naloga `iva-0098`. `pre-commit` hook
+odbija commit sa drugim autorom ili committerom, a `commit-msg` odbija poruku u
+kojoj se pojave tragovi alata koji su pisali kod (`Generated with ...`,
+`Co-Authored-By: ...`). Razlog je praktičan: GitHub svakog autora commit-a
+prikazuje u listi Contributors, pa se tu ne sme pojaviti nalog koji nije
+vlasnikov.
+
 ## Blokade
 
 - **Lokalno:** `pre-push` hook blokira `git push origin main` (izvor u
