@@ -178,6 +178,71 @@
     });
   });
 
+  // ===== GA4 scroll depth =====
+  // Where visitors actually stop reading. One event per threshold per page
+  // view; thresholds are in document order so they always fire ascending.
+  (function scrollDepth() {
+    // Listeners attach regardless of consent state: GA4 is only created
+    // later in this file (the consent gate), so bailing out here dropped
+    // scroll_depth entirely. send() re-checks window.gtag per call.
+    var marks = [25, 50, 75, 100];
+    var reached = 0;
+    var retries = 0;
+    function send() {
+      if (!window.gtag) return;
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      if (max <= 0) return;
+      // Reaching the bottom IS 100%. Deriving it from scrollHeight alone
+      // lost the last threshold when reveal animations grew the document
+      // after the jump (rounded to 99).
+      var atBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+      var pct = atBottom ? 100 : Math.min(99, Math.round((window.scrollY / max) * 100));
+      while (reached < marks.length && pct >= marks[reached]) {
+        gtag('event', 'scroll_depth', { percent: marks[reached], page: location.pathname });
+        reached++;
+      }
+      // Scroll-reveal animations grow the document AFTER the scroll that
+      // reached the bottom, so 100% can become true with no further
+      // scroll event. Bounded retry: at most two re-checks, armed only
+      // while the visitor is sitting at the bottom of the page.
+      if (reached < marks.length && retries < 2 &&
+          window.scrollY + window.innerHeight >= doc.scrollHeight - 24) {
+        retries++;
+        setTimeout(send, 800);
+      }
+      if (reached >= marks.length) {
+        window.removeEventListener('scroll', send);
+        window.removeEventListener('resize', send);
+      }
+    }
+    window.addEventListener('scroll', send, { passive: true });
+    window.addEventListener('resize', send, { passive: true });
+    send();
+  })();
+
+  // ===== GA4 outbound click =====
+  // The strongest intent signal on a one-call site is the visitor leaving for
+  // a profile, a paper or a mail client. Not tracked today at all.
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || !window.gtag || a.closest('#consentBanner')) return;
+    var href = a.getAttribute('href') || '';
+    if (!href) return;
+    var kind = /^https?:\/\//i.test(href) ? 'external'
+             : /^mailto:/i.test(href) ? 'email'
+             : /^tel:/i.test(href) ? 'phone' : null;
+    if (!kind) return;
+    if (kind === 'external' && href.indexOf(location.hostname) !== -1) return;
+    gtag('event', 'outbound_click', {
+      link_kind: kind,
+      href: href.slice(0, 120),
+      link_text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+      page: location.pathname,
+      source: sourceDim()
+    });
+  });
+
   // ===== GA4 CTA click tracking =====
   // One delegated listener: primary buttons and CTA links report
   // `cta_click` with a readable label (booking CTAs, hero CTAs, sticky CTA).

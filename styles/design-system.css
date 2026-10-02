@@ -486,6 +486,14 @@ h3 { font-size: var(--text-xl); }
   margin-bottom: 18px;
   letter-spacing: -0.01em;
 }
+.hero-byline {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--ink);
+  margin: -6px 0 14px;
+  letter-spacing: -0.01em;
+}
 .hero-tag {
   font-size: var(--text-lg);
   color: var(--text-muted);
@@ -1010,6 +1018,8 @@ body.page-doc { padding: var(--space-16) 0; }
 @media (max-width: 480px) {
   h1 { font-size: var(--text-2xl); }
   .hero-name { font-size: var(--text-2xl); }
+  .hero-byline { font-size: var(--text-base); margin: -4px 0 12px; }
+  .hero-byline { font-size: var(--text-base); margin: -4px 0 12px; }
   .metrics-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .cta-section { padding: var(--space-12) var(--space-6); }
