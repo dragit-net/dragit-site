@@ -829,6 +829,15 @@ html.region-gate .region-loading { display: flex; }
   margin-top: var(--space-3);
   font-style: italic;
 }
+@media (max-width: 768px) {
+  /* Two columns plus the gap do not fit a phone: the text column keeps its
+     min-content width, the figure shrinks to ~100px and the section overflows
+     the viewport. Stack it instead. Measured 2026-10-02 (d365-fo at 360px). */
+  .split {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
 .bullets {
   list-style: none;
   margin: var(--space-6) 0;
