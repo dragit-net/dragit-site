@@ -1382,11 +1382,14 @@ body.page-doc { padding: var(--space-16) 0; }
 .cta-calendly.cal-loaded .cal-facade { display: none; }
 
 /* ── GA4 CONSENT BANNER (deferred Consent Mode) ── */
+/* z-index must stay above .sticky-cta and .exit-nudge (both z-index 200):
+   on mobile they are fixed at the bottom and would otherwise cover the
+   consent buttons, leaving the visitor unable to accept or decline. */
 .consent-banner {
   position: fixed;
   left: var(--space-4, 1rem);
   bottom: var(--space-4, 1rem);
-  z-index: 70;
+  z-index: 300;
   max-width: 420px;
   background: var(--white, #fff);
   border: 1px solid var(--border, #e5e8ef);
