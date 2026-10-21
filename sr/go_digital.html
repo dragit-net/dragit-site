@@ -42,6 +42,39 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Digitalna transformacija","serviceType":"Strategija digitalne transformacije, redizajn procesa i upravljanje promenom","provider":{"@type":"Organization","@id":"https://www.dragit.net/#organization","name":"dragIT","url":"https://www.dragit.net/","email":"info@dragit.net"},"url":"https://www.dragit.net/sr/go_digital.html","areaServed":[{"@type":"Place","name":"European Union"},{"@type":"Place","name":"Bosnia and Herzegovina"},{"@type":"Place","name":"Serbia"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/sr/"},{"@type":"ListItem","position":2,"name":"Digitalna transformacija","item":"https://www.dragit.net/sr/go_digital.html"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Šta sloj nadzora zapravo prikazuje?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pet nadzornih tabli nad više od dvadeset eksternih sistema, u produkciji kod Ragn-Sells od jula 2026: kritični batch, batch visokog prioriteta, non-value validacija, tok porudžbine i sloj integracija. Dobijate stanje operacije dok traje - ne izveštaj o prošlom mesecu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da li mora da radi u oblaku?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Radi na Azure-u tamo gde to odgovara okruženju, ali sloj se odnosi na procese, ne na hostovanje. Isti tip operativne slike kod Boksit Group radi na njihovoj modernizovanoj infrastrukturi (95% Linux, 13 km optike, 300+ hostova), i to je dokaz reference."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Šta radimo kada proces još nije vidljiv?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To je prvo na redu da se popravi, a obično je kratka lista. Kod Soligne su norme operacija i dokumentacija mašina postojale, dnevne radne liste su postojale kao obrasci, a odstupanje od norme nije se prikazivalo nigde - procep je retko egzotičan. Obično je nedostajuće poređenje, a poređenje je mali posao."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -56,7 +89,8 @@
       <li><a href="/sr/d365-fo.html">D365 F&O</a></li>
       <li><a href="/sr/custom_software.html">Softver po meri</a></li>
       <li><a href="/sr/strategy.html">Strategija</a></li>
-      <li><a href="/sr/book_meeting.html">Kontakt</a></li>
+      <li><a href="about.html">O meni</a>
+      <a href="/sr/book_meeting.html">Kontakt</a></li>
     </ul>
     <div class="nav-right">
       <button class="nav-burger" aria-label="Meni" type="button">
@@ -124,6 +158,26 @@
   </div>
 </section>
 </main>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Pre nego što se javite</p>
+      <h2 class="section-title">Pitanja o operativnoj vidljivosti</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Šta sloj nadzora zapravo prikazuje?</summary>
+        <div class="faq-body"><p>Pet nadzornih tabli nad više od dvadeset eksternih sistema, u produkciji kod Ragn-Sells od jula 2026: kritični batch, batch visokog prioriteta, non-value validacija, tok porudžbine i sloj integracija. Dobijate stanje operacije dok traje - ne izveštaj o prošlom mesecu.</p></div>
+      </details>
+      <details class="faq-item"><summary>Da li mora da radi u oblaku?</summary>
+        <div class="faq-body"><p>Radi na Azure-u tamo gde to odgovara okruženju, ali sloj se odnosi na procese, ne na hostovanje. Isti tip operativne slike kod Boksit Group radi na njihovoj modernizovanoj infrastrukturi (95% Linux, 13 km optike, 300+ hostova), i to je dokaz reference.</p></div>
+      </details>
+      <details class="faq-item"><summary>Šta radimo kada proces još nije vidljiv?</summary>
+        <div class="faq-body"><p>To je prvo na redu da se popravi, a obično je kratka lista. Kod Soligne su norme operacija i dokumentacija mašina postojale, dnevne radne liste su postojale kao obrasci, a odstupanje od norme nije se prikazivalo nigde - procep je retko egzotičan. Obično je nedostajuće poređenje, a poređenje je mali posao.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">

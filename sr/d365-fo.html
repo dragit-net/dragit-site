@@ -42,6 +42,39 @@
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Dynamics 365 F&O konsalting i razvoj","serviceType":"D365 F&O konsalting, implementacija, integracija i monitoring","provider":{"@type":"Organization","@id":"https://www.dragit.net/#organization","name":"dragIT","url":"https://www.dragit.net/","email":"info@dragit.net"},"url":"https://www.dragit.net/sr/d365-fo.html","areaServed":[{"@type":"Place","name":"European Union"},{"@type":"Place","name":"Bosnia and Herzegovina"},{"@type":"Place","name":"Serbia"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/sr/"},{"@type":"ListItem","position":2,"name":"D365 F&O","item":"https://www.dragit.net/sr/d365-fo.html"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Koliko traje D365 F&O program?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dovoljno dugo da vredi raditi kako treba. Referenca je Ragn-Sells, gde je D365 F&O program (New Horizon) za dve godine prešao sa tvrdog migriranja na punu funkcionalnost, bez prekida poslovanja. Prvo što vidite nije konačni prelaz na novu verziju, nego radni sloj nad batch procesima i interfejsima - projekat ima vidljiv rezultat dugo pre go-live-a."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Možete li preuzeti već započetu implementaciju?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, i to je često bolji početak. Krećemo od onoga što okruženje već radi: koji batch poslovi kasne, gde se interfejsi slažu u redu, koliko vas košta put nadogradnje. Tek posle toga razgovaramo o promenama."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Šta se dešava sa našom prilagođenom logikom?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ostaje tamo gde zaslužuje, a kriterijum je polugodišnja Microsoft nadogradnja: ako promena ne može da prođe kroz nadogradnju bez prepisivanja, ona je obaveza, a ne imovina. Sloj nadzora je građen da nadogradnje preživi, jer sloj koji se kvari na svakom izdanju gori od toga da ga nema."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -56,7 +89,8 @@
       <li><a href="/sr/d365-fo.html" class="nav-active">D365 F&O</a></li>
       <li><a href="/sr/custom_software.html">Softver po meri</a></li>
       <li><a href="/sr/strategy.html">Strategija</a></li>
-      <li><a href="/sr/book_meeting.html">Kontakt</a></li>
+      <li><a href="about.html">O meni</a>
+      <a href="/sr/book_meeting.html">Kontakt</a></li>
     </ul>
     <div class="nav-right">
       <button class="nav-burger" aria-label="Meni" type="button">
@@ -194,6 +228,26 @@
   </div>
 </section>
 </main>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Pre nego što se javite</p>
+      <h2 class="section-title">Pitanja o isporuci D365 F&O</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Koliko traje D365 F&O program?</summary>
+        <div class="faq-body"><p>Dovoljno dugo da vredi raditi kako treba. Referenca je Ragn-Sells, gde je D365 F&O program (New Horizon) za dve godine prešao sa tvrdog migriranja na punu funkcionalnost, bez prekida poslovanja. Prvo što vidite nije konačni prelaz na novu verziju, nego radni sloj nad batch procesima i interfejsima - projekat ima vidljiv rezultat dugo pre go-live-a.</p></div>
+      </details>
+      <details class="faq-item"><summary>Možete li preuzeti već započetu implementaciju?</summary>
+        <div class="faq-body"><p>Da, i to je često bolji početak. Krećemo od onoga što okruženje već radi: koji batch poslovi kasne, gde se interfejsi slažu u redu, koliko vas košta put nadogradnje. Tek posle toga razgovaramo o promenama.</p></div>
+      </details>
+      <details class="faq-item"><summary>Šta se dešava sa našom prilagođenom logikom?</summary>
+        <div class="faq-body"><p>Ostaje tamo gde zaslužuje, a kriterijum je polugodišnja Microsoft nadogradnja: ako promena ne može da prođe kroz nadogradnju bez prepisivanja, ona je obaveza, a ne imovina. Sloj nadzora je građen da nadogradnje preživi, jer sloj koji se kvari na svakom izdanju gori od toga da ga nema.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">

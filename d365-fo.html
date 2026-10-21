@@ -40,6 +40,39 @@
   <script>setTimeout(function(){var d=document.documentElement;if(d.classList&&d.classList.contains('region-gate')){d.classList.remove('region-gate');var o=document.getElementById('regionLoading');if(o)o.style.display='none';}},4500);</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Dynamics 365 F&O Consulting & Development","serviceType":"Dynamics 365 Finance & Operations consulting, implementation, integration and observability","provider":{"@type":"Organization","@id":"https://www.dragit.net/#organization","name":"dragIT","url":"https://www.dragit.net/","email":"info@dragit.net"},"url":"https://www.dragit.net/d365-fo.html","areaServed":[{"@type":"Place","name":"European Union"},{"@type":"Place","name":"Bosnia and Herzegovina"},{"@type":"Place","name":"Serbia"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"dragIT","item":"https://www.dragit.net/"},{"@type":"ListItem","position":2,"name":"D365 F&O","item":"https://www.dragit.net/d365-fo.html"}]}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a D365 F&O programme take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Long enough to be worth doing properly. The reference is Ragn-Sells, where the D365 F&O programme (New Horizon) went from a hard migration to full functionality in two years, with no business interruption. What you see first is not the final cutover - it is a working monitoring layer over your batch and integration processes, so the project has a visible result long before go-live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you take over an implementation that is already running?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That is often the better way to start, and I take those engagements deliberately. We begin with what the environment already does: which batch jobs finish late, where the interfaces queue up, what the upgrade path costs you. Only after that does anyone talk about changing something."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the customisation we already have?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It stays where it earns its place, and the criterion is the biannual Microsoft update: if a change cannot pass through an upgrade without a rewrite, it is a liability, not an asset. The observability layer is built to survive those updates, because a monitoring layer that breaks on every release is worse than no layer at all."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -270,6 +303,26 @@
 
 <!-- FOOTER -->
 </main>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Before you reach out</p>
+      <h2 class="section-title">Questions about the D365 F&O delivery</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>How long does a D365 F&O programme take?</summary>
+        <div class="faq-body"><p>Long enough to be worth doing properly. The reference is Ragn-Sells, where the D365 F&O programme (New Horizon) went from a hard migration to full functionality in two years, with no business interruption. What you see first is not the final cutover - it is a working monitoring layer over your batch and integration processes, so the project has a visible result long before go-live.</p></div>
+      </details>
+      <details class="faq-item"><summary>Can you take over an implementation that is already running?</summary>
+        <div class="faq-body"><p>That is often the better way to start, and I take those engagements deliberately. We begin with what the environment already does: which batch jobs finish late, where the interfaces queue up, what the upgrade path costs you. Only after that does anyone talk about changing something.</p></div>
+      </details>
+      <details class="faq-item"><summary>What happens to the customisation we already have?</summary>
+        <div class="faq-body"><p>It stays where it earns its place, and the criterion is the biannual Microsoft update: if a change cannot pass through an upgrade without a rewrite, it is a liability, not an asset. The observability layer is built to survive those updates, because a monitoring layer that breaks on every release is worse than no layer at all.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
 
 <footer class="footer">
   <div class="container">
