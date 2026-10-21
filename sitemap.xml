@@ -11,6 +11,11 @@
   <!-- SR face (dragIT corporate, regional RS/ME/HR/BA/MK) -->
   <url><loc>https://www.dragit.net/sr/</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://www.dragit.net/sr/cases.html</loc><lastmod>2026-10-18</lastmod></url>
+  <url>
+    <loc>https://www.dragit.net/sr/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
   <url><loc>https://www.dragit.net/sr/strategy.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://www.dragit.net/sr/d365-fo.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://www.dragit.net/sr/custom_software.html</loc><lastmod>2026-10-18</lastmod></url>
