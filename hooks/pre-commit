@@ -1,0 +1,34 @@
+#!/bin/sh
+# Block commits that are not authored and committed by the single allowed account.
+#
+# Owner order 2026-10-02: every commit on this repo must be iva-0098. A repo-local
+# git identity of "bitno2u" is what put the wrong contributor on the production
+# history in the first place, so the identity is checked at commit time, not trusted.
+ALLOWED_NAME="iva-0098"
+ALLOWED_EMAIL="iva-0098@users.noreply.github.com"
+
+author="$(git var GIT_AUTHOR_IDENT)"
+committer="$(git var GIT_COMMITTER_IDENT)"
+
+check_ident() {
+    label="$1"; ident="$2"
+    case "$ident" in
+        "$ALLOWED_NAME <$ALLOWED_EMAIL>"*) return 0 ;;
+    esac
+    echo "" >&2
+    echo "  BLOKIRANO: $label nije $ALLOWED_NAME <$ALLOWED_EMAIL>" >&2
+    echo "  trenutno: $ident" >&2
+    echo "  ispravka: git config user.name  \"$ALLOWED_NAME\"" >&2
+    echo "           git config user.email \"$ALLOWED_EMAIL\"" >&2
+    echo "" >&2
+    return 1
+}
+
+fail=0
+check_ident "autor" "$author" || fail=1
+check_ident "committer" "$committer" || fail=1
+
+if [ "$fail" = "1" ]; then
+    exit 1
+fi
+exit 0

@@ -1,0 +1,45 @@
+#!/bin/sh
+# dragIT site - blokada direktnog push-a na produkciju (Odluka 41).
+#
+# `main` je izvor za GitHub Pages: svaki push na nju je ODMAH produkcija.
+# Zato je main read-only za ljude i agenta: promene se rade na grani `dev`,
+# prolaze kroz site_dev/release/gate.py i isporucuju iskljucivo preko
+# site_dev/release/release.py, koji postavlja DRAGIT_RELEASE=1.
+#
+# Ovaj hook je posao u .git/hooks/pre-push; verzija koja se instalira je u
+# site_dev/release/hooks/pre-push (povrat posle clone-a: install_hooks.py).
+
+set -e
+remote="$1"
+
+# Isporuka preko release.py: dozvoljeno, kapije je vec pokrenuo.
+if [ "$DRAGIT_RELEASE" = "1" ]; then
+    exit 0
+fi
+
+blocked=0
+while read -r local_ref local_sha remote_ref remote_sha; do
+    case "$remote_ref" in
+        refs/heads/main)
+            blocked=1
+            echo "" >&2
+            echo "  BLOKIRANO: push na main = trenutna produkcija (www.dragit.net)" >&2
+            if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
+                echo "  Ne brise se grana main koja je izvor Pages." >&2
+            else
+                echo "  main je read-only. Tok izmene je:" >&2
+                echo "    1) rad na grani dev:   git switch dev" >&2
+                echo "    2) kapije:            C:/Python313/python site_dev/release/gate.py" >&2
+                echo "    3) isporuka:          C:/Python313/python site_dev/release/release.py" >&2
+                echo "  release.py pravi backup tag stare verzije, ff-mergeuje dev u main," >&2
+                echo "  push-uje i verifikuje produkciju (Odluka 36 + Odluka 41)." >&2
+            fi
+            echo "" >&2
+            ;;
+    esac
+done
+
+if [ "$blocked" = "1" ]; then
+    exit 1
+fi
+exit 0
