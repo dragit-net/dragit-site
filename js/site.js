@@ -26,6 +26,17 @@
   var html = document.documentElement;
   var params = new URLSearchParams(location.search);
 
+  // Crawlers are never routed by IP. From outside the region the gate turns
+  // every /sr/... URL into a redirect to its EN twin, so Googlebot (whose
+  // crawlers sit outside RS/ME/HR/BA/MK) never sees the Serbian face: it is
+  // reported as "Page with redirect" and the declared canonical is ignored.
+  // Bots get the page exactly as served; region routing stays for humans.
+  var BOT_UA = /googlebot|bingbot|yandex|duckduckbot|baiduspider|applebot|petalbot|semrushbot|ahrefsbot|mj12bot|screaming frog|headlesschrome|lighthouse|gptbot|oai-searchbot|claudebot|perplexitybot/i;
+  if (BOT_UA.test(navigator.userAgent || '') || navigator.webdriver === true) {
+    reveal();
+    return;
+  }
+
   function facePath() {
     var seg = location.pathname.split('/').filter(Boolean);
     var isSr = seg[0] === 'sr';
