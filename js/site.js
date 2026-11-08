@@ -140,15 +140,23 @@
     // Safety: never keep the page hidden for more than 4 seconds
     var timer = setTimeout(reveal, 4000);
 
+    // Primary: api.country.is. Fallback: ipinfo.io (same IP -> country rule,
+    // only when the primary refuses the connection — e.g. Yettel mobile CGNAT).
+    function handleCountry(d) {
+      clearTimeout(timer);
+      var cc = ((d && d.country) || '').toUpperCase();
+      try { if (cc) sessionStorage.setItem(GEO_KEY, cc); } catch (e) { /* ignore */ }
+      route(cc);
+    }
     fetch('https://api.country.is/')
       .then(function (r) { return r.json(); })
-      .then(function (d) {
-        clearTimeout(timer);
-        var cc = (d.country || '').toUpperCase();
-        try { if (cc) sessionStorage.setItem(GEO_KEY, cc); } catch (e) { /* ignore */ }
-        route(cc);
-      })
-      .catch(function () { clearTimeout(timer); reveal(); });
+      .then(handleCountry)
+      .catch(function () {
+        fetch('https://ipinfo.io/json/')
+          .then(function (r) { return r.json(); })
+          .then(handleCountry)
+          .catch(function () { clearTimeout(timer); reveal(); });
+      });
   }
   // ===== Mobile burger nav toggle =====
   var burger = document.querySelector('.nav-burger');
